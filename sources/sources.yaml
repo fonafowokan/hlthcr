@@ -1,0 +1,653 @@
+# Healthcare Foundations — Source Registry
+# Approved sources only: hhs.gov, cms.gov, cdc.gov, nih.gov, healthcare.gov
+# Schema:
+#   source_id: SRC-NNN
+#   title: "<document/page title>"
+#   url: "<full URL>"
+#   domain: payor | provider | patient | data | cross_domain
+#   key_points: [list of extracted points]
+#   regulatory_tags: [HIPAA, ...]
+#   date_accessed: YYYY-MM-DD
+
+sources:
+  - source_id: SRC-PRV-001
+    title: "CMS Glossary – Health Care Provider"
+    url: "https://www.cms.gov/glossary?items_per_page=10&term=provider&viewmode=grid"
+    domain: provider
+    key_points:
+      - "A health care provider is a person who is trained and licensed to give health care, or a place that is licensed to give health care."
+      - "Doctors, nurses, and hospitals are examples of health care providers."
+    regulatory_tags: []
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PRV-002
+    title: "Become a Medicare Provider or Supplier"
+    url: "https://www.cms.gov/medicare/enrollment-renewal/providers-suppliers"
+    domain: provider
+    key_points:
+      - "Medicare distinguishes between providers (institutional care facilities like hospitals) and suppliers (entities furnishing diagnostic, therapeutic, or equipment services)."
+      - "Enrollment requires three steps: obtain an NPI, complete a PECOS application, and engage with your regional MAC."
+      - "Providers must report ownership changes and adverse legal actions within 30 days; all other changes within 90 days."
+      - "PECOS applications process in approximately 30 days; paper applications in approximately 65 days."
+    regulatory_tags: [Medicare, NPI, PECOS]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PRV-003
+    title: "CMS Enrollment Applications (CMS-855 Forms)"
+    url: "https://www.cms.gov/medicare/enrollment-renewal/providers-suppliers/chain-ownership-system-pecos/enrollment-applications"
+    domain: provider
+    key_points:
+      - "CMS-855A is for institutional providers (hospitals, SNFs, home health agencies, hospices)."
+      - "CMS-855I is for individual physicians and non-physician practitioners."
+      - "CMS-855B is for clinics, group practices, and certain other suppliers."
+      - "CMS-855S is for DMEPOS suppliers."
+      - "CMS-855O is for ordering and certifying physicians and non-physician practitioners."
+    regulatory_tags: [Medicare, CMS-855]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PRV-004
+    title: "Enroll as a DMEPOS Supplier"
+    url: "https://www.cms.gov/medicare/enrollment-renewal/providers-suppliers/durable-medical-equipment-prosthetics-orthotics-supplies-dmepos"
+    domain: provider
+    key_points:
+      - "DME is equipment that can withstand repeated use, has an expected life of at least 3 years, serves a medical purpose, and is appropriate for home use."
+      - "DMEPOS suppliers must obtain accreditation from a CMS-approved organization."
+      - "A $50,000 surety bond is required for each NPI maintained with an enrollment contractor."
+      - "Examples of DME include hospital beds, wheelchairs, ventilators, oxygen equipment, prosthetics, and orthotics."
+    regulatory_tags: [Medicare, DMEPOS, Accreditation]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PRV-005
+    title: "Covered Entities and Business Associates"
+    url: "https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html"
+    domain: provider
+    key_points:
+      - "HIPAA covered entities include health care clearinghouses, health plans, and health care providers who conduct certain electronic transactions."
+      - "Most doctors, clinics, hospitals, psychologists, chiropractors, nursing homes, pharmacies, and dentists are covered entities."
+      - "Covered entities must comply with HIPAA Privacy and Security Rules to protect health information."
+      - "Covered entities must have contracts with business associates ensuring proper use of health information."
+      - "A covered provider with a direct treatment relationship must make a good faith effort to obtain written acknowledgement of privacy practices from patients."
+    regulatory_tags: [HIPAA, Privacy Rule, Security Rule]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PRV-006
+    title: "Professional Paper Claim Form (CMS-1500)"
+    url: "https://www.cms.gov/medicare/billing/electronicbillingeditrans/1500"
+    domain: provider
+    key_points:
+      - "The CMS-1500 form is the standard claim form used by non-institutional providers and suppliers to bill Medicare."
+      - "Providers should submit initial Medicare claims electronically unless they qualify for a waiver."
+      - "The electronic equivalent is the ASC X12 837 Professional (837P) transaction."
+    regulatory_tags: [Medicare, Claims, ASCA]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PRV-007
+    title: "Institutional Paper Claim Form (CMS-1450 / UB-04)"
+    url: "https://www.cms.gov/medicare/coding-billing/electronic-billing/institutional-paper-claim-form"
+    domain: provider
+    key_points:
+      - "The CMS-1450 form (also known as UB-04) is used by institutional providers (hospitals, SNFs, home health agencies) to bill Medicare."
+      - "Institutional providers and non-institutional providers use different claim forms."
+    regulatory_tags: [Medicare, Claims]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PRV-008
+    title: "Ambulance Services Coverage"
+    url: "https://www.medicare.gov/coverage/ambulance-services"
+    domain: provider
+    key_points:
+      - "Medicare covers ambulance services only when the patient's medical condition makes other transportation contraindicated."
+      - "Emergency air ambulance (airplane or helicopter) is covered when immediate transport is needed and ground transportation cannot provide it."
+      - "Non-emergency ambulance coverage is very limited and requires a written physician order."
+      - "The ambulance fee schedule applies to volunteer, municipal, private, and independent ambulance suppliers as well as institutional providers."
+    regulatory_tags: [Medicare, Ambulance]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PRV-009
+    title: "Medicaid Provider Enrollment Requirements Fact Sheet"
+    url: "https://www.cms.gov/files/document/mpe-factsheet082616pdf"
+    domain: provider
+    key_points:
+      - "States must have an agreement between the Medicaid agency and each provider furnishing services."
+      - "States may impose additional provider enrollment requirements beyond federal minimums."
+      - "State Medicaid Agencies must verify that providers have an unrestricted license."
+      - "Medicaid enrollment application fees apply to institutional providers but not to individual physicians or group practices."
+    regulatory_tags: [Medicaid, Enrollment]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PRV-010
+    title: "CMS Provider of Services File – Clinical Laboratories"
+    url: "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/provider-of-services-file-clinical-laboratories"
+    domain: provider
+    key_points:
+      - "Clinical laboratories exist in many facility types including hospitals, ambulatory surgery centers, physician offices, pharmacies, and independent labs."
+      - "Ancillary services such as laboratory tests in hospital settings are generally packaged into facility payments rather than paid separately."
+    regulatory_tags: [CLIA, Medicare]
+    date_accessed: 2026-03-21
+
+  # ── Patient Sources ─────────────────────────────────────────────
+
+  - source_id: SRC-PAT-001
+    title: "Glossary of Health Coverage and Medical Terms (Uniform Glossary)"
+    url: "https://www.cms.gov/CCIIO/Resources/Forms-Reports-and-Other-Resources/Downloads/Uniform-Glossary-01-2020.pdf"
+    domain: patient
+    key_points:
+      - "A subscriber is the primary individual who enrolls in and holds the insurance plan contract with the carrier."
+      - "A dependent is a family member (spouse, child, domestic partner) covered under the subscriber's insurance plan."
+      - "Dependent coverage is insurance protection extending to eligible family members beyond the primary subscriber."
+      - "A premium is the regular payment required to maintain active insurance coverage."
+      - "A deductible is the set amount an insured individual must pay before the plan begins sharing costs for covered services."
+      - "A copayment is a fixed dollar amount the patient pays at the point of service."
+      - "Coinsurance is the percentage of costs shared between the insurer and patient after the deductible is satisfied."
+      - "The out-of-pocket limit is the maximum annual amount an individual pays before insurance covers remaining eligible expenses at 100%."
+      - "A claim is a formal request submitted to the insurance company for payment of covered healthcare services."
+      - "An Explanation of Benefits (EOB) is a document detailing claim processing results, showing services covered, amounts paid, and patient responsibility."
+    regulatory_tags: [ACA]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-002
+    title: "Dependent – HealthCare.gov Glossary"
+    url: "https://www.healthcare.gov/glossary/dependent/"
+    domain: patient
+    key_points:
+      - "A dependent is a child or other individual for whom a parent, relative, or other person may claim a personal exemption tax deduction."
+      - "Under the ACA, dependents can be included on a Marketplace application if they will be claimed as tax dependents."
+    regulatory_tags: [ACA]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-003
+    title: "Coverage for Young Adults"
+    url: "https://www.cms.gov/marketplace/private-health-insurance/coverage-young-adults"
+    domain: patient
+    key_points:
+      - "The ACA requires health plans that offer dependent coverage to make it available until the child reaches age 26."
+      - "Both married and unmarried children qualify for dependent coverage under 26."
+      - "Starting in 2014, children can stay on a parent's employer plan even if they have access to employer coverage elsewhere."
+    regulatory_tags: [ACA]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-004
+    title: "Your Rights Under HIPAA"
+    url: "https://www.hhs.gov/hipaa/for-individuals/guidance-materials-for-consumers/index.html"
+    domain: patient
+    key_points:
+      - "Patients have the right to ask to see or get a copy of their health and claims records."
+      - "Covered entities must usually provide records within 30 days of the request."
+      - "Patients have the right to request corrections to their health records."
+      - "Patients have the right to be notified of a breach of their unsecured health information."
+      - "Patients have the right to file a complaint with HHS if they believe their privacy rights have been violated."
+    regulatory_tags: [HIPAA, Privacy Rule]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-005
+    title: "Individuals' Right under HIPAA to Access their Health Information"
+    url: "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/access/index.html"
+    domain: patient
+    key_points:
+      - "The HIPAA Privacy Rule gives individuals a legal, enforceable right to see and receive copies of their health information."
+      - "Designated record sets include medical records, billing records, payment and claims records, and health plan enrollment records."
+      - "Individuals can direct a covered entity to transmit a copy of their PHI to a designated person or entity of their choice."
+      - "A provider may charge reasonable costs for copying and mailing records but cannot charge for searching or retrieving them."
+      - "Covered entities must respond to access requests within 30 days."
+    regulatory_tags: [HIPAA, Privacy Rule]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-006
+    title: "Summary of the HIPAA Privacy Rule"
+    url: "https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html"
+    domain: patient
+    key_points:
+      - "Protected health information (PHI) is individually identifiable health information relating to past, present, or future physical or mental health, provision of care, or payment for care."
+      - "The Privacy Rule applies to health plans, health care clearinghouses, and health care providers who conduct certain electronic transactions."
+      - "The Rule requires appropriate safeguards to protect the privacy of PHI and sets limits on uses and disclosures without individual authorization."
+      - "Individual rights include the right to access, right to request amendment, right to an accounting of disclosures, and right to request restrictions."
+    regulatory_tags: [HIPAA, Privacy Rule]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-007
+    title: "Getting Health Coverage Outside Open Enrollment"
+    url: "https://www.healthcare.gov/coverage-outside-open-enrollment/special-enrollment-period/"
+    domain: patient
+    key_points:
+      - "Open Enrollment is the annual period when anyone can enroll in or change a Marketplace health plan."
+      - "A Special Enrollment Period (SEP) allows enrollment outside Open Enrollment based on qualifying life events."
+      - "Qualifying life events include losing health coverage, moving, getting married, having a baby, or adopting a child."
+      - "Most SEPs give you 60 days before or after the qualifying event to enroll in a plan."
+    regulatory_tags: [ACA, Marketplace]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-008
+    title: "Your Total Costs for Health Care: Premium, Deductible, and Out-of-Pocket Costs"
+    url: "https://www.healthcare.gov/choose-a-plan/your-total-costs/"
+    domain: patient
+    key_points:
+      - "A premium is the amount you pay each month to maintain your health insurance coverage."
+      - "The deductible is the amount you spend for covered services before your plan pays anything, except for free preventive services."
+      - "After you meet your deductible, you typically pay coinsurance or a copay for covered services."
+      - "The out-of-pocket maximum is the most you spend for covered services in a year; after reaching it the plan pays 100%."
+    regulatory_tags: [ACA]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-009
+    title: "Health Insurance Terms You Should Know"
+    url: "https://www.cms.gov/medical-bill-rights/help/guides/health-insurance-terms"
+    domain: patient
+    key_points:
+      - "Cost sharing is the patient's share of costs for plan-covered services that must be paid out of pocket."
+      - "In-network providers have a contract with the health plan to provide services at certain costs."
+      - "Out-of-network providers do not have a contract with the plan and typically result in higher out-of-pocket costs."
+      - "The allowed amount is the maximum payment the plan will pay for a covered service."
+      - "Balance billing is when a provider bills the patient for the remaining balance the plan does not cover."
+    regulatory_tags: [No Surprises Act]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-010
+    title: "Informed Consent – StatPearls (NCBI Bookshelf)"
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK430827/"
+    domain: patient
+    key_points:
+      - "Informed consent is a communication process in which a clinician educates a patient about the risks, benefits, and alternatives of a procedure or intervention."
+      - "Key elements include the nature of the procedure, risks and benefits, reasonable alternatives, and an assessment of patient understanding."
+      - "Competent adults provide their own consent; parents or guardians consent for children."
+      - "Exceptions to informed consent include life-threatening emergencies with insufficient time and patient incapacity with no available decision-maker."
+    regulatory_tags: []
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-011
+    title: "Patient Engagement – CDC Health Literacy"
+    url: "https://www.cdc.gov/health-literacy/php/research-summaries/patient-engagement.html"
+    domain: patient
+    key_points:
+      - "Patient activation is the knowledge, skills, and confidence to become actively engaged in one's health care."
+      - "Higher patient activation is associated with improved health outcomes and lower costs."
+      - "Key engagement strategies include self-management support, shared decision-making, and health information systems."
+    regulatory_tags: []
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-012
+    title: "How to Read an Explanation of Benefits"
+    url: "https://www.cms.gov/medical-bill-rights/help/guides/explanation-of-benefits"
+    domain: patient
+    key_points:
+      - "An EOB shows the costs of care, including services received, dates, amount the plan pays, and the amount the patient owes."
+      - "Patients should compare their EOB with the provider's bill to verify that services and amounts match."
+      - "Patients should only pay after receiving a bill from the provider and confirming it matches the EOB."
+    regulatory_tags: []
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAT-013
+    title: "Notice of Privacy Practices"
+    url: "https://www.hhs.gov/hipaa/for-individuals/notice-privacy-practices/index.html"
+    domain: patient
+    key_points:
+      - "The HIPAA Privacy Rule requires covered entities to provide a Notice of Privacy Practices in plain language."
+      - "The notice must describe how the entity may use and disclose protected health information."
+      - "Health care providers with direct treatment relationships must give the notice no later than the date of first service."
+      - "The provider must make a good faith effort to obtain written acknowledgment of receipt of the notice."
+    regulatory_tags: [HIPAA, Privacy Rule]
+    date_accessed: 2026-03-21
+
+  # ── Payor Sources ────────────────────────────────────────────────
+
+  - source_id: SRC-PAY-001
+    title: "Parts of Medicare"
+    url: "https://www.medicare.gov/basics/get-started-with-medicare/medicare-basics/parts-of-medicare"
+    domain: payor
+    key_points:
+      - "Medicare Part A covers inpatient hospital stays, skilled nursing facility care, hospice care, and some home health services."
+      - "Medicare Part B covers doctors' services, outpatient care, durable medical equipment, and preventive services."
+      - "Medicare serves people age 65 and older and some people under 65 with certain disabilities or conditions."
+      - "Original Medicare consists of Part A and Part B together."
+    regulatory_tags: []
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAY-002
+    title: "Original Medicare (Part A and B) Eligibility and Enrollment"
+    url: "https://www.cms.gov/medicare/enrollment-renewal/original-part-a-b"
+    domain: payor
+    key_points:
+      - "People are eligible for Medicare when they turn 65."
+      - "People already receiving Social Security are automatically enrolled in Part A and Part B."
+      - "Medicare is also available to people under 65 with disabilities, ESRD, or ALS."
+      - "Medicare is administered by the Centers for Medicare & Medicaid Services (CMS), a federal agency under HHS."
+    regulatory_tags: []
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAY-003
+    title: "2026 Medicare Parts A & B Premiums and Deductibles"
+    url: "https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles"
+    domain: payor
+    key_points:
+      - "Most people do not pay a premium for Part A if they have 40 or more quarters of Medicare-covered employment."
+      - "The 2026 standard monthly premium for Part B is $202.90."
+      - "The 2026 annual deductible for Part B is $283."
+    regulatory_tags: []
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAY-004
+    title: "Medicaid"
+    url: "https://www.medicaid.gov/medicaid"
+    domain: payor
+    key_points:
+      - "Medicaid provides health coverage to eligible low-income adults, children, pregnant women, elderly adults, and people with disabilities."
+      - "Medicaid is funded jointly by states and the federal government."
+      - "Medicaid is administered by states according to federal requirements."
+      - "Medicaid covered 68.8 million people as of November 2025."
+      - "The federal share of costs is determined by the Federal Medical Assistance Percentage (FMAP), which varies by state."
+    regulatory_tags: []
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAY-005
+    title: "Types of health insurance"
+    url: "https://www.cms.gov/medical-bill-rights/help/guides/what-type-of-insurance"
+    domain: payor
+    key_points:
+      - "Health insurance falls into three broad categories: employer-sponsored, individual/marketplace, and government programs."
+      - "Private employer plans offer group health coverage to employees."
+      - "Individual plans can be purchased through the Health Insurance Marketplace or directly from insurers."
+      - "Government programs include Medicare, Medicaid/CHIP, and TRICARE."
+    regulatory_tags: []
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAY-006
+    title: "Health insurance plan & network types: HMOs, PPOs, and more"
+    url: "https://www.healthcare.gov/choose-a-plan/plan-types/"
+    domain: payor
+    key_points:
+      - "Common commercial plan types include HMO, PPO, EPO, and POS."
+      - "The majority of people in the U.S. have private (commercial) health insurance."
+    regulatory_tags: []
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAY-007
+    title: "Covered Entities and Business Associates"
+    url: "https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html"
+    domain: payor
+    key_points:
+      - "Health plans are one of the three types of HIPAA covered entities, alongside health care providers and clearinghouses."
+      - "Covered health plans include health insurance companies, HMOs, employer-sponsored health plans, and government programs like Medicare and Medicaid."
+      - "A group health plan with fewer than 50 participants administered solely by the employer is not a HIPAA covered entity."
+      - "Covered entities must comply with HIPAA Privacy and Security Rules to protect health information."
+    regulatory_tags: [HIPAA]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAY-008
+    title: "Are You a Covered Entity?"
+    url: "https://www.cms.gov/priorities/key-initiatives/burden-reduction/administrative-simplification/hipaa/covered-entities"
+    domain: payor
+    key_points:
+      - "HIPAA covered entities include health plans, healthcare providers who transmit electronically, and clearinghouses."
+      - "Health plans subject to HIPAA include health insurance companies, HMOs, employer-sponsored plans, Medicare, Medicaid, and military/veterans programs."
+      - "Business associates that handle PHI on behalf of covered entities must have written HIPAA agreements."
+    regulatory_tags: [HIPAA]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAY-009
+    title: "Know your rights without insurance"
+    url: "https://www.cms.gov/medical-bill-rights/know-your-rights/no-insurance"
+    domain: payor
+    key_points:
+      - "Self-pay patients are those who do not have insurance or choose not to use their insurance for a given service."
+      - "An uninsured individual is not enrolled in any group health plan, individual health insurance, or federal health care program."
+      - "The No Surprises Act requires providers to give uninsured or self-pay patients a good faith estimate of expected charges."
+    regulatory_tags: [No Surprises Act]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-PAY-010
+    title: "Medicare Secondary Payer"
+    url: "https://www.cms.gov/medicare/coordination-benefits-recovery/overview/secondary-payer"
+    domain: payor
+    key_points:
+      - "A payer is an entity responsible for paying healthcare providers, including private insurers and government programs."
+      - "When a patient has multiple payers, coordination of benefits rules determine which payer pays first (primary payer)."
+    regulatory_tags: []
+    date_accessed: 2026-03-21
+
+  # ── Healthcare Data Sources ──────────────────────────────────────
+
+  - source_id: SRC-DAT-001
+    title: "What is PHI?"
+    url: "https://www.hhs.gov/answers/hipaa/what-is-phi/index.html"
+    domain: data
+    key_points:
+      - "PHI is individually identifiable health information held or transmitted by a covered entity or its business associate, in any form or medium."
+      - "PHI relates to an individual's past, present, or future physical or mental health or condition, the provision of health care, or payment for health care."
+      - "PHI includes common identifiers such as name, address, birth date, and Social Security Number when associated with health information."
+      - "PHI is protected whether it is in electronic, paper, or oral form."
+    regulatory_tags: [HIPAA, PHI]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-DAT-002
+    title: "Summary of the HIPAA Privacy Rule"
+    url: "https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html"
+    domain: data
+    key_points:
+      - "The Privacy Rule protects all individually identifiable health information held or transmitted by a covered entity or its business associate."
+      - "Covered entities are health plans, health care clearinghouses, and health care providers who conduct certain electronic transactions."
+      - "The minimum necessary standard requires covered entities to make reasonable efforts to limit use and disclosure of PHI to the minimum necessary to accomplish the intended purpose."
+      - "Disclosures for treatment purposes between health care providers are exempt from the minimum necessary requirement."
+      - "Individuals have rights to access, inspect, and obtain a copy of their PHI."
+    regulatory_tags: [HIPAA, Privacy Rule, PHI]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-DAT-003
+    title: "Summary of the HIPAA Security Rule"
+    url: "https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html"
+    domain: data
+    key_points:
+      - "The Security Rule establishes national standards to protect electronic protected health information (ePHI)."
+      - "The Security Rule applies to covered entities and their business associates."
+      - "The Security Rule requires three categories of safeguards: administrative, physical, and technical."
+      - "Administrative safeguards are organizational policies and procedures to manage the security program."
+      - "Physical safeguards protect electronic systems, buildings, and equipment from unauthorized access and hazards."
+      - "Technical safeguards are technology-based measures to protect ePHI and control access."
+      - "The Security Rule aims to ensure the confidentiality, integrity, and availability of ePHI."
+    regulatory_tags: [HIPAA, Security Rule, ePHI]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-DAT-004
+    title: "Breach Notification Rule"
+    url: "https://www.hhs.gov/hipaa/for-professionals/breach-notification/index.html"
+    domain: data
+    key_points:
+      - "Covered entities must notify affected individuals of a breach of unsecured PHI without unreasonable delay and no later than 60 days after discovery."
+      - "Breaches affecting more than 500 residents of a state or jurisdiction require notification to prominent media outlets within 60 days."
+      - "Covered entities must notify the HHS Secretary of all breaches; breaches affecting 500 or more individuals are reported immediately, while smaller breaches are reported annually."
+      - "Business associates must notify the covered entity of a breach within 60 days of discovery."
+    regulatory_tags: [HIPAA, Breach Notification]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-DAT-005
+    title: "Covered Entities and Business Associates"
+    url: "https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html"
+    domain: data
+    key_points:
+      - "HIPAA covered entities are health care clearinghouses, health plans, and health care providers who transmit health information electronically."
+      - "Health plans include health, dental, vision, and prescription drug insurers, HMOs, Medicare, Medicaid, and employer-sponsored group health plans."
+      - "Health care clearinghouses process nonstandard health information into standard formats or vice versa."
+      - "A business associate performs functions involving PHI on behalf of a covered entity and must have a written agreement to comply with HIPAA rules."
+    regulatory_tags: [HIPAA, Covered Entities, Business Associates]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-DAT-006
+    title: "ICD-10"
+    url: "https://www.cms.gov/medicare/coding-billing/icd-10-codes"
+    domain: data
+    key_points:
+      - "ICD-10-CM (Clinical Modification) is used by all providers in every healthcare setting for coding diagnoses."
+      - "ICD-10-PCS (Procedure Coding System) is used for coding inpatient hospital procedures."
+      - "The U.S. transitioned from ICD-9 to ICD-10 on October 1, 2015."
+      - "ICD-10 applies to all HIPAA-covered entities, not just Medicare or Medicaid providers."
+    regulatory_tags: [ICD-10, HIPAA]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-DAT-007
+    title: "Transitioning to ICD-10"
+    url: "https://www.cms.gov/newsroom/fact-sheets/transitioning-icd-10"
+    domain: data
+    key_points:
+      - "ICD-9-CM had approximately 14,000 diagnosis codes; ICD-10-CM has approximately 69,000 diagnosis codes."
+      - "ICD-10 provides greater specificity in identifying health conditions with codes up to 7 characters long."
+      - "ICD-9 code categories were full and the structure limited the creation of new codes."
+      - "ICD-10 terminology is more consistent with current medical practice and technology."
+    regulatory_tags: [ICD-9, ICD-10]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-DAT-008
+    title: "Overview of Coding & Classification Systems"
+    url: "https://www.cms.gov/cms-guide-medical-technology-companies-and-other-interested-parties/coding/overview-coding-classification-systems"
+    domain: data
+    key_points:
+      - "HCPCS Level I consists of CPT codes — 5-digit numeric codes maintained by the AMA to identify medical services and procedures."
+      - "HCPCS Level II codes identify products, supplies, and services not included in CPT, such as ambulance services and durable medical equipment."
+      - "HCPCS Level II codes consist of one alphabetical letter followed by 4 numeric digits and are maintained by CMS."
+      - "CPT covers six sections: Evaluation and Management, Anesthesiology, Surgery, Radiology, Pathology/Laboratory, and Medicine."
+    regulatory_tags: [HCPCS, CPT]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-DAT-009
+    title: "Health Insurance Plan & Network Types"
+    url: "https://www.healthcare.gov/choose-a-plan/plan-types/"
+    domain: data
+    key_points:
+      - "An in-network provider has a contract with a health insurer to provide services at agreed-upon rates, resulting in lower costs for the patient."
+      - "An out-of-network provider does not have a contract with the insurer, so the patient pays more for services."
+      - "Plan types such as HMOs, PPOs, and POS plans vary in how much they cover for out-of-network care."
+    regulatory_tags: [Network, Insurance]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-DAT-010
+    title: "Electronic Health Records"
+    url: "https://www.cms.gov/priorities/key-initiatives/e-health/records"
+    domain: data
+    key_points:
+      - "An EHR is an electronic version of a patient's medical history maintained by the provider over time."
+      - "EHRs include demographics, progress notes, medications, vital signs, past medical history, immunizations, lab data, and radiology reports."
+      - "EHRs reduce duplication of tests, reduce delays in treatment, and can improve accuracy of medical records."
+      - "Certified EHR technology stores data in a structured format that allows providers to easily retrieve and transfer patient information."
+    regulatory_tags: [EHR]
+    date_accessed: 2026-03-21
+
+  # ── Cross-Domain Sources ──────────────────────────────────────────
+
+  - source_id: SRC-CRS-001
+    title: "Electronic Health Care Claims"
+    url: "https://www.cms.gov/medicare/coding-billing/electronic-billing/electronic-healthcare-claims"
+    domain: cross_domain
+    key_points:
+      - "Claims are electronically transmitted from providers to Medicare Administrative Contractors (MACs)"
+      - "Initial HIPAA-standard edits determine if claims meet basic requirements; failures reject the entire batch"
+      - "Automated edits check completeness, valid values, data consistency, business rules, duplicates, and provider/beneficiary eligibility"
+      - "Claims passing initial edits are then checked against Medicare coverage and payment policy, which may result in rejection or denial"
+      - "After successful transmission an acknowledgment report is generated and sent back to the submitter"
+    regulatory_tags: [HIPAA, Claims]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-CRS-002
+    title: "Health Plan Eligibility Benefit Inquiry and Response"
+    url: "https://www.cms.gov/priorities/key-initiatives/burden-reduction/administrative-simplification/transactions/health-plan-eligibility-benefit-inquiry-response"
+    domain: cross_domain
+    key_points:
+      - "The eligibility/benefit inquiry transaction (270) obtains information about an enrollee's benefit plan including eligibility and coverage"
+      - "HHS adopted ASC X12N 270/271 Version 5010 as the standard for eligibility inquiry and response"
+      - "As of January 1 2013 health plans must respond in real time to providers' eligibility questions"
+      - "Real-time responses must include deductibles, co-pays, coinsurance amounts, and coverage information for specific service types"
+      - "Inquiries can be sent from a provider to a health plan or from one health plan to another"
+    regulatory_tags: [HIPAA, Eligibility, Administrative-Simplification]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-CRS-003
+    title: "Are You a Covered Entity?"
+    url: "https://www.cms.gov/priorities/key-initiatives/burden-reduction/administrative-simplification/hipaa/covered-entities"
+    domain: cross_domain
+    key_points:
+      - "HIPAA covered entities are health care clearinghouses, certain health care providers, and health plans"
+      - "Health plans include health, dental, vision, prescription drug insurers, HMOs, Medicare, Medicaid, and employer-sponsored group health plans"
+      - "Healthcare providers who transmit HIPAA transactions electronically are covered entities"
+      - "Healthcare clearinghouses process nonstandard health information to conform to standards for data content or format on behalf of other organizations"
+      - "Clearinghouses include billing services, repricing companies, community health management information systems, and value-added networks"
+      - "Covered entities must establish written agreements with business associates to ensure HIPAA compliance"
+    regulatory_tags: [HIPAA, Covered-Entities]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-CRS-004
+    title: "How to Read an Explanation of Benefits"
+    url: "https://www.cms.gov/medical-bill-rights/help/guides/explanation-of-benefits"
+    domain: cross_domain
+    key_points:
+      - "An EOB is a document received from a health plan after a provider visit showing total charges and how much each party owes"
+      - "An EOB is not a bill"
+      - "EOB includes Provider Charges (billed amount), Allowed Charges (what provider will actually be paid), Paid by Insurer, and What You Owe"
+      - "Remark codes (2-3 character codes) provide explanations about costs and charges"
+      - "Patients can use EOBs to track how they use their coverage and understand healthcare costs"
+    regulatory_tags: [Claims, Patient-Rights]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-CRS-005
+    title: "National Provider Identifier Standard (NPI)"
+    url: "https://www.cms.gov/regulations-and-guidance/administrative-simplification/nationalprovidentstand"
+    domain: cross_domain
+    key_points:
+      - "The NPI is a unique 10-digit identification number for covered health care providers required by HIPAA"
+      - "The NPI is intelligence-free meaning it carries no information about provider state or specialty"
+      - "Once assigned an NPI does not change even if the provider changes name or address"
+      - "All HIPAA-covered providers whether individuals or organizations must obtain an NPI"
+      - "All health plans and clearinghouses must use NPIs in HIPAA administrative and financial transactions"
+      - "CMS developed the National Plan and Provider Enumeration System (NPPES) to assign NPIs"
+    regulatory_tags: [HIPAA, NPI, Administrative-Simplification]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-CRS-006
+    title: "Adopted Standards and Operating Rules"
+    url: "https://www.cms.gov/priorities/key-initiatives/burden-reduction/administrative-simplification/hipaa/adopted-standards-operating-rules"
+    domain: cross_domain
+    key_points:
+      - "HIPAA mandates standard electronic transaction formats for the healthcare industry"
+      - "837 (Version 5010) is the standard for submitting health care claims (institutional, professional, dental)"
+      - "835 (Version 5010) is the standard for electronic remittance advice (claim payment information from payor to provider)"
+      - "270/271 is the standard for eligibility inquiry and response"
+      - "276/277 is the standard for claim status inquiry and response"
+      - "278 is the standard for referral and prior authorization requests"
+      - "834 is the standard for enrollment and disenrollment"
+      - "820 is the standard for premium payments"
+    regulatory_tags: [HIPAA, EDI, Administrative-Simplification]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-CRS-007
+    title: "Overview of Coding and Classification Systems"
+    url: "https://www.cms.gov/cms-guide-medical-technology-companies-and-other-interested-parties/coding/overview-coding-classification-systems"
+    domain: cross_domain
+    key_points:
+      - "ICD-10-CM codes represent diagnoses and are used by all providers in every healthcare setting"
+      - "CPT codes (HCPCS Level I) represent procedures and services and are maintained by the AMA"
+      - "HCPCS Level II codes are established and maintained by CMS for products and supplies"
+      - "Claims must include an ICD-10-CM diagnosis code linked to the appropriate procedure code"
+      - "A claim submitted without a valid ICD-10-CM code is returned to the provider as incomplete"
+      - "Diagnosis codes must support medical necessity for the procedure codes to be covered and reimbursed"
+    regulatory_tags: [Coding, Billing, Claims]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-CRS-008
+    title: "Summary of the HIPAA Privacy Rule"
+    url: "https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html"
+    domain: cross_domain
+    key_points:
+      - "Protected health information (PHI) includes data relating to health condition, provision of health care, or payment for health care that identifies the individual"
+      - "The Privacy Rule establishes national standards for protecting health information and gives individuals rights over their PHI"
+      - "Covered entities may use and disclose PHI without individual authorization for treatment, payment, and health care operations"
+      - "The minimum necessary standard requires covered entities to limit PHI disclosures to the minimum needed for the purpose"
+      - "Individuals have the right to access, inspect, and obtain copies of their health records within 30 days of request"
+      - "Individuals may request corrections to their health records and file complaints with HHS"
+    regulatory_tags: [HIPAA, Privacy, PHI]
+    date_accessed: 2026-03-21
+
+  - source_id: SRC-CRS-009
+    title: "Medicare Billing: 837P and Form CMS-1500"
+    url: "https://www.cms.gov/files/document/mln006976-medicare-billing-cms-1500-837p.pdf"
+    domain: cross_domain
+    key_points:
+      - "The 837P is the HIPAA standard electronic format for professional healthcare claim submission"
+      - "ASC X12 Version 5010 is the adopted standard format for claim transactions"
+      - "The CMS-1500 is the paper equivalent of the 837P electronic claim form"
+    regulatory_tags: [HIPAA, Claims, Billing]
+    date_accessed: 2026-03-21

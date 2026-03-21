@@ -1,0 +1,53 @@
+payor:
+  government_programs:
+    - Medicare Part A
+    - Medicare Part B
+    - Medicaid
+  commercial_insurance:
+    - Aetna
+    - Blue Cross Blue Shield
+    - UnitedHealthcare
+  self_pay: true
+
+provider:
+  facility:
+    - physician_office
+    - hospital
+  equipment:
+    - durable_medical_equipment (DME)
+  transportation:
+    - air_ambulance
+    - taxi_services (when reimbursable)
+  ancillary_services: true
+  multiple_provider_types: true
+
+patient:
+  roles:
+    - subscriber (primary)
+    - dependent
+  concepts:
+    - eligibility
+    - patient_rights
+    - consent
+    - access
+    - engagement
+
+data:
+  coding_systems:
+    - ICD-9
+    - ICD-10
+    - HCPCS
+    - CPT
+  network_status:
+    - in_network
+    - out_of_network
+  privacy:
+    - PHI
+    - HIPAA_rules
+
+cross_domain:
+  - claims_flow (patient -> provider -> payor)
+  - eligibility_verification
+  - billing_and_coding_interaction
+  - reimbursement_scenarios
+  - HIPAA_across_entities

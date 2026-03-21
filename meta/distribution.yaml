@@ -1,0 +1,19 @@
+questions:
+  total: 1000
+  types:
+    true_false: 300
+    mcq: 700
+
+  by_pillar:
+    payor: 200
+    provider: 200
+    patient: 200
+    data: 200
+    cross_domain: 200
+
+tutorials:
+  total: 40-60
+  per_pillar: 8-12
+
+scenes:
+  per_tutorial: 3-5

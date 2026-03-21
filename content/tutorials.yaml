@@ -1,0 +1,772 @@
+# Healthcare Foundations — Tutorial Modules
+# Each tutorial groups related facts into a plain-language lesson
+# 5 tutorials, one per pillar, foundational level
+
+tutorials:
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 1 — PAYOR PILLAR
+  # ══════════════════════════════════════════════════════════════════
+  - tutorial_id: T-PAYOR-01
+    title: "Who Pays for Healthcare?"
+    pillar: payor
+    learning_objectives:
+      - "Define what a payor is and explain the payor's role in healthcare"
+      - "Identify the three broad categories of healthcare payors: government programs, commercial insurance, and self-pay"
+      - "Describe the difference between Medicare Part A and Part B"
+      - "Explain how Medicaid differs from Medicare in eligibility and administration"
+      - "Understand how HIPAA applies to health plans as covered entities"
+    sections:
+      - heading: "What Is a Payor?"
+        text: >
+          When you visit a doctor or go to the hospital, someone has to pay the bill. A payor
+          (also spelled "payer") is the entity responsible for paying healthcare providers for
+          the services you receive.
+
+
+          Payors fall into three broad categories: government programs like Medicare and
+          Medicaid, commercial (private) insurance companies, and self-pay. Most Americans
+          have coverage through one of these channels.
+
+
+          When a patient has coverage from more than one payor, coordination of benefits rules
+          determine which payor pays first. The one that pays first is called the primary payer.
+
+      - heading: "Government Payors: Medicare"
+        text: >
+          Medicare is a federal health insurance program run by the Centers for Medicare and
+          Medicaid Services (CMS), an agency within the U.S. Department of Health and Human
+          Services. It primarily covers people age 65 and older, but it also covers certain
+          younger people with disabilities, End-Stage Renal Disease, or ALS.
+
+
+          Original Medicare has two main parts. Part A is Hospital Insurance. It covers
+          inpatient hospital stays, skilled nursing facility care, hospice care, and some home
+          health services. Most people do not pay a monthly premium for Part A because they or
+          their spouse paid Medicare taxes for at least 10 years while working.
+
+
+          Part B is Medical Insurance. It covers doctors' visits, outpatient hospital care,
+          durable medical equipment like wheelchairs, and preventive services such as
+          screenings and vaccinations. Part B requires a monthly premium. For 2026, the
+          standard Part B premium is $202.90 per month with a $283 annual deductible.
+
+
+          If you are already receiving Social Security benefits, you are automatically enrolled
+          in both Part A and Part B when you become eligible.
+
+      - heading: "Government Payors: Medicaid"
+        text: >
+          Medicaid is a joint federal and state program that provides health coverage to
+          eligible low-income adults, children, pregnant women, elderly adults, and people
+          with disabilities. Unlike Medicare, which is purely federal, Medicaid is funded by
+          both the federal government and state governments. The federal share varies by
+          state based on per capita income and is called the Federal Medical Assistance
+          Percentage (FMAP).
+
+
+          Each state runs its own Medicaid program following federal requirements. This means
+          eligibility rules and covered services can differ from state to state. Medicaid
+          eligibility is based on income and household size rather than age, and people can
+          apply at any time during the year. There is no annual enrollment window like some
+          other programs.
+
+      - heading: "Commercial (Private) Insurance"
+        text: >
+          Commercial health insurance is the most common form of health coverage in the
+          United States. You can get it through your employer, purchase it on the Health
+          Insurance Marketplace, or buy it directly from an insurance company. Companies
+          like Aetna, Blue Cross Blue Shield, and UnitedHealthcare are examples of major
+          commercial insurers.
+
+
+          Employer-sponsored group health plans are the most common way Americans get private
+          insurance. Typically, the employer shares the cost of premiums with employees. For
+          example, your company might pay 70% of the monthly premium and you pay the remaining
+          30%.
+
+
+          Commercial plans come in several types. An HMO (Health Maintenance Organization)
+          usually requires you to choose a primary care doctor and get referrals to see
+          specialists. A PPO (Preferred Provider Organization) gives you more flexibility to
+          see any provider but costs less when you stay in-network. Other types include EPO
+          (Exclusive Provider Organization) and POS (Point of Service) plans.
+
+      - heading: "Self-Pay Patients"
+        text: >
+          A self-pay patient is someone who does not have health insurance or who chooses not
+          to file a claim with their insurer for a particular service. An uninsured individual
+          is someone not enrolled in any group health plan, individual insurance, or federal
+          healthcare program.
+
+
+          If you are uninsured or self-pay, providers are required to help you understand costs
+          upfront. Under the No Surprises Act, providers must give you a good faith estimate
+          of expected charges before or when you schedule a healthcare service. This way, you
+          know roughly what you will owe before you receive care.
+
+      - heading: "HIPAA and Health Plans"
+        text: >
+          You may have heard of HIPAA, the Health Insurance Portability and Accountability
+          Act. Under HIPAA, health plans are one of three types of "covered entities" that
+          must follow strict rules to protect patient health information. The other two types
+          are healthcare providers and clearinghouses.
+
+
+          HIPAA-covered health plans include health insurance companies, HMOs, employer-
+          sponsored group health plans, and government programs such as Medicare and Medicaid.
+          These entities must comply with HIPAA's Privacy Rule and Security Rule.
+
+
+          There is one notable exception: a group health plan with fewer than 50 participants
+          that is administered solely by the employer is exempt from HIPAA covered-entity
+          requirements.
+
+    summary:
+      - "A payor is the entity that pays providers for healthcare services — either a government program, a commercial insurer, or the patient themselves (self-pay)."
+      - "Medicare is a federal program mainly for people 65 and older; Part A covers hospital stays, Part B covers doctor visits and outpatient care."
+      - "Medicaid is a joint federal-state program for low-income individuals, with eligibility rules that vary by state."
+      - "Commercial insurance, often provided through employers, is the most common coverage in the U.S. and comes in plan types like HMO and PPO."
+      - "Under HIPAA, health plans must protect patient health information just like providers and clearinghouses."
+    linked_facts:
+      - FACT-PAY-001
+      - FACT-PAY-002
+      - FACT-PAY-003
+      - FACT-PAY-004
+      - FACT-PAY-005
+      - FACT-PAY-006
+      - FACT-PAY-007
+      - FACT-PAY-008
+      - FACT-PAY-009
+      - FACT-PAY-010
+      - FACT-PAY-011
+      - FACT-PAY-012
+      - FACT-PAY-013
+      - FACT-PAY-014
+      - FACT-PAY-015
+      - FACT-PAY-016
+      - FACT-PAY-017
+      - FACT-PAY-018
+      - FACT-PAY-019
+      - FACT-PAY-020
+      - FACT-PAY-021
+      - FACT-PAY-022
+      - FACT-PAY-023
+      - FACT-PAY-024
+      - FACT-PAY-025
+
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 2 — PROVIDER PILLAR
+  # ══════════════════════════════════════════════════════════════════
+  - tutorial_id: T-PROVIDER-01
+    title: "Who Provides Healthcare?"
+    pillar: provider
+    learning_objectives:
+      - "Define what a healthcare provider is and distinguish between providers and suppliers under Medicare"
+      - "Identify the main types of providers: physicians, hospitals, DME suppliers, ambulance services, and ancillary services"
+      - "Explain how providers bill payors using standard claim forms"
+      - "Describe the Medicare and Medicaid enrollment process for providers"
+      - "Understand why most providers are HIPAA covered entities"
+    sections:
+      - heading: "What Is a Healthcare Provider?"
+        text: >
+          A healthcare provider is a person trained and licensed to give healthcare, or a
+          place licensed to give healthcare. Your family doctor is a provider. So is a
+          hospital, a pharmacy, and a physical therapy clinic.
+
+
+          Medicare law makes an important distinction. It calls facilities like hospitals,
+          hospices, and nursing homes "providers." It calls entities that furnish equipment
+          or diagnostic services "suppliers." The distinction matters for billing and
+          enrollment, but in everyday language, people use "provider" for both.
+
+      - heading: "Types of Providers"
+        text: >
+          Physicians and non-physician practitioners (like nurse practitioners and physician
+          assistants) are the providers most people see first. A physician office is a common
+          setting where you receive outpatient evaluation, diagnosis, and treatment.
+
+
+          Hospitals are institutional providers. They include general hospitals, critical
+          access hospitals, skilled nursing facilities, home health agencies, and hospices.
+          If you break your arm and need surgery, a hospital is where you would go.
+
+
+          Durable Medical Equipment (DME) suppliers provide equipment that can withstand
+          repeated use and lasts at least three years. Think of hospital beds, wheelchairs,
+          ventilators, oxygen equipment, artificial limbs, and back braces. DME serves a
+          medical purpose and is meant to be used in your home.
+
+
+          Ambulance services are another provider type. Medicare covers ambulance
+          transportation only when your medical condition makes other transportation unsafe.
+          Emergency air ambulance by helicopter or airplane is covered when ground ambulance
+          cannot get you there fast enough.
+
+
+          Ancillary services round out the picture. These include lab tests, radiology,
+          pharmacy services, and other diagnostic or therapeutic services that support your
+          primary care. Clinical labs operate in many settings — hospitals, physician offices,
+          pharmacies, surgery centers, and as independent labs.
+
+      - heading: "How Providers Bill for Services"
+        text: >
+          When a provider treats you, they need to send a bill — called a claim — to the
+          payor. Different types of providers use different claim forms.
+
+
+          Non-institutional providers and suppliers (like your doctor's office) bill Medicare
+          using the CMS-1500 form or its electronic version, the 837P transaction.
+          Institutional providers (like hospitals) use the CMS-1450 form, also known as the
+          UB-04, or the electronic 837I transaction.
+
+
+          Nearly all providers must submit claims to Medicare electronically. This is required
+          under the Administrative Simplification Compliance Act (ASCA), unless the provider
+          qualifies for a special waiver.
+
+      - heading: "Enrolling in Medicare"
+        text: >
+          Before a provider can bill Medicare, they must enroll. The process has three main
+          steps. First, the provider gets a National Provider Identifier (NPI) — a unique
+          10-digit number used across all health transactions. Second, they complete an
+          application through PECOS, Medicare's online enrollment system. Third, they work
+          with their regional Medicare Administrative Contractor (MAC).
+
+
+          Different provider types use different enrollment forms. Physicians use form
+          CMS-855I. Hospitals and other institutional providers use form CMS-855A. DME
+          suppliers use form CMS-855S and must also get accreditation from a CMS-approved
+          organization and post a $50,000 surety bond.
+
+
+          Online applications through PECOS process in about 30 days. Paper applications
+          take about 65 days. The ambulance fee schedule covers volunteer, municipal, private,
+          and independent ambulance suppliers as well as hospitals.
+
+      - heading: "Enrolling in Medicaid"
+        text: >
+          Medicaid enrollment works differently from Medicare. Each state runs its own
+          Medicaid provider enrollment process and can impose requirements beyond the federal
+          minimums set by CMS.
+
+
+          At a minimum, state Medicaid agencies must verify that a provider holds an
+          unrestricted license before approving enrollment. Beyond that, states may require
+          additional documentation, background checks, or site visits.
+
+      - heading: "HIPAA and Providers"
+        text: >
+          Under HIPAA, a healthcare provider becomes a "covered entity" when it transmits
+          health information electronically in connection with certain transactions, such as
+          billing claims. In practice, most doctors, clinics, hospitals, psychologists,
+          chiropractors, nursing homes, pharmacies, and dentists are HIPAA covered entities.
+
+
+          As covered entities, providers must comply with the Privacy Rule and Security Rule.
+          This means they must put safeguards in place to protect patient health information,
+          train their employees on privacy practices, and have contracts with any business
+          associates that handle patient data on their behalf.
+
+    summary:
+      - "A healthcare provider is any licensed person or facility that delivers care — including physicians, hospitals, DME suppliers, ambulance services, and ancillary services like labs."
+      - "Providers bill payors using standardized claim forms: the CMS-1500 for non-institutional providers and the UB-04 for hospitals and facilities."
+      - "To bill Medicare, providers must obtain an NPI, enroll through PECOS, and work with their regional Medicare Administrative Contractor."
+      - "Each state runs its own Medicaid enrollment process with requirements that can go beyond federal minimums."
+      - "Most providers are HIPAA covered entities and must protect patient health information under the Privacy and Security Rules."
+    linked_facts:
+      - FACT-PRV-001
+      - FACT-PRV-002
+      - FACT-PRV-003
+      - FACT-PRV-004
+      - FACT-PRV-005
+      - FACT-PRV-006
+      - FACT-PRV-007
+      - FACT-PRV-008
+      - FACT-PRV-009
+      - FACT-PRV-010
+      - FACT-PRV-011
+      - FACT-PRV-012
+      - FACT-PRV-013
+      - FACT-PRV-014
+      - FACT-PRV-015
+      - FACT-PRV-016
+      - FACT-PRV-017
+      - FACT-PRV-018
+      - FACT-PRV-019
+      - FACT-PRV-020
+      - FACT-PRV-021
+      - FACT-PRV-022
+      - FACT-PRV-023
+      - FACT-PRV-024
+      - FACT-PRV-025
+
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 3 — PATIENT PILLAR
+  # ══════════════════════════════════════════════════════════════════
+  - tutorial_id: T-PATIENT-01
+    title: "Who Receives Healthcare?"
+    pillar: patient
+    learning_objectives:
+      - "Explain the difference between a subscriber and a dependent on a health insurance plan"
+      - "Describe how eligibility and enrollment work, including open enrollment and special enrollment periods"
+      - "Identify patient rights under HIPAA, including the right to access and amend health records"
+      - "Define key cost-sharing terms: premium, deductible, copay, coinsurance, and out-of-pocket maximum"
+      - "Understand the purpose of an Explanation of Benefits (EOB) and the importance of patient engagement"
+    sections:
+      - heading: "Subscribers and Dependents"
+        text: >
+          When someone signs up for health insurance, they become the subscriber — also
+          called the policyholder. The subscriber is the primary person who holds the
+          insurance contract.
+
+
+          Family members covered under that same plan are called dependents. A dependent
+          might be a spouse, a child, or a domestic partner. Under the Affordable Care Act,
+          children can stay on a parent's plan until they turn 26, regardless of whether
+          they are married. For example, if you get a job at 22 that does not offer insurance,
+          you can remain on your parent's plan for four more years.
+
+      - heading: "Getting Covered: Eligibility and Enrollment"
+        text: >
+          How you get health insurance depends on where you get it. Eligibility for
+          employer-sponsored insurance is determined by your employer's plan rules.
+          Marketplace eligibility depends on factors like your income, household size, and
+          where you live.
+
+
+          Most health plans have an Open Enrollment period — an annual window when anyone
+          can enroll in, renew, or change their plan. Outside that window, you generally
+          cannot sign up unless you experience a qualifying life event.
+
+
+          A Special Enrollment Period (SEP) lets you enroll or change plans outside of Open
+          Enrollment after certain life changes — like losing your coverage, getting married,
+          having a baby, or moving to a new state. Most SEPs give you 60 days before or after
+          the event to pick a new plan.
+
+      - heading: "Your Rights Under HIPAA"
+        text: >
+          As a patient, you have important rights when it comes to your health information.
+          Under the HIPAA Privacy Rule, you have a legal right to access and obtain copies of
+          your protected health information (PHI) from covered entities like doctors,
+          hospitals, and health plans. They must respond to your request within 30 days.
+
+
+          You can also request corrections or amendments to your health records if you believe
+          something is inaccurate or incomplete. And you can direct a covered entity to send
+          your records to a third party — another doctor, a family member, or anyone you
+          choose.
+
+
+          A provider may charge a reasonable fee for copying and mailing your records, but
+          they cannot charge you for searching for or retrieving them. If you ever believe
+          your privacy rights have been violated, you can file a complaint with the U.S.
+          Department of Health and Human Services (HHS).
+
+      - heading: "Notice of Privacy Practices and Consent"
+        text: >
+          When you visit a new doctor or hospital, they will usually ask you to sign a form
+          acknowledging their Notice of Privacy Practices. This is a plain-language document
+          required by HIPAA that explains how the provider may use and share your health
+          information.
+
+
+          Separately, before any procedure or treatment, your provider should obtain your
+          informed consent. This means the clinician explains the risks, benefits, and
+          alternatives so you can make a voluntary, informed decision. Competent adults
+          give their own consent. For children, a parent or legal guardian provides it.
+
+
+          In a life-threatening emergency, informed consent can be waived if there is not
+          enough time to obtain it and no authorized decision-maker is available. For
+          instance, if you arrive at the emergency room unconscious, doctors can begin
+          life-saving treatment immediately.
+
+      - heading: "Understanding Your Costs"
+        text: >
+          Health insurance does not mean free healthcare. You share costs with your plan in
+          several ways.
+
+
+          A premium is the amount you pay each month to keep your coverage active, whether
+          or not you see a doctor. A deductible is the amount you must pay out of pocket
+          each year before your plan starts paying its share. For example, if your deductible
+          is $1,000, you pay the first $1,000 of covered services yourself.
+
+
+          A copay is a fixed dollar amount you pay at the time of a visit — like $25 for a
+          doctor's appointment. Coinsurance is a percentage you pay after meeting your
+          deductible. For example, you might pay 20% of a covered service while your plan
+          pays 80%.
+
+
+          The out-of-pocket maximum is the most you will pay in a plan year. Once you hit
+          that number, your plan pays 100% of covered costs for the rest of the year. This
+          protects you from very high medical bills.
+
+      - heading: "Explanation of Benefits"
+        text: >
+          After your health plan processes a claim from your provider, it sends you an
+          Explanation of Benefits (EOB). The EOB shows what was billed, what the plan paid,
+          and what you owe. It is not a bill — it is a summary.
+
+
+          You should compare your EOB with the actual bill from your provider to make sure
+          the services and amounts match before you pay. If something does not line up,
+          contact your provider or your health plan to ask about it.
+
+      - heading: "Patient Engagement"
+        text: >
+          Patient engagement means having the knowledge, skills, and confidence to actively
+          participate in your own healthcare decisions. Research shows that patients who are
+          more engaged tend to have better health outcomes and lower costs.
+
+
+          Simple steps make a difference: asking questions during appointments, understanding
+          your insurance benefits, reviewing your EOBs, and keeping track of your medical
+          records. The more you understand the system, the better you can navigate it.
+
+    summary:
+      - "The subscriber holds the insurance contract; dependents are covered family members, and children can stay on a parent's plan until age 26."
+      - "Open Enrollment is the annual window to sign up or change plans; Special Enrollment Periods allow changes after qualifying life events."
+      - "Under HIPAA, you have the right to access, copy, and request corrections to your health records."
+      - "Cost sharing includes premiums, deductibles, copays, coinsurance, and an out-of-pocket maximum that caps your annual spending."
+      - "Always compare your Explanation of Benefits with your provider's bill before paying."
+    linked_facts:
+      - FACT-PAT-001
+      - FACT-PAT-002
+      - FACT-PAT-003
+      - FACT-PAT-004
+      - FACT-PAT-005
+      - FACT-PAT-006
+      - FACT-PAT-007
+      - FACT-PAT-008
+      - FACT-PAT-009
+      - FACT-PAT-010
+      - FACT-PAT-011
+      - FACT-PAT-012
+      - FACT-PAT-013
+      - FACT-PAT-014
+      - FACT-PAT-015
+      - FACT-PAT-016
+      - FACT-PAT-017
+      - FACT-PAT-018
+      - FACT-PAT-019
+      - FACT-PAT-020
+      - FACT-PAT-021
+      - FACT-PAT-022
+      - FACT-PAT-023
+      - FACT-PAT-024
+      - FACT-PAT-025
+
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 4 — DATA PILLAR
+  # ══════════════════════════════════════════════════════════════════
+  - tutorial_id: T-DATA-01
+    title: "Healthcare Data and Privacy"
+    pillar: data
+    learning_objectives:
+      - "Define Protected Health Information (PHI) and explain why it matters"
+      - "Describe HIPAA's Privacy Rule, Security Rule, and Breach Notification Rule"
+      - "Identify covered entities and business associates under HIPAA"
+      - "Explain the purpose of ICD, CPT, and HCPCS codes in healthcare"
+      - "Understand the difference between in-network and out-of-network providers and the role of Electronic Health Records"
+    sections:
+      - heading: "What Is Protected Health Information?"
+        text: >
+          Healthcare generates a lot of sensitive data. Protected Health Information (PHI) is
+          any individually identifiable health information that relates to your past, present,
+          or future physical or mental health, the care you received, or payment for that
+          care.
+
+
+          PHI includes things like your name, address, date of birth, and Social Security
+          Number when they are linked to health information. It is protected under HIPAA
+          regardless of form — whether it is in a computer system, on paper, or spoken aloud.
+
+      - heading: "The HIPAA Privacy Rule"
+        text: >
+          The HIPAA Privacy Rule sets national standards for protecting PHI. It applies to
+          covered entities — health plans, healthcare providers, and clearinghouses — as well
+          as their business associates.
+
+
+          One key concept is the minimum necessary standard. Covered entities must make
+          reasonable efforts to limit how much PHI they use or share to only what is needed
+          for the task at hand. For example, if a billing office needs to process a claim,
+          they should only access the billing-related information, not your entire medical
+          history.
+
+
+          There is an exception: when providers share PHI for treatment purposes, the minimum
+          necessary rule does not apply. Your doctor can share your full relevant history with
+          a specialist who is treating you. You also have the right to access, inspect, and
+          get copies of your own PHI.
+
+      - heading: "Covered Entities and Business Associates"
+        text: >
+          HIPAA defines three types of covered entities: health plans (like insurance
+          companies and Medicare), healthcare clearinghouses, and healthcare providers who
+          send health information electronically.
+
+
+          A business associate is a person or organization that handles PHI on behalf of a
+          covered entity. For example, a company that stores medical records in the cloud for
+          a hospital is a business associate. They must sign a written agreement to follow
+          HIPAA rules and protect the data they handle.
+
+      - heading: "The Security Rule and Breach Notification"
+        text: >
+          While the Privacy Rule covers all forms of PHI, the HIPAA Security Rule focuses
+          specifically on electronic PHI (ePHI). It requires covered entities and business
+          associates to ensure the confidentiality, integrity, and availability of ePHI.
+
+
+          The Security Rule requires three types of safeguards: administrative (policies and
+          procedures), physical (protecting facilities and equipment), and technical
+          (technology controls for access and data protection). Think of it as locking the
+          building, training the staff, and securing the computers.
+
+
+          If a breach of unsecured PHI does happen, the Breach Notification Rule kicks in.
+          The covered entity must notify affected individuals within 60 days of discovering
+          the breach. If the breach affects more than 500 people in a state, prominent media
+          outlets and the HHS Secretary must also be notified. Smaller breaches are reported
+          to HHS annually.
+
+      - heading: "Medical Codes: ICD, CPT, and HCPCS"
+        text: >
+          Healthcare runs on standardized codes. When your doctor diagnoses you with
+          something, that diagnosis is translated into an ICD code (International
+          Classification of Diseases). The U.S. switched from ICD-9 to ICD-10 in 2015,
+          expanding from about 14,000 codes to about 69,000. ICD-10 codes can be up to 7
+          characters long and capture more detail about the location, severity, and type
+          of a condition.
+
+
+          ICD-10-CM (Clinical Modification) codes are used everywhere for diagnoses.
+          ICD-10-PCS (Procedure Coding System) codes are used specifically for inpatient
+          hospital procedures.
+
+
+          On the procedure side, CPT (Current Procedural Terminology) codes are 5-digit
+          numbers maintained by the American Medical Association that identify the services
+          a provider performed. HCPCS (Healthcare Common Procedure Coding System) has two
+          levels: Level I is the CPT codes, and Level II covers products and services not in
+          CPT — like ambulance services, durable medical equipment, and prosthetics. Level II
+          codes start with a letter followed by 4 digits and are maintained by CMS.
+
+      - heading: "In-Network vs. Out-of-Network"
+        text: >
+          An in-network provider has a contract with your health insurer to provide services
+          at pre-negotiated rates. This means lower out-of-pocket costs for you. If you visit
+          an in-network doctor, your insurer has already agreed on what the service should
+          cost.
+
+
+          An out-of-network provider has no such contract. You typically pay significantly
+          more for the same service. For example, an in-network office visit might cost you
+          a $25 copay, while the same visit out-of-network could cost you hundreds of dollars.
+
+      - heading: "Electronic Health Records"
+        text: >
+          An Electronic Health Record (EHR) is a digital version of your medical history.
+          It includes your demographics, medications, vital signs, immunizations, lab results,
+          and radiology reports — all maintained by your provider over time.
+
+
+          EHRs help reduce duplicate tests, decrease treatment delays, and improve the
+          accuracy of medical records by making your information available electronically to
+          authorized providers. Certified EHR technology stores your data in a structured
+          format so providers can easily retrieve, transfer, and use it to support care
+          decisions.
+
+    summary:
+      - "PHI is any health-related information that can identify you, and HIPAA protects it whether it is electronic, on paper, or spoken."
+      - "The Privacy Rule limits how PHI is used and shared; the Security Rule adds technical, physical, and administrative safeguards for electronic data."
+      - "If a data breach occurs, affected individuals must be notified within 60 days."
+      - "ICD codes capture diagnoses, CPT codes capture procedures, and HCPCS Level II codes cover equipment and supplies — together they form the language of medical billing."
+      - "Using in-network providers saves you money, and EHRs make your health information more accessible and accurate."
+    linked_facts:
+      - FACT-DAT-001
+      - FACT-DAT-002
+      - FACT-DAT-003
+      - FACT-DAT-004
+      - FACT-DAT-005
+      - FACT-DAT-006
+      - FACT-DAT-007
+      - FACT-DAT-008
+      - FACT-DAT-009
+      - FACT-DAT-010
+      - FACT-DAT-011
+      - FACT-DAT-012
+      - FACT-DAT-013
+      - FACT-DAT-014
+      - FACT-DAT-015
+      - FACT-DAT-016
+      - FACT-DAT-017
+      - FACT-DAT-018
+      - FACT-DAT-019
+      - FACT-DAT-020
+      - FACT-DAT-021
+      - FACT-DAT-022
+      - FACT-DAT-023
+      - FACT-DAT-024
+      - FACT-DAT-025
+
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 5 — CROSS-DOMAIN PILLAR
+  # ══════════════════════════════════════════════════════════════════
+  - tutorial_id: T-CROSS-01
+    title: "How It All Connects"
+    pillar: cross_domain
+    learning_objectives:
+      - "Trace the end-to-end flow of a healthcare claim from patient visit to payment"
+      - "Explain how eligibility verification works before a service is provided"
+      - "Describe how diagnosis codes and procedure codes work together on a claim"
+      - "Identify the roles of clearinghouses, NPIs, and standardized transaction formats in connecting the system"
+      - "Understand how HIPAA ties together payors, providers, and patients through shared privacy obligations"
+    sections:
+      - heading: "The Life of a Claim"
+        text: >
+          Let me walk you through how a healthcare claim works from start to finish. You
+          visit a doctor. The doctor treats you. Then the doctor's office submits a claim —
+          a standardized bill — to your health plan. The health plan processes the claim and
+          issues payment.
+
+
+          Providers submit claims electronically to payors or to intermediaries like Medicare
+          Administrative Contractors, using HIPAA-standard transaction formats. When the
+          payor receives a claim, automated checks verify completeness, valid data, duplicate
+          submissions, and whether the provider and patient are eligible.
+
+
+          After these checks, the claim is adjudicated. It can be approved for payment,
+          rejected (sent back to the provider for corrections), or denied (the service is
+          not covered or does not meet policy requirements).
+
+      - heading: "Eligibility Verification"
+        text: >
+          Before treating you, a provider can check whether your insurance is active and what
+          it covers. They do this by sending an electronic eligibility inquiry — called a
+          HIPAA 270 transaction — to your health plan.
+
+
+          Since January 2013, HIPAA rules require health plans to respond to these inquiries
+          in real time. The response includes information about your deductibles, copays, and
+          coinsurance. This helps the provider's office tell you upfront what you might owe
+          for a visit.
+
+      - heading: "How Codes Tell the Story"
+        text: >
+          Every claim must pair a diagnosis code with a procedure code. The diagnosis code
+          (ICD-10-CM) explains why you needed care. The procedure code (CPT or HCPCS)
+          describes what the provider did. Together, they link the clinical documentation to
+          the payor's reimbursement decision.
+
+
+          If a claim is submitted without a valid diagnosis code, it gets returned as
+          incomplete and will not be processed. Even if the codes are present, the payor
+          checks whether the diagnosis supports the procedure. If the diagnosis does not
+          justify the service according to coverage policy, the claim may be denied for
+          lack of medical necessity. For example, a claim for a knee MRI would need a
+          diagnosis that explains why imaging the knee was medically needed.
+
+      - heading: "Explanation of Benefits and Reimbursement"
+        text: >
+          After your claim is processed, two things happen. Your health plan sends you an
+          Explanation of Benefits (EOB). It shows the provider's charges, the allowed amount,
+          what the plan paid, and what you owe. Remember, the EOB is not a bill — it is a
+          summary. You should compare it to the actual bill from your provider.
+
+
+          At the same time, the payor sends the provider an Electronic Remittance Advice
+          (ERA) — a HIPAA 835 transaction — detailing the payment amount, any adjustments,
+          and reasons for denials.
+
+
+          The "allowed amount" is the maximum your plan will pay for a covered service. For
+          in-network services, the provider generally cannot bill you beyond the allowed
+          amount. Your share is limited to your copay, coinsurance, or deductible.
+
+      - heading: "Clearinghouses: The Middlemen"
+        text: >
+          A healthcare clearinghouse is an intermediary that sits between providers and
+          payors. It receives claims and other transactions from providers, converts them
+          into HIPAA-standard electronic formats, and forwards them to the correct health
+          plan.
+
+
+          Think of a clearinghouse as a translator. A provider's billing system might format
+          data one way, but the health plan expects it in a specific standard format. The
+          clearinghouse makes sure everything matches up. Clearinghouses are one of the
+          three types of HIPAA covered entities, alongside health plans and providers.
+
+      - heading: "The National Provider Identifier"
+        text: >
+          Every HIPAA-covered provider has a National Provider Identifier (NPI) — a unique,
+          permanent 10-digit number. The NPI must appear on all electronic claims, eligibility
+          inquiries, and other HIPAA transactions.
+
+
+          The NPI is "intelligence-free." That means the number itself carries no information
+          about the provider's location, specialty, or type. It is purely a unique identifier,
+          like a Social Security Number for providers. This ensures that each provider can be
+          consistently identified across every transaction in the system.
+
+      - heading: "HIPAA Ties It All Together"
+        text: >
+          HIPAA's Privacy Rule applies to all three types of covered entities — health plans,
+          healthcare providers, and clearinghouses. Each must protect patients' protected
+          health information (PHI). PHI is any data about a person's health, care, or payment
+          that can identify them.
+
+
+          Covered entities can share PHI without patient authorization for three purposes:
+          treatment, payment, and healthcare operations — known as TPO. Outside of those
+          purposes, the minimum necessary standard applies, meaning entities must limit
+          shared information to the smallest amount needed.
+
+
+          You have the right to access and obtain copies of your health records from any
+          covered entity within 30 days and to request corrections. HIPAA's Administrative
+          Simplification provisions also mandate standard electronic formats for key
+          transactions — claims (837), remittance advice (835), eligibility verification
+          (270/271), claim status (276/277), and referral authorization (278). The current
+          standard is ASC X12 Version 5010, used by providers, payors, and clearinghouses
+          nationwide. These standardized formats allow any provider to submit a claim to any
+          health plan using the same data structure, enabling interoperability across the
+          entire system.
+
+    summary:
+      - "A claim flows from patient visit to provider submission to payor adjudication, resulting in payment, rejection, or denial."
+      - "Eligibility verification happens electronically in real time before or at the time of service."
+      - "Every claim pairs a diagnosis code (ICD-10) with a procedure code (CPT/HCPCS) — both must be valid for the claim to be paid."
+      - "Clearinghouses translate and route claims between providers and payors, and the NPI uniquely identifies every provider in the system."
+      - "HIPAA unifies the system by requiring all covered entities to protect PHI and use standardized electronic transaction formats."
+    linked_facts:
+      - FACT-CRS-001
+      - FACT-CRS-002
+      - FACT-CRS-003
+      - FACT-CRS-004
+      - FACT-CRS-005
+      - FACT-CRS-006
+      - FACT-CRS-007
+      - FACT-CRS-008
+      - FACT-CRS-009
+      - FACT-CRS-010
+      - FACT-CRS-011
+      - FACT-CRS-012
+      - FACT-CRS-013
+      - FACT-CRS-014
+      - FACT-CRS-015
+      - FACT-CRS-016
+      - FACT-CRS-017
+      - FACT-CRS-018
+      - FACT-CRS-019
+      - FACT-CRS-020
+      - FACT-CRS-021
+      - FACT-CRS-022
+      - FACT-CRS-023
+      - FACT-CRS-024
+      - FACT-CRS-025

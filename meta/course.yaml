@@ -1,0 +1,20 @@
+course_id: HF-001
+title: "Healthcare Foundations: Payor, Provider, Patient, and Data"
+level: foundational
+total_questions: 1000
+
+pillars:
+  - payor
+  - provider
+  - patient
+  - data
+  - cross_domain
+
+delivery_modes:
+  - web
+  - video
+  - lms
+
+audio_mode:
+  primary: pre_recorded
+  secondary: dynamic_tts

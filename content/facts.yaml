@@ -1,0 +1,821 @@
+# Healthcare Foundations — Atomic Fact Library
+# Each fact: one statement, one source, one pillar
+# Schema:
+#   fact_id: FACT-NNN
+#   pillar: payor | provider | patient | data | cross_domain
+#   statement: "<clear factual statement>"
+#   source_id: SRC-NNN
+#   tags: [list of topic tags]
+
+facts:
+  # --- What is a provider ---
+  - fact_id: FACT-PRV-001
+    pillar: provider
+    statement: "A health care provider is a person trained and licensed to give health care, or a place licensed to give health care."
+    source_id: SRC-PRV-001
+    tags: [Definition, General]
+
+  - fact_id: FACT-PRV-002
+    pillar: provider
+    statement: "Medicare law distinguishes between providers (institutional care facilities such as hospitals, hospices, and nursing homes) and suppliers (entities that furnish diagnostic, therapeutic, or equipment services rather than sustained residential care)."
+    source_id: SRC-PRV-002
+    tags: [Definition, Medicare, Provider, Supplier]
+
+  # --- Provider types: Physician ---
+  - fact_id: FACT-PRV-003
+    pillar: provider
+    statement: "Physicians and non-physician practitioners (such as nurse practitioners and physician assistants) enroll in Medicare using form CMS-855I."
+    source_id: SRC-PRV-003
+    tags: [Physician, Enrollment, CMS-855]
+
+  - fact_id: FACT-PRV-004
+    pillar: provider
+    statement: "A physician office is a common provider setting where patients receive outpatient evaluation, diagnosis, and treatment from a licensed physician."
+    source_id: SRC-PRV-001
+    tags: [Physician, Facility]
+
+  # --- Provider types: Hospital ---
+  - fact_id: FACT-PRV-005
+    pillar: provider
+    statement: "Hospitals are institutional providers that enroll in Medicare using form CMS-855A and bill using the CMS-1450 (UB-04) institutional claim form."
+    source_id: SRC-PRV-003
+    tags: [Hospital, Facility, Enrollment, Claims]
+
+  - fact_id: FACT-PRV-006
+    pillar: provider
+    statement: "Institutional providers include hospitals, critical access hospitals, skilled nursing facilities, home health agencies, and hospices."
+    source_id: SRC-PRV-002
+    tags: [Hospital, Facility, Institutional]
+
+  # --- Provider types: DME ---
+  - fact_id: FACT-PRV-007
+    pillar: provider
+    statement: "Durable Medical Equipment (DME) is equipment that can withstand repeated use, has an expected life of at least three years, serves a medical purpose, is generally not useful without illness or injury, and is appropriate for use in a patient's home."
+    source_id: SRC-PRV-004
+    tags: [DME, Definition]
+
+  - fact_id: FACT-PRV-008
+    pillar: provider
+    statement: "Examples of DME include hospital beds, wheelchairs, ventilators, oxygen equipment, prosthetics such as artificial limbs, and orthotics such as back and neck braces."
+    source_id: SRC-PRV-004
+    tags: [DME, Examples]
+
+  - fact_id: FACT-PRV-009
+    pillar: provider
+    statement: "DMEPOS suppliers must obtain accreditation from a CMS-approved organization and post a $50,000 surety bond per NPI to enroll in Medicare."
+    source_id: SRC-PRV-004
+    tags: [DME, Enrollment, Accreditation]
+
+  - fact_id: FACT-PRV-010
+    pillar: provider
+    statement: "DMEPOS suppliers enroll in Medicare using form CMS-855S, which is separate from the forms used by physicians or institutional providers."
+    source_id: SRC-PRV-003
+    tags: [DME, Enrollment, CMS-855]
+
+  # --- Provider types: Transportation ---
+  - fact_id: FACT-PRV-011
+    pillar: provider
+    statement: "Medicare covers ambulance transportation only when the patient's medical condition makes any other means of transportation contraindicated."
+    source_id: SRC-PRV-008
+    tags: [Transportation, Ambulance, Medicare]
+
+  - fact_id: FACT-PRV-012
+    pillar: provider
+    statement: "Emergency air ambulance transport by airplane or helicopter is covered by Medicare when immediate transport is needed and ground ambulance cannot provide it."
+    source_id: SRC-PRV-008
+    tags: [Transportation, Air Ambulance, Medicare]
+
+  - fact_id: FACT-PRV-013
+    pillar: provider
+    statement: "The Medicare ambulance fee schedule applies to volunteer, municipal, private, and independent ambulance suppliers as well as institutional providers like hospitals."
+    source_id: SRC-PRV-008
+    tags: [Transportation, Ambulance, Payment]
+
+  # --- Provider types: Ancillary ---
+  - fact_id: FACT-PRV-014
+    pillar: provider
+    statement: "Ancillary services include laboratory tests, radiology, pharmacy services, and other diagnostic or therapeutic services that support a patient's primary care."
+    source_id: SRC-PRV-010
+    tags: [Ancillary, Laboratory, Pharmacy]
+
+  - fact_id: FACT-PRV-015
+    pillar: provider
+    statement: "Clinical laboratories operate in many settings including hospitals, physician offices, pharmacies, ambulatory surgery centers, and as independent labs."
+    source_id: SRC-PRV-010
+    tags: [Ancillary, Laboratory]
+
+  # --- How providers bill payors ---
+  - fact_id: FACT-PRV-016
+    pillar: provider
+    statement: "Non-institutional providers and suppliers bill Medicare using the CMS-1500 claim form (or its electronic equivalent, the 837P transaction), while institutional providers use the CMS-1450 form (UB-04) or the 837I transaction."
+    source_id: SRC-PRV-006
+    tags: [Billing, Claims, CMS-1500, UB-04]
+
+  - fact_id: FACT-PRV-017
+    pillar: provider
+    statement: "Providers are required to submit Medicare claims electronically under the Administrative Simplification Compliance Act (ASCA) unless they qualify for a waiver."
+    source_id: SRC-PRV-006
+    tags: [Billing, Claims, Electronic]
+
+  # --- Provider enrollment: Medicare ---
+  - fact_id: FACT-PRV-018
+    pillar: provider
+    statement: "To enroll in Medicare, a provider must first obtain a National Provider Identifier (NPI), then complete an application through PECOS (the online enrollment system), and finally work with their regional Medicare Administrative Contractor (MAC)."
+    source_id: SRC-PRV-002
+    tags: [Enrollment, Medicare, NPI, PECOS, MAC]
+
+  - fact_id: FACT-PRV-019
+    pillar: provider
+    statement: "Every health care provider that bills Medicare must have a unique National Provider Identifier (NPI), which is a standard 10-digit number used to identify the provider across all health transactions."
+    source_id: SRC-PRV-002
+    tags: [Enrollment, NPI]
+
+  - fact_id: FACT-PRV-020
+    pillar: provider
+    statement: "Medicare enrollment applications submitted online through PECOS process in approximately 30 days, while paper applications take approximately 65 days."
+    source_id: SRC-PRV-002
+    tags: [Enrollment, PECOS, Medicare]
+
+  # --- Provider enrollment: Medicaid ---
+  - fact_id: FACT-PRV-021
+    pillar: provider
+    statement: "Each state administers its own Medicaid provider enrollment process and may impose requirements beyond the federal minimums set by CMS."
+    source_id: SRC-PRV-009
+    tags: [Enrollment, Medicaid, State]
+
+  - fact_id: FACT-PRV-022
+    pillar: provider
+    statement: "State Medicaid agencies must verify that a provider holds an unrestricted license before approving enrollment."
+    source_id: SRC-PRV-009
+    tags: [Enrollment, Medicaid, Licensing]
+
+  # --- HIPAA obligations ---
+  - fact_id: FACT-PRV-023
+    pillar: provider
+    statement: "Under HIPAA, a health care provider becomes a covered entity when it transmits health information electronically in connection with certain transactions such as claims billing."
+    source_id: SRC-PRV-005
+    tags: [HIPAA, Covered Entity, Compliance]
+
+  - fact_id: FACT-PRV-024
+    pillar: provider
+    statement: "HIPAA-covered providers must comply with the Privacy Rule and Security Rule, which require safeguards to protect patient health information, training for employees, and contracts with business associates."
+    source_id: SRC-PRV-005
+    tags: [HIPAA, Privacy Rule, Security Rule]
+
+  - fact_id: FACT-PRV-025
+    pillar: provider
+    statement: "Most doctors, clinics, hospitals, psychologists, chiropractors, nursing homes, pharmacies, and dentists are HIPAA-covered entities because they transmit health information electronically."
+    source_id: SRC-PRV-005
+    tags: [HIPAA, Covered Entity, Provider Types]
+
+  # ══════════════════════════════════════════════════════════════════
+  # PAYOR PILLAR
+  # ══════════════════════════════════════════════════════════════════
+
+  # --- What is a payor ---
+  - fact_id: FACT-PAY-001
+    pillar: payor
+    statement: "A payor (also spelled payer) is an entity responsible for paying healthcare providers for services delivered to patients; payors include private health insurers and government programs such as Medicare and Medicaid."
+    source_id: SRC-PAY-010
+    tags: [Definition, General]
+
+  - fact_id: FACT-PAY-002
+    pillar: payor
+    statement: "Healthcare payors fall into three broad categories: government programs (such as Medicare and Medicaid), commercial (private) insurance, and self-pay."
+    source_id: SRC-PAY-005
+    tags: [Definition, Categories]
+
+  - fact_id: FACT-PAY-003
+    pillar: payor
+    statement: "When a patient has coverage from more than one payor, coordination of benefits rules determine which payor pays first; the payor that pays first is called the primary payer."
+    source_id: SRC-PAY-010
+    tags: [Coordination of Benefits, General]
+
+  # --- Medicare overview ---
+  - fact_id: FACT-PAY-004
+    pillar: payor
+    statement: "Medicare is a federal health insurance program primarily for people age 65 and older; it is also available to certain people under 65 who have disabilities, End-Stage Renal Disease (ESRD), or ALS."
+    source_id: SRC-PAY-002
+    tags: [Medicare, Government, Eligibility]
+
+  - fact_id: FACT-PAY-005
+    pillar: payor
+    statement: "Medicare is administered by the Centers for Medicare & Medicaid Services (CMS), a federal agency within the U.S. Department of Health and Human Services (HHS)."
+    source_id: SRC-PAY-002
+    tags: [Medicare, Government, CMS]
+
+  - fact_id: FACT-PAY-006
+    pillar: payor
+    statement: "Original Medicare consists of two parts: Part A (Hospital Insurance) and Part B (Medical Insurance)."
+    source_id: SRC-PAY-001
+    tags: [Medicare, Part A, Part B]
+
+  # --- Medicare Part A ---
+  - fact_id: FACT-PAY-007
+    pillar: payor
+    statement: "Medicare Part A (Hospital Insurance) covers inpatient hospital stays, skilled nursing facility care, hospice care, and some home health services."
+    source_id: SRC-PAY-001
+    tags: [Medicare, Part A, Coverage]
+
+  - fact_id: FACT-PAY-008
+    pillar: payor
+    statement: "Most people do not pay a monthly premium for Medicare Part A because they or their spouse paid Medicare taxes for 40 or more quarters (10 years) during their working life."
+    source_id: SRC-PAY-003
+    tags: [Medicare, Part A, Premium]
+
+  # --- Medicare Part B ---
+  - fact_id: FACT-PAY-009
+    pillar: payor
+    statement: "Medicare Part B (Medical Insurance) covers doctors' services, outpatient hospital care, durable medical equipment, and preventive services such as screenings and vaccinations."
+    source_id: SRC-PAY-001
+    tags: [Medicare, Part B, Coverage]
+
+  - fact_id: FACT-PAY-010
+    pillar: payor
+    statement: "Medicare Part B requires a monthly premium; for 2026 the standard Part B premium is $202.90 per month and the annual deductible is $283."
+    source_id: SRC-PAY-003
+    tags: [Medicare, Part B, Premium, Cost]
+
+  - fact_id: FACT-PAY-011
+    pillar: payor
+    statement: "People already receiving Social Security benefits are automatically enrolled in Medicare Part A and Part B when they become eligible."
+    source_id: SRC-PAY-002
+    tags: [Medicare, Enrollment, Social Security]
+
+  # --- Medicaid ---
+  - fact_id: FACT-PAY-012
+    pillar: payor
+    statement: "Medicaid is a joint federal and state program that provides health coverage to eligible low-income adults, children, pregnant women, elderly adults, and people with disabilities."
+    source_id: SRC-PAY-004
+    tags: [Medicaid, Government, Definition]
+
+  - fact_id: FACT-PAY-013
+    pillar: payor
+    statement: "Medicaid is funded jointly by the federal government and state governments; the federal share is determined by the Federal Medical Assistance Percentage (FMAP), which varies by state based on per capita income."
+    source_id: SRC-PAY-004
+    tags: [Medicaid, Government, Funding, FMAP]
+
+  - fact_id: FACT-PAY-014
+    pillar: payor
+    statement: "Medicaid is administered by individual states according to federal requirements, which means eligibility rules and covered services can vary from state to state."
+    source_id: SRC-PAY-004
+    tags: [Medicaid, Government, Administration]
+
+  - fact_id: FACT-PAY-015
+    pillar: payor
+    statement: "Unlike Medicare, which is a purely federal program, Medicaid eligibility is based on income and household size rather than age, and people can apply for Medicaid at any time during the year."
+    source_id: SRC-PAY-004
+    tags: [Medicaid, Eligibility, Medicare Comparison]
+
+  # --- Commercial insurance ---
+  - fact_id: FACT-PAY-016
+    pillar: payor
+    statement: "Commercial (private) health insurance is the most common form of health coverage in the United States and can be obtained through an employer, purchased on the Health Insurance Marketplace, or bought directly from an insurance company."
+    source_id: SRC-PAY-005
+    tags: [Commercial, Private Insurance]
+
+  - fact_id: FACT-PAY-017
+    pillar: payor
+    statement: "Aetna, Blue Cross Blue Shield, and UnitedHealthcare are examples of major commercial health insurance companies that offer employer-sponsored and individual health plans."
+    source_id: SRC-PAY-006
+    tags: [Commercial, Aetna, BCBS, UnitedHealthcare]
+
+  - fact_id: FACT-PAY-018
+    pillar: payor
+    statement: "Common types of commercial health insurance plans include HMO (Health Maintenance Organization), PPO (Preferred Provider Organization), EPO (Exclusive Provider Organization), and POS (Point of Service)."
+    source_id: SRC-PAY-006
+    tags: [Commercial, HMO, PPO, EPO, POS]
+
+  - fact_id: FACT-PAY-019
+    pillar: payor
+    statement: "Employer-sponsored group health plans are the most common way Americans obtain private health insurance; the employer typically shares the cost of premiums with employees."
+    source_id: SRC-PAY-005
+    tags: [Commercial, Employer-Sponsored]
+
+  # --- Self-pay ---
+  - fact_id: FACT-PAY-020
+    pillar: payor
+    statement: "A self-pay patient is someone who does not have health insurance or who chooses not to submit a claim to their insurance for a particular health care service."
+    source_id: SRC-PAY-009
+    tags: [Self-Pay, Definition]
+
+  - fact_id: FACT-PAY-021
+    pillar: payor
+    statement: "An uninsured individual is a person who is not enrolled in any group health plan, individual health insurance coverage, or federal health care program."
+    source_id: SRC-PAY-009
+    tags: [Self-Pay, Uninsured, Definition]
+
+  - fact_id: FACT-PAY-022
+    pillar: payor
+    statement: "Under the No Surprises Act, providers must give uninsured or self-pay patients a good faith estimate of expected charges before or upon scheduling a health care service."
+    source_id: SRC-PAY-009
+    tags: [Self-Pay, No Surprises Act, Patient Rights]
+
+  # --- HIPAA and payors ---
+  - fact_id: FACT-PAY-023
+    pillar: payor
+    statement: "Under HIPAA, health plans are one of the three categories of covered entities (along with health care providers and clearinghouses) and must comply with the Privacy Rule and Security Rule to protect patient health information."
+    source_id: SRC-PAY-007
+    tags: [HIPAA, Covered Entity, Health Plans]
+
+  - fact_id: FACT-PAY-024
+    pillar: payor
+    statement: "HIPAA-covered health plans include health insurance companies, HMOs, employer-sponsored group health plans, and government programs such as Medicare and Medicaid."
+    source_id: SRC-PAY-008
+    tags: [HIPAA, Covered Entity, Medicare, Medicaid, Commercial]
+
+  - fact_id: FACT-PAY-025
+    pillar: payor
+    statement: "A group health plan with fewer than 50 participants that is administered solely by the employer is exempt from HIPAA covered-entity requirements."
+    source_id: SRC-PAY-007
+    tags: [HIPAA, Exemption, Small Plans]
+
+  # ══════════════════════════════════════════════════════════════════
+  # PATIENT PILLAR
+  # ══════════════════════════════════════════════════════════════════
+
+  # --- Subscriber vs dependent ---
+  - fact_id: FACT-PAT-001
+    pillar: patient
+    statement: "The subscriber (also called the policyholder) is the primary individual who enrolls in and holds the health insurance contract with the insurance carrier."
+    source_id: SRC-PAT-001
+    tags: [Subscriber, Definition]
+
+  - fact_id: FACT-PAT-002
+    pillar: patient
+    statement: "A dependent is a family member — such as a spouse, child, or domestic partner — who is covered under the subscriber's health insurance plan rather than holding their own policy."
+    source_id: SRC-PAT-001
+    tags: [Dependent, Definition]
+
+  - fact_id: FACT-PAT-003
+    pillar: patient
+    statement: "Under the Affordable Care Act, health plans that offer dependent coverage must allow children to remain on a parent's plan until they reach age 26, regardless of marital status."
+    source_id: SRC-PAT-003
+    tags: [Dependent, ACA, Young Adults]
+
+  # --- Eligibility and enrollment ---
+  - fact_id: FACT-PAT-004
+    pillar: patient
+    statement: "Open Enrollment is the annual period when anyone can enroll in, renew, or change a Health Insurance Marketplace plan; outside this window, enrollment is generally not permitted unless a qualifying life event occurs."
+    source_id: SRC-PAT-007
+    tags: [Enrollment, Open Enrollment, Marketplace]
+
+  - fact_id: FACT-PAT-005
+    pillar: patient
+    statement: "A Special Enrollment Period (SEP) allows a person to enroll in or change a Marketplace plan outside of Open Enrollment after a qualifying life event such as losing coverage, getting married, having a baby, or moving."
+    source_id: SRC-PAT-007
+    tags: [Enrollment, SEP, Qualifying Life Event]
+
+  - fact_id: FACT-PAT-006
+    pillar: patient
+    statement: "Most Special Enrollment Periods give the individual 60 days before or after the qualifying life event to select a new health plan."
+    source_id: SRC-PAT-007
+    tags: [Enrollment, SEP, Timeframe]
+
+  - fact_id: FACT-PAT-007
+    pillar: patient
+    statement: "Eligibility for employer-sponsored health insurance is determined by the employer's plan rules, while Marketplace eligibility depends on factors such as income, household size, and residency."
+    source_id: SRC-PAT-002
+    tags: [Eligibility, Employer, Marketplace]
+
+  # --- Patient rights under HIPAA ---
+  - fact_id: FACT-PAT-008
+    pillar: patient
+    statement: "Under the HIPAA Privacy Rule, patients have a legal, enforceable right to access and obtain copies of their protected health information (PHI) held by covered entities such as doctors, hospitals, and health plans."
+    source_id: SRC-PAT-005
+    tags: [Rights, HIPAA, Access]
+
+  - fact_id: FACT-PAT-009
+    pillar: patient
+    statement: "A covered entity must respond to a patient's request to access their health records within 30 days of receiving the request."
+    source_id: SRC-PAT-005
+    tags: [Rights, HIPAA, Access, Timeframe]
+
+  - fact_id: FACT-PAT-010
+    pillar: patient
+    statement: "Patients have the right to request corrections or amendments to their health records if they believe the information is inaccurate or incomplete."
+    source_id: SRC-PAT-004
+    tags: [Rights, HIPAA, Amendment]
+
+  - fact_id: FACT-PAT-011
+    pillar: patient
+    statement: "A provider may charge a reasonable fee for copying and mailing health records to a patient, but cannot charge for searching for or retrieving those records."
+    source_id: SRC-PAT-005
+    tags: [Rights, HIPAA, Access, Fees]
+
+  - fact_id: FACT-PAT-012
+    pillar: patient
+    statement: "Patients can direct a covered entity to send a copy of their health information to a third party of their choice, such as another doctor or a family member."
+    source_id: SRC-PAT-005
+    tags: [Rights, HIPAA, Access, Third Party]
+
+  - fact_id: FACT-PAT-013
+    pillar: patient
+    statement: "Patients have the right to file a complaint with the U.S. Department of Health and Human Services (HHS) if they believe their HIPAA privacy rights have been violated."
+    source_id: SRC-PAT-004
+    tags: [Rights, HIPAA, Complaint]
+
+  # --- Notice of Privacy Practices ---
+  - fact_id: FACT-PAT-014
+    pillar: patient
+    statement: "The HIPAA Privacy Rule requires health care providers and health plans to give patients a Notice of Privacy Practices — a plain-language document explaining how the entity may use and disclose the patient's health information."
+    source_id: SRC-PAT-013
+    tags: [Rights, HIPAA, Notice of Privacy Practices]
+
+  # --- Consent ---
+  - fact_id: FACT-PAT-015
+    pillar: patient
+    statement: "Informed consent is a communication process in which a clinician explains the risks, benefits, and alternatives of a proposed procedure or treatment so the patient can make a voluntary, informed decision."
+    source_id: SRC-PAT-010
+    tags: [Consent, Definition]
+
+  - fact_id: FACT-PAT-016
+    pillar: patient
+    statement: "Competent adults have the legal right to give or withhold informed consent for their own medical treatment; for children, a parent or legal guardian provides consent."
+    source_id: SRC-PAT-010
+    tags: [Consent, Competence, Minors]
+
+  - fact_id: FACT-PAT-017
+    pillar: patient
+    statement: "Informed consent may be waived in life-threatening emergencies when there is not enough time to obtain consent and no authorized decision-maker is available."
+    source_id: SRC-PAT-010
+    tags: [Consent, Emergency Exception]
+
+  # --- Cost sharing: copay, deductible, coinsurance ---
+  - fact_id: FACT-PAT-018
+    pillar: patient
+    statement: "A premium is the amount a patient pays — usually monthly — to maintain health insurance coverage, regardless of whether they use medical services."
+    source_id: SRC-PAT-008
+    tags: [Cost Sharing, Premium]
+
+  - fact_id: FACT-PAT-019
+    pillar: patient
+    statement: "A deductible is the amount a patient must pay out of pocket for covered health care services each year before the insurance plan begins to pay its share."
+    source_id: SRC-PAT-008
+    tags: [Cost Sharing, Deductible]
+
+  - fact_id: FACT-PAT-020
+    pillar: patient
+    statement: "A copayment (copay) is a fixed dollar amount — for example $25 — that a patient pays for a covered service at the time of the visit."
+    source_id: SRC-PAT-001
+    tags: [Cost Sharing, Copayment]
+
+  - fact_id: FACT-PAT-021
+    pillar: patient
+    statement: "Coinsurance is the percentage of a covered service's cost that the patient pays after meeting the deductible — for example, the patient pays 20% and the plan pays 80%."
+    source_id: SRC-PAT-001
+    tags: [Cost Sharing, Coinsurance]
+
+  - fact_id: FACT-PAT-022
+    pillar: patient
+    statement: "The out-of-pocket maximum is the most a patient will pay for covered services in a plan year; once reached, the health plan pays 100% of covered costs for the remainder of the year."
+    source_id: SRC-PAT-008
+    tags: [Cost Sharing, Out-of-Pocket Maximum]
+
+  # --- Patient interaction with payors and providers ---
+  - fact_id: FACT-PAT-023
+    pillar: patient
+    statement: "After a health plan processes a claim, it sends the patient an Explanation of Benefits (EOB) showing what was billed, what the plan paid, and what the patient owes; the EOB is not a bill."
+    source_id: SRC-PAT-012
+    tags: [EOB, Payor Interaction]
+
+  - fact_id: FACT-PAT-024
+    pillar: patient
+    statement: "Patients should compare the Explanation of Benefits from their health plan with the bill from their provider to confirm that services and amounts match before making a payment."
+    source_id: SRC-PAT-012
+    tags: [EOB, Provider Interaction, Billing]
+
+  # --- Patient engagement ---
+  - fact_id: FACT-PAT-025
+    pillar: patient
+    statement: "Patient engagement refers to a patient's knowledge, skills, and confidence to actively participate in their own health care decisions; research shows that higher patient activation is associated with better health outcomes and lower costs."
+    source_id: SRC-PAT-011
+    tags: [Engagement, Activation, Outcomes]
+
+  # ══════════════════════════════════════════════════════════════════
+  # HEALTHCARE DATA FACTS
+  # Coding systems, PHI, HIPAA, EHR, network status
+  # ══════════════════════════════════════════════════════════════════
+
+  # --- What is PHI ---
+  - fact_id: FACT-DAT-001
+    pillar: data
+    statement: "Protected Health Information (PHI) is individually identifiable health information that relates to a person's past, present, or future physical or mental health, the provision of health care, or payment for health care."
+    source_id: SRC-DAT-001
+    tags: [PHI, HIPAA, Definition]
+
+  - fact_id: FACT-DAT-002
+    pillar: data
+    statement: "PHI includes common identifiers such as a patient's name, address, date of birth, and Social Security Number when they are associated with health information."
+    source_id: SRC-DAT-001
+    tags: [PHI, Identifiers]
+
+  - fact_id: FACT-DAT-003
+    pillar: data
+    statement: "PHI is protected under HIPAA regardless of its form — electronic, paper, or oral."
+    source_id: SRC-DAT-001
+    tags: [PHI, HIPAA]
+
+  # --- HIPAA Privacy Rule ---
+  - fact_id: FACT-DAT-004
+    pillar: data
+    statement: "The HIPAA Privacy Rule establishes national standards for protecting individually identifiable health information held or transmitted by covered entities and their business associates."
+    source_id: SRC-DAT-002
+    tags: [HIPAA, Privacy Rule]
+
+  - fact_id: FACT-DAT-005
+    pillar: data
+    statement: "The minimum necessary standard requires covered entities to make reasonable efforts to limit the use and disclosure of PHI to the minimum amount needed to accomplish the intended purpose."
+    source_id: SRC-DAT-002
+    tags: [HIPAA, Privacy Rule, Minimum Necessary]
+
+  - fact_id: FACT-DAT-006
+    pillar: data
+    statement: "Disclosures of PHI for treatment purposes between health care providers are exempt from the minimum necessary requirement."
+    source_id: SRC-DAT-002
+    tags: [HIPAA, Privacy Rule, Minimum Necessary, Treatment]
+
+  - fact_id: FACT-DAT-007
+    pillar: data
+    statement: "Under the HIPAA Privacy Rule, individuals have the right to access, inspect, and obtain a copy of their own protected health information."
+    source_id: SRC-DAT-002
+    tags: [HIPAA, Privacy Rule, Patient Rights]
+
+  # --- Covered entities ---
+  - fact_id: FACT-DAT-008
+    pillar: data
+    statement: "HIPAA defines three types of covered entities: health plans, health care clearinghouses, and health care providers who transmit health information electronically in connection with covered transactions."
+    source_id: SRC-DAT-005
+    tags: [HIPAA, Covered Entities]
+
+  - fact_id: FACT-DAT-009
+    pillar: data
+    statement: "A business associate is a person or organization that performs functions involving the use or disclosure of PHI on behalf of a covered entity and must sign a written agreement to comply with HIPAA rules."
+    source_id: SRC-DAT-005
+    tags: [HIPAA, Business Associate]
+
+  # --- HIPAA Security Rule ---
+  - fact_id: FACT-DAT-010
+    pillar: data
+    statement: "The HIPAA Security Rule establishes national standards to protect electronic protected health information (ePHI) and requires covered entities and business associates to ensure its confidentiality, integrity, and availability."
+    source_id: SRC-DAT-003
+    tags: [HIPAA, Security Rule, ePHI]
+
+  - fact_id: FACT-DAT-011
+    pillar: data
+    statement: "The HIPAA Security Rule requires three categories of safeguards: administrative (policies and procedures), physical (protection of facilities and equipment), and technical (technology controls for access and data protection)."
+    source_id: SRC-DAT-003
+    tags: [HIPAA, Security Rule, Safeguards]
+
+  # --- Breach Notification ---
+  - fact_id: FACT-DAT-012
+    pillar: data
+    statement: "The HIPAA Breach Notification Rule requires covered entities to notify affected individuals of a breach of unsecured PHI without unreasonable delay and no later than 60 days after discovering the breach."
+    source_id: SRC-DAT-004
+    tags: [HIPAA, Breach Notification]
+
+  - fact_id: FACT-DAT-013
+    pillar: data
+    statement: "When a breach of unsecured PHI affects more than 500 residents of a state or jurisdiction, the covered entity must also notify prominent media outlets and the HHS Secretary within 60 days; smaller breaches are reported to HHS annually."
+    source_id: SRC-DAT-004
+    tags: [HIPAA, Breach Notification]
+
+  # --- ICD codes ---
+  - fact_id: FACT-DAT-014
+    pillar: data
+    statement: "ICD codes (International Classification of Diseases) are standardized codes used to represent medical diagnoses and inpatient procedures on claims and medical records."
+    source_id: SRC-DAT-006
+    tags: [ICD, Coding]
+
+  - fact_id: FACT-DAT-015
+    pillar: data
+    statement: "The United States transitioned from ICD-9 to ICD-10 on October 1, 2015, expanding from approximately 14,000 diagnosis codes to approximately 69,000 to allow greater clinical specificity."
+    source_id: SRC-DAT-007
+    tags: [ICD-9, ICD-10, Coding]
+
+  - fact_id: FACT-DAT-016
+    pillar: data
+    statement: "ICD-10-CM (Clinical Modification) codes are used by all providers in every healthcare setting to code diagnoses, while ICD-10-PCS (Procedure Coding System) codes are used specifically for inpatient hospital procedures."
+    source_id: SRC-DAT-006
+    tags: [ICD-10, ICD-10-CM, ICD-10-PCS, Coding]
+
+  - fact_id: FACT-DAT-017
+    pillar: data
+    statement: "ICD-10 codes can be up to 7 characters long, compared to the shorter ICD-9 codes, providing more detail about the location, severity, and type of a condition."
+    source_id: SRC-DAT-007
+    tags: [ICD-10, Coding]
+
+  # --- HCPCS and CPT ---
+  - fact_id: FACT-DAT-018
+    pillar: data
+    statement: "HCPCS (Healthcare Common Procedure Coding System) is a standardized coding system with two levels: Level I consists of CPT codes for medical services and procedures, and Level II covers products, supplies, and services not included in CPT."
+    source_id: SRC-DAT-008
+    tags: [HCPCS, CPT, Coding]
+
+  - fact_id: FACT-DAT-019
+    pillar: data
+    statement: "CPT (Current Procedural Terminology) codes are 5-digit numeric codes maintained by the American Medical Association (AMA) that identify medical services and procedures performed by health care professionals."
+    source_id: SRC-DAT-008
+    tags: [CPT, Coding, AMA]
+
+  - fact_id: FACT-DAT-020
+    pillar: data
+    statement: "HCPCS Level II codes consist of one alphabetical letter followed by 4 numeric digits and are maintained by CMS to identify items such as ambulance services, durable medical equipment, and prosthetics."
+    source_id: SRC-DAT-008
+    tags: [HCPCS, Coding, CMS]
+
+  # --- In-network vs out-of-network ---
+  - fact_id: FACT-DAT-021
+    pillar: data
+    statement: "An in-network provider has a contract with a patient's health insurer to provide services at pre-negotiated rates, which results in lower out-of-pocket costs for the patient."
+    source_id: SRC-DAT-009
+    tags: [Network, In-Network, Insurance]
+
+  - fact_id: FACT-DAT-022
+    pillar: data
+    statement: "An out-of-network provider does not have a contract with the patient's health insurer, so the patient typically pays significantly more for the same services compared to an in-network provider."
+    source_id: SRC-DAT-009
+    tags: [Network, Out-of-Network, Insurance]
+
+  # --- EHR ---
+  - fact_id: FACT-DAT-023
+    pillar: data
+    statement: "An Electronic Health Record (EHR) is a digital version of a patient's medical history maintained by the provider over time, including demographics, medications, vital signs, immunizations, lab results, and radiology reports."
+    source_id: SRC-DAT-010
+    tags: [EHR, Health Records]
+
+  - fact_id: FACT-DAT-024
+    pillar: data
+    statement: "EHRs help reduce duplication of tests, decrease delays in treatment, and improve the accuracy and clarity of medical records by making health information available electronically to authorized providers."
+    source_id: SRC-DAT-010
+    tags: [EHR, Health Records, Interoperability]
+
+  - fact_id: FACT-DAT-025
+    pillar: data
+    statement: "Certified EHR technology stores patient data in a structured format that allows health care providers to easily retrieve, transfer, and use the information to support patient care decisions."
+    source_id: SRC-DAT-010
+    tags: [EHR, Certified EHR, Health Records]
+
+  # ══════════════════════════════════════════════════════════════════
+  # CROSS-DOMAIN FACTS
+  # How payor, provider, patient, and data interact
+  # ══════════════════════════════════════════════════════════════════
+
+  # --- Claims flow end-to-end ---
+  - fact_id: FACT-CRS-001
+    pillar: cross_domain
+    statement: "The basic claims flow is: a patient receives care from a provider, the provider submits a claim to the payor (health plan), and the payor processes the claim and issues payment."
+    source_id: SRC-CRS-001
+    tags: [Claims, Flow]
+
+  - fact_id: FACT-CRS-002
+    pillar: cross_domain
+    statement: "Providers submit claims electronically to payors (or their intermediaries such as Medicare Administrative Contractors) using HIPAA-standard transaction formats."
+    source_id: SRC-CRS-001
+    tags: [Claims, Electronic, HIPAA]
+
+  - fact_id: FACT-CRS-003
+    pillar: cross_domain
+    statement: "When a payor receives a claim, automated edits check for completeness, valid values, data consistency, duplicate submissions, and provider and beneficiary eligibility before the claim is adjudicated."
+    source_id: SRC-CRS-001
+    tags: [Claims, Adjudication]
+
+  - fact_id: FACT-CRS-004
+    pillar: cross_domain
+    statement: "After adjudication, a claim may be approved for payment, rejected (returned to the provider for correction), or denied (the service is not covered or does not meet policy requirements)."
+    source_id: SRC-CRS-001
+    tags: [Claims, Adjudication, Denial]
+
+  # --- Eligibility verification ---
+  - fact_id: FACT-CRS-005
+    pillar: cross_domain
+    statement: "Before or at the time of service, a provider can send an electronic eligibility inquiry (HIPAA 270 transaction) to the patient's health plan to verify coverage and benefits."
+    source_id: SRC-CRS-002
+    tags: [Eligibility, Verification, 270/271]
+
+  - fact_id: FACT-CRS-006
+    pillar: cross_domain
+    statement: "Since January 1, 2013, HIPAA operating rules require health plans to respond to eligibility inquiries in real time, including information on deductibles, co-pays, and coinsurance."
+    source_id: SRC-CRS-002
+    tags: [Eligibility, Real-Time, HIPAA]
+
+  # --- Billing and coding interaction ---
+  - fact_id: FACT-CRS-007
+    pillar: cross_domain
+    statement: "Every claim must pair a diagnosis code (ICD-10-CM) that explains why care was needed with a procedure code (CPT or HCPCS) that describes the service performed; this pairing links the provider's clinical documentation to the payor's reimbursement decision."
+    source_id: SRC-CRS-007
+    tags: [Coding, Billing, ICD-10, CPT]
+
+  - fact_id: FACT-CRS-008
+    pillar: cross_domain
+    statement: "A claim submitted without a valid ICD-10-CM diagnosis code is returned to the provider as an incomplete claim and will not be processed for payment."
+    source_id: SRC-CRS-007
+    tags: [Coding, Claims, ICD-10]
+
+  - fact_id: FACT-CRS-009
+    pillar: cross_domain
+    statement: "Payors use the diagnosis code on a claim to determine medical necessity; if the diagnosis does not support the procedure according to coverage policy, the claim may be denied."
+    source_id: SRC-CRS-007
+    tags: [Coding, Medical-Necessity, Reimbursement]
+
+  # --- Explanation of Benefits ---
+  - fact_id: FACT-CRS-010
+    pillar: cross_domain
+    statement: "An Explanation of Benefits (EOB) is a document sent by the health plan to the patient after a claim is processed, showing provider charges, allowed charges, the amount the insurer paid, and what the patient owes."
+    source_id: SRC-CRS-004
+    tags: [EOB, Patient, Claims]
+
+  - fact_id: FACT-CRS-011
+    pillar: cross_domain
+    statement: "An EOB is not a bill; it is a summary of how the health plan processed the claim, and the patient should compare it to the provider's actual bill for accuracy."
+    source_id: SRC-CRS-004
+    tags: [EOB, Patient]
+
+  # --- Reimbursement ---
+  - fact_id: FACT-CRS-012
+    pillar: cross_domain
+    statement: "After a claim is adjudicated, the payor sends an Electronic Remittance Advice (ERA, HIPAA 835 transaction) to the provider detailing the payment amount, adjustments, and reasons for any denials."
+    source_id: SRC-CRS-006
+    tags: [Reimbursement, ERA, 835]
+
+  - fact_id: FACT-CRS-013
+    pillar: cross_domain
+    statement: "The 'allowed amount' is the maximum a health plan will pay for a covered service; the provider may bill the patient for any remaining cost-sharing (co-pay, coinsurance, or deductible) but generally cannot bill beyond the allowed amount for in-network services."
+    source_id: SRC-CRS-004
+    tags: [Reimbursement, Allowed-Amount, Cost-Sharing]
+
+  # --- Clearinghouses ---
+  - fact_id: FACT-CRS-014
+    pillar: cross_domain
+    statement: "A healthcare clearinghouse is an intermediary that receives claims and other transactions from providers, converts them into HIPAA-standard electronic formats, and forwards them to the appropriate health plan for processing."
+    source_id: SRC-CRS-003
+    tags: [Clearinghouse, Claims, HIPAA]
+
+  - fact_id: FACT-CRS-015
+    pillar: cross_domain
+    statement: "Healthcare clearinghouses are one of the three types of HIPAA covered entities, along with health plans and health care providers who transmit transactions electronically."
+    source_id: SRC-CRS-003
+    tags: [Clearinghouse, HIPAA, Covered-Entity]
+
+  # --- NPI ---
+  - fact_id: FACT-CRS-016
+    pillar: cross_domain
+    statement: "The National Provider Identifier (NPI) is a unique, permanent 10-digit number assigned to every HIPAA-covered provider; it must appear on all electronic claims, eligibility inquiries, and other HIPAA transactions."
+    source_id: SRC-CRS-005
+    tags: [NPI, HIPAA, Identifier]
+
+  - fact_id: FACT-CRS-017
+    pillar: cross_domain
+    statement: "The NPI is intelligence-free, meaning the number itself carries no information about the provider's location, specialty, or type; it serves purely as a unique identifier."
+    source_id: SRC-CRS-005
+    tags: [NPI, Identifier]
+
+  # --- HIPAA across all entities ---
+  - fact_id: FACT-CRS-018
+    pillar: cross_domain
+    statement: "HIPAA's Privacy Rule applies to all three types of covered entities — health plans (payors), health care providers, and clearinghouses — requiring each to protect patients' protected health information (PHI)."
+    source_id: SRC-CRS-008
+    tags: [HIPAA, Privacy, PHI, Covered-Entity]
+
+  - fact_id: FACT-CRS-019
+    pillar: cross_domain
+    statement: "Protected health information (PHI) is any data that relates to a person's health condition, the care they received, or payment for that care and that can identify the individual."
+    source_id: SRC-CRS-008
+    tags: [HIPAA, PHI, Definition]
+
+  - fact_id: FACT-CRS-020
+    pillar: cross_domain
+    statement: "Under HIPAA, covered entities may share PHI without patient authorization for three purposes: treatment, payment, and health care operations (known as TPO)."
+    source_id: SRC-CRS-008
+    tags: [HIPAA, TPO, PHI]
+
+  - fact_id: FACT-CRS-021
+    pillar: cross_domain
+    statement: "The HIPAA minimum necessary standard requires that when PHI is used or disclosed, covered entities limit the information to the smallest amount needed to accomplish the intended purpose."
+    source_id: SRC-CRS-008
+    tags: [HIPAA, Minimum-Necessary, PHI]
+
+  - fact_id: FACT-CRS-022
+    pillar: cross_domain
+    statement: "Patients have the right under HIPAA to access and obtain copies of their own health records from any covered entity within 30 days of request, and to request corrections to those records."
+    source_id: SRC-CRS-008
+    tags: [HIPAA, Patient-Rights, Access]
+
+  # --- Data standards that enable the system ---
+  - fact_id: FACT-CRS-023
+    pillar: cross_domain
+    statement: "HIPAA's Administrative Simplification provisions mandate standard electronic formats for key transactions including claims submission (837), remittance advice (835), eligibility verification (270/271), claim status inquiry (276/277), and referral authorization (278)."
+    source_id: SRC-CRS-006
+    tags: [HIPAA, EDI, Standards, Transactions]
+
+  - fact_id: FACT-CRS-024
+    pillar: cross_domain
+    statement: "The ASC X12 Version 5010 is the current HIPAA-adopted standard format for electronic healthcare transactions, used by providers, payors, and clearinghouses nationwide."
+    source_id: SRC-CRS-006
+    tags: [HIPAA, EDI, Version-5010]
+
+  - fact_id: FACT-CRS-025
+    pillar: cross_domain
+    statement: "Standardized transaction formats allow any provider to submit a claim to any health plan using the same data structure, enabling interoperability across the entire healthcare system."
+    source_id: SRC-CRS-006
+    tags: [Interoperability, EDI, Standards]

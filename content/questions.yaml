@@ -1,0 +1,1353 @@
+# Healthcare Foundations — Question Bank (Pilot)
+# 75 questions: 15 per pillar, 25 TF + 50 MCQ
+#
+# Schema:
+#   question_id, type, pillar, tutorial_id, question,
+#   options (MCQ), correct_answer, explanation_correct,
+#   explanation_incorrect, fact_id, regulatory_tags, difficulty
+
+questions:
+- question_id: Q-PAY-001
+  type: TF
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: Medicare Part A primarily covers hospital stays.
+  correct_answer: 'True'
+  explanation_correct: Medicare Part A is Hospital Insurance and covers inpatient hospital stays, skilled nursing facility
+    care, hospice care, and some home health services.
+  explanation_incorrect: This statement is true. Part A is specifically known as Hospital Insurance.
+  fact_id: FACT-PAY-007
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-002
+  type: TF
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: Medicaid is a purely federal program with no state involvement in funding.
+  correct_answer: 'False'
+  explanation_correct: Medicaid is jointly funded by the federal government and state governments. The federal share is determined
+    by the Federal Medical Assistance Percentage (FMAP).
+  explanation_incorrect: This statement is false. Medicaid is a joint federal and state program, not purely federal.
+  fact_id: FACT-PAY-013
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-003
+  type: TF
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: Commercial health insurance is the most common form of health coverage in the United States.
+  correct_answer: 'True'
+  explanation_correct: Commercial (private) health insurance is indeed the most common form of health coverage in the United
+    States.
+  explanation_incorrect: This statement is true. More Americans have commercial insurance than any other type of coverage.
+  fact_id: FACT-PAY-016
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-004
+  type: TF
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: Under HIPAA, health plans are classified as covered entities.
+  correct_answer: 'True'
+  explanation_correct: Under HIPAA, health plans are one of the three categories of covered entities, alongside healthcare
+    providers and clearinghouses.
+  explanation_incorrect: This statement is true. Health plans must comply with the HIPAA Privacy Rule and Security Rule as
+    covered entities.
+  fact_id: FACT-PAY-023
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-PAY-005
+  type: TF
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: Medicare Part B does not require enrollees to pay a monthly premium.
+  correct_answer: 'False'
+  explanation_correct: Medicare Part B does require a monthly premium. For 2026, the standard Part B premium is $202.90 per
+    month.
+  explanation_incorrect: This statement is false. Unlike Part A (which is premium-free for most people), Part B requires a
+    monthly premium.
+  fact_id: FACT-PAY-010
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-006
+  type: MCQ
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: What is a payor in healthcare?
+  options:
+    A: A patient who receives medical treatment
+    B: An entity responsible for paying healthcare providers for services delivered to patients
+    C: A government agency that licenses doctors
+    D: A hospital that provides inpatient care
+  correct_answer: B
+  explanation_correct: A payor (also spelled payer) is an entity responsible for paying healthcare providers for services
+    delivered to patients.
+  explanation_incorrect:
+    A: A patient receives care but is not necessarily the payor. The payor is the entity that pays the provider.
+    C: A licensing agency regulates providers but does not pay for patient services.
+    D: A hospital is a provider, not a payor. Providers deliver care; payors pay for it.
+  fact_id: FACT-PAY-001
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-007
+  type: MCQ
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: Which of the following is a government healthcare payor?
+  options:
+    A: Aetna
+    B: Medicare
+    C: Blue Cross Blue Shield
+    D: UnitedHealthcare
+  correct_answer: B
+  explanation_correct: Medicare is a federal health insurance program administered by CMS, making it a government payor.
+  explanation_incorrect:
+    A: Aetna is a commercial (private) health insurance company, not a government program.
+    C: Blue Cross Blue Shield is a commercial insurer, not a government program.
+    D: UnitedHealthcare is a commercial insurer, not a government program.
+  fact_id: FACT-PAY-004
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-008
+  type: MCQ
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: Which three broad categories do healthcare payors fall into?
+  options:
+    A: Government programs, commercial insurance, and self-pay
+    B: Medicare, Medicaid, and TRICARE
+    C: Hospitals, clinics, and pharmacies
+    D: HMO, PPO, and EPO
+  correct_answer: A
+  explanation_correct: 'Healthcare payors fall into three broad categories: government programs (such as Medicare and Medicaid),
+    commercial (private) insurance, and self-pay.'
+  explanation_incorrect:
+    B: Medicare, Medicaid, and TRICARE are all government programs — they represent only one of the three categories.
+    C: Hospitals, clinics, and pharmacies are types of providers, not payors.
+    D: HMO, PPO, and EPO are types of commercial insurance plans, not the three broad payor categories.
+  fact_id: FACT-PAY-002
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-009
+  type: MCQ
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: Which federal agency administers the Medicare program?
+  options:
+    A: Food and Drug Administration (FDA)
+    B: Centers for Disease Control and Prevention (CDC)
+    C: Centers for Medicare & Medicaid Services (CMS)
+    D: National Institutes of Health (NIH)
+  correct_answer: C
+  explanation_correct: Medicare is administered by the Centers for Medicare & Medicaid Services (CMS), a federal agency within
+    the U.S. Department of Health and Human Services.
+  explanation_incorrect:
+    A: The FDA regulates food and drugs, not health insurance programs.
+    B: The CDC focuses on disease prevention and public health, not health insurance administration.
+    D: The NIH conducts and supports biomedical research, not health insurance administration.
+  fact_id: FACT-PAY-005
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-010
+  type: MCQ
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: What does Medicare Part B cover?
+  options:
+    A: Inpatient hospital stays and hospice care
+    B: Prescription drug coverage
+    C: Doctors' services, outpatient care, and preventive services
+    D: Dental and vision care only
+  correct_answer: C
+  explanation_correct: Medicare Part B (Medical Insurance) covers doctors' services, outpatient hospital care, durable medical
+    equipment, and preventive services such as screenings and vaccinations.
+  explanation_incorrect:
+    A: Inpatient hospital stays and hospice care are covered by Medicare Part A, not Part B.
+    B: Prescription drug coverage is provided by Medicare Part D, not Part B.
+    D: Original Medicare (Parts A and B) generally does not cover routine dental and vision care.
+  fact_id: FACT-PAY-009
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-011
+  type: MCQ
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: What primarily determines Medicaid eligibility?
+  options:
+    A: Age and employment status
+    B: Income and household size
+    C: Military service history
+    D: Number of years of U.S. citizenship
+  correct_answer: B
+  explanation_correct: Medicaid eligibility is based on income and household size rather than age, and people can apply at
+    any time during the year.
+  explanation_incorrect:
+    A: Age is the primary factor for Medicare, not Medicaid. Medicaid eligibility is income-based.
+    C: Military service history determines eligibility for TRICARE or VA benefits, not Medicaid.
+    D: Citizenship duration is not the primary eligibility factor for Medicaid; income and household size are.
+  fact_id: FACT-PAY-015
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-012
+  type: MCQ
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: Which type of commercial health insurance plan typically requires a referral to see a specialist?
+  options:
+    A: PPO (Preferred Provider Organization)
+    B: HMO (Health Maintenance Organization)
+    C: EPO (Exclusive Provider Organization)
+    D: POS (Point of Service)
+  correct_answer: B
+  explanation_correct: An HMO (Health Maintenance Organization) usually requires you to choose a primary care doctor and get
+    referrals to see specialists.
+  explanation_incorrect:
+    A: A PPO gives more flexibility to see any provider without a referral, though costs are lower when staying in-network.
+    C: An EPO is a type of plan that limits coverage to in-network providers but does not typically require referrals.
+    D: A POS plan blends features of HMOs and PPOs but is not the plan type most commonly associated with specialist referrals.
+  fact_id: FACT-PAY-018
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-013
+  type: MCQ
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: What is a self-pay patient?
+  options:
+    A: A patient enrolled in Medicare Part A
+    B: A patient covered by an employer-sponsored group health plan
+    C: A patient who does not have health insurance or chooses not to file a claim with their insurer
+    D: A patient whose payor has denied their claim
+  correct_answer: C
+  explanation_correct: A self-pay patient is someone who does not have health insurance or who chooses not to submit a claim
+    to their insurance for a particular service.
+  explanation_incorrect:
+    A: A patient enrolled in Medicare Part A has government insurance coverage and is not self-pay.
+    B: A patient with employer-sponsored insurance has commercial coverage and is not self-pay.
+    D: A claim denial does not automatically make a patient self-pay; the patient may appeal or the provider may resubmit.
+  fact_id: FACT-PAY-020
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-014
+  type: MCQ
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: What is the most common way Americans obtain private health insurance?
+  options:
+    A: Purchasing directly from an insurance company
+    B: Through employer-sponsored group health plans
+    C: Through the Health Insurance Marketplace
+    D: Through Medicaid
+  correct_answer: B
+  explanation_correct: Employer-sponsored group health plans are the most common way Americans obtain private health insurance.
+  explanation_incorrect:
+    A: Direct purchase is an option but is less common than employer-sponsored coverage.
+    C: The Marketplace is an option for those without employer coverage but is not the most common source.
+    D: Medicaid is a government program, not private insurance.
+  fact_id: FACT-PAY-019
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAY-015
+  type: MCQ
+  pillar: payor
+  tutorial_id: T-PAYOR-01
+  question: Which type of health plan is exempt from HIPAA covered-entity requirements?
+  options:
+    A: Medicare
+    B: A group health plan with fewer than 50 participants administered solely by the employer
+    C: Any HMO plan
+    D: Medicaid
+  correct_answer: B
+  explanation_correct: A group health plan with fewer than 50 participants that is administered solely by the employer is
+    exempt from HIPAA covered-entity requirements.
+  explanation_incorrect:
+    A: Medicare is a government program and is a HIPAA-covered health plan.
+    C: HMOs are health plans and are generally HIPAA-covered entities.
+    D: Medicaid is a government program and is a HIPAA-covered health plan.
+  fact_id: FACT-PAY-025
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-PRV-001
+  type: TF
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: A healthcare provider can be either a person or a place that is licensed to give healthcare.
+  correct_answer: 'True'
+  explanation_correct: A health care provider is a person trained and licensed to give health care, or a place licensed to
+    give health care.
+  explanation_incorrect: This statement is true. Providers include individual practitioners like physicians as well as facilities
+    like hospitals.
+  fact_id: FACT-PRV-001
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-002
+  type: TF
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: Hospitals bill Medicare using the CMS-1500 claim form.
+  correct_answer: 'False'
+  explanation_correct: Hospitals are institutional providers and bill using the CMS-1450 (UB-04) form or its electronic equivalent,
+    the 837I transaction. The CMS-1500 form is used by non-institutional providers like physician offices.
+  explanation_incorrect: This statement is false. Hospitals use the UB-04 (CMS-1450) form, not the CMS-1500.
+  fact_id: FACT-PRV-005
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-003
+  type: TF
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: The National Provider Identifier (NPI) is a unique 10-digit number assigned to healthcare providers.
+  correct_answer: 'True'
+  explanation_correct: Every health care provider that bills Medicare must have a unique NPI, which is a standard 10-digit
+    number used to identify the provider across all health transactions.
+  explanation_incorrect: This statement is true. The NPI is a standardized 10-digit identifier used across all health transactions.
+  fact_id: FACT-PRV-019
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-004
+  type: TF
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: Medicare covers ambulance transportation regardless of the patient's medical condition.
+  correct_answer: 'False'
+  explanation_correct: Medicare covers ambulance transportation only when the patient's medical condition makes any other
+    means of transportation contraindicated.
+  explanation_incorrect: This statement is false. Medicare only covers ambulance transport when the patient's condition makes
+    other transportation unsafe.
+  fact_id: FACT-PRV-011
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-005
+  type: TF
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: A healthcare provider becomes a HIPAA covered entity when it transmits health information electronically in connection
+    with certain transactions.
+  correct_answer: 'True'
+  explanation_correct: Under HIPAA, a health care provider becomes a covered entity when it transmits health information electronically
+    in connection with certain transactions such as claims billing.
+  explanation_incorrect: This statement is true. Electronic transmission of health information for transactions like billing
+    triggers HIPAA covered-entity status.
+  fact_id: FACT-PRV-023
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-PRV-006
+  type: MCQ
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: Under Medicare law, what term is used for entities that furnish equipment or diagnostic services rather than sustained
+    residential care?
+  options:
+    A: Providers
+    B: Suppliers
+    C: Contractors
+    D: Clearinghouses
+  correct_answer: B
+  explanation_correct: Medicare law distinguishes between providers (institutional care facilities) and suppliers (entities
+    that furnish diagnostic, therapeutic, or equipment services).
+  explanation_incorrect:
+    A: Under Medicare law, 'providers' refers specifically to institutional care facilities such as hospitals, hospices, and
+      nursing homes.
+    C: Contractors in Medicare typically refers to Medicare Administrative Contractors (MACs) that process claims, not entities
+      that furnish equipment.
+    D: Clearinghouses are entities that process electronic health transactions, not entities that furnish equipment or diagnostic
+      services.
+  fact_id: FACT-PRV-002
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-007
+  type: MCQ
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: Which enrollment form do physicians use to enroll in Medicare?
+  options:
+    A: CMS-855A
+    B: CMS-855S
+    C: CMS-855I
+    D: CMS-1500
+  correct_answer: C
+  explanation_correct: Physicians and non-physician practitioners enroll in Medicare using form CMS-855I.
+  explanation_incorrect:
+    A: CMS-855A is used by institutional providers such as hospitals, not individual physicians.
+    B: CMS-855S is used by DMEPOS suppliers, not physicians.
+    D: CMS-1500 is a claim form used for billing, not an enrollment form.
+  fact_id: FACT-PRV-003
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-008
+  type: MCQ
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: Which of the following is an example of Durable Medical Equipment (DME)?
+  options:
+    A: A prescription medication
+    B: A wheelchair
+    C: A blood test
+    D: An X-ray image
+  correct_answer: B
+  explanation_correct: Examples of DME include hospital beds, wheelchairs, ventilators, oxygen equipment, prosthetics, and
+    orthotics.
+  explanation_incorrect:
+    A: Prescription medications are pharmaceutical products, not durable medical equipment.
+    C: A blood test is a laboratory service, which falls under ancillary services.
+    D: An X-ray image is a radiology service, which falls under ancillary services.
+  fact_id: FACT-PRV-008
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-009
+  type: MCQ
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: Which claim form do non-institutional providers (such as physician offices) use to bill Medicare?
+  options:
+    A: UB-04 (CMS-1450)
+    B: CMS-1500
+    C: CMS-855I
+    D: CMS-855A
+  correct_answer: B
+  explanation_correct: Non-institutional providers and suppliers bill Medicare using the CMS-1500 claim form or its electronic
+    equivalent, the 837P transaction.
+  explanation_incorrect:
+    A: The UB-04 (CMS-1450) is used by institutional providers like hospitals, not physician offices.
+    C: CMS-855I is a Medicare enrollment form for physicians, not a billing claim form.
+    D: CMS-855A is a Medicare enrollment form for institutional providers, not a billing claim form.
+  fact_id: FACT-PRV-016
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-010
+  type: MCQ
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: What is the first step a provider must take before enrolling in Medicare?
+  options:
+    A: Complete a PECOS application
+    B: Obtain a National Provider Identifier (NPI)
+    C: Contact their regional Medicare Administrative Contractor (MAC)
+    D: Post a surety bond
+  correct_answer: B
+  explanation_correct: To enroll in Medicare, a provider must first obtain an NPI, then complete an application through PECOS,
+    and finally work with their regional MAC.
+  explanation_incorrect:
+    A: The PECOS application is the second step. The provider must first obtain an NPI.
+    C: Working with the regional MAC is the third step in the enrollment process, not the first.
+    D: Posting a surety bond is a requirement specific to DMEPOS suppliers, not the first step for all providers.
+  fact_id: FACT-PRV-018
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-011
+  type: MCQ
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: Which of the following is an example of an ancillary service?
+  options:
+    A: An inpatient hospital stay
+    B: Ambulance transportation
+    C: Laboratory tests
+    D: A wheelchair rental
+  correct_answer: C
+  explanation_correct: Ancillary services include laboratory tests, radiology, pharmacy services, and other diagnostic or
+    therapeutic services that support a patient's primary care.
+  explanation_incorrect:
+    A: An inpatient hospital stay is a service provided by an institutional provider, not classified as an ancillary service.
+    B: Ambulance transportation is its own provider category (transportation), not an ancillary service.
+    D: A wheelchair rental falls under Durable Medical Equipment (DME), not ancillary services.
+  fact_id: FACT-PRV-014
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-012
+  type: MCQ
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: How long does a Medicare enrollment application submitted through PECOS typically take to process?
+  options:
+    A: 7 days
+    B: 30 days
+    C: 65 days
+    D: 90 days
+  correct_answer: B
+  explanation_correct: Medicare enrollment applications submitted online through PECOS process in approximately 30 days.
+  explanation_incorrect:
+    A: 7 days is too short. Online PECOS applications take approximately 30 days to process.
+    C: 65 days is the approximate processing time for paper applications, not online PECOS submissions.
+    D: 90 days is longer than the typical processing time for either online or paper applications.
+  fact_id: FACT-PRV-020
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-013
+  type: MCQ
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: What must a state Medicaid agency verify before approving a provider's enrollment?
+  options:
+    A: That the provider has at least five years of experience
+    B: That the provider holds an unrestricted license
+    C: That the provider is enrolled in Medicare Part B
+    D: That the provider has completed a residency program
+  correct_answer: B
+  explanation_correct: State Medicaid agencies must verify that a provider holds an unrestricted license before approving
+    enrollment.
+  explanation_incorrect:
+    A: There is no federal Medicaid requirement for a minimum number of years of experience.
+    C: Medicare Part B enrollment is not a prerequisite for Medicaid provider enrollment.
+    D: While residency may be required for licensure, the Medicaid enrollment requirement is specifically about holding an
+      unrestricted license.
+  fact_id: FACT-PRV-022
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-014
+  type: MCQ
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: Which of the following is NOT an institutional provider under Medicare?
+  options:
+    A: Hospital
+    B: Skilled nursing facility
+    C: Physician office
+    D: Hospice
+  correct_answer: C
+  explanation_correct: Institutional providers include hospitals, critical access hospitals, skilled nursing facilities, home
+    health agencies, and hospices. A physician office is a non-institutional provider setting.
+  explanation_incorrect:
+    A: Hospitals are institutional providers under Medicare.
+    B: Skilled nursing facilities are institutional providers under Medicare.
+    D: Hospices are institutional providers under Medicare.
+  fact_id: FACT-PRV-006
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PRV-015
+  type: MCQ
+  pillar: provider
+  tutorial_id: T-PROVIDER-01
+  question: What additional requirements must DMEPOS suppliers meet to enroll in Medicare, beyond submitting form CMS-855S?
+  options:
+    A: Complete a residency program and pass a board exam
+    B: Obtain accreditation from a CMS-approved organization and post a $50,000 surety bond
+    C: Register with the state pharmacy board and obtain a DEA number
+    D: Submit a paper application and complete an in-person interview
+  correct_answer: B
+  explanation_correct: DMEPOS suppliers must obtain accreditation from a CMS-approved organization and post a $50,000 surety
+    bond per NPI to enroll in Medicare.
+  explanation_incorrect:
+    A: Residency programs and board exams are requirements for physicians, not DMEPOS suppliers.
+    C: Pharmacy board registration and DEA numbers relate to pharmacies and controlled substances, not DMEPOS enrollment.
+    D: There is no in-person interview requirement. The additional requirements are accreditation and a surety bond.
+  fact_id: FACT-PRV-009
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAT-001
+  type: TF
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: A dependent is a family member covered under the subscriber's health insurance plan.
+  correct_answer: 'True'
+  explanation_correct: A dependent is indeed a family member — such as a spouse, child, or domestic partner — covered under
+    the subscriber's plan rather than holding their own policy.
+  explanation_incorrect: This statement is true. A dependent is a family member who receives coverage through the subscriber's
+    insurance contract.
+  fact_id: FACT-PAT-002
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAT-002
+  type: TF
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: Under the Affordable Care Act, children can remain on a parent's health plan until they reach age 30.
+  correct_answer: 'False'
+  explanation_correct: Under the ACA, children can remain on a parent's plan until age 26, not age 30, regardless of marital
+    status.
+  explanation_incorrect: The ACA requires health plans to allow children to stay on a parent's plan until age 26, not 30.
+  fact_id: FACT-PAT-003
+  regulatory_tags:
+  - ACA
+  difficulty: basic
+- question_id: Q-PAT-003
+  type: TF
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: A covered entity must respond to a patient's request to access their health records within 30 days.
+  correct_answer: 'True'
+  explanation_correct: Under the HIPAA Privacy Rule, a covered entity must respond to a patient's access request within 30
+    days of receiving it.
+  explanation_incorrect: This statement is true. HIPAA requires covered entities to respond to access requests within 30 days.
+  fact_id: FACT-PAT-009
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-PAT-004
+  type: TF
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: Informed consent can never be waived, even in a life-threatening emergency.
+  correct_answer: 'False'
+  explanation_correct: Informed consent may be waived in life-threatening emergencies when there is not enough time to obtain
+    consent and no authorized decision-maker is available.
+  explanation_incorrect: Informed consent can be waived in emergencies when the patient's life is at risk and no authorized
+    decision-maker is available.
+  fact_id: FACT-PAT-017
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAT-005
+  type: TF
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: An Explanation of Benefits (EOB) is a bill that the patient must pay immediately.
+  correct_answer: 'False'
+  explanation_correct: An EOB is not a bill. It is a summary from the health plan showing what was billed, what the plan paid,
+    and what the patient owes.
+  explanation_incorrect: An EOB is a summary document, not a bill. Patients should compare the EOB with the actual provider
+    bill before making any payment.
+  fact_id: FACT-PAT-023
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAT-006
+  type: MCQ
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: Who is the subscriber on a health insurance plan?
+  options:
+    A: A family member covered under someone else's plan
+    B: The primary individual who enrolls in and holds the insurance contract
+    C: The insurance company that issues the policy
+    D: The employer who sponsors the group plan
+  correct_answer: B
+  explanation_correct: The subscriber (also called the policyholder) is the primary individual who enrolls in and holds the
+    health insurance contract with the insurance carrier.
+  explanation_incorrect:
+    A: A family member covered under someone else's plan is a dependent, not the subscriber.
+    C: The insurance company is the carrier or insurer, not the subscriber.
+    D: The employer sponsors the plan but is not the subscriber on an individual's policy.
+  fact_id: FACT-PAT-001
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAT-007
+  type: MCQ
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: What is the annual period during which anyone can enroll in or change a Health Insurance Marketplace plan?
+  options:
+    A: Special Enrollment Period
+    B: Qualifying Life Event window
+    C: Open Enrollment
+    D: Grace Period
+  correct_answer: C
+  explanation_correct: Open Enrollment is the annual period when anyone can enroll in, renew, or change a Marketplace plan.
+  explanation_incorrect:
+    A: A Special Enrollment Period is triggered by a qualifying life event and occurs outside of Open Enrollment.
+    B: A qualifying life event triggers a Special Enrollment Period; it is not a named enrollment window.
+    D: A grace period is time allowed to make a late payment, not an enrollment window.
+  fact_id: FACT-PAT-004
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAT-008
+  type: MCQ
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: Which of the following is a qualifying life event that triggers a Special Enrollment Period?
+  options:
+    A: Receiving a raise at work
+    B: Turning 30 years old
+    C: Getting married
+    D: Changing your primary care doctor
+  correct_answer: C
+  explanation_correct: Getting married is a qualifying life event that allows a person to enroll in or change a Marketplace
+    plan during a Special Enrollment Period.
+  explanation_incorrect:
+    A: A raise in pay is not a qualifying life event under Marketplace rules.
+    B: Turning 30 is not a qualifying life event for health insurance enrollment.
+    D: Changing your doctor does not trigger a Special Enrollment Period.
+  fact_id: FACT-PAT-005
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAT-009
+  type: MCQ
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: Under HIPAA, which right allows patients to request corrections to their health records?
+  options:
+    A: Right to access
+    B: Right to amendment
+    C: Right to complaint
+    D: Right to portability
+  correct_answer: B
+  explanation_correct: Patients have the right to request amendments (corrections) to their health records if they believe
+    the information is inaccurate or incomplete.
+  explanation_incorrect:
+    A: The right to access allows patients to view and obtain copies of their records, not to correct them.
+    C: The right to complaint lets patients file a grievance with HHS, not correct records.
+    D: Portability relates to transferring coverage between plans, not correcting health records.
+  fact_id: FACT-PAT-010
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-PAT-010
+  type: MCQ
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: If a patient believes their HIPAA privacy rights have been violated, where can they file a complaint?
+  options:
+    A: The state governor's office
+    B: The Federal Trade Commission (FTC)
+    C: The U.S. Department of Health and Human Services (HHS)
+    D: The local police department
+  correct_answer: C
+  explanation_correct: Patients have the right to file a complaint with the U.S. Department of Health and Human Services (HHS)
+    if they believe their HIPAA privacy rights have been violated.
+  explanation_incorrect:
+    A: The state governor's office does not handle HIPAA complaints.
+    B: The FTC handles consumer protection matters but is not the designated body for HIPAA complaints.
+    D: Local police do not handle HIPAA privacy complaints.
+  fact_id: FACT-PAT-013
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-PAT-011
+  type: MCQ
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: What is informed consent?
+  options:
+    A: A form that assigns payment to the provider
+    B: A billing agreement between the patient and the insurance company
+    C: A process in which a clinician explains the risks, benefits, and alternatives of a proposed treatment so the patient
+      can make a voluntary decision
+    D: A notice that describes how the provider will use patient health information
+  correct_answer: C
+  explanation_correct: Informed consent is a communication process in which a clinician explains the risks, benefits, and
+    alternatives of a proposed procedure or treatment so the patient can make a voluntary, informed decision.
+  explanation_incorrect:
+    A: Assignment of payment is a billing arrangement, not informed consent.
+    B: A billing agreement relates to financial terms, not the clinical decision-making process.
+    D: That describes a Notice of Privacy Practices, which is a separate HIPAA requirement.
+  fact_id: FACT-PAT-015
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAT-012
+  type: MCQ
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: What is the term for the amount a patient pays each month to maintain health insurance coverage?
+  options:
+    A: Deductible
+    B: Copayment
+    C: Premium
+    D: Coinsurance
+  correct_answer: C
+  explanation_correct: A premium is the amount a patient pays — usually monthly — to maintain health insurance coverage, regardless
+    of whether they use medical services.
+  explanation_incorrect:
+    A: A deductible is the amount paid out of pocket before the plan starts paying, not the monthly payment to maintain coverage.
+    B: A copayment is a fixed dollar amount paid at the time of a visit, not the monthly coverage payment.
+    D: Coinsurance is a percentage of costs shared after the deductible is met, not the monthly payment.
+  fact_id: FACT-PAT-018
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAT-013
+  type: MCQ
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: A patient pays 20% of a covered service's cost after meeting the deductible, while the plan pays 80%. What is
+    the patient's 20% share called?
+  options:
+    A: Copayment
+    B: Deductible
+    C: Premium
+    D: Coinsurance
+  correct_answer: D
+  explanation_correct: Coinsurance is the percentage of a covered service's cost that the patient pays after meeting the deductible.
+  explanation_incorrect:
+    A: A copayment is a fixed dollar amount (e.g., $25), not a percentage of the cost.
+    B: The deductible is the total amount a patient must pay before insurance begins sharing costs, not a percentage split.
+    C: The premium is the monthly payment to maintain coverage, not a cost-sharing percentage.
+  fact_id: FACT-PAT-021
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAT-014
+  type: MCQ
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: What happens when a patient reaches their out-of-pocket maximum for the plan year?
+  options:
+    A: The patient's coverage is terminated
+    B: The patient must pay a higher coinsurance rate
+    C: The health plan pays 100% of covered costs for the remainder of the year
+    D: The deductible resets to zero
+  correct_answer: C
+  explanation_correct: Once a patient reaches the out-of-pocket maximum, the health plan pays 100% of covered costs for the
+    remainder of the plan year.
+  explanation_incorrect:
+    A: Reaching the out-of-pocket maximum does not terminate coverage; it provides financial protection.
+    B: The coinsurance rate does not increase at the out-of-pocket maximum; instead, the plan covers 100%.
+    D: The deductible does not reset when the out-of-pocket maximum is reached.
+  fact_id: FACT-PAT-022
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-PAT-015
+  type: MCQ
+  pillar: patient
+  tutorial_id: T-PATIENT-01
+  question: Why is patient engagement important in healthcare?
+  options:
+    A: It allows patients to bill their own insurance claims
+    B: It reduces the need for health insurance coverage
+    C: Higher patient engagement is associated with better health outcomes and lower costs
+    D: It transfers clinical decision-making from providers to patients
+  correct_answer: C
+  explanation_correct: Research shows that higher patient activation and engagement is associated with better health outcomes
+    and lower costs.
+  explanation_incorrect:
+    A: Patient engagement does not involve patients billing their own claims.
+    B: Engagement does not reduce the need for insurance; it helps patients navigate the system more effectively.
+    D: Patient engagement supports shared decision-making; it does not transfer full clinical authority to patients.
+  fact_id: FACT-PAT-025
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-DAT-001
+  type: TF
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: Protected Health Information (PHI) is only protected under HIPAA when it is stored electronically.
+  correct_answer: 'False'
+  explanation_correct: PHI is protected under HIPAA regardless of its form — electronic, paper, or oral.
+  explanation_incorrect: HIPAA protects PHI in all forms, not just electronic. Paper records and spoken information are also
+    covered.
+  fact_id: FACT-DAT-003
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-DAT-002
+  type: TF
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: The minimum necessary standard applies to disclosures of PHI for treatment purposes between health care providers.
+  correct_answer: 'False'
+  explanation_correct: Disclosures of PHI for treatment purposes between health care providers are exempt from the minimum
+    necessary requirement.
+  explanation_incorrect: Treatment-related disclosures between providers are specifically exempt from the minimum necessary
+    standard so that providers can share complete clinical information needed for patient care.
+  fact_id: FACT-DAT-006
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-DAT-003
+  type: TF
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: A business associate must sign a written agreement to comply with HIPAA rules before handling PHI on behalf of
+    a covered entity.
+  correct_answer: 'True'
+  explanation_correct: A business associate is required to sign a written agreement (Business Associate Agreement) to comply
+    with HIPAA rules before handling PHI on behalf of a covered entity.
+  explanation_incorrect: This statement is true. HIPAA requires a written agreement between covered entities and their business
+    associates.
+  fact_id: FACT-DAT-009
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-DAT-004
+  type: TF
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: The United States transitioned from ICD-9 to ICD-10 on October 1, 2015.
+  correct_answer: 'True'
+  explanation_correct: The U.S. transitioned from ICD-9 to ICD-10 on October 1, 2015, expanding from approximately 14,000
+    diagnosis codes to approximately 69,000.
+  explanation_incorrect: This statement is true. The ICD-10 transition date was October 1, 2015.
+  fact_id: FACT-DAT-015
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-DAT-005
+  type: TF
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: An in-network provider has a contract with the patient's health insurer to provide services at pre-negotiated
+    rates.
+  correct_answer: 'True'
+  explanation_correct: An in-network provider has a contract with the patient's health insurer to provide services at pre-negotiated
+    rates, which results in lower out-of-pocket costs for the patient.
+  explanation_incorrect: This statement is true. In-network providers have agreed to pre-negotiated rates with the insurer.
+  fact_id: FACT-DAT-021
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-DAT-006
+  type: MCQ
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: Which of the following best defines Protected Health Information (PHI)?
+  options:
+    A: Any medical data stored in a hospital's computer system
+    B: Individually identifiable health information relating to a person's health, care, or payment for care
+    C: A patient's name and address regardless of whether it is linked to health data
+    D: Only electronic records that contain diagnosis codes
+  correct_answer: B
+  explanation_correct: PHI is individually identifiable health information that relates to a person's past, present, or future
+    physical or mental health, the provision of health care, or payment for health care.
+  explanation_incorrect:
+    A: Not all data in a hospital computer is PHI; it must be individually identifiable and related to health, care, or payment.
+    C: A name and address alone, without a link to health information, is not PHI.
+    D: PHI is not limited to electronic records or diagnosis codes; it covers all forms and types of health information.
+  fact_id: FACT-DAT-001
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-DAT-007
+  type: MCQ
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: Which of the following is an example of a common identifier included in PHI?
+  options:
+    A: A patient's favorite color
+    B: A patient's Social Security Number linked to health information
+    C: The brand of medical equipment used during treatment
+    D: The name of the hospital's CEO
+  correct_answer: B
+  explanation_correct: PHI includes common identifiers such as a patient's name, address, date of birth, and Social Security
+    Number when they are associated with health information.
+  explanation_incorrect:
+    A: A favorite color is not a health identifier and is not part of PHI.
+    C: An equipment brand name does not identify an individual patient.
+    D: The hospital CEO's name is not individually identifiable health information about a patient.
+  fact_id: FACT-DAT-002
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-DAT-008
+  type: MCQ
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: What does the HIPAA Privacy Rule establish?
+  options:
+    A: Technical standards for encrypting electronic health records
+    B: National standards for protecting individually identifiable health information
+    C: Reimbursement rates for Medicare claims
+    D: Licensing requirements for health care providers
+  correct_answer: B
+  explanation_correct: The HIPAA Privacy Rule establishes national standards for protecting individually identifiable health
+    information held or transmitted by covered entities and their business associates.
+  explanation_incorrect:
+    A: Technical standards for electronic data are addressed by the HIPAA Security Rule, not the Privacy Rule.
+    C: Reimbursement rates are set by CMS fee schedules, not by the Privacy Rule.
+    D: Provider licensing is governed by state agencies, not the Privacy Rule.
+  fact_id: FACT-DAT-004
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-DAT-009
+  type: MCQ
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: What does the minimum necessary standard require covered entities to do?
+  options:
+    A: Share all available PHI to ensure thorough treatment
+    B: Limit the use and disclosure of PHI to the minimum amount needed for the intended purpose
+    C: Store the minimum number of patient records required by law
+    D: Require patients to provide the minimum amount of personal information
+  correct_answer: B
+  explanation_correct: The minimum necessary standard requires covered entities to make reasonable efforts to limit the use
+    and disclosure of PHI to the minimum amount needed to accomplish the intended purpose.
+  explanation_incorrect:
+    A: Sharing all available PHI contradicts the minimum necessary standard; only the needed information should be shared.
+    C: The standard relates to limiting disclosures, not to the number of records stored.
+    D: The standard applies to how covered entities handle PHI, not to what patients provide.
+  fact_id: FACT-DAT-005
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-DAT-010
+  type: MCQ
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: Which of the following is NOT one of the three types of HIPAA covered entities?
+  options:
+    A: Health plans
+    B: Health care clearinghouses
+    C: Pharmaceutical manufacturers
+    D: Health care providers who transmit health information electronically
+  correct_answer: C
+  explanation_correct: 'HIPAA defines three types of covered entities: health plans, health care clearinghouses, and health
+    care providers who transmit health information electronically. Pharmaceutical manufacturers are not covered entities.'
+  explanation_incorrect:
+    A: Health plans are one of the three types of HIPAA covered entities.
+    B: Health care clearinghouses are one of the three types of HIPAA covered entities.
+    D: Health care providers who transmit health information electronically are one of the three types of HIPAA covered entities.
+  fact_id: FACT-DAT-008
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-DAT-011
+  type: MCQ
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: Which three categories of safeguards does the HIPAA Security Rule require?
+  options:
+    A: Administrative, physical, and technical
+    B: Clinical, financial, and operational
+    C: Federal, state, and local
+    D: Preventive, detective, and corrective
+  correct_answer: A
+  explanation_correct: 'The HIPAA Security Rule requires three categories of safeguards: administrative (policies and procedures),
+    physical (protection of facilities and equipment), and technical (technology controls for access and data protection).'
+  explanation_incorrect:
+    B: Clinical, financial, and operational are not the safeguard categories defined by the Security Rule.
+    C: Federal, state, and local refer to levels of government, not Security Rule safeguard categories.
+    D: Preventive, detective, and corrective are general security control types but not the categories specified in the HIPAA
+      Security Rule.
+  fact_id: FACT-DAT-011
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-DAT-012
+  type: MCQ
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: Under the HIPAA Breach Notification Rule, within how many days must a covered entity notify affected individuals
+    of a breach of unsecured PHI?
+  options:
+    A: 30 days
+    B: 60 days
+    C: 90 days
+    D: 120 days
+  correct_answer: B
+  explanation_correct: The Breach Notification Rule requires covered entities to notify affected individuals without unreasonable
+    delay and no later than 60 days after discovering the breach.
+  explanation_incorrect:
+    A: 30 days is the timeframe for responding to a patient's access request, not for breach notification.
+    C: 90 days exceeds the maximum allowed notification period for a breach.
+    D: 120 days exceeds the maximum allowed notification period for a breach.
+  fact_id: FACT-DAT-012
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
+- question_id: Q-DAT-013
+  type: MCQ
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: Which coding system is used to classify medical diagnoses?
+  options:
+    A: CPT
+    B: ICD
+    C: HCPCS Level II
+    D: NPI
+  correct_answer: B
+  explanation_correct: ICD (International Classification of Diseases) codes are standardized codes used to represent medical
+    diagnoses and inpatient procedures on claims and medical records.
+  explanation_incorrect:
+    A: CPT codes identify medical services and procedures performed by providers, not diagnoses.
+    C: HCPCS Level II codes cover products, supplies, and services such as ambulance services and DME.
+    D: NPI is a provider identification number, not a coding system for diagnoses.
+  fact_id: FACT-DAT-014
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-DAT-014
+  type: MCQ
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: What type of codes are CPT codes, and who maintains them?
+  options:
+    A: Diagnosis codes maintained by the World Health Organization
+    B: Supply codes maintained by CMS
+    C: 5-digit procedure codes maintained by the American Medical Association (AMA)
+    D: 7-character condition codes maintained by HHS
+  correct_answer: C
+  explanation_correct: CPT (Current Procedural Terminology) codes are 5-digit numeric codes maintained by the American Medical
+    Association (AMA) that identify medical services and procedures.
+  explanation_incorrect:
+    A: ICD codes, not CPT codes, classify diagnoses. The World Health Organization maintains ICD internationally.
+    B: CMS maintains HCPCS Level II codes for supplies and equipment, not CPT codes.
+    D: ICD-10 codes can be up to 7 characters; CPT codes are 5-digit numeric codes maintained by the AMA.
+  fact_id: FACT-DAT-019
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-DAT-015
+  type: MCQ
+  pillar: data
+  tutorial_id: T-DATA-01
+  question: What is an Electronic Health Record (EHR)?
+  options:
+    A: A paper chart stored in a filing cabinet at the provider's office
+    B: A digital version of a patient's medical history maintained by the provider over time
+    C: An insurance claim submitted electronically to a health plan
+    D: A billing statement sent to the patient after a visit
+  correct_answer: B
+  explanation_correct: An EHR is a digital version of a patient's medical history maintained by the provider over time, including
+    demographics, medications, vital signs, immunizations, lab results, and radiology reports.
+  explanation_incorrect:
+    A: A paper chart is a traditional medical record, not an electronic health record.
+    C: An electronic claim is a billing transaction, not an EHR.
+    D: A billing statement is a financial document, not a comprehensive digital medical record.
+  fact_id: FACT-DAT-023
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-001
+  type: MCQ
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: What is the correct order of the basic healthcare claims process?
+  options:
+    A: Patient receives care, provider submits claim, payor processes payment
+    B: Payor submits claim, provider receives care, patient processes payment
+    C: Provider receives payment, patient submits claim, payor delivers care
+    D: Patient submits claim, payor delivers care, provider receives payment
+  correct_answer: A
+  explanation_correct: The claims process flows from patient receiving care to the provider submitting a claim to the payor
+    for processing and payment.
+  explanation_incorrect:
+    B: Payors do not submit claims -- providers do.
+    C: Providers submit claims, not patients, and payors do not deliver care.
+    D: Patients do not submit claims to payors -- providers do.
+  fact_id: FACT-CRS-001
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-002
+  type: MCQ
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: After adjudication, which of the following is a possible outcome for a healthcare claim?
+  options:
+    A: The claim is approved for payment
+    B: The claim is forwarded to the patient for self-processing
+    C: The claim is automatically resubmitted by the payor
+    D: The claim is sent to a different provider for review
+  correct_answer: A
+  explanation_correct: After adjudication, a claim may be approved for payment, rejected (returned for correction), or denied
+    (service not covered or does not meet policy requirements).
+  explanation_incorrect:
+    B: Patients do not self-process claims; the payor adjudicates them.
+    C: Payors do not automatically resubmit claims; rejected claims are returned to the provider for correction.
+    D: Claims are not sent to other providers for review; the payor makes the adjudication decision.
+  fact_id: FACT-CRS-004
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-003
+  type: MCQ
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: What is the purpose of a HIPAA 270 transaction?
+  options:
+    A: To submit a claim for payment
+    B: To verify a patient's insurance eligibility and benefits
+    C: To send payment from the payor to the provider
+    D: To report a HIPAA privacy violation
+  correct_answer: B
+  explanation_correct: The HIPAA 270 transaction is an electronic eligibility inquiry that a provider sends to a health plan
+    to verify a patient's coverage and benefits.
+  explanation_incorrect:
+    A: Claim submission uses the 837 transaction, not the 270.
+    C: Payment information is communicated through the 835 (ERA) transaction, not the 270.
+    D: The 270 transaction is for eligibility inquiries, not for reporting privacy violations.
+  fact_id: FACT-CRS-005
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-004
+  type: MCQ
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: Every healthcare claim must pair which two types of codes?
+  options:
+    A: A diagnosis code (ICD-10-CM) and a procedure code (CPT or HCPCS)
+    B: A National Provider Identifier (NPI) and a Social Security Number
+    C: A facility code and a pharmacy code
+    D: A payor code and a clearinghouse code
+  correct_answer: A
+  explanation_correct: Every claim must pair a diagnosis code (ICD-10-CM) explaining why care was needed with a procedure
+    code (CPT or HCPCS) describing the service performed.
+  explanation_incorrect:
+    B: While the NPI must appear on claims, it is not paired with a Social Security Number. Claims require diagnosis and procedure
+      codes.
+    C: Facility codes and pharmacy codes are not the required code pairing on every claim.
+    D: There is no standard 'payor code' or 'clearinghouse code' that must be paired on a claim.
+  fact_id: FACT-CRS-007
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-005
+  type: MCQ
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: What is the difference between an Explanation of Benefits (EOB) and a bill?
+  options:
+    A: An EOB is a summary of how the health plan processed the claim; it is not a bill
+    B: An EOB is the final bill the patient must pay to the health plan
+    C: An EOB and a bill are two names for the same document
+    D: An EOB is sent by the provider, while a bill is sent by the payor
+  correct_answer: A
+  explanation_correct: An EOB is a document sent by the health plan to the patient summarizing how the claim was processed.
+    It is not a bill -- the patient should compare it to the actual bill from the provider.
+  explanation_incorrect:
+    B: The EOB is not a bill and does not require direct payment to the health plan.
+    C: They are different documents; the EOB summarizes claim processing while the bill requests payment from the patient.
+    D: The EOB is sent by the health plan (payor), not the provider. The bill comes from the provider.
+  fact_id: FACT-CRS-011
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-006
+  type: MCQ
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: What is an Electronic Remittance Advice (ERA)?
+  options:
+    A: A document the payor sends to the patient explaining their benefits
+    B: A HIPAA 835 transaction the payor sends to the provider detailing payment, adjustments, and denial reasons
+    C: A claim submission form the provider sends to the payor
+    D: An eligibility verification request sent before a patient visit
+  correct_answer: B
+  explanation_correct: The ERA (HIPAA 835 transaction) is sent by the payor to the provider after claim adjudication, detailing
+    the payment amount, adjustments, and reasons for any denials.
+  explanation_incorrect:
+    A: The document sent to the patient is the Explanation of Benefits (EOB), not the ERA.
+    C: Claim submissions use the 837 transaction. The ERA is a payment notification sent from payor to provider.
+    D: Eligibility verification uses the 270/271 transaction, not the 835.
+  fact_id: FACT-CRS-012
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-007
+  type: MCQ
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: What is the 'allowed amount' in healthcare reimbursement?
+  options:
+    A: The total amount the patient must pay out of pocket
+    B: The maximum amount a health plan will pay for a covered service
+    C: The amount the provider charges before any insurance processing
+    D: The fee a clearinghouse charges to process a claim
+  correct_answer: B
+  explanation_correct: The allowed amount is the maximum a health plan will pay for a covered service. For in-network services,
+    the provider generally cannot bill the patient beyond this amount.
+  explanation_incorrect:
+    A: The allowed amount is the plan's maximum payment, not the patient's total out-of-pocket cost. The patient owes only
+      their cost-sharing portion.
+    C: The provider's charge (billed amount) is different from the allowed amount, which is set by the health plan.
+    D: The allowed amount relates to reimbursement for services, not clearinghouse processing fees.
+  fact_id: FACT-CRS-013
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-008
+  type: MCQ
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: What is the primary role of a healthcare clearinghouse?
+  options:
+    A: To provide medical care directly to patients
+    B: To receive transactions from providers, convert them to HIPAA-standard formats, and forward them to health plans
+    C: To issue National Provider Identifiers to new providers
+    D: To adjudicate claims and determine payment amounts
+  correct_answer: B
+  explanation_correct: A clearinghouse acts as an intermediary that receives claims and other transactions from providers,
+    converts them into HIPAA-standard electronic formats, and forwards them to the appropriate health plan.
+  explanation_incorrect:
+    A: Clearinghouses do not provide medical care; they are data intermediaries.
+    C: NPIs are issued by the Centers for Medicare and Medicaid Services (CMS), not by clearinghouses.
+    D: Claim adjudication is performed by the payor (health plan), not by the clearinghouse.
+  fact_id: FACT-CRS-014
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-009
+  type: MCQ
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: What does 'TPO' stand for under HIPAA, and why is it important?
+  options:
+    A: Treatment, Payment, and Operations -- covered entities may share PHI for these purposes without patient authorization
+    B: Transaction, Privacy, and Oversight -- it describes the three HIPAA rules
+    C: Testing, Processing, and Output -- it describes how claims are adjudicated
+    D: Transfer, Protection, and Organization -- it defines how clearinghouses operate
+  correct_answer: A
+  explanation_correct: TPO stands for Treatment, Payment, and Health Care Operations. Under HIPAA, covered entities may share
+    protected health information for these three purposes without obtaining patient authorization.
+  explanation_incorrect:
+    B: TPO does not stand for Transaction, Privacy, and Oversight. It refers to the permissible uses of PHI.
+    C: TPO is not related to claims processing steps. It is a HIPAA concept about when PHI can be shared.
+    D: TPO does not describe clearinghouse operations. It defines when covered entities can share PHI without authorization.
+  fact_id: FACT-CRS-020
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-010
+  type: MCQ
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: Which standard format is currently adopted under HIPAA for electronic healthcare transactions?
+  options:
+    A: HL7 FHIR Release 4
+    B: ASC X12 Version 5010
+    C: ICD-10-PCS Version 2024
+    D: CPT Category III codes
+  correct_answer: B
+  explanation_correct: ASC X12 Version 5010 is the current HIPAA-adopted standard format for electronic healthcare transactions,
+    used by providers, payors, and clearinghouses nationwide.
+  explanation_incorrect:
+    A: HL7 FHIR is an interoperability standard for health data exchange but is not the HIPAA-mandated transaction format.
+    C: ICD-10-PCS is a procedure coding system for inpatient settings, not a transaction format.
+    D: CPT Category III codes are temporary procedure codes, not a transaction format standard.
+  fact_id: FACT-CRS-024
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-011
+  type: TF
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: The National Provider Identifier (NPI) is a unique, permanent 10-digit number that carries no information about
+    the provider's location, specialty, or type.
+  correct_answer: 'True'
+  explanation_correct: The NPI is intelligence-free, meaning the number itself carries no information about the provider.
+    It serves purely as a unique identifier.
+  explanation_incorrect: The NPI is indeed intelligence-free. The 10-digit number contains no embedded information about location,
+    specialty, or provider type.
+  fact_id: FACT-CRS-017
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-012
+  type: TF
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: HIPAA's Privacy Rule applies only to health plans and does not cover healthcare providers or clearinghouses.
+  correct_answer: 'False'
+  explanation_correct: 'HIPAA''s Privacy Rule applies to all three types of covered entities: health plans (payors), health
+    care providers, and clearinghouses.'
+  explanation_incorrect: This statement is false. The Privacy Rule covers all three types of covered entities, not just health
+    plans.
+  fact_id: FACT-CRS-018
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-013
+  type: TF
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: The HIPAA minimum necessary standard requires covered entities to limit PHI disclosures to the smallest amount
+    of information needed to accomplish the intended purpose.
+  correct_answer: 'True'
+  explanation_correct: The minimum necessary standard is a core HIPAA principle requiring that when PHI is used or disclosed,
+    it must be limited to the smallest amount needed for the purpose.
+  explanation_incorrect: This statement is true. The minimum necessary standard is a real HIPAA requirement that limits PHI
+    to only what is needed.
+  fact_id: FACT-CRS-021
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-014
+  type: TF
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: A claim submitted without a valid ICD-10-CM diagnosis code will still be processed for payment as long as a procedure
+    code is present.
+  correct_answer: 'False'
+  explanation_correct: A claim submitted without a valid ICD-10-CM diagnosis code is returned to the provider as incomplete
+    and will not be processed for payment.
+  explanation_incorrect: This statement is false. Both a valid diagnosis code and a procedure code are required. A missing
+    diagnosis code causes the claim to be returned as incomplete.
+  fact_id: FACT-CRS-008
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CRS-015
+  type: TF
+  pillar: cross_domain
+  tutorial_id: T-CROSS-01
+  question: Standardized transaction formats allow any provider to submit a claim to any health plan using the same data structure,
+    enabling interoperability across the healthcare system.
+  correct_answer: 'True'
+  explanation_correct: Standardized formats ensure that any provider can communicate with any health plan using the same data
+    structure, which is the foundation of interoperability in healthcare.
+  explanation_incorrect: This statement is true. HIPAA-mandated standardized formats are specifically designed to enable interoperability
+    across providers, payors, and clearinghouses.
+  fact_id: FACT-CRS-025
+  regulatory_tags: []
+  difficulty: basic

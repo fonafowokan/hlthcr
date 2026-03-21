@@ -1,0 +1,54 @@
+visual_style:
+  type: "clean healthcare explainer"
+  palette:
+    primary: "#2A6F97"
+    secondary: "#61A5C2"
+    accent: "#A9D6E5"
+    text_dark: "#1A1A2E"
+    background: "#FFFFFF"
+
+  icons:
+    payor: "shield/card/building"
+    provider: "hospital/doctor/ambulance/DME"
+    patient: "person/family/subscriber/dependent"
+    data: "document/code/lock/database"
+
+  rules:
+    - consistent icon usage per pillar
+    - no photorealism
+    - flat or light illustration style
+    - same character style throughout
+    - recurring motifs per pillar
+
+  categories:
+    - title_cards
+    - pillar_cards
+    - concept_diagrams
+    - comparison_charts
+    - workflow_diagrams
+    - icon_sets
+    - scenario_illustrations
+    - question_screens
+    - answer_explanation_screens
+
+audio:
+  primary_mode: pre_recorded
+  voice: "neutral, clear, instructional"
+  pace: "moderate"
+  secondary_mode: dynamic_tts
+
+video:
+  format: mp4
+  resolution: 1080p
+  fps: 30
+  composition:
+    - scene visuals
+    - synced narration
+    - optional captions
+
+export_formats:
+  video: mp4
+  captions: vtt
+  course_structure: json
+  quizzes: json
+  study_guide: pdf

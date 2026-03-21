@@ -1,0 +1,673 @@
+# Healthcare Foundations — Scene Definitions
+# Each tutorial produces: 1 intro + lesson scenes + 1 assessment
+# Default aspect ratio: 16:9 | Default resolution: 1920x1080
+
+scenes:
+
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 1 — T-PAYOR-01: "Who Pays for Healthcare?"
+  # ══════════════════════════════════════════════════════════════════
+
+  - scene_id: SCN-PAYOR-01-01
+    tutorial_id: T-PAYOR-01
+    order: 1
+    scene_type: intro
+    screen_text: "Who Pays for Healthcare?"
+    visual_asset: images/payor-title-card.png
+    visual_type: nano-banana
+    visual_prompt_hint: "Healthcare payor title card — shield/insurance icon, teal and blue tones, clean modern"
+    audio_asset: audio/payor-01-01.mp3
+    layout: full_visual
+    aspect_ratio: "16:9"
+    linked_facts: []
+
+  - scene_id: SCN-PAYOR-01-02
+    tutorial_id: T-PAYOR-01
+    order: 2
+    scene_type: lesson
+    screen_text: "A payor is the entity that pays providers for your healthcare services. The three broad categories are government programs (Medicare, Medicaid), commercial insurance, and self-pay. When multiple payors exist, coordination of benefits determines which pays first."
+    visual_asset: images/payor-categories.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Hub-and-spoke diagram with 'Payor' in center, three spokes to Government, Commercial Insurance, and Self-Pay, each with small icons"
+    audio_asset: audio/payor-01-02.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAY-001
+      - FACT-PAY-002
+      - FACT-PAY-003
+
+  - scene_id: SCN-PAYOR-01-03
+    tutorial_id: T-PAYOR-01
+    order: 3
+    scene_type: lesson
+    screen_text: "Medicare is a federal program run by CMS, mainly covering people 65+. Part A (Hospital Insurance) covers inpatient stays and hospice. Part B (Medical Insurance) covers doctor visits, outpatient care, and preventive services — with a monthly premium of $202.90 for 2026."
+    visual_asset: images/payor-medicare-parts.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Two-column comparison chart: Part A (Hospital Insurance) vs Part B (Medical Insurance) with key coverage items listed under each"
+    audio_asset: audio/payor-01-03.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAY-004
+      - FACT-PAY-005
+      - FACT-PAY-006
+      - FACT-PAY-007
+
+  - scene_id: SCN-PAYOR-01-04
+    tutorial_id: T-PAYOR-01
+    order: 4
+    scene_type: lesson
+    screen_text: "Medicaid is a joint federal-state program for low-income individuals. Unlike Medicare, eligibility is based on income and household size, not age. Each state runs its own program, so rules vary. People can apply year-round — there is no enrollment window."
+    visual_asset: images/payor-medicaid.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Comparison diagram: Medicare (federal, age-based) vs Medicaid (federal+state, income-based) with key differences highlighted"
+    audio_asset: audio/payor-01-04.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAY-008
+      - FACT-PAY-009
+      - FACT-PAY-010
+
+  - scene_id: SCN-PAYOR-01-05
+    tutorial_id: T-PAYOR-01
+    order: 5
+    scene_type: lesson
+    screen_text: "Commercial insurance is the most common coverage in the U.S., often through employers who share premium costs. Plan types include HMO (requires referrals, lower cost), PPO (more flexibility, higher cost), EPO, and POS plans."
+    visual_asset: images/payor-commercial.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Flowchart showing employer-sponsored path and marketplace path, branching into HMO, PPO, EPO, POS plan types with brief labels"
+    audio_asset: audio/payor-01-05.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAY-011
+      - FACT-PAY-012
+      - FACT-PAY-013
+      - FACT-PAY-014
+
+  - scene_id: SCN-PAYOR-01-06
+    tutorial_id: T-PAYOR-01
+    order: 6
+    scene_type: lesson
+    screen_text: "Self-pay patients have no insurance or choose not to file a claim. Under the No Surprises Act, providers must give a good faith estimate of charges before scheduled services so patients know what they will owe."
+    visual_asset: images/payor-selfpay.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Simple process flow: Patient schedules service -> Provider gives Good Faith Estimate -> Patient knows expected cost"
+    audio_asset: audio/payor-01-06.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAY-015
+      - FACT-PAY-016
+      - FACT-PAY-017
+
+  - scene_id: SCN-PAYOR-01-07
+    tutorial_id: T-PAYOR-01
+    order: 7
+    scene_type: lesson
+    screen_text: "Under HIPAA, health plans are covered entities that must protect patient information. This includes insurers, HMOs, employer plans, and government programs. Exception: employer plans with fewer than 50 participants that are self-administered are exempt."
+    visual_asset: images/payor-hipaa.png
+    visual_type: excalidraw
+    visual_prompt_hint: "List diagram showing HIPAA covered health plans: insurance companies, HMOs, employer plans, Medicare, Medicaid — with exemption callout box"
+    audio_asset: audio/payor-01-07.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAY-018
+      - FACT-PAY-019
+      - FACT-PAY-020
+
+  - scene_id: SCN-PAYOR-01-08
+    tutorial_id: T-PAYOR-01
+    order: 8
+    scene_type: assessment
+    screen_text: "Let's check your understanding of healthcare payors."
+    visual_asset: ""
+    visual_type: ""
+    visual_prompt_hint: ""
+    audio_asset: audio/payor-01-08.mp3
+    layout: text_only
+    aspect_ratio: "16:9"
+    linked_facts: []
+
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 2 — T-PROVIDER-01: "Who Provides Healthcare?"
+  # ══════════════════════════════════════════════════════════════════
+
+  - scene_id: SCN-PROVIDER-01-01
+    tutorial_id: T-PROVIDER-01
+    order: 1
+    scene_type: intro
+    screen_text: "Who Provides Healthcare?"
+    visual_asset: images/provider-title-card.png
+    visual_type: nano-banana
+    visual_prompt_hint: "Healthcare provider title card — stethoscope and hospital icon, warm green and white tones, professional and clean"
+    audio_asset: audio/provider-01-01.mp3
+    layout: full_visual
+    aspect_ratio: "16:9"
+    linked_facts: []
+
+  - scene_id: SCN-PROVIDER-01-02
+    tutorial_id: T-PROVIDER-01
+    order: 2
+    scene_type: lesson
+    screen_text: "A healthcare provider is any licensed person or facility that delivers care. Medicare distinguishes between 'providers' (hospitals, hospices, nursing homes) and 'suppliers' (equipment and diagnostic services), though everyday language uses 'provider' for both."
+    visual_asset: images/provider-definition.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Two-box comparison: Providers (hospitals, hospices, nursing homes) vs Suppliers (DME, diagnostic labs) with shared 'provider' label above"
+    audio_asset: audio/provider-01-02.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PRV-001
+      - FACT-PRV-002
+
+  - scene_id: SCN-PROVIDER-01-03
+    tutorial_id: T-PROVIDER-01
+    order: 3
+    scene_type: lesson
+    screen_text: "Provider types include physicians and nurse practitioners, hospitals and skilled nursing facilities, DME suppliers (wheelchairs, ventilators), ambulance services, and ancillary services like labs and radiology."
+    visual_asset: images/provider-types.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Hub-and-spoke diagram with 'Provider Types' in center, five spokes: Physicians, Hospitals, DME Suppliers, Ambulance, Ancillary Services with icons"
+    audio_asset: audio/provider-01-03.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PRV-003
+      - FACT-PRV-004
+      - FACT-PRV-005
+      - FACT-PRV-006
+      - FACT-PRV-007
+
+  - scene_id: SCN-PROVIDER-01-04
+    tutorial_id: T-PROVIDER-01
+    order: 4
+    scene_type: lesson
+    screen_text: "Providers bill payors using standardized claim forms. Non-institutional providers use the CMS-1500 (or electronic 837P). Hospitals use the UB-04 / CMS-1450 (or electronic 837I). Nearly all Medicare claims must be submitted electronically."
+    visual_asset: images/provider-billing.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Two-path flowchart: Doctor's office -> CMS-1500 / 837P -> Payor; Hospital -> UB-04 / 837I -> Payor"
+    audio_asset: audio/provider-01-04.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PRV-008
+      - FACT-PRV-009
+      - FACT-PRV-010
+
+  - scene_id: SCN-PROVIDER-01-05
+    tutorial_id: T-PROVIDER-01
+    order: 5
+    scene_type: lesson
+    screen_text: "To bill Medicare, providers must: (1) get a National Provider Identifier (NPI), (2) enroll through PECOS, and (3) work with their regional MAC. Different provider types use different forms — physicians use CMS-855I, hospitals use CMS-855A, DME suppliers use CMS-855S."
+    visual_asset: images/provider-medicare-enrollment.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Three-step process flow: Get NPI -> Enroll via PECOS -> Work with MAC, with enrollment form variants listed below"
+    audio_asset: audio/provider-01-05.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PRV-011
+      - FACT-PRV-012
+      - FACT-PRV-013
+      - FACT-PRV-014
+
+  - scene_id: SCN-PROVIDER-01-06
+    tutorial_id: T-PROVIDER-01
+    order: 6
+    scene_type: lesson
+    screen_text: "Medicaid enrollment is state-run. Each state sets its own process beyond federal minimums. At minimum, states must verify an unrestricted license. Additional requirements may include background checks and site visits."
+    visual_asset: images/provider-medicaid-enrollment.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Layered diagram: Federal minimum (license verification) at base, state-specific additions (background checks, site visits, documentation) stacked above"
+    audio_asset: audio/provider-01-06.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PRV-017
+      - FACT-PRV-018
+
+  - scene_id: SCN-PROVIDER-01-07
+    tutorial_id: T-PROVIDER-01
+    order: 7
+    scene_type: lesson
+    screen_text: "Most providers are HIPAA covered entities because they transmit health information electronically. They must comply with the Privacy Rule and Security Rule — protecting patient data, training employees, and having contracts with business associates."
+    visual_asset: images/provider-hipaa.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Checklist-style diagram: HIPAA obligations for providers — Privacy Rule compliance, Security Rule compliance, employee training, business associate agreements"
+    audio_asset: audio/provider-01-07.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PRV-019
+      - FACT-PRV-020
+      - FACT-PRV-021
+
+  - scene_id: SCN-PROVIDER-01-08
+    tutorial_id: T-PROVIDER-01
+    order: 8
+    scene_type: assessment
+    screen_text: "Let's check your understanding of healthcare providers."
+    visual_asset: ""
+    visual_type: ""
+    visual_prompt_hint: ""
+    audio_asset: audio/provider-01-08.mp3
+    layout: text_only
+    aspect_ratio: "16:9"
+    linked_facts: []
+
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 3 — T-PATIENT-01: "Who Receives Healthcare?"
+  # ══════════════════════════════════════════════════════════════════
+
+  - scene_id: SCN-PATIENT-01-01
+    tutorial_id: T-PATIENT-01
+    order: 1
+    scene_type: intro
+    screen_text: "Who Receives Healthcare?"
+    visual_asset: images/patient-title-card.png
+    visual_type: nano-banana
+    visual_prompt_hint: "Patient-centered title card — person with health shield icon, soft purple and white tones, welcoming and accessible"
+    audio_asset: audio/patient-01-01.mp3
+    layout: full_visual
+    aspect_ratio: "16:9"
+    linked_facts: []
+
+  - scene_id: SCN-PATIENT-01-02
+    tutorial_id: T-PATIENT-01
+    order: 2
+    scene_type: lesson
+    screen_text: "The subscriber (policyholder) is the person who holds the insurance contract. Dependents — spouse, children, domestic partners — are covered under that plan. Under the ACA, children can stay on a parent's plan until age 26."
+    visual_asset: images/patient-subscriber.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Simple hierarchy diagram: Subscriber at top, branching down to Dependents (spouse, children, partner) with ACA age-26 callout"
+    audio_asset: audio/patient-01-02.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAT-001
+      - FACT-PAT-002
+      - FACT-PAT-003
+
+  - scene_id: SCN-PATIENT-01-03
+    tutorial_id: T-PATIENT-01
+    order: 3
+    scene_type: lesson
+    screen_text: "Open Enrollment is the annual window to sign up or change plans. Outside that window, a Special Enrollment Period (SEP) allows changes after qualifying life events — losing coverage, marriage, birth, or moving. Most SEPs give you 60 days."
+    visual_asset: images/patient-enrollment.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Timeline diagram showing Open Enrollment window and SEP trigger events (job loss, marriage, baby, move) with 60-day windows"
+    audio_asset: audio/patient-01-03.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAT-004
+      - FACT-PAT-005
+      - FACT-PAT-006
+
+  - scene_id: SCN-PATIENT-01-04
+    tutorial_id: T-PATIENT-01
+    order: 4
+    scene_type: lesson
+    screen_text: "Under HIPAA, you can access and copy your health records within 30 days. You can request corrections to inaccurate information and direct records to be sent to a third party. Providers may charge for copies but not for searching or retrieving them."
+    visual_asset: images/patient-hipaa-rights.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Three-item list with icons: Access and copy records (30 days), Request corrections, Direct records to third party — with fee note"
+    audio_asset: audio/patient-01-04.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAT-007
+      - FACT-PAT-008
+      - FACT-PAT-009
+
+  - scene_id: SCN-PATIENT-01-05
+    tutorial_id: T-PATIENT-01
+    order: 5
+    scene_type: lesson
+    screen_text: "Providers must give you a Notice of Privacy Practices explaining how they use your health information. Before treatment, they obtain informed consent — explaining risks, benefits, and alternatives. In life-threatening emergencies, consent can be waived."
+    visual_asset: images/patient-consent.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Two-panel layout: Left — Notice of Privacy Practices (document icon); Right — Informed Consent process (explain risks, patient decides) with emergency exception note"
+    audio_asset: audio/patient-01-05.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAT-010
+      - FACT-PAT-011
+      - FACT-PAT-012
+      - FACT-PAT-013
+
+  - scene_id: SCN-PATIENT-01-06
+    tutorial_id: T-PATIENT-01
+    order: 6
+    scene_type: lesson
+    screen_text: "Cost sharing has five key terms: Premium (monthly payment), Deductible (annual amount before plan pays), Copay (fixed per-visit fee), Coinsurance (percentage you pay after deductible), and Out-of-Pocket Maximum (annual cap on your spending)."
+    visual_asset: images/patient-costs.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Stacked bar or funnel diagram showing cost-sharing flow: Premium, Deductible, Copay/Coinsurance, Out-of-Pocket Max with brief definitions"
+    audio_asset: audio/patient-01-06.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAT-014
+      - FACT-PAT-015
+      - FACT-PAT-016
+      - FACT-PAT-017
+      - FACT-PAT-018
+
+  - scene_id: SCN-PATIENT-01-07
+    tutorial_id: T-PATIENT-01
+    order: 7
+    scene_type: lesson
+    screen_text: "An Explanation of Benefits (EOB) shows what was billed, what your plan paid, and what you owe — but it is not a bill. Always compare the EOB with your provider's bill before paying."
+    visual_asset: images/patient-eob.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Annotated EOB mock-up showing key fields: charges billed, plan paid, patient owes — with 'Not a bill' callout"
+    audio_asset: audio/patient-01-07.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAT-019
+      - FACT-PAT-020
+
+  - scene_id: SCN-PATIENT-01-08
+    tutorial_id: T-PATIENT-01
+    order: 8
+    scene_type: lesson
+    screen_text: "Patient engagement means actively participating in your healthcare decisions. Engaged patients have better outcomes and lower costs. Key steps: ask questions, understand benefits, review EOBs, and track your records."
+    visual_asset: images/patient-engagement.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Circular diagram with 'Engaged Patient' in center, four actions around it: Ask questions, Know your benefits, Review EOBs, Track records"
+    audio_asset: audio/patient-01-08.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAT-021
+      - FACT-PAT-022
+
+  - scene_id: SCN-PATIENT-01-09
+    tutorial_id: T-PATIENT-01
+    order: 9
+    scene_type: assessment
+    screen_text: "Let's check your understanding of the patient's role in healthcare."
+    visual_asset: ""
+    visual_type: ""
+    visual_prompt_hint: ""
+    audio_asset: audio/patient-01-09.mp3
+    layout: text_only
+    aspect_ratio: "16:9"
+    linked_facts: []
+
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 4 — T-DATA-01: "Healthcare Data and Privacy"
+  # ══════════════════════════════════════════════════════════════════
+
+  - scene_id: SCN-DATA-01-01
+    tutorial_id: T-DATA-01
+    order: 1
+    scene_type: intro
+    screen_text: "Healthcare Data and Privacy"
+    visual_asset: images/data-title-card.png
+    visual_type: nano-banana
+    visual_prompt_hint: "Data privacy title card — lock and medical data icons, deep blue and silver tones, secure and modern feel"
+    audio_asset: audio/data-01-01.mp3
+    layout: full_visual
+    aspect_ratio: "16:9"
+    linked_facts: []
+
+  - scene_id: SCN-DATA-01-02
+    tutorial_id: T-DATA-01
+    order: 2
+    scene_type: lesson
+    screen_text: "Protected Health Information (PHI) is any individually identifiable data about your health, care, or payment. It includes names, addresses, dates of birth, and SSNs when linked to health data. PHI is protected under HIPAA in any form — electronic, paper, or spoken."
+    visual_asset: images/data-phi.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Diagram showing PHI examples (name, DOB, SSN, medical record) grouped inside a shield/lock icon, with 'electronic, paper, spoken' labels"
+    audio_asset: audio/data-01-02.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-DAT-001
+      - FACT-DAT-002
+      - FACT-DAT-003
+
+  - scene_id: SCN-DATA-01-03
+    tutorial_id: T-DATA-01
+    order: 3
+    scene_type: lesson
+    screen_text: "The HIPAA Privacy Rule sets national standards for protecting PHI. The minimum necessary standard limits access to only what is needed for the task. Exception: treatment purposes — your doctor can share your full history with a treating specialist."
+    visual_asset: images/data-privacy-rule.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Flowchart: PHI access request -> Is it for treatment? Yes: full access. No: minimum necessary standard applies — only relevant data shared"
+    audio_asset: audio/data-01-03.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-DAT-004
+      - FACT-DAT-005
+      - FACT-DAT-006
+
+  - scene_id: SCN-DATA-01-04
+    tutorial_id: T-DATA-01
+    order: 4
+    scene_type: lesson
+    screen_text: "HIPAA defines three covered entities: health plans, clearinghouses, and providers who transmit electronically. A business associate handles PHI on behalf of a covered entity and must sign a written agreement to follow HIPAA rules."
+    visual_asset: images/data-covered-entities.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Three-column layout: Health Plans, Clearinghouses, Providers — with Business Associates shown below connected by contract/agreement arrows"
+    audio_asset: audio/data-01-04.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-DAT-007
+      - FACT-DAT-008
+      - FACT-DAT-009
+
+  - scene_id: SCN-DATA-01-05
+    tutorial_id: T-DATA-01
+    order: 5
+    scene_type: lesson
+    screen_text: "The Security Rule protects electronic PHI (ePHI) through three safeguard types: administrative (policies), physical (facility protection), and technical (access controls). If a breach occurs, the Breach Notification Rule requires notifying affected individuals within 60 days."
+    visual_asset: images/data-security-rule.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Three-pillar diagram: Administrative, Physical, Technical safeguards — with Breach Notification timeline (60 days) below"
+    audio_asset: audio/data-01-05.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-DAT-010
+      - FACT-DAT-011
+      - FACT-DAT-012
+      - FACT-DAT-013
+
+  - scene_id: SCN-DATA-01-06
+    tutorial_id: T-DATA-01
+    order: 6
+    scene_type: lesson
+    screen_text: "ICD-10 codes capture diagnoses (~69,000 codes, up to 7 characters). CPT codes (5-digit) identify procedures performed. HCPCS Level II codes cover equipment and supplies not in CPT — like ambulances, DME, and prosthetics."
+    visual_asset: images/data-medical-codes.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Three-row reference table: ICD-10 (diagnoses, 69K codes) | CPT (procedures, 5-digit) | HCPCS Level II (equipment/supplies, letter+4 digits) with examples"
+    audio_asset: audio/data-01-06.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-DAT-014
+      - FACT-DAT-015
+      - FACT-DAT-016
+      - FACT-DAT-017
+
+  - scene_id: SCN-DATA-01-07
+    tutorial_id: T-DATA-01
+    order: 7
+    scene_type: lesson
+    screen_text: "In-network providers have pre-negotiated rates with your insurer, meaning lower costs for you. Out-of-network providers have no such contract — you pay significantly more. Electronic Health Records (EHRs) reduce duplicate tests and improve accuracy by making your data available digitally."
+    visual_asset: images/data-network-ehr.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Split diagram: Left side — in-network vs out-of-network cost comparison; Right side — EHR benefits (reduce duplicates, improve accuracy, digital access)"
+    audio_asset: audio/data-01-07.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-DAT-018
+      - FACT-DAT-019
+      - FACT-DAT-020
+      - FACT-DAT-021
+
+  - scene_id: SCN-DATA-01-08
+    tutorial_id: T-DATA-01
+    order: 8
+    scene_type: assessment
+    screen_text: "Let's check your understanding of healthcare data and privacy."
+    visual_asset: ""
+    visual_type: ""
+    visual_prompt_hint: ""
+    audio_asset: audio/data-01-08.mp3
+    layout: text_only
+    aspect_ratio: "16:9"
+    linked_facts: []
+
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 5 — T-CROSS-01: "How It All Connects"
+  # ══════════════════════════════════════════════════════════════════
+
+  - scene_id: SCN-CROSS-01-01
+    tutorial_id: T-CROSS-01
+    order: 1
+    scene_type: intro
+    screen_text: "How It All Connects"
+    visual_asset: images/cross-title-card.png
+    visual_type: nano-banana
+    visual_prompt_hint: "Cross-domain title card — interconnected network of healthcare icons (heart, clipboard, shield, dollar), vibrant multi-color, holistic feel"
+    audio_asset: audio/cross-01-01.mp3
+    layout: full_visual
+    aspect_ratio: "16:9"
+    linked_facts: []
+
+  - scene_id: SCN-CROSS-01-02
+    tutorial_id: T-CROSS-01
+    order: 2
+    scene_type: lesson
+    screen_text: "A claim flows through clear steps: patient visits provider, provider submits a standardized claim electronically, payor runs automated checks (completeness, eligibility, duplicates), then adjudicates — approving, rejecting, or denying the claim."
+    visual_asset: images/cross-claim-lifecycle.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Horizontal process flow: Patient Visit -> Provider Submits Claim -> Automated Checks -> Adjudication (approve / reject / deny)"
+    audio_asset: audio/cross-01-02.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-CRS-001
+      - FACT-CRS-002
+      - FACT-CRS-003
+
+  - scene_id: SCN-CROSS-01-03
+    tutorial_id: T-CROSS-01
+    order: 3
+    scene_type: lesson
+    screen_text: "Before treatment, providers verify your insurance by sending a HIPAA 270 transaction. Since 2013, health plans must respond in real time with your deductible, copay, and coinsurance details — so you know upfront what you may owe."
+    visual_asset: images/cross-eligibility.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Request-response diagram: Provider sends 270 inquiry -> Health Plan responds with coverage details (deductible, copay, coinsurance) in real time"
+    audio_asset: audio/cross-01-03.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-CRS-004
+      - FACT-CRS-005
+
+  - scene_id: SCN-CROSS-01-04
+    tutorial_id: T-CROSS-01
+    order: 4
+    scene_type: lesson
+    screen_text: "Every claim pairs a diagnosis code (ICD-10-CM — why care was needed) with a procedure code (CPT/HCPCS — what was done). Missing or mismatched codes cause rejections. The payor checks whether the diagnosis supports the procedure for medical necessity."
+    visual_asset: images/cross-codes-claim.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Paired-box diagram: Diagnosis Code (ICD-10 — 'why') linked to Procedure Code (CPT/HCPCS — 'what') flowing into claim validation checkpoint"
+    audio_asset: audio/cross-01-04.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-CRS-006
+      - FACT-CRS-007
+      - FACT-CRS-008
+
+  - scene_id: SCN-CROSS-01-05
+    tutorial_id: T-CROSS-01
+    order: 5
+    scene_type: lesson
+    screen_text: "After adjudication, the patient gets an EOB (charges, plan payment, amount owed) and the provider gets an ERA (HIPAA 835 transaction) with payment details and adjustment reasons. The allowed amount caps what in-network providers can bill you."
+    visual_asset: images/cross-eob-era.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Split output diagram: Payor in center, arrow left to Patient (EOB document) and arrow right to Provider (ERA / 835 transaction) with key fields labeled"
+    audio_asset: audio/cross-01-05.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-CRS-009
+      - FACT-CRS-010
+      - FACT-CRS-011
+
+  - scene_id: SCN-CROSS-01-06
+    tutorial_id: T-CROSS-01
+    order: 6
+    scene_type: lesson
+    screen_text: "Clearinghouses are intermediaries that translate and route claims between providers and payors into HIPAA-standard formats. They are one of the three HIPAA covered entity types, alongside health plans and providers."
+    visual_asset: images/cross-clearinghouse.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Three-node flow: Provider -> Clearinghouse (translator icon) -> Payor, with 'HIPAA standard format' label on the output arrow"
+    audio_asset: audio/cross-01-06.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-CRS-012
+      - FACT-CRS-013
+
+  - scene_id: SCN-CROSS-01-07
+    tutorial_id: T-CROSS-01
+    order: 7
+    scene_type: lesson
+    screen_text: "Every covered provider has a National Provider Identifier (NPI) — a unique, permanent 10-digit number on all electronic transactions. The NPI is 'intelligence-free,' carrying no information about specialty or location — just a unique ID."
+    visual_asset: images/cross-npi.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Callout box showing NPI format (10-digit example), with arrows pointing to claims, eligibility checks, and other transactions where it appears"
+    audio_asset: audio/cross-01-07.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-CRS-014
+      - FACT-CRS-015
+
+  - scene_id: SCN-CROSS-01-08
+    tutorial_id: T-CROSS-01
+    order: 8
+    scene_type: lesson
+    screen_text: "HIPAA unifies the system. All covered entities must protect PHI and can share it without authorization only for treatment, payment, and operations (TPO). Standard electronic formats (ASC X12 Version 5010) enable any provider to submit claims to any plan using the same structure."
+    visual_asset: images/cross-hipaa-unified.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Triangle diagram with Payors, Providers, Clearinghouses at vertices, HIPAA in center, TPO and standard transactions (837, 835, 270/271) labeled on connecting edges"
+    audio_asset: audio/cross-01-08.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-CRS-016
+      - FACT-CRS-017
+      - FACT-CRS-018
+      - FACT-CRS-019
+      - FACT-CRS-020
+
+  - scene_id: SCN-CROSS-01-09
+    tutorial_id: T-CROSS-01
+    order: 9
+    scene_type: assessment
+    screen_text: "Let's check your understanding of how the healthcare system connects."
+    visual_asset: ""
+    visual_type: ""
+    visual_prompt_hint: ""
+    audio_asset: audio/cross-01-09.mp3
+    layout: text_only
+    aspect_ratio: "16:9"
+    linked_facts: []
