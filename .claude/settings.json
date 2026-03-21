@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import sys,json; f=json.load(sys.stdin).get('tool_input',{}).get('file_path',''); f.endswith('.py') and __import__('subprocess').run(['python3','-m','py_compile',f])\" 2>&1 || true",
+            "statusMessage": "Syntax-checking Python file..."
+          }
+        ]
+      }
+    ]
+  }
+}
