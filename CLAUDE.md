@@ -27,7 +27,7 @@ Plus a **Cross-Domain** pillar covering claims flow, billing interactions, eligi
 | Explained Key | Correct + wrong answer explanations |
 | Source Map | Every question traceable to a fact and source |
 | Visual Pack | Consistent artwork, diagrams, icons per style guide |
-| Audio Narration | Pre-recorded MP3 per scene (primary), dynamic TTS (secondary) |
+| Audio Narration | Pre-recorded WAV per scene via Kokoro TTS (local, free) |
 | Scenes | Screen-level definitions linking text, visuals, and audio |
 | Video Export | MP4 lessons for Udemy/Coursera portability |
 
@@ -96,6 +96,23 @@ See `meta/distribution.yaml` for exact numbers. Summary:
 3. **Platform publish** — Udemy (HD video + audio required, 30min minimum) and Coursera (module-based)
 
 Build as **modular lesson scenes** — one canonical source that drives web pages, narrated videos, slide exports, and LMS uploads.
+
+## 8a. Audio Pipeline
+
+**Engine**: Kokoro TTS (hexgrad/Kokoro-82M) — local, open-source, zero cost.
+
+| Voice | Description |
+|-------|-------------|
+| `af_heart` | American female, warm and clear (default) |
+| `af_nova` | American female, bright and energetic |
+| `am_michael` | American male, steady and professional |
+| `bm_george` | British male, calm and measured |
+
+**Generation**: `python scripts/audio/generate_narration.py`
+- Reads scenes.yaml + tutorials.yaml
+- Lesson scenes use full tutorial section text (not condensed screen_text)
+- Outputs WAV at 24kHz to `media/audio/`
+- Supports per-scene, per-tutorial, or full-batch generation
 
 ## 9. Shared Folder
 

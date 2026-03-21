@@ -15,6 +15,10 @@ delivery_modes:
   - video
   - lms
 
-audio_mode:
-  primary: pre_recorded
-  secondary: dynamic_tts
+audio:
+  engine: kokoro
+  model: hexgrad/Kokoro-82M
+  voice: af_heart
+  speed: 1.0
+  format: wav
+  sample_rate: 24000

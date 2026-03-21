@@ -32,10 +32,18 @@ visual_style:
     - answer_explanation_screens
 
 audio:
-  primary_mode: pre_recorded
-  voice: "neutral, clear, instructional"
-  pace: "moderate"
-  secondary_mode: dynamic_tts
+  engine: kokoro
+  model: hexgrad/Kokoro-82M
+  sample_rate: 24000
+  default_voice: af_heart
+  default_speed: 1.0
+  available_voices:
+    af_heart: "American female, warm and clear"
+    af_nova: "American female, bright and energetic"
+    am_michael: "American male, steady and professional"
+    bm_george: "British male, calm and measured"
+  output_format: wav
+  script: scripts/audio/generate_narration.py
 
 video:
   format: mp4
