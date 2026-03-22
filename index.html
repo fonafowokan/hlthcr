@@ -1271,7 +1271,8 @@ function showPlaybackPicker() {
     </div>
   `;
   document.getElementById('audioControls').style.display = 'none';
-  document.getElementById('prevBtn').disabled = true;
+  document.getElementById('prevBtn').disabled = false;
+  document.getElementById('prevBtn').removeAttribute('disabled');
   document.getElementById('nextBtn').style.display = 'none';
   document.getElementById('sceneProgressFill').style.width = '0%';
   document.getElementById('sceneProgressLabel').textContent = '';
@@ -1427,7 +1428,9 @@ function renderScene() {
   updateCaptionText();
 
   // Nav buttons
-  document.getElementById('prevBtn').disabled = currentSceneIndex === 0;
+  const prevBtn = document.getElementById('prevBtn');
+  prevBtn.disabled = false;
+  prevBtn.removeAttribute('disabled');
   const isAssessment = scene.scene_type === 'assessment';
   const isLast = currentSceneIndex === total - 1;
   const nextBtn = document.getElementById('nextBtn');
@@ -1472,7 +1475,9 @@ function nextScene() {
 }
 
 function prevScene() {
-  if (currentSceneIndex > 0) {
+  if (!playbackMode || currentSceneIndex === 0) {
+    goBack();
+  } else {
     currentSceneIndex--;
     renderScene();
   }
