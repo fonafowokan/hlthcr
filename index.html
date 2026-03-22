@@ -169,6 +169,132 @@ body {
 }
 .pillar-card:hover .start-label { background: #1B4965; }
 
+/* ── Glossary Home Card ── */
+.glossary-home-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border-top: 4px solid var(--accent);
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.glossary-home-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.glossary-home-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.glossary-home-card h3 { font-size: 18px; font-weight: 600; color: var(--dark); margin-bottom: 2px; }
+.glossary-home-card .pillar-meta { color: var(--gray-500); font-size: 13px; margin-bottom: 4px; }
+.glossary-home-card .pillar-desc { color: var(--gray-500); font-size: 14px; }
+.glossary-home-card .start-label {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background var(--transition);
+}
+.glossary-home-card:hover .start-label { background: #1B4965; }
+
+/* ── Glossary Panel ── */
+.glossary-panel {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.glossary-search-wrap {
+  position: sticky;
+  top: 60px;
+  z-index: 50;
+  padding: 12px 0;
+  background: var(--gray-100);
+}
+.glossary-search {
+  width: 100%;
+  padding: 14px 20px;
+  border: 2px solid var(--gray-200);
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color var(--transition);
+  background: var(--white);
+}
+.glossary-search:focus { border-color: var(--accent); }
+.glossary-list {
+  margin-top: 8px;
+}
+.glossary-item {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.glossary-term {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+.glossary-def {
+  font-size: 14px;
+  color: var(--dark);
+  line-height: 1.5;
+}
+.glossary-letter-header {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-500);
+  padding: 16px 0 8px 4px;
+  border-bottom: 2px solid var(--gray-200);
+  margin-bottom: 8px;
+  scroll-margin-top: 160px;
+}
+.glossary-alpha-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  padding: 12px 0;
+  position: sticky;
+  top: 56px;
+  z-index: 51;
+  background: var(--gray-100);
+}
+.glossary-alpha-btn {
+  width: 32px; height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.glossary-alpha-btn:hover { background: var(--accent); color: var(--white); }
+.glossary-alpha-btn.disabled { color: var(--gray-300); cursor: default; box-shadow: none; }
+.glossary-alpha-btn.disabled:hover { background: var(--white); color: var(--gray-300); }
+
+@media (max-width: 768px) {
+  .glossary-home-card { flex-direction: column; align-items: flex-start; }
+  .glossary-home-left { flex-direction: row; }
+}
+
 /* ── Scene Player ── */
 .scene-player {
   max-width: 1000px;
@@ -766,6 +892,28 @@ body {
       <p>Learn the building blocks of the U.S. healthcare system in five short lessons.</p>
     </div>
     <div class="pillar-grid" id="pillarGrid"></div>
+    <div class="glossary-home-card" onclick="showGlossary()">
+      <div class="glossary-home-left">
+        <div class="pillar-icon">&#128214;</div>
+        <div>
+          <h3>Key Terms</h3>
+          <div class="pillar-meta"><span id="glossaryCount">67 definitions</span></div>
+          <p class="pillar-desc">Quick reference for healthcare terms used in this course.</p>
+        </div>
+      </div>
+      <span class="start-label">Browse Glossary</span>
+    </div>
+  </div>
+</div>
+
+<!-- View: Glossary -->
+<div class="view" id="glossaryView">
+  <div class="glossary-panel">
+    <div class="glossary-alpha-bar" id="glossaryAlpha"></div>
+    <div class="glossary-search-wrap">
+      <input type="text" id="glossarySearch" class="glossary-search" placeholder="Search terms..." oninput="filterGlossary()">
+    </div>
+    <div class="glossary-list" id="glossaryList"></div>
   </div>
 </div>
 
@@ -1084,6 +1232,7 @@ function renderHome() {
     `;
     grid.appendChild(card);
   });
+  document.getElementById('glossaryCount').textContent = GLOSSARY.length + ' definitions';
 }
 
 // ════════════════════════════════════════════════════════════════
@@ -1153,6 +1302,66 @@ function goBack() {
   document.getElementById('backBtn').classList.remove('visible');
   document.getElementById('headerTitle').textContent = 'Healthcare Foundations';
   document.getElementById('headerRight').textContent = '';
+}
+
+function showGlossary() {
+  showView('glossaryView');
+  document.getElementById('backBtn').classList.add('visible');
+  document.getElementById('headerTitle').textContent = 'Key Terms';
+  document.getElementById('headerRight').textContent = '';
+  document.getElementById('glossarySearch').value = '';
+  renderAlphaBar();
+  renderGlossary(GLOSSARY);
+}
+
+function renderAlphaBar() {
+  const bar = document.getElementById('glossaryAlpha');
+  const usedLetters = new Set(GLOSSARY.map(g => g.term[0].toUpperCase()));
+  let html = '';
+  for (let i = 65; i <= 90; i++) {
+    const letter = String.fromCharCode(i);
+    const has = usedLetters.has(letter);
+    html += `<button class="glossary-alpha-btn${has ? '' : ' disabled'}" onclick="${has ? "scrollToLetter('" + letter + "')" : ''}">${letter}</button>`;
+  }
+  bar.innerHTML = html;
+}
+
+function scrollToLetter(letter) {
+  const el = document.getElementById('glossary-letter-' + letter);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  // Clear search when using letter nav
+  document.getElementById('glossarySearch').value = '';
+  renderGlossary(GLOSSARY);
+  setTimeout(() => {
+    const el2 = document.getElementById('glossary-letter-' + letter);
+    if (el2) el2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 50);
+}
+
+function renderGlossary(terms) {
+  const list = document.getElementById('glossaryList');
+  const sorted = [...terms].sort((a, b) => a.term.localeCompare(b.term));
+  let html = '';
+  let currentLetter = '';
+  for (const g of sorted) {
+    const letter = g.term[0].toUpperCase();
+    if (letter !== currentLetter) {
+      currentLetter = letter;
+      html += `<div class="glossary-letter-header" id="glossary-letter-${letter}">${letter}</div>`;
+    }
+    html += `<div class="glossary-item"><div class="glossary-term">${escHtml(g.term)}</div><div class="glossary-def">${escHtml(g.definition)}</div></div>`;
+  }
+  if (!html) html = '<p style="text-align:center;color:var(--gray-500);padding:40px;">No matching terms.</p>';
+  list.innerHTML = html;
+}
+
+function filterGlossary() {
+  const q = document.getElementById('glossarySearch').value.toLowerCase().trim();
+  if (!q) { renderGlossary(GLOSSARY); return; }
+  const filtered = GLOSSARY.filter(g => g.term.toLowerCase().includes(q) || g.definition.toLowerCase().includes(q));
+  renderGlossary(filtered);
 }
 
 function renderScene() {
