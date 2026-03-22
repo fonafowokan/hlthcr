@@ -44,6 +44,40 @@ VOICES = {
 }
 
 
+# Acronyms that should be spelled out letter-by-letter for TTS.
+# Maps uppercase acronym to spaced letters with periods for clear pronunciation.
+SPELL_OUT = {
+    "PHI": "P. H. I.",
+    "EHR": "E. H. R.",
+    "EOB": "E. O. B.",
+    "NPI": "N. P. I.",
+    "ERA": "E. R. A.",
+    "DME": "D. M. E.",
+    "TPO": "T. P. O.",
+    "HHS": "H. H. S.",
+    "CMS": "C. M. S.",
+    "ACA": "A. C. A.",
+    "SEP": "S. E. P.",
+    "MAC": "M. A. C.",
+    "FMAP": "F. MAP.",
+    "ASCA": "A. S. C. A.",
+    "ePHI": "electronic P. H. I.",
+    "DMEPOS": "D. M. E. P. O. S.",
+    "PECOS": "PEE-koss",
+    "HIPAA": "HIP-AH",
+    "HCPCS": "HICK-picks",
+}
+
+import re
+
+def preprocess_for_tts(text: str) -> str:
+    """Replace acronyms with TTS-friendly pronunciations."""
+    for acronym, replacement in SPELL_OUT.items():
+        # Match whole word only, case-sensitive
+        text = re.sub(r'\b' + re.escape(acronym) + r'\b', replacement, text)
+    return text
+
+
 def load_scenes(scenes_path: Path) -> list:
     with open(scenes_path) as f:
         data = yaml.safe_load(f)
@@ -160,6 +194,7 @@ def main():
             print(f"  [{i}/{total}] {scene_id} — skipped (no text)")
             continue
 
+        narration = preprocess_for_tts(narration)
         print(f"  [{i}/{total}] {scene_id} — {len(narration)} chars...", end=" ", flush=True)
 
         audio = generate_audio(pipe, narration, args.voice, args.speed)

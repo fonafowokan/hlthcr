@@ -303,6 +303,24 @@ body {
 }
 .scene-text-only .begin-quiz-btn:hover { background: #1B4965; }
 
+/* Playback picker */
+.playback-picker {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; min-height: 400px; text-align: center; padding: 32px;
+}
+.playback-picker h2 { font-size: 28px; margin-bottom: 8px; color: var(--primary); }
+.playback-picker p { color: var(--gray-500); margin-bottom: 32px; font-size: 18px; }
+.picker-buttons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.picker-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  background: var(--white); border: 2px solid var(--gray-200); border-radius: var(--radius);
+  padding: 28px 32px; cursor: pointer; transition: var(--transition); min-width: 200px;
+}
+.picker-btn:hover { border-color: var(--accent); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+.picker-icon { font-size: 32px; color: var(--primary); }
+.picker-label { font-size: 18px; font-weight: 700; color: var(--dark); }
+.picker-desc { font-size: 13px; color: var(--gray-500); max-width: 180px; }
+
 /* Image placeholder */
 .image-placeholder {
   width: 100%; height: 100%;
@@ -349,6 +367,53 @@ body {
   flex-shrink: 0;
 }
 .audio-play-btn:hover { background: #1B4965; }
+.audio-rewind-btn {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--gray-200);
+  color: var(--dark);
+  border: none;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  flex-shrink: 0;
+}
+.audio-rewind-btn:hover { background: var(--gray-300); }
+.audio-cc-btn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--gray-200);
+  color: var(--gray-500);
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+.audio-cc-btn.active {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+.audio-cc-btn:hover { border-color: var(--accent); }
+.caption-bar {
+  display: none;
+  background: var(--dark);
+  color: var(--white);
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  max-height: 150px;
+  overflow-y: auto;
+  margin-bottom: 8px;
+}
+.caption-bar.visible { display: block; }
 .audio-progress-wrap {
   flex: 1;
   display: flex;
@@ -659,6 +724,7 @@ body {
     </div>
     <div class="scene-content" id="sceneContent"></div>
     <div class="audio-controls" id="audioControls">
+      <button class="audio-rewind-btn" onclick="rewindAudio()" aria-label="Rewind 10 seconds">&#8634;10s</button>
       <button class="audio-play-btn" id="audioPlayBtn" onclick="toggleAudio()" aria-label="Play audio">&#9654;</button>
       <div class="audio-progress-wrap">
         <div class="audio-progress-track" id="audioTrack" onclick="seekAudio(event)">
@@ -666,7 +732,9 @@ body {
         </div>
         <span class="audio-time" id="audioTime">0:00</span>
       </div>
+      <button class="audio-cc-btn" id="ccBtn" onclick="toggleCaptions()" aria-label="Toggle captions">CC</button>
     </div>
+    <div class="caption-bar" id="captionBar"></div>
     <div class="scene-nav">
       <button class="nav-prev" id="prevBtn" onclick="prevScene()">Previous</button>
       <button class="nav-next" id="nextBtn" onclick="nextScene()">Next</button>
@@ -691,6 +759,8 @@ const TUTORIALS = [
   { tutorial_id: "T-DATA-01", title: "Healthcare Data and Privacy", pillar: "data", icon: "\uD83D\uDD12", description: "PHI, HIPAA rules, medical coding systems, and EHRs.", color: "#3B5BDB" },
   { tutorial_id: "T-CROSS-01", title: "How It All Connects", pillar: "cross_domain", icon: "\uD83D\uDD17", description: "Claims lifecycle, eligibility, coding on claims, and interoperability.", color: "#C0392B" }
 ];
+
+const TUTORIAL_SECTIONS = {"T-PAYOR-01": ["When you visit a doctor or go to the hospital, someone has to pay the bill. A payor (also spelled \"payer\") is the entity responsible for paying healthcare providers for the services you receive.\n\nPayors fall into three broad categories: government programs like Medicare and Medicaid, commercial (private) insurance companies, and self-pay. Most Americans have coverage through one of these channels.\n\nWhen a patient has coverage from more than one payor, coordination of benefits rules determine which payor pays first. The one that pays first is called the primary payer.", "Medicare is a federal health insurance program run by the Centers for Medicare and Medicaid Services (CMS), an agency within the U.S. Department of Health and Human Services. It primarily covers people age 65 and older, but it also covers certain younger people with disabilities, End-Stage Renal Disease, or ALS.\n\nOriginal Medicare has two main parts. Part A is Hospital Insurance. It covers inpatient hospital stays, skilled nursing facility care, hospice care, and some home health services. Most people do not pay a monthly premium for Part A because they or their spouse paid Medicare taxes for at least 10 years while working.\n\nPart B is Medical Insurance. It covers doctors' visits, outpatient hospital care, durable medical equipment like wheelchairs, and preventive services such as screenings and vaccinations. Part B requires a monthly premium. For 2026, the standard Part B premium is $202.90 per month with a $283 annual deductible.\n\nIf you are already receiving Social Security benefits, you are automatically enrolled in both Part A and Part B when you become eligible.", "Medicaid is a joint federal and state program that provides health coverage to eligible low-income adults, children, pregnant women, elderly adults, and people with disabilities. Unlike Medicare, which is purely federal, Medicaid is funded by both the federal government and state governments. The federal share varies by state based on per capita income and is called the Federal Medical Assistance Percentage (FMAP).\n\nEach state runs its own Medicaid program following federal requirements. This means eligibility rules and covered services can differ from state to state. Medicaid eligibility is based on income and household size rather than age, and people can apply at any time during the year. There is no annual enrollment window like some other programs.", "Commercial health insurance is the most common form of health coverage in the United States. You can get it through your employer, purchase it on the Health Insurance Marketplace, or buy it directly from an insurance company. Companies like Aetna, Blue Cross Blue Shield, and UnitedHealthcare are examples of major commercial insurers.\n\nEmployer-sponsored group health plans are the most common way Americans get private insurance. Typically, the employer shares the cost of premiums with employees. For example, your company might pay 70% of the monthly premium and you pay the remaining 30%.\n\nCommercial plans come in several types. An HMO (Health Maintenance Organization) usually requires you to choose a primary care doctor and get referrals to see specialists. A PPO (Preferred Provider Organization) gives you more flexibility to see any provider but costs less when you stay in-network. Other types include EPO (Exclusive Provider Organization) and POS (Point of Service) plans.", "A self-pay patient is someone who does not have health insurance or who chooses not to file a claim with their insurer for a particular service. An uninsured individual is someone not enrolled in any group health plan, individual insurance, or federal healthcare program.\n\nIf you are uninsured or self-pay, providers are required to help you understand costs upfront. Under the No Surprises Act, providers must give you a good faith estimate of expected charges before or when you schedule a healthcare service. This way, you know roughly what you will owe before you receive care.", "You may have heard of HIPAA, the Health Insurance Portability and Accountability Act. Under HIPAA, health plans are one of three types of \"covered entities\" that must follow strict rules to protect patient health information. The other two types are healthcare providers and clearinghouses.\n\nHIPAA-covered health plans include health insurance companies, HMOs, employer- sponsored group health plans, and government programs such as Medicare and Medicaid. These entities must comply with HIPAA's Privacy Rule and Security Rule.\n\nThere is one notable exception: a group health plan with fewer than 50 participants that is administered solely by the employer is exempt from HIPAA covered-entity requirements."], "T-PROVIDER-01": ["A healthcare provider is a person trained and licensed to give healthcare, or a place licensed to give healthcare. Your family doctor is a provider. So is a hospital, a pharmacy, and a physical therapy clinic.\n\nMedicare law makes an important distinction. It calls facilities like hospitals, hospices, and nursing homes \"providers.\" It calls entities that furnish equipment or diagnostic services \"suppliers.\" The distinction matters for billing and enrollment, but in everyday language, people use \"provider\" for both.", "Physicians and non-physician practitioners (like nurse practitioners and physician assistants) are the providers most people see first. A physician office is a common setting where you receive outpatient evaluation, diagnosis, and treatment.\n\nHospitals are institutional providers. They include general hospitals, critical access hospitals, skilled nursing facilities, home health agencies, and hospices. If you break your arm and need surgery, a hospital is where you would go.\n\nDurable Medical Equipment (DME) suppliers provide equipment that can withstand repeated use and lasts at least three years. Think of hospital beds, wheelchairs, ventilators, oxygen equipment, artificial limbs, and back braces. DME serves a medical purpose and is meant to be used in your home.\n\nAmbulance services are another provider type. Medicare covers ambulance transportation only when your medical condition makes other transportation unsafe. Emergency air ambulance by helicopter or airplane is covered when ground ambulance cannot get you there fast enough.\n\nAncillary services round out the picture. These include lab tests, radiology, pharmacy services, and other diagnostic or therapeutic services that support your primary care. Clinical labs operate in many settings — hospitals, physician offices, pharmacies, surgery centers, and as independent labs.", "When a provider treats you, they need to send a bill — called a claim — to the payor. Different types of providers use different claim forms.\n\nNon-institutional providers and suppliers (like your doctor's office) bill Medicare using the CMS-1500 form or its electronic version, the 837P transaction. Institutional providers (like hospitals) use the CMS-1450 form, also known as the UB-04, or the electronic 837I transaction.\n\nNearly all providers must submit claims to Medicare electronically. This is required under the Administrative Simplification Compliance Act (ASCA), unless the provider qualifies for a special waiver.", "Before a provider can bill Medicare, they must enroll. The process has three main steps. First, the provider gets a National Provider Identifier (NPI) — a unique 10-digit number used across all health transactions. Second, they complete an application through PECOS, Medicare's online enrollment system. Third, they work with their regional Medicare Administrative Contractor (MAC).\n\nDifferent provider types use different enrollment forms. Physicians use form CMS-855I. Hospitals and other institutional providers use form CMS-855A. DME suppliers use form CMS-855S and must also get accreditation from a CMS-approved organization and post a $50,000 surety bond.\n\nOnline applications through PECOS process in about 30 days. Paper applications take about 65 days. The ambulance fee schedule covers volunteer, municipal, private, and independent ambulance suppliers as well as hospitals.", "Medicaid enrollment works differently from Medicare. Each state runs its own Medicaid provider enrollment process and can impose requirements beyond the federal minimums set by CMS.\n\nAt a minimum, state Medicaid agencies must verify that a provider holds an unrestricted license before approving enrollment. Beyond that, states may require additional documentation, background checks, or site visits.", "Under HIPAA, a healthcare provider becomes a \"covered entity\" when it transmits health information electronically in connection with certain transactions, such as billing claims. In practice, most doctors, clinics, hospitals, psychologists, chiropractors, nursing homes, pharmacies, and dentists are HIPAA covered entities.\n\nAs covered entities, providers must comply with the Privacy Rule and Security Rule. This means they must put safeguards in place to protect patient health information, train their employees on privacy practices, and have contracts with any business associates that handle patient data on their behalf."], "T-PATIENT-01": ["When someone signs up for health insurance, they become the subscriber — also called the policyholder. The subscriber is the primary person who holds the insurance contract.\n\nFamily members covered under that same plan are called dependents. A dependent might be a spouse, a child, or a domestic partner. Under the Affordable Care Act, children can stay on a parent's plan until they turn 26, regardless of whether they are married. For example, if you get a job at 22 that does not offer insurance, you can remain on your parent's plan for four more years.", "How you get health insurance depends on where you get it. Eligibility for employer-sponsored insurance is determined by your employer's plan rules. Marketplace eligibility depends on factors like your income, household size, and where you live.\n\nMost health plans have an Open Enrollment period — an annual window when anyone can enroll in, renew, or change their plan. Outside that window, you generally cannot sign up unless you experience a qualifying life event.\n\nA Special Enrollment Period (SEP) lets you enroll or change plans outside of Open Enrollment after certain life changes — like losing your coverage, getting married, having a baby, or moving to a new state. Most SEPs give you 60 days before or after the event to pick a new plan.", "As a patient, you have important rights when it comes to your health information. Under the HIPAA Privacy Rule, you have a legal right to access and obtain copies of your protected health information (PHI) from covered entities like doctors, hospitals, and health plans. They must respond to your request within 30 days.\n\nYou can also request corrections or amendments to your health records if you believe something is inaccurate or incomplete. And you can direct a covered entity to send your records to a third party — another doctor, a family member, or anyone you choose.\n\nA provider may charge a reasonable fee for copying and mailing your records, but they cannot charge you for searching for or retrieving them. If you ever believe your privacy rights have been violated, you can file a complaint with the U.S. Department of Health and Human Services (HHS).", "When you visit a new doctor or hospital, they will usually ask you to sign a form acknowledging their Notice of Privacy Practices. This is a plain-language document required by HIPAA that explains how the provider may use and share your health information.\n\nSeparately, before any procedure or treatment, your provider should obtain your informed consent. This means the clinician explains the risks, benefits, and alternatives so you can make a voluntary, informed decision. Competent adults give their own consent. For children, a parent or legal guardian provides it.\n\nIn a life-threatening emergency, informed consent can be waived if there is not enough time to obtain it and no authorized decision-maker is available. For instance, if you arrive at the emergency room unconscious, doctors can begin life-saving treatment immediately.", "Health insurance does not mean free healthcare. You share costs with your plan in several ways.\n\nA premium is the amount you pay each month to keep your coverage active, whether or not you see a doctor. A deductible is the amount you must pay out of pocket each year before your plan starts paying its share. For example, if your deductible is $1,000, you pay the first $1,000 of covered services yourself.\n\nA copay is a fixed dollar amount you pay at the time of a visit — like $25 for a doctor's appointment. Coinsurance is a percentage you pay after meeting your deductible. For example, you might pay 20% of a covered service while your plan pays 80%.\n\nThe out-of-pocket maximum is the most you will pay in a plan year. Once you hit that number, your plan pays 100% of covered costs for the rest of the year. This protects you from very high medical bills.", "After your health plan processes a claim from your provider, it sends you an Explanation of Benefits (EOB). The EOB shows what was billed, what the plan paid, and what you owe. It is not a bill — it is a summary.\n\nYou should compare your EOB with the actual bill from your provider to make sure the services and amounts match before you pay. If something does not line up, contact your provider or your health plan to ask about it.", "Patient engagement means having the knowledge, skills, and confidence to actively participate in your own healthcare decisions. Research shows that patients who are more engaged tend to have better health outcomes and lower costs.\n\nSimple steps make a difference: asking questions during appointments, understanding your insurance benefits, reviewing your EOBs, and keeping track of your medical records. The more you understand the system, the better you can navigate it."], "T-DATA-01": ["Healthcare generates a lot of sensitive data. Protected Health Information (PHI) is any individually identifiable health information that relates to your past, present, or future physical or mental health, the care you received, or payment for that care.\n\nPHI includes things like your name, address, date of birth, and Social Security Number when they are linked to health information. It is protected under HIPAA regardless of form — whether it is in a computer system, on paper, or spoken aloud.", "The HIPAA Privacy Rule sets national standards for protecting PHI. It applies to covered entities — health plans, healthcare providers, and clearinghouses — as well as their business associates.\n\nOne key concept is the minimum necessary standard. Covered entities must make reasonable efforts to limit how much PHI they use or share to only what is needed for the task at hand. For example, if a billing office needs to process a claim, they should only access the billing-related information, not your entire medical history.\n\nThere is an exception: when providers share PHI for treatment purposes, the minimum necessary rule does not apply. Your doctor can share your full relevant history with a specialist who is treating you. You also have the right to access, inspect, and get copies of your own PHI.", "HIPAA defines three types of covered entities: health plans (like insurance companies and Medicare), healthcare clearinghouses, and healthcare providers who send health information electronically.\n\nA business associate is a person or organization that handles PHI on behalf of a covered entity. For example, a company that stores medical records in the cloud for a hospital is a business associate. They must sign a written agreement to follow HIPAA rules and protect the data they handle.", "While the Privacy Rule covers all forms of PHI, the HIPAA Security Rule focuses specifically on electronic PHI (ePHI). It requires covered entities and business associates to ensure the confidentiality, integrity, and availability of ePHI.\n\nThe Security Rule requires three types of safeguards: administrative (policies and procedures), physical (protecting facilities and equipment), and technical (technology controls for access and data protection). Think of it as locking the building, training the staff, and securing the computers.\n\nIf a breach of unsecured PHI does happen, the Breach Notification Rule kicks in. The covered entity must notify affected individuals within 60 days of discovering the breach. If the breach affects more than 500 people in a state, prominent media outlets and the HHS Secretary must also be notified. Smaller breaches are reported to HHS annually.", "Healthcare runs on standardized codes. When your doctor diagnoses you with something, that diagnosis is translated into an ICD code (International Classification of Diseases). The U.S. switched from ICD-9 to ICD-10 in 2015, expanding from about 14,000 codes to about 69,000. ICD-10 codes can be up to 7 characters long and capture more detail about the location, severity, and type of a condition.\n\nICD-10-CM (Clinical Modification) codes are used everywhere for diagnoses. ICD-10-PCS (Procedure Coding System) codes are used specifically for inpatient hospital procedures.\n\nOn the procedure side, CPT (Current Procedural Terminology) codes are 5-digit numbers maintained by the American Medical Association that identify the services a provider performed. HCPCS (Healthcare Common Procedure Coding System) has two levels: Level I is the CPT codes, and Level II covers products and services not in CPT — like ambulance services, durable medical equipment, and prosthetics. Level II codes start with a letter followed by 4 digits and are maintained by CMS.", "An in-network provider has a contract with your health insurer to provide services at pre-negotiated rates. This means lower out-of-pocket costs for you. If you visit an in-network doctor, your insurer has already agreed on what the service should cost.\n\nAn out-of-network provider has no such contract. You typically pay significantly more for the same service. For example, an in-network office visit might cost you a $25 copay, while the same visit out-of-network could cost you hundreds of dollars.", "An Electronic Health Record (EHR) is a digital version of your medical history. It includes your demographics, medications, vital signs, immunizations, lab results, and radiology reports — all maintained by your provider over time.\n\nEHRs help reduce duplicate tests, decrease treatment delays, and improve the accuracy of medical records by making your information available electronically to authorized providers. Certified EHR technology stores your data in a structured format so providers can easily retrieve, transfer, and use it to support care decisions."], "T-CROSS-01": ["Let me walk you through how a healthcare claim works from start to finish. You visit a doctor. The doctor treats you. Then the doctor's office submits a claim — a standardized bill — to your health plan. The health plan processes the claim and issues payment.\n\nProviders submit claims electronically to payors or to intermediaries like Medicare Administrative Contractors, using HIPAA-standard transaction formats. When the payor receives a claim, automated checks verify completeness, valid data, duplicate submissions, and whether the provider and patient are eligible.\n\nAfter these checks, the claim is adjudicated. It can be approved for payment, rejected (sent back to the provider for corrections), or denied (the service is not covered or does not meet policy requirements).", "Before treating you, a provider can check whether your insurance is active and what it covers. They do this by sending an electronic eligibility inquiry — called a HIPAA 270 transaction — to your health plan.\n\nSince January 2013, HIPAA rules require health plans to respond to these inquiries in real time. The response includes information about your deductibles, copays, and coinsurance. This helps the provider's office tell you upfront what you might owe for a visit.", "Every claim must pair a diagnosis code with a procedure code. The diagnosis code (ICD-10-CM) explains why you needed care. The procedure code (CPT or HCPCS) describes what the provider did. Together, they link the clinical documentation to the payor's reimbursement decision.\n\nIf a claim is submitted without a valid diagnosis code, it gets returned as incomplete and will not be processed. Even if the codes are present, the payor checks whether the diagnosis supports the procedure. If the diagnosis does not justify the service according to coverage policy, the claim may be denied for lack of medical necessity. For example, a claim for a knee MRI would need a diagnosis that explains why imaging the knee was medically needed.", "After your claim is processed, two things happen. Your health plan sends you an Explanation of Benefits (EOB). It shows the provider's charges, the allowed amount, what the plan paid, and what you owe. Remember, the EOB is not a bill — it is a summary. You should compare it to the actual bill from your provider.\n\nAt the same time, the payor sends the provider an Electronic Remittance Advice (ERA) — a HIPAA 835 transaction — detailing the payment amount, any adjustments, and reasons for denials.\n\nThe \"allowed amount\" is the maximum your plan will pay for a covered service. For in-network services, the provider generally cannot bill you beyond the allowed amount. Your share is limited to your copay, coinsurance, or deductible.", "A healthcare clearinghouse is an intermediary that sits between providers and payors. It receives claims and other transactions from providers, converts them into HIPAA-standard electronic formats, and forwards them to the correct health plan.\n\nThink of a clearinghouse as a translator. A provider's billing system might format data one way, but the health plan expects it in a specific standard format. The clearinghouse makes sure everything matches up. Clearinghouses are one of the three types of HIPAA covered entities, alongside health plans and providers.", "Every HIPAA-covered provider has a National Provider Identifier (NPI) — a unique, permanent 10-digit number. The NPI must appear on all electronic claims, eligibility inquiries, and other HIPAA transactions.\n\nThe NPI is \"intelligence-free.\" That means the number itself carries no information about the provider's location, specialty, or type. It is purely a unique identifier, like a Social Security Number for providers. This ensures that each provider can be consistently identified across every transaction in the system.", "HIPAA's Privacy Rule applies to all three types of covered entities — health plans, healthcare providers, and clearinghouses. Each must protect patients' protected health information (PHI). PHI is any data about a person's health, care, or payment that can identify them.\n\nCovered entities can share PHI without patient authorization for three purposes: treatment, payment, and healthcare operations — known as TPO. Outside of those purposes, the minimum necessary standard applies, meaning entities must limit shared information to the smallest amount needed.\n\nYou have the right to access and obtain copies of your health records from any covered entity within 30 days and to request corrections. HIPAA's Administrative Simplification provisions also mandate standard electronic formats for key transactions — claims (837), remittance advice (835), eligibility verification (270/271), claim status (276/277), and referral authorization (278). The current standard is ASC X12 Version 5010, used by providers, payors, and clearinghouses nationwide. These standardized formats allow any provider to submit a claim to any health plan using the same data structure, enabling interoperability across the entire system."]};
 
 const SCENES = [
   {"scene_id":"SCN-PAYOR-01-01","tutorial_id":"T-PAYOR-01","order":1,"scene_type":"intro","screen_text":"Who Pays for Healthcare?","visual_asset":"images/payor-title-card.png","visual_type":"nano-banana","visual_prompt_hint":"Healthcare payor title card \u2014 shield/insurance icon, teal and blue tones, clean modern","audio_asset":"audio/payor-01-01.wav","layout":"full_visual","linked_facts":[]},
@@ -829,6 +899,8 @@ let tutorialScenes = [];
 let audioEl = null;
 let isPlaying = false;
 let audioUpdateInterval = null;
+let playbackMode = null; // 'continuous' or 'scene' — chosen at lesson start
+let captionsOn = false;
 
 // Quiz state
 let quizQuestions = [];
@@ -898,9 +970,47 @@ function startTutorial(tid) {
   currentTutorialId = tid;
   tutorialScenes = getScenesForTutorial(tid);
   currentSceneIndex = 0;
+  playbackMode = null;
   showView('playerView');
   updateHeader();
+  showPlaybackPicker();
+}
+
+function showPlaybackPicker() {
+  const t = TUTORIALS.find(t => t.tutorial_id === currentTutorialId);
+  const container = document.getElementById('sceneContent');
+  container.innerHTML = `
+    <div class="playback-picker">
+      <h2>${escHtml(t ? t.title : '')}</h2>
+      <p>How would you like to go through this lesson?</p>
+      <div class="picker-buttons">
+        <button class="picker-btn" onclick="pickPlayback('continuous')">
+          <span class="picker-icon">&#9654;&#9654;</span>
+          <span class="picker-label">Play All</span>
+          <span class="picker-desc">Audio plays continuously, scenes auto-advance</span>
+        </button>
+        <button class="picker-btn" onclick="pickPlayback('scene')">
+          <span class="picker-icon">&#9654;&#124;</span>
+          <span class="picker-label">One at a Time</span>
+          <span class="picker-desc">Control each scene manually</span>
+        </button>
+      </div>
+    </div>
+  `;
+  document.getElementById('audioControls').style.display = 'none';
+  document.getElementById('prevBtn').disabled = true;
+  document.getElementById('nextBtn').style.display = 'none';
+  document.getElementById('sceneProgressFill').style.width = '0%';
+  document.getElementById('sceneProgressLabel').textContent = '';
+}
+
+function pickPlayback(mode) {
+  playbackMode = mode;
   renderScene();
+  if (mode === 'continuous') {
+    // Auto-play audio on first scene
+    setTimeout(() => { if (audioEl && !isPlaying) toggleAudio(); }, 300);
+  }
 }
 
 function updateHeader() {
@@ -910,7 +1020,7 @@ function updateHeader() {
   const right = document.getElementById('headerRight');
   backBtn.classList.add('visible');
   title.textContent = t ? t.title : 'Healthcare Foundations';
-  right.textContent = '';
+  right.textContent = playbackMode === 'continuous' ? '▶▶ Auto' : '';
 }
 
 function goBack() {
@@ -979,6 +1089,9 @@ function renderScene() {
   } else {
     audioControls.style.display = 'none';
   }
+
+  // Captions
+  updateCaptionText();
 
   // Nav buttons
   document.getElementById('prevBtn').disabled = currentSceneIndex === 0;
@@ -1050,6 +1163,24 @@ function setupAudio(src) {
     isPlaying = false;
     document.getElementById('audioPlayBtn').innerHTML = '&#9654;';
     clearInterval(audioUpdateInterval);
+    // In continuous mode, auto-advance to next scene
+    if (playbackMode === 'continuous') {
+      const nextIdx = currentSceneIndex + 1;
+      if (nextIdx < tutorialScenes.length) {
+        const nextScene = tutorialScenes[nextIdx];
+        if (nextScene.scene_type !== 'assessment') {
+          setTimeout(() => {
+            currentSceneIndex = nextIdx;
+            renderScene();
+            // Auto-play the next scene's audio
+            setTimeout(() => { if (audioEl && !isPlaying) toggleAudio(); }, 300);
+          }, 500);
+        } else {
+          // Reached assessment — advance but don't auto-play
+          setTimeout(() => { currentSceneIndex = nextIdx; renderScene(); }, 500);
+        }
+      }
+    }
   });
 
   audioEl.addEventListener('error', () => {
@@ -1077,7 +1208,7 @@ function updateAudioProgress() {
   if (!audioEl || !audioEl.duration) return;
   const pct = (audioEl.currentTime / audioEl.duration) * 100;
   document.getElementById('audioFill').style.width = pct + '%';
-  document.getElementById('audioTime').textContent = formatTime(audioEl.currentTime);
+  document.getElementById('audioTime').textContent = formatTime(audioEl.currentTime) + ' / ' + formatTime(audioEl.duration);
 }
 
 function seekAudio(e) {
@@ -1086,6 +1217,42 @@ function seekAudio(e) {
   const rect = track.getBoundingClientRect();
   const pct = (e.clientX - rect.left) / rect.width;
   audioEl.currentTime = pct * audioEl.duration;
+  updateAudioProgress();
+}
+
+function toggleCaptions() {
+  captionsOn = !captionsOn;
+  const btn = document.getElementById('ccBtn');
+  const bar = document.getElementById('captionBar');
+  btn.classList.toggle('active', captionsOn);
+  if (captionsOn) {
+    updateCaptionText();
+    bar.classList.add('visible');
+  } else {
+    bar.classList.remove('visible');
+  }
+}
+
+function updateCaptionText() {
+  const bar = document.getElementById('captionBar');
+  if (!captionsOn || !bar) return;
+  const scene = tutorialScenes[currentSceneIndex];
+  if (!scene) { bar.textContent = ''; return; }
+  // Use full tutorial section text for lesson scenes
+  if (scene.scene_type === 'lesson') {
+    const sections = TUTORIAL_SECTIONS[scene.tutorial_id] || [];
+    const secIdx = scene.order - 2;
+    if (secIdx >= 0 && secIdx < sections.length) {
+      bar.textContent = sections[secIdx];
+      return;
+    }
+  }
+  bar.textContent = scene.screen_text || '';
+}
+
+function rewindAudio() {
+  if (!audioEl) return;
+  audioEl.currentTime = Math.max(0, audioEl.currentTime - 10);
   updateAudioProgress();
 }
 
