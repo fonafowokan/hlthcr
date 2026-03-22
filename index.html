@@ -2104,7 +2104,7 @@ function renderScene() {
     html = `
       <div class="scene-text-only">
         <h2>${escHtml(scene.screen_text)}</h2>
-        <p>Answer 15 questions to test what you learned.</p>
+        <p>Test what you learned — ${Math.min(20, getQuestionsForTutorial(currentTutorialId).length)} questions at a time, ${getQuestionsForTutorial(currentTutorialId).length} total.</p>
         <button class="begin-quiz-btn" onclick="startQuiz()">Begin Quiz</button>
       </div>
     `;
@@ -2355,20 +2355,33 @@ function stopAudio() {
 // QUIZ
 // ════════════════════════════════════════════════════════════════
 
+let allPillarQuestions = []; // full pool for current pillar
+let quizRound = 0;
+const QUIZ_BATCH = 20;
+
 function startQuiz() {
   stopAudio();
-  quizQuestions = getQuestionsForTutorial(currentTutorialId);
-  // Shuffle questions
-  for (let i = quizQuestions.length - 1; i > 0; i--) {
+  allPillarQuestions = getQuestionsForTutorial(currentTutorialId);
+  // Shuffle full pool
+  for (let i = allPillarQuestions.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [quizQuestions[i], quizQuestions[j]] = [quizQuestions[j], quizQuestions[i]];
+    [allPillarQuestions[i], allPillarQuestions[j]] = [allPillarQuestions[j], allPillarQuestions[i]];
   }
+  quizRound = 0;
+  startQuizBatch();
+}
+
+function startQuizBatch() {
+  const start = quizRound * QUIZ_BATCH;
+  const end = Math.min(start + QUIZ_BATCH, allPillarQuestions.length);
+  quizQuestions = allPillarQuestions.slice(start, end);
   quizIndex = 0;
   quizScore = 0;
   quizAnswered = false;
   showView('quizView');
   const t = TUTORIALS.find(t => t.tutorial_id === currentTutorialId);
-  document.getElementById('headerTitle').textContent = t ? t.title + ' \u2014 Quiz' : 'Quiz';
+  const roundLabel = allPillarQuestions.length > QUIZ_BATCH ? ` (${start + 1}\u2013${end} of ${allPillarQuestions.length})` : '';
+  document.getElementById('headerTitle').textContent = (t ? t.title + ' \u2014 Quiz' : 'Quiz') + roundLabel;
   renderQuestion();
 }
 
@@ -2475,6 +2488,10 @@ function showQuizSummary() {
   else if (pct >= 60) message = 'Good effort! Review the lesson to strengthen a few areas.';
   else message = 'Keep going! Re-read the lesson and try again.';
 
+  const nextStart = (quizRound + 1) * QUIZ_BATCH;
+  const hasMore = nextStart < allPillarQuestions.length;
+  const remaining = allPillarQuestions.length - nextStart;
+
   const container = document.getElementById('quizContainer');
   container.innerHTML = `
     <div class="quiz-summary">
@@ -2486,7 +2503,8 @@ function showQuizSummary() {
       <p>${message}</p>
       <div class="summary-actions">
         <button class="summary-home-btn" onclick="goBack()">Back to Course Home</button>
-        <button class="summary-retry-btn" onclick="startQuiz()">Retry Quiz</button>
+        ${hasMore ? `<button class="summary-retry-btn" onclick="quizRound++; startQuizBatch()">Next ${Math.min(QUIZ_BATCH, remaining)} Questions</button>` : ''}
+        <button class="summary-retry-btn" onclick="startQuiz()">Restart All (Shuffled)</button>
       </div>
     </div>
   `;
