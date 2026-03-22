@@ -1,0 +1,12 @@
+{
+  "image_file": "cross-claim-lifecycle.png",
+  "scene_id": "SCN-CROSS-01-02",
+  "tutorial_id": "T-CROSS-01",
+  "visual_type": "excalidraw",
+  "visual_prompt_hint": "Left-to-right flow: Patient Visit -> Provider Submits Claim -> Automated Checks -> Adjudication",
+  "prompt": "Left-to-Right Flow. 4 boxes: Patient (yellow) -> Provider (teal) -> Claim (purple) -> Payor (blue). Arrows: Visit, Submit, Pay. Title: Claims Flow.",
+  "generated_at": "2026-03-21T20:07:00",
+  "aspect_ratio": "16:9",
+  "version": 2,
+  "spelling_check": "PASS — v1 had duplicate Submit/Process labels"
+}

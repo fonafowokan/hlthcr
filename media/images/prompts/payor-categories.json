@@ -1,0 +1,12 @@
+{
+  "image_file": "payor-categories.png",
+  "scene_id": "SCN-PAYOR-01-02",
+  "tutorial_id": "T-PAYOR-01",
+  "visual_type": "excalidraw",
+  "visual_prompt_hint": "Hub-and-spoke diagram with Payor in center, three spokes to Government, Commercial Insurance, and Self-Pay",
+  "prompt": "Hub and Spoke layout. Center hub: Payor (soft blue). Top spoke: Government (teal) with Medicare, Medicaid. Right spoke: Commercial (warm yellow) with Aetna, BCBS, UHC. Bottom spoke: Self-Pay (light purple) with No insurance. Title: Types of Payors.",
+  "generated_at": "2026-03-21T20:04:00",
+  "aspect_ratio": "16:9",
+  "version": 1,
+  "spelling_check": "PASS — minor # in title, acceptable"
+}

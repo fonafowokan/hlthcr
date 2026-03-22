@@ -1,0 +1,12 @@
+{
+  "image_file": "payor-medicare-parts.png",
+  "scene_id": "SCN-PAYOR-01-03",
+  "tutorial_id": "T-PAYOR-01",
+  "visual_type": "excalidraw",
+  "visual_prompt_hint": "Side-by-side comparison: Part A (Hospital Insurance) vs Part B (Medical Insurance)",
+  "prompt": "Side-by-Side Comparison. Left: Part A, Hospital — Hospital stays, Nursing, Hospice. Usually free. Right: Part B, Medical — Doctor visits, Lab tests, Vaccines. $203/month. Title: Medicare A vs B.",
+  "generated_at": "2026-03-21T20:07:00",
+  "aspect_ratio": "16:9",
+  "version": 3,
+  "spelling_check": "PASS — v1 had Outphient, v2 had Inpatent/Outpbient, v3 used shorter labels to avoid misspellings"
+}

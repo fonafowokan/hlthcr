@@ -1,0 +1,10 @@
+{
+  "image_file": "provider-title-card.png",
+  "scene_id": "SCN-PROVIDER-01-01",
+  "tutorial_id": "T-PROVIDER-01",
+  "visual_type": "nano-banana",
+  "visual_prompt_hint": "Healthcare provider title card — stethoscope and hospital icon, warm green and white tones, professional and clean",
+  "prompt": "{\"prompt\": \"Clean modern healthcare education title card, 16:9 aspect ratio. Healthcare provider title card \\u2014 stethoscope and hospital icon, warm green and white tones, professional and clean. Bold clean sans-serif text at center reads 'Who Provides Healthcare?' in dark navy (#1A1A2E). Professional, minimal, educational feel. No people, no photos. Flat design with subtle depth. Color palette: teal (#2A6F97), light blue (#A9D6E5), white, dark navy text.\", \"negative_prompt\": \"blurry, low reso...",
+  "generated_at": "2026-03-21T20:33:58.995863",
+  "aspect_ratio": "16:9"
+}

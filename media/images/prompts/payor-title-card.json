@@ -1,0 +1,12 @@
+{
+  "image_file": "payor-title-card.png",
+  "scene_id": "SCN-PAYOR-01-01",
+  "tutorial_id": "T-PAYOR-01",
+  "visual_type": "nano-banana",
+  "visual_prompt_hint": "Healthcare payor title card — shield/insurance icon, teal and blue tones, clean modern",
+  "prompt": "Clean modern healthcare education title card, 16:9 aspect ratio. A large translucent teal and blue shield icon centered on a soft white-to-light-blue gradient background. Small subtle healthcare icons (stethoscope, clipboard, heart) float around the shield. Bold clean sans-serif text at center reads \"Who Pays for Healthcare?\" in dark navy (#1A1A2E). Below in smaller text: \"Payor Fundamentals\". Professional, minimal, educational feel.",
+  "generated_at": "2026-03-21T20:04:00",
+  "aspect_ratio": "16:9",
+  "version": 1,
+  "spelling_check": "PASS"
+}

@@ -1,0 +1,10 @@
+{
+  "image_file": "provider-medicare-enrollment.png",
+  "scene_id": "SCN-PROVIDER-01-05",
+  "tutorial_id": "T-PROVIDER-01",
+  "visual_type": "excalidraw",
+  "visual_prompt_hint": "Three-step process flow: Get NPI -> Enroll via PECOS -> Work with MAC, with enrollment form variants listed below",
+  "prompt": "Excalidraw-style hand-drawn diagram on a clean white background. All text uses neat, consistent architect-style handwriting -- legible, slightly rounded letters with medium stroke weight. Letter sizes are uniform within each label. Titles are bold and larger. Body labels are smaller but equally neat. This is NOT sloppy handwriting -- it looks like a designer wrote it carefully with a thick marker.\n\nShapes are rounded rectangles with a 2-3px dark gray (#495057) hand-drawn outline and soft pastel ...",
+  "generated_at": "2026-03-21T20:34:48.876029",
+  "aspect_ratio": "16:9"
+}

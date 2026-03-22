@@ -1,0 +1,10 @@
+{
+  "image_file": "cross-title-card.png",
+  "scene_id": "SCN-CROSS-01-01",
+  "tutorial_id": "T-CROSS-01",
+  "visual_type": "nano-banana",
+  "visual_prompt_hint": "Cross-domain title card — interconnected network of healthcare icons (heart, clipboard, shield, dollar), vibrant multi-color, holistic feel",
+  "prompt": "{\"prompt\": \"Clean modern healthcare education title card, 16:9 aspect ratio. Cross-domain title card \\u2014 interconnected network of healthcare icons (heart, clipboard, shield, dollar), vibrant multi-color, holistic feel. Bold clean sans-serif text at center reads 'How It All Connects' in dark navy (#1A1A2E). Professional, minimal, educational feel. No people, no photos. Flat design with subtle depth. Color palette: teal (#2A6F97), light blue (#A9D6E5), white, dark navy text.\", \"negative_prompt...",
+  "generated_at": "2026-03-21T20:39:46.537276",
+  "aspect_ratio": "16:9"
+}

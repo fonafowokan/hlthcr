@@ -1,0 +1,10 @@
+{
+  "image_file": "data-title-card.png",
+  "scene_id": "SCN-DATA-01-01",
+  "tutorial_id": "T-DATA-01",
+  "visual_type": "nano-banana",
+  "visual_prompt_hint": "Data privacy title card — lock and medical data icons, deep blue and silver tones, secure and modern feel",
+  "prompt": "{\"prompt\": \"Clean modern healthcare education title card, 16:9 aspect ratio. Data privacy title card \\u2014 lock and medical data icons, deep blue and silver tones, secure and modern feel. Bold clean sans-serif text at center reads 'Healthcare Data and Privacy' in dark navy (#1A1A2E). Professional, minimal, educational feel. No people, no photos. Flat design with subtle depth. Color palette: teal (#2A6F97), light blue (#A9D6E5), white, dark navy text.\", \"negative_prompt\": \"blurry, low resolution...",
+  "generated_at": "2026-03-21T20:37:53.371651",
+  "aspect_ratio": "16:9"
+}

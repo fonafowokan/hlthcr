@@ -1,0 +1,10 @@
+{
+  "image_file": "patient-eob.png",
+  "scene_id": "SCN-PATIENT-01-07",
+  "tutorial_id": "T-PATIENT-01",
+  "visual_type": "excalidraw",
+  "visual_prompt_hint": "Annotated EOB mock-up showing key fields: charges billed, plan paid, patient owes — with 'Not a bill' callout",
+  "prompt": "Excalidraw-style hand-drawn diagram on a clean white background. All text uses neat, consistent architect-style handwriting -- legible, slightly rounded letters with medium stroke weight. Letter sizes are uniform within each label. Titles are bold and larger. Body labels are smaller but equally neat. This is NOT sloppy handwriting -- it looks like a designer wrote it carefully with a thick marker.\n\nShapes are rounded rectangles with a 2-3px dark gray (#495057) hand-drawn outline and soft pastel ...",
+  "generated_at": "2026-03-21T20:37:13.925075",
+  "aspect_ratio": "16:9"
+}

@@ -1,0 +1,10 @@
+{
+  "image_file": "patient-title-card.png",
+  "scene_id": "SCN-PATIENT-01-01",
+  "tutorial_id": "T-PATIENT-01",
+  "visual_type": "nano-banana",
+  "visual_prompt_hint": "Patient-centered title card — person with health shield icon, soft purple and white tones, welcoming and accessible",
+  "prompt": "{\"prompt\": \"Clean modern healthcare education title card, 16:9 aspect ratio. Patient-centered title card \\u2014 person with health shield icon, soft purple and white tones, welcoming and accessible. Bold clean sans-serif text at center reads 'Who Receives Healthcare?' in dark navy (#1A1A2E). Professional, minimal, educational feel. No people, no photos. Flat design with subtle depth. Color palette: teal (#2A6F97), light blue (#A9D6E5), white, dark navy text.\", \"negative_prompt\": \"blurry, low res...",
+  "generated_at": "2026-03-21T20:35:52.659336",
+  "aspect_ratio": "16:9"
+}
