@@ -1,0 +1,202 @@
+# Healthcare Foundations — Logical Fact Ordering
+# Defines the curriculum learning sequence for the 125 atomic facts
+# Grouped into 14 topic sections, ordered for progressive understanding
+#
+# Usage: drives the Facts Explorer panel in index.html
+# Generated: 2026-03-22
+
+sections:
+  - section_id: 1
+    title: "The Players: Who's Who"
+    description: "Introducing the three key roles in healthcare"
+    facts:
+      - FACT-PRV-001
+      - FACT-PAY-001
+      - FACT-PAT-001
+      - FACT-PAT-002
+      - FACT-CRS-001
+
+  - section_id: 2
+    title: "Providers: Types & Settings"
+    description: "The different kinds of healthcare providers and where care happens"
+    facts:
+      - FACT-PRV-002
+      - FACT-PRV-004
+      - FACT-PRV-005
+      - FACT-PRV-006
+      - FACT-PRV-007
+      - FACT-PRV-008
+      - FACT-PRV-009
+      - FACT-PRV-010
+      - FACT-PRV-011
+      - FACT-PRV-012
+      - FACT-PRV-013
+      - FACT-PRV-014
+      - FACT-PRV-015
+
+  - section_id: 3
+    title: "Provider Enrollment & Billing"
+    description: "How providers register with Medicare and submit claims"
+    facts:
+      - FACT-PRV-019
+      - FACT-CRS-016
+      - FACT-CRS-017
+      - FACT-PRV-018
+      - FACT-PRV-020
+      - FACT-PRV-003
+      - FACT-PRV-016
+      - FACT-PRV-017
+      - FACT-PRV-021
+      - FACT-PRV-022
+
+  - section_id: 4
+    title: "Payors: Government Programs"
+    description: "Medicare and Medicaid — how government health insurance works"
+    facts:
+      - FACT-PAY-002
+      - FACT-PAY-004
+      - FACT-PAY-005
+      - FACT-PAY-006
+      - FACT-PAY-007
+      - FACT-PAY-008
+      - FACT-PAY-009
+      - FACT-PAY-010
+      - FACT-PAY-011
+      - FACT-PAY-012
+      - FACT-PAY-013
+      - FACT-PAY-014
+      - FACT-PAY-015
+
+  - section_id: 5
+    title: "Payors: Commercial & Self-Pay"
+    description: "Private insurance plans and paying out of pocket"
+    facts:
+      - FACT-PAY-016
+      - FACT-PAY-017
+      - FACT-PAY-018
+      - FACT-PAY-019
+      - FACT-PAY-003
+      - FACT-PAY-020
+      - FACT-PAY-021
+      - FACT-PAY-022
+
+  - section_id: 6
+    title: "Patient Enrollment & Eligibility"
+    description: "How patients get and keep health insurance coverage"
+    facts:
+      - FACT-PAT-003
+      - FACT-PAT-004
+      - FACT-PAT-005
+      - FACT-PAT-006
+      - FACT-PAT-007
+      - FACT-CRS-005
+      - FACT-CRS-006
+
+  - section_id: 7
+    title: "Patient Cost Sharing"
+    description: "Premiums, deductibles, copays, coinsurance, and out-of-pocket limits"
+    facts:
+      - FACT-PAT-018
+      - FACT-PAT-019
+      - FACT-PAT-020
+      - FACT-PAT-021
+      - FACT-PAT-022
+      - FACT-CRS-013
+
+  - section_id: 8
+    title: "Patient Rights & Consent"
+    description: "Informed consent, access to records, and HIPAA patient rights"
+    facts:
+      - FACT-PAT-015
+      - FACT-PAT-016
+      - FACT-PAT-017
+      - FACT-PAT-008
+      - FACT-PAT-009
+      - FACT-PAT-010
+      - FACT-PAT-011
+      - FACT-PAT-012
+      - FACT-PAT-013
+      - FACT-PAT-014
+      - FACT-PAT-025
+
+  - section_id: 9
+    title: "Healthcare Data: Coding Systems"
+    description: "ICD, CPT, and HCPCS — the languages of healthcare billing"
+    facts:
+      - FACT-DAT-014
+      - FACT-DAT-015
+      - FACT-DAT-016
+      - FACT-DAT-017
+      - FACT-DAT-018
+      - FACT-DAT-019
+      - FACT-DAT-020
+      - FACT-CRS-007
+      - FACT-CRS-009
+
+  - section_id: 10
+    title: "Healthcare Data: Networks & EHRs"
+    description: "In-network vs out-of-network providers and electronic health records"
+    facts:
+      - FACT-DAT-021
+      - FACT-DAT-022
+      - FACT-DAT-023
+      - FACT-DAT-024
+      - FACT-DAT-025
+
+  - section_id: 11
+    title: "Claims Flow & Processing"
+    description: "How a claim moves from provider to payor to payment"
+    facts:
+      - FACT-CRS-002
+      - FACT-CRS-003
+      - FACT-CRS-008
+      - FACT-CRS-004
+      - FACT-CRS-010
+      - FACT-CRS-011
+      - FACT-PAT-023
+      - FACT-PAT-024
+      - FACT-CRS-012
+
+  - section_id: 12
+    title: "Clearinghouses & Transaction Standards"
+    description: "How electronic healthcare transactions are standardized and routed"
+    facts:
+      - FACT-CRS-014
+      - FACT-CRS-015
+      - FACT-CRS-023
+      - FACT-CRS-024
+      - FACT-CRS-025
+
+  - section_id: 13
+    title: "HIPAA: PHI & Privacy Rule"
+    description: "What protected health information is and how the Privacy Rule works"
+    facts:
+      - FACT-DAT-001
+      - FACT-DAT-002
+      - FACT-DAT-003
+      - FACT-CRS-019
+      - FACT-DAT-004
+      - FACT-DAT-005
+      - FACT-DAT-006
+      - FACT-CRS-020
+      - FACT-CRS-021
+      - FACT-DAT-007
+      - FACT-CRS-022
+
+  - section_id: 14
+    title: "HIPAA: Covered Entities & Security"
+    description: "Who must follow HIPAA, and how health data is secured"
+    facts:
+      - FACT-DAT-008
+      - FACT-PRV-023
+      - FACT-PRV-025
+      - FACT-PRV-024
+      - FACT-PAY-023
+      - FACT-PAY-024
+      - FACT-PAY-025
+      - FACT-CRS-018
+      - FACT-DAT-009
+      - FACT-DAT-010
+      - FACT-DAT-011
+      - FACT-DAT-012
+      - FACT-DAT-013

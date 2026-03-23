@@ -64,7 +64,7 @@ SPELL_OUT = {
     "ePHI": "electronic P. H. I.",
     "DMEPOS": "D. M. E. P. O. S.",
     "PECOS": "PEE-koss",
-    "HIPAA": "HIP-AH",
+    "HIPAA": "hippa",
     "HCPCS": "HICK-picks",
 }
 

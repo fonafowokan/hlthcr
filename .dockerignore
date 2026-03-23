@@ -1,0 +1,14 @@
+.claude
+.vscode
+.git
+.gitignore
+.dockerignore
+.env
+Dockerfile
+scripts
+exports
+projects
+validation
+sources
+meta
+brand-assets

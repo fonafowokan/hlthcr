@@ -5109,9 +5109,10 @@ questions:
   correct_answer: A
   explanation_correct: PHI relates to a person's past, present, or future health, the provision of health care, or payment
     for health care.
-  explanation_incorrect_B: Employment and salary data are not health information and are not covered by HIPAA.
-  explanation_incorrect_C: Educational records fall under FERPA, not HIPAA.
-  explanation_incorrect_D: Criminal records are not health information protected under HIPAA.
+  explanation_incorrect:
+    B: Employment and salary data are not health information and are not covered by HIPAA.
+    C: Educational records fall under FERPA, not HIPAA.
+    D: Criminal records are not health information protected under HIPAA.
 - question_id: Q-DAT-036
   type: MCQ
   pillar: data
@@ -5126,9 +5127,10 @@ questions:
   correct_answer: B
   explanation_correct: A blood type by itself, with no link to an individual's identity, is not PHI. PHI requires both health
     data and an identifier.
-  explanation_incorrect_A: A patient's name linked to health information is a common PHI identifier.
-  explanation_incorrect_C: A Social Security Number linked to health data is a classic example of PHI.
-  explanation_incorrect_D: A home address linked to health information qualifies as PHI.
+  explanation_incorrect:
+    A: A patient's name linked to health information is a common PHI identifier.
+    C: A Social Security Number linked to health data is a classic example of PHI.
+    D: A home address linked to health information qualifies as PHI.
 - question_id: Q-DAT-037
   type: MCQ
   pillar: data
@@ -5142,9 +5144,10 @@ questions:
     D: Paper and oral only
   correct_answer: C
   explanation_correct: HIPAA protects PHI regardless of its form — electronic, paper, or oral.
-  explanation_incorrect_A: Electronic-only protection would leave paper records and spoken information unprotected.
-  explanation_incorrect_B: Oral communications containing PHI are also protected under HIPAA.
-  explanation_incorrect_D: Electronic PHI is also protected under HIPAA, particularly by the Security Rule.
+  explanation_incorrect:
+    A: Electronic-only protection would leave paper records and spoken information unprotected.
+    B: Oral communications containing PHI are also protected under HIPAA.
+    D: Electronic PHI is also protected under HIPAA, particularly by the Security Rule.
 - question_id: Q-DAT-038
   type: MCQ
   pillar: data
@@ -5159,9 +5162,10 @@ questions:
   correct_answer: B
   explanation_correct: The Privacy Rule establishes standards for covered entities and their business associates regarding
     the protection of PHI.
-  explanation_incorrect_A: The Privacy Rule applies to all covered entities, not just hospitals and physician offices.
-  explanation_incorrect_C: Health plans are only one type of covered entity. Providers and clearinghouses are also covered.
-  explanation_incorrect_D: The Privacy Rule applies broadly to covered entities in both the private and public sectors.
+  explanation_incorrect:
+    A: The Privacy Rule applies to all covered entities, not just hospitals and physician offices.
+    C: Health plans are only one type of covered entity. Providers and clearinghouses are also covered.
+    D: The Privacy Rule applies broadly to covered entities in both the private and public sectors.
 - question_id: Q-DAT-039
   type: MCQ
   pillar: data
@@ -5176,9 +5180,10 @@ questions:
   correct_answer: B
   explanation_correct: The minimum necessary standard requires covered entities to limit PHI use and disclosure to the minimum
     needed for the intended purpose.
-  explanation_incorrect_A: The standard relates to PHI disclosure limits, not file size or data storage.
-  explanation_incorrect_C: Staffing levels for equipment access are not related to the minimum necessary standard.
-  explanation_incorrect_D: The standard governs how much PHI is shared, not how many patient visits occur.
+  explanation_incorrect:
+    A: The standard relates to PHI disclosure limits, not file size or data storage.
+    C: Staffing levels for equipment access are not related to the minimum necessary standard.
+    D: The standard governs how much PHI is shared, not how many patient visits occur.
 - question_id: Q-DAT-040
   type: MCQ
   pillar: data
@@ -5193,9 +5198,10 @@ questions:
   correct_answer: B
   explanation_correct: Treatment-related disclosures between health care providers are specifically exempt from the minimum
     necessary standard.
-  explanation_incorrect_A: Marketing disclosures are not exempt from HIPAA requirements.
-  explanation_incorrect_C: Law enforcement disclosures are not broadly exempt from the minimum necessary standard.
-  explanation_incorrect_D: Employer wellness disclosures are not exempt from the minimum necessary requirement.
+  explanation_incorrect:
+    A: Marketing disclosures are not exempt from HIPAA requirements.
+    C: Law enforcement disclosures are not broadly exempt from the minimum necessary standard.
+    D: Employer wellness disclosures are not exempt from the minimum necessary requirement.
 - question_id: Q-DAT-041
   type: MCQ
   pillar: data
@@ -5209,9 +5215,10 @@ questions:
     D: The right to edit their medical records directly without provider involvement
   correct_answer: B
   explanation_correct: The Privacy Rule grants individuals the right to access, inspect, and obtain a copy of their own PHI.
-  explanation_incorrect_A: Patients can request amendments, but providers are not required to delete records.
-  explanation_incorrect_C: Patients cannot universally block all provider access to PHI needed for treatment.
-  explanation_incorrect_D: Patients may request amendments, but they cannot directly edit their medical records.
+  explanation_incorrect:
+    A: Patients can request amendments, but providers are not required to delete records.
+    C: Patients cannot universally block all provider access to PHI needed for treatment.
+    D: Patients may request amendments, but they cannot directly edit their medical records.
 - question_id: Q-DAT-042
   type: MCQ
   pillar: data
@@ -5226,10 +5233,10 @@ questions:
   correct_answer: A
   explanation_correct: Health care providers who transmit health information electronically in connection with covered transactions
     are one of the three types of covered entities.
-  explanation_incorrect_B: Medical device manufacturers are not covered entities unless they also function as a provider,
-    plan, or clearinghouse.
-  explanation_incorrect_C: Pharmaceutical companies are not covered entities under HIPAA.
-  explanation_incorrect_D: A blog publishing medical advice is not a covered entity.
+  explanation_incorrect:
+    B: Medical device manufacturers are not covered entities unless they also function as a provider, plan, or clearinghouse.
+    C: Pharmaceutical companies are not covered entities under HIPAA.
+    D: A blog publishing medical advice is not a covered entity.
 - question_id: Q-DAT-043
   type: MCQ
   pillar: data
@@ -5244,9 +5251,10 @@ questions:
   correct_answer: B
   explanation_correct: Health care clearinghouses process health information received from one entity into a standard format
     for another entity.
-  explanation_incorrect_A: Clearinghouses do not provide direct patient care — that is the role of providers.
-  explanation_incorrect_C: Selling insurance policies is the function of health plans, not clearinghouses.
-  explanation_incorrect_D: Equipment manufacturing is not a clearinghouse function.
+  explanation_incorrect:
+    A: Clearinghouses do not provide direct patient care — that is the role of providers.
+    C: Selling insurance policies is the function of health plans, not clearinghouses.
+    D: Equipment manufacturing is not a clearinghouse function.
 - question_id: Q-DAT-044
   type: MCQ
   pillar: data
@@ -5261,9 +5269,10 @@ questions:
   correct_answer: B
   explanation_correct: A business associate must sign a written Business Associate Agreement (BAA) to comply with HIPAA rules
     before handling PHI.
-  explanation_incorrect_A: Patient consent forms are signed by patients, not business associates.
-  explanation_incorrect_C: A medical license is for health care providers, not business associates.
-  explanation_incorrect_D: Provider enrollment is for providers participating in health plans, not for business associates.
+  explanation_incorrect:
+    A: Patient consent forms are signed by patients, not business associates.
+    C: A medical license is for health care providers, not business associates.
+    D: Provider enrollment is for providers participating in health plans, not for business associates.
 - question_id: Q-DAT-045
   type: MCQ
   pillar: data
@@ -5278,10 +5287,10 @@ questions:
   correct_answer: B
   explanation_correct: A billing company that handles PHI on behalf of a covered entity is a business associate and must have
     a BAA in place.
-  explanation_incorrect_A: A patient is not a business associate — they are the individual whose PHI is being protected.
-  explanation_incorrect_C: A nurse providing care is part of the covered entity (the provider), not a separate business associate.
-  explanation_incorrect_D: A health insurer is itself a covered entity, not a business associate of another covered entity
-    in this context.
+  explanation_incorrect:
+    A: A patient is not a business associate — they are the individual whose PHI is being protected.
+    C: A nurse providing care is part of the covered entity (the provider), not a separate business associate.
+    D: A health insurer is itself a covered entity, not a business associate of another covered entity in this context.
 - question_id: Q-DAT-046
   type: MCQ
   pillar: data
@@ -5296,10 +5305,10 @@ questions:
   correct_answer: B
   explanation_correct: The Security Rule specifically addresses the protection of electronic protected health information
     (ePHI).
-  explanation_incorrect_A: The Security Rule focuses on ePHI. The Privacy Rule provides broader protection for PHI in all
-    forms.
-  explanation_incorrect_C: Paper records are covered by the Privacy Rule, not the Security Rule.
-  explanation_incorrect_D: Oral communications are covered by the Privacy Rule, not the Security Rule.
+  explanation_incorrect:
+    A: The Security Rule focuses on ePHI. The Privacy Rule provides broader protection for PHI in all forms.
+    C: Paper records are covered by the Privacy Rule, not the Security Rule.
+    D: Oral communications are covered by the Privacy Rule, not the Security Rule.
 - question_id: Q-DAT-047
   type: MCQ
   pillar: data
@@ -5313,10 +5322,10 @@ questions:
     D: Marketability
   correct_answer: B
   explanation_correct: The Security Rule requires ensuring the confidentiality, integrity, and availability of ePHI.
-  explanation_incorrect_A: Profitability is a business objective, not a security objective under HIPAA.
-  explanation_incorrect_C: While HIPAA includes portability provisions, the Security Rule focuses on confidentiality, integrity,
-    and availability.
-  explanation_incorrect_D: Marketability is not a security objective under HIPAA.
+  explanation_incorrect:
+    A: Profitability is a business objective, not a security objective under HIPAA.
+    C: While HIPAA includes portability provisions, the Security Rule focuses on confidentiality, integrity, and availability.
+    D: Marketability is not a security objective under HIPAA.
 - question_id: Q-DAT-048
   type: MCQ
   pillar: data
@@ -5330,9 +5339,10 @@ questions:
     D: Placing fire extinguishers near data storage equipment
   correct_answer: B
   explanation_correct: Administrative safeguards include policies and procedures such as workforce training on handling ePHI.
-  explanation_incorrect_A: Locks on server rooms are a physical safeguard.
-  explanation_incorrect_C: Encryption is a technical safeguard.
-  explanation_incorrect_D: Fire protection for equipment is a physical safeguard.
+  explanation_incorrect:
+    A: Locks on server rooms are a physical safeguard.
+    C: Encryption is a technical safeguard.
+    D: Fire protection for equipment is a physical safeguard.
 - question_id: Q-DAT-049
   type: MCQ
   pillar: data
@@ -5347,9 +5357,10 @@ questions:
   correct_answer: C
   explanation_correct: Technical safeguards are technology-based controls such as access controls, user authentication, and
     encryption.
-  explanation_incorrect_A: Background checks are an administrative safeguard.
-  explanation_incorrect_B: Offsite storage of backup tapes is a physical safeguard.
-  explanation_incorrect_D: Staff training is an administrative safeguard.
+  explanation_incorrect:
+    A: Background checks are an administrative safeguard.
+    B: Offsite storage of backup tapes is a physical safeguard.
+    D: Staff training is an administrative safeguard.
 - question_id: Q-DAT-050
   type: MCQ
   pillar: data
@@ -5365,9 +5376,10 @@ questions:
   correct_answer: C
   explanation_correct: The Breach Notification Rule requires notification without unreasonable delay and no later than 60
     days after discovery.
-  explanation_incorrect_A: 30 days is shorter than the required notification window.
-  explanation_incorrect_B: 45 days is not the correct timeframe under the rule.
-  explanation_incorrect_D: 90 days exceeds the maximum allowed notification period.
+  explanation_incorrect:
+    A: 30 days is shorter than the required notification window.
+    B: 45 days is not the correct timeframe under the rule.
+    D: 90 days exceeds the maximum allowed notification period.
 - question_id: Q-DAT-051
   type: MCQ
   pillar: data
@@ -5381,10 +5393,10 @@ questions:
     D: A breach that occurs at a federal government facility
   correct_answer: B
   explanation_correct: Media notification is required when a breach affects 500 or more residents of a single state or jurisdiction.
-  explanation_incorrect_A: Media notification is not required for every breach — only large-scale breaches trigger this requirement.
-  explanation_incorrect_C: The format of the records is not what triggers media notification — it is the number of affected
-    individuals.
-  explanation_incorrect_D: The type of facility does not determine whether media notification is required.
+  explanation_incorrect:
+    A: Media notification is not required for every breach — only large-scale breaches trigger this requirement.
+    C: The format of the records is not what triggers media notification — it is the number of affected individuals.
+    D: The type of facility does not determine whether media notification is required.
 - question_id: Q-DAT-052
   type: MCQ
   pillar: data
@@ -5398,11 +5410,10 @@ questions:
     D: They are reported to state authorities instead of HHS
   correct_answer: C
   explanation_correct: Smaller breaches affecting fewer than 500 individuals are reported to HHS on an annual basis.
-  explanation_incorrect_A: All breaches of unsecured PHI must be reported to HHS regardless of size.
-  explanation_incorrect_B: The 60-day individual notification requirement applies, but HHS reporting for small breaches is
-    annual.
-  explanation_incorrect_D: HHS reporting is required for all breaches. State notification may also apply but does not replace
-    HHS reporting.
+  explanation_incorrect:
+    A: All breaches of unsecured PHI must be reported to HHS regardless of size.
+    B: The 60-day individual notification requirement applies, but HHS reporting for small breaches is annual.
+    D: HHS reporting is required for all breaches. State notification may also apply but does not replace HHS reporting.
 - question_id: Q-DAT-053
   type: MCQ
   pillar: data
@@ -5416,9 +5427,10 @@ questions:
     D: Insurance Claims Documentation
   correct_answer: B
   explanation_correct: ICD stands for International Classification of Diseases, the standardized system for coding diagnoses.
-  explanation_incorrect_A: There is no standardized coding system called the Integrated Clinical Database.
-  explanation_incorrect_C: ICD does not stand for Internal Code for Diagnoses.
-  explanation_incorrect_D: ICD is a diagnostic classification system, not an insurance claims documentation system.
+  explanation_incorrect:
+    A: There is no standardized coding system called the Integrated Clinical Database.
+    C: ICD does not stand for Internal Code for Diagnoses.
+    D: ICD is a diagnostic classification system, not an insurance claims documentation system.
 - question_id: Q-DAT-054
   type: MCQ
   pillar: data
@@ -5433,9 +5445,10 @@ questions:
   correct_answer: B
   explanation_correct: ICD codes are standardized codes used to represent medical diagnoses and inpatient procedures on claims
     and records.
-  explanation_incorrect_A: Provider credentials are not represented by ICD codes.
-  explanation_incorrect_C: Insurance premiums are financial amounts, not coded with ICD.
-  explanation_incorrect_D: Drug dosages are not classified using ICD codes.
+  explanation_incorrect:
+    A: Provider credentials are not represented by ICD codes.
+    C: Insurance premiums are financial amounts, not coded with ICD.
+    D: Drug dosages are not classified using ICD codes.
 - question_id: Q-DAT-055
   type: MCQ
   pillar: data
@@ -5449,9 +5462,10 @@ questions:
     D: March 1, 2018
   correct_answer: B
   explanation_correct: The U.S. transitioned from ICD-9 to ICD-10 on October 1, 2015.
-  explanation_incorrect_A: January 1, 2010 was not the ICD-10 transition date.
-  explanation_incorrect_C: July 1, 2013 was not the transition date, though it was an earlier proposed deadline.
-  explanation_incorrect_D: March 1, 2018 is well after the actual transition date.
+  explanation_incorrect:
+    A: January 1, 2010 was not the ICD-10 transition date.
+    C: July 1, 2013 was not the transition date, though it was an earlier proposed deadline.
+    D: March 1, 2018 is well after the actual transition date.
 - question_id: Q-DAT-056
   type: MCQ
   pillar: data
@@ -5465,9 +5479,10 @@ questions:
     D: ICD-9 had 30,000; ICD-10 has 100,000
   correct_answer: B
   explanation_correct: ICD-9 had approximately 14,000 diagnosis codes; ICD-10 expanded this to approximately 69,000.
-  explanation_incorrect_A: This reverses the numbers. ICD-10 has more codes than ICD-9.
-  explanation_incorrect_C: These numbers do not reflect the actual code counts for either system.
-  explanation_incorrect_D: Neither 30,000 nor 100,000 reflects the actual code counts.
+  explanation_incorrect:
+    A: This reverses the numbers. ICD-10 has more codes than ICD-9.
+    C: These numbers do not reflect the actual code counts for either system.
+    D: Neither 30,000 nor 100,000 reflects the actual code counts.
 - question_id: Q-DAT-057
   type: MCQ
   pillar: data
@@ -5481,9 +5496,10 @@ questions:
     D: HCPCS Level II
   correct_answer: B
   explanation_correct: ICD-10-PCS (Procedure Coding System) is used specifically for coding inpatient hospital procedures.
-  explanation_incorrect_A: ICD-10-CM is used for diagnosis coding across all settings, not specifically for inpatient procedures.
-  explanation_incorrect_C: CPT codes identify medical services and procedures but are not specific to inpatient hospital procedures.
-  explanation_incorrect_D: HCPCS Level II codes cover supplies, equipment, and services not included in CPT.
+  explanation_incorrect:
+    A: ICD-10-CM is used for diagnosis coding across all settings, not specifically for inpatient procedures.
+    C: CPT codes identify medical services and procedures but are not specific to inpatient hospital procedures.
+    D: HCPCS Level II codes cover supplies, equipment, and services not included in CPT.
 - question_id: Q-DAT-058
   type: MCQ
   pillar: data
@@ -5497,9 +5513,10 @@ questions:
     D: Certified Medical
   correct_answer: B
   explanation_correct: CM stands for Clinical Modification. ICD-10-CM codes are used by all providers to code diagnoses.
-  explanation_incorrect_A: CM does not stand for Comprehensive Medicine.
-  explanation_incorrect_C: CM does not stand for Claims Management.
-  explanation_incorrect_D: CM does not stand for Certified Medical.
+  explanation_incorrect:
+    A: CM does not stand for Comprehensive Medicine.
+    C: CM does not stand for Claims Management.
+    D: CM does not stand for Certified Medical.
 - question_id: Q-DAT-059
   type: MCQ
   pillar: data
@@ -5514,9 +5531,10 @@ questions:
   correct_answer: C
   explanation_correct: ICD-10 codes can be up to 7 characters long, providing detail about location, severity, and type of
     condition.
-  explanation_incorrect_A: 3 characters would be the minimum category code, not the maximum length.
-  explanation_incorrect_B: 5 characters is the length of CPT codes, not the maximum for ICD-10.
-  explanation_incorrect_D: ICD-10 codes do not extend to 10 characters.
+  explanation_incorrect:
+    A: 3 characters would be the minimum category code, not the maximum length.
+    B: 5 characters is the length of CPT codes, not the maximum for ICD-10.
+    D: ICD-10 codes do not extend to 10 characters.
 - question_id: Q-DAT-060
   type: MCQ
   pillar: data
@@ -5531,9 +5549,10 @@ questions:
   correct_answer: B
   explanation_correct: The expanded character length of ICD-10 allows more clinical detail about location, severity, and type
     of condition.
-  explanation_incorrect_A: Code length does not directly determine claims processing speed.
-  explanation_incorrect_C: Insurance premiums are not determined by the length of diagnosis codes.
-  explanation_incorrect_D: ICD-10 actually has far more codes than ICD-9, not fewer.
+  explanation_incorrect:
+    A: Code length does not directly determine claims processing speed.
+    C: Insurance premiums are not determined by the length of diagnosis codes.
+    D: ICD-10 actually has far more codes than ICD-9, not fewer.
 - question_id: Q-DAT-061
   type: MCQ
   pillar: data
@@ -5548,9 +5567,10 @@ questions:
   correct_answer: B
   explanation_correct: HCPCS has two levels — Level I (CPT codes) and Level II (products, supplies, and services not included
     in CPT).
-  explanation_incorrect_A: HCPCS has two levels, not one.
-  explanation_incorrect_C: HCPCS has two levels. There was historically a Level III, but it was discontinued.
-  explanation_incorrect_D: HCPCS does not have four levels.
+  explanation_incorrect:
+    A: HCPCS has two levels, not one.
+    C: HCPCS has two levels. There was historically a Level III, but it was discontinued.
+    D: HCPCS does not have four levels.
 - question_id: Q-DAT-062
   type: MCQ
   pillar: data
@@ -5565,9 +5585,10 @@ questions:
   correct_answer: B
   explanation_correct: HCPCS Level II covers products, supplies, and services not included in CPT, such as ambulance services
     and durable medical equipment.
-  explanation_incorrect_A: Surgical procedures are typically coded using CPT or ICD-10-PCS, not HCPCS Level II.
-  explanation_incorrect_C: Mental health diagnoses are coded with ICD codes, not HCPCS Level II.
-  explanation_incorrect_D: Lab test interpretations are typically coded with CPT, not HCPCS Level II.
+  explanation_incorrect:
+    A: Surgical procedures are typically coded using CPT or ICD-10-PCS, not HCPCS Level II.
+    C: Mental health diagnoses are coded with ICD codes, not HCPCS Level II.
+    D: Lab test interpretations are typically coded with CPT, not HCPCS Level II.
 - question_id: Q-DAT-063
   type: MCQ
   pillar: data
@@ -5581,9 +5602,10 @@ questions:
     D: 7 digits
   correct_answer: C
   explanation_correct: CPT codes are 5-digit numeric codes that identify medical services and procedures.
-  explanation_incorrect_A: CPT codes are longer than 3 digits.
-  explanation_incorrect_B: 4 digits is the numeric portion of a HCPCS Level II code, but CPT codes have 5 digits.
-  explanation_incorrect_D: 7 characters is the maximum length for ICD-10 codes, not CPT.
+  explanation_incorrect:
+    A: CPT codes are longer than 3 digits.
+    B: 4 digits is the numeric portion of a HCPCS Level II code, but CPT codes have 5 digits.
+    D: 7 characters is the maximum length for ICD-10 codes, not CPT.
 - question_id: Q-DAT-064
   type: MCQ
   pillar: data
@@ -5597,9 +5619,10 @@ questions:
     D: Department of Health and Human Services (HHS)
   correct_answer: C
   explanation_correct: The American Medical Association (AMA) develops and maintains CPT codes.
-  explanation_incorrect_A: CMS maintains HCPCS Level II codes, not CPT codes.
-  explanation_incorrect_B: WHO maintains the ICD classification system, not CPT.
-  explanation_incorrect_D: HHS oversees HIPAA enforcement but does not maintain CPT codes.
+  explanation_incorrect:
+    A: CMS maintains HCPCS Level II codes, not CPT codes.
+    B: WHO maintains the ICD classification system, not CPT.
+    D: HHS oversees HIPAA enforcement but does not maintain CPT codes.
 - question_id: Q-DAT-065
   type: MCQ
   pillar: data
@@ -5613,9 +5636,10 @@ questions:
     D: Two letters followed by 3 numeric digits
   correct_answer: B
   explanation_correct: HCPCS Level II codes consist of one alphabetical letter followed by 4 numeric digits.
-  explanation_incorrect_A: 5 numeric digits describes a CPT code, not a HCPCS Level II code.
-  explanation_incorrect_C: 7 alphanumeric characters describes the maximum length of an ICD-10 code.
-  explanation_incorrect_D: HCPCS Level II codes begin with one letter, not two.
+  explanation_incorrect:
+    A: 5 numeric digits describes a CPT code, not a HCPCS Level II code.
+    C: 7 alphanumeric characters describes the maximum length of an ICD-10 code.
+    D: HCPCS Level II codes begin with one letter, not two.
 - question_id: Q-DAT-066
   type: MCQ
   pillar: data
@@ -5630,9 +5654,10 @@ questions:
   correct_answer: C
   explanation_correct: CMS maintains HCPCS Level II codes to identify items such as ambulance services, durable medical equipment,
     and prosthetics.
-  explanation_incorrect_A: The AMA maintains CPT codes (HCPCS Level I), not Level II.
-  explanation_incorrect_B: WHO maintains the ICD system, not HCPCS Level II.
-  explanation_incorrect_D: The AHA is not responsible for maintaining HCPCS Level II codes.
+  explanation_incorrect:
+    A: The AMA maintains CPT codes (HCPCS Level I), not Level II.
+    B: WHO maintains the ICD system, not HCPCS Level II.
+    D: The AHA is not responsible for maintaining HCPCS Level II codes.
 - question_id: Q-DAT-067
   type: MCQ
   pillar: data
@@ -5646,9 +5671,10 @@ questions:
     D: An outpatient knee surgery
   correct_answer: B
   explanation_correct: HCPCS Level II codes identify items like durable medical equipment, ambulance services, and prosthetics.
-  explanation_incorrect_A: An office visit would typically be coded with a CPT code.
-  explanation_incorrect_C: A diagnosis is coded using an ICD code, not HCPCS Level II.
-  explanation_incorrect_D: Outpatient surgery is typically coded with CPT codes.
+  explanation_incorrect:
+    A: An office visit would typically be coded with a CPT code.
+    C: A diagnosis is coded using an ICD code, not HCPCS Level II.
+    D: Outpatient surgery is typically coded with CPT codes.
 - question_id: Q-DAT-068
   type: MCQ
   pillar: data
@@ -5663,9 +5689,10 @@ questions:
   correct_answer: B
   explanation_correct: In-network providers have pre-negotiated rates with the insurer, which results in lower out-of-pocket
     costs for patients.
-  explanation_incorrect_A: In-network providers do not waive all fees — patients still have cost-sharing responsibilities.
-  explanation_incorrect_C: Tax credits are not tied to using in-network providers.
-  explanation_incorrect_D: Deductibles are not automatically waived for in-network visits.
+  explanation_incorrect:
+    A: In-network providers do not waive all fees — patients still have cost-sharing responsibilities.
+    C: Tax credits are not tied to using in-network providers.
+    D: Deductibles are not automatically waived for in-network visits.
 - question_id: Q-DAT-069
   type: MCQ
   pillar: data
@@ -5680,9 +5707,10 @@ questions:
   correct_answer: B
   explanation_correct: Without a contract, the provider is not bound to pre-negotiated rates, so the patient bears higher
     costs.
-  explanation_incorrect_A: Provider charges are not taxes and are not related to tax rates.
-  explanation_incorrect_C: Equipment cost is not the reason patients pay more for out-of-network care.
-  explanation_incorrect_D: Using an out-of-network provider does not cancel the patient's insurance policy.
+  explanation_incorrect:
+    A: Provider charges are not taxes and are not related to tax rates.
+    C: Equipment cost is not the reason patients pay more for out-of-network care.
+    D: Using an out-of-network provider does not cancel the patient's insurance policy.
 - question_id: Q-DAT-070
   type: MCQ
   pillar: data
@@ -5697,9 +5725,10 @@ questions:
   correct_answer: B
   explanation_correct: An in-network provider has a contract with the patient's health insurer to provide services at pre-negotiated
     rates.
-  explanation_incorrect_A: Network status is determined by a contractual relationship with an insurer, not geographic location.
-  explanation_incorrect_C: In-network status applies to any insurer, not just Medicare.
-  explanation_incorrect_D: In-network status is about the contractual relationship, not the practice setting.
+  explanation_incorrect:
+    A: Network status is determined by a contractual relationship with an insurer, not geographic location.
+    C: In-network status applies to any insurer, not just Medicare.
+    D: In-network status is about the contractual relationship, not the practice setting.
 - question_id: Q-DAT-071
   type: MCQ
   pillar: data
@@ -5714,9 +5743,10 @@ questions:
   correct_answer: B
   explanation_correct: EHRs include clinical data such as demographics, medications, vital signs, immunizations, lab results,
     and radiology reports.
-  explanation_incorrect_A: Credit scores and financial history are not part of an EHR.
-  explanation_incorrect_C: Provider insurance details are administrative records, not EHR content.
-  explanation_incorrect_D: Hospital revenue reports are financial documents, not part of an EHR.
+  explanation_incorrect:
+    A: Credit scores and financial history are not part of an EHR.
+    C: Provider insurance details are administrative records, not EHR content.
+    D: Hospital revenue reports are financial documents, not part of an EHR.
 - question_id: Q-DAT-072
   type: MCQ
   pillar: data
@@ -5731,9 +5761,10 @@ questions:
   correct_answer: B
   explanation_correct: EHRs reduce test duplication, decrease delays, and improve accuracy by making information available
     electronically to authorized providers.
-  explanation_incorrect_A: EHRs support physicians — they do not replace them.
-  explanation_incorrect_C: EHRs provide information to providers; they do not enable patient self-diagnosis.
-  explanation_incorrect_D: EHRs are digital records, not telehealth platforms.
+  explanation_incorrect:
+    A: EHRs support physicians — they do not replace them.
+    C: EHRs provide information to providers; they do not enable patient self-diagnosis.
+    D: EHRs are digital records, not telehealth platforms.
 - question_id: Q-DAT-073
   type: MCQ
   pillar: data
@@ -5748,9 +5779,10 @@ questions:
   correct_answer: B
   explanation_correct: Certified EHR technology stores data in a structured format that supports retrieval, transfer, and
     care decisions.
-  explanation_incorrect_A: Certified EHRs store data digitally in a structured format, not handwritten.
-  explanation_incorrect_C: EHRs are designed to support access by multiple authorized providers.
-  explanation_incorrect_D: Certified EHRs enable electronic sharing without printing.
+  explanation_incorrect:
+    A: Certified EHRs store data digitally in a structured format, not handwritten.
+    C: EHRs are designed to support access by multiple authorized providers.
+    D: Certified EHRs enable electronic sharing without printing.
 - question_id: Q-DAT-074
   type: MCQ
   pillar: data
@@ -5765,9 +5797,10 @@ questions:
   correct_answer: B
   explanation_correct: The Privacy Rule establishes national standards for the protection of individually identifiable health
     information.
-  explanation_incorrect_A: The Privacy Rule sets national standards, not local hospital guidelines.
-  explanation_incorrect_C: HIPAA is a U.S. law, not an international pharmaceutical standard.
-  explanation_incorrect_D: Medical school accreditation is handled by separate organizations, not the HIPAA Privacy Rule.
+  explanation_incorrect:
+    A: The Privacy Rule sets national standards, not local hospital guidelines.
+    C: HIPAA is a U.S. law, not an international pharmaceutical standard.
+    D: Medical school accreditation is handled by separate organizations, not the HIPAA Privacy Rule.
 - question_id: Q-DAT-075
   type: MCQ
   pillar: data
@@ -5782,9 +5815,10 @@ questions:
   correct_answer: C
   explanation_correct: Physical safeguards protect the physical facilities, workstations, and devices where ePHI is stored
     or accessed.
-  explanation_incorrect_A: Unique login credentials are a technical safeguard.
-  explanation_incorrect_B: Risk assessments are an administrative safeguard.
-  explanation_incorrect_D: Email encryption is a technical safeguard.
+  explanation_incorrect:
+    A: Unique login credentials are a technical safeguard.
+    B: Risk assessments are an administrative safeguard.
+    D: Email encryption is a technical safeguard.
 - question_id: Q-DAT-076
   type: MCQ
   pillar: data
@@ -5799,9 +5833,10 @@ questions:
   correct_answer: C
   explanation_correct: The rule requires notification without unreasonable delay and no later than 60 days after discovering
     the breach.
-  explanation_incorrect_A: The rule specifies "without unreasonable delay" but allows up to 60 days, not immediate notification.
-  explanation_incorrect_B: 24 hours is not the standard under the Breach Notification Rule.
-  explanation_incorrect_D: One calendar year far exceeds the maximum allowed notification period.
+  explanation_incorrect:
+    A: The rule specifies "without unreasonable delay" but allows up to 60 days, not immediate notification.
+    B: 24 hours is not the standard under the Breach Notification Rule.
+    D: One calendar year far exceeds the maximum allowed notification period.
 - question_id: Q-DAT-077
   type: MCQ
   pillar: data
@@ -5816,9 +5851,10 @@ questions:
   correct_answer: A
   explanation_correct: An EHR is a digital version of a patient's medical history maintained by the provider over time, unlike
     a paper chart.
-  explanation_incorrect_B: EHRs typically contain more comprehensive and accessible data than paper charts.
-  explanation_incorrect_C: EHRs are maintained by and accessible to authorized providers.
-  explanation_incorrect_D: EHRs are valid in their electronic form and do not require printing.
+  explanation_incorrect:
+    B: EHRs typically contain more comprehensive and accessible data than paper charts.
+    C: EHRs are maintained by and accessible to authorized providers.
+    D: EHRs are valid in their electronic form and do not require printing.
 - question_id: Q-DAT-078
   type: MCQ
   pillar: data
@@ -5833,9 +5869,10 @@ questions:
   correct_answer: B
   explanation_correct: ICD codes provide a standardized system for classifying medical diagnoses and inpatient procedures
     on claims and records.
-  explanation_incorrect_A: Provider salaries are not determined by ICD codes.
-  explanation_incorrect_C: Insurance eligibility is determined by plan rules, not ICD codes.
-  explanation_incorrect_D: Hospital rankings are not based on ICD codes.
+  explanation_incorrect:
+    A: Provider salaries are not determined by ICD codes.
+    C: Insurance eligibility is determined by plan rules, not ICD codes.
+    D: Hospital rankings are not based on ICD codes.
 - question_id: Q-DAT-079
   type: MCQ
   pillar: data
@@ -5850,10 +5887,10 @@ questions:
   correct_answer: A
   explanation_correct: Accessing only the specific data elements needed for the task (billing) is a proper application of
     the minimum necessary standard.
-  explanation_incorrect_B: A receptionist does not need psychiatric notes to schedule an appointment — this exceeds the minimum
-    necessary.
-  explanation_incorrect_C: Accessing all patient records for software testing is not limited to the minimum necessary.
-  explanation_incorrect_D: Sharing complete patient files with a marketing agency violates the minimum necessary standard.
+  explanation_incorrect:
+    B: A receptionist does not need psychiatric notes to schedule an appointment — this exceeds the minimum necessary.
+    C: Accessing all patient records for software testing is not limited to the minimum necessary.
+    D: Sharing complete patient files with a marketing agency violates the minimum necessary standard.
 - question_id: Q-DAT-080
   type: MCQ
   pillar: data
@@ -5868,9 +5905,10 @@ questions:
   correct_answer: B
   explanation_correct: EHRs reduce treatment delays by making health information available electronically to authorized providers
     when and where it is needed.
-  explanation_incorrect_A: EHRs eliminate the need for patients to carry paper records, not reinforce it.
-  explanation_incorrect_C: EHRs improve information access; they do not restrict which providers can treat a patient.
-  explanation_incorrect_D: EHRs support care decisions but do not replace diagnostic testing.
+  explanation_incorrect:
+    A: EHRs eliminate the need for patients to carry paper records, not reinforce it.
+    C: EHRs improve information access; they do not restrict which providers can treat a patient.
+    D: EHRs support care decisions but do not replace diagnostic testing.
 - question_id: Q-CRS-016
   type: TF
   pillar: cross_domain
@@ -6089,9 +6127,10 @@ questions:
     D: The clearinghouse creates the claim on behalf of the patient
   correct_answer: B
   explanation_correct: In the standard claims flow, the provider submits a claim to the payor after the patient receives care.
-  explanation_incorrect_A: Patients do not typically submit claims; the provider handles claim submission.
-  explanation_incorrect_C: Payors do not automatically generate claims; they receive and process claims submitted by providers.
-  explanation_incorrect_D: Clearinghouses translate and forward claims but do not create them on behalf of patients.
+  explanation_incorrect:
+    A: Patients do not typically submit claims; the provider handles claim submission.
+    C: Payors do not automatically generate claims; they receive and process claims submitted by providers.
+    D: Clearinghouses translate and forward claims but do not create them on behalf of patients.
 - question_id: Q-CRS-036
   type: MCQ
   pillar: cross_domain
@@ -6105,9 +6144,10 @@ questions:
     D: Faxed copies of the patient's medical record
   correct_answer: B
   explanation_correct: HIPAA requires providers to submit claims electronically using standard transaction formats.
-  explanation_incorrect_A: While paper claims still exist in limited cases, HIPAA promotes and often requires electronic submission.
-  explanation_incorrect_C: Claims are not submitted verbally.
-  explanation_incorrect_D: Faxing medical records is not the standard method of claim submission under HIPAA.
+  explanation_incorrect:
+    A: While paper claims still exist in limited cases, HIPAA promotes and often requires electronic submission.
+    C: Claims are not submitted verbally.
+    D: Faxing medical records is not the standard method of claim submission under HIPAA.
 - question_id: Q-CRS-037
   type: MCQ
   pillar: cross_domain
@@ -6122,9 +6162,10 @@ questions:
   correct_answer: C
   explanation_correct: Automated edits check for completeness, valid values, data consistency, duplicate submissions, and
     provider/beneficiary eligibility.
-  explanation_incorrect_A: A provider's credit score is not part of claim processing.
-  explanation_incorrect_B: The patient's prior bill payment history is not checked during automated claim edits.
-  explanation_incorrect_D: Employer approval is not part of the automated claim edit process.
+  explanation_incorrect:
+    A: A provider's credit score is not part of claim processing.
+    B: The patient's prior bill payment history is not checked during automated claim edits.
+    D: Employer approval is not part of the automated claim edit process.
 - question_id: Q-CRS-038
   type: MCQ
   pillar: cross_domain
@@ -6139,9 +6180,10 @@ questions:
   correct_answer: B
   explanation_correct: Before adjudication, automated edits verify completeness, valid values, data consistency, duplicate
     status, and beneficiary eligibility.
-  explanation_incorrect_A: Patients do not approve claims before adjudication.
-  explanation_incorrect_C: Claims are not published in any public database.
-  explanation_incorrect_D: Claims are not routinely forwarded to a government agency for pre-approval.
+  explanation_incorrect:
+    A: Patients do not approve claims before adjudication.
+    C: Claims are not published in any public database.
+    D: Claims are not routinely forwarded to a government agency for pre-approval.
 - question_id: Q-CRS-039
   type: MCQ
   pillar: cross_domain
@@ -6156,9 +6198,10 @@ questions:
   correct_answer: B
   explanation_correct: A rejected claim is returned to the provider for correction, typically because of errors or missing
     information, and can be resubmitted.
-  explanation_incorrect_A: This describes a denied claim, not a rejected one.
-  explanation_incorrect_C: A rejected claim does not require a government appeal; it requires correction and resubmission.
-  explanation_incorrect_D: Rejection does not require a refund; the provider corrects and resubmits the claim.
+  explanation_incorrect:
+    A: This describes a denied claim, not a rejected one.
+    C: A rejected claim does not require a government appeal; it requires correction and resubmission.
+    D: Rejection does not require a refund; the provider corrects and resubmits the claim.
 - question_id: Q-CRS-040
   type: MCQ
   pillar: cross_domain
@@ -6172,9 +6215,10 @@ questions:
     D: The patient's eligibility was verified before the visit
   correct_answer: B
   explanation_correct: A claim may be denied if the service is not covered or does not meet policy requirements.
-  explanation_incorrect_A: Using the correct format supports claim processing, not denial.
-  explanation_incorrect_C: Including a valid NPI is required and would not cause a denial.
-  explanation_incorrect_D: Verified eligibility supports processing, not denial.
+  explanation_incorrect:
+    A: Using the correct format supports claim processing, not denial.
+    C: Including a valid NPI is required and would not cause a denial.
+    D: Verified eligibility supports processing, not denial.
 - question_id: Q-CRS-041
   type: MCQ
   pillar: cross_domain
@@ -6189,9 +6233,10 @@ questions:
   correct_answer: C
   explanation_correct: Providers can verify eligibility before or at the time of service by sending a HIPAA 270 transaction
     to the health plan.
-  explanation_incorrect_A: Eligibility verification is typically done before or at the time of service, not only after a denial.
-  explanation_incorrect_B: Eligibility inquiries can be sent at any time, not just during open enrollment.
-  explanation_incorrect_D: Checking eligibility after discharge would be too late for most purposes.
+  explanation_incorrect:
+    A: Eligibility verification is typically done before or at the time of service, not only after a denial.
+    B: Eligibility inquiries can be sent at any time, not just during open enrollment.
+    D: Checking eligibility after discharge would be too late for most purposes.
 - question_id: Q-CRS-042
   type: MCQ
   pillar: cross_domain
@@ -6206,9 +6251,10 @@ questions:
   correct_answer: B
   explanation_correct: Since 2013, HIPAA operating rules require real-time responses that include deductible, co-pay, and
     coinsurance information.
-  explanation_incorrect_A: Tax return information is not part of eligibility responses.
-  explanation_incorrect_C: A full claims history is not returned in an eligibility response.
-  explanation_incorrect_D: Medical history is not part of an eligibility verification response.
+  explanation_incorrect:
+    A: Tax return information is not part of eligibility responses.
+    C: A full claims history is not returned in an eligibility response.
+    D: Medical history is not part of an eligibility verification response.
 - question_id: Q-CRS-043
   type: MCQ
   pillar: cross_domain
@@ -6223,10 +6269,10 @@ questions:
   correct_answer: B
   explanation_correct: The diagnosis code (ICD-10-CM) explains why care was needed, and the procedure code (CPT/HCPCS) describes
     the service performed; together they link clinical documentation to reimbursement.
-  explanation_incorrect_A: While codes appear in records, the pairing requirement is driven by billing and reimbursement,
-    not just internal record-keeping.
-  explanation_incorrect_C: Code pairing is about billing, not patient treatment choice.
-  explanation_incorrect_D: The clearinghouse does not assign NPIs based on code pairing.
+  explanation_incorrect:
+    A: While codes appear in records, the pairing requirement is driven by billing and reimbursement, not just internal record-keeping.
+    C: Code pairing is about billing, not patient treatment choice.
+    D: The clearinghouse does not assign NPIs based on code pairing.
 - question_id: Q-CRS-044
   type: MCQ
   pillar: cross_domain
@@ -6241,9 +6287,10 @@ questions:
   correct_answer: B
   explanation_correct: A claim without a valid ICD-10-CM diagnosis code is returned as incomplete and will not be processed
     for payment.
-  explanation_incorrect_A: Payors do not assign default diagnosis codes to incomplete claims.
-  explanation_incorrect_C: Clearinghouses translate formats but do not add clinical codes to claims.
-  explanation_incorrect_D: Patients are not responsible for providing diagnosis codes.
+  explanation_incorrect:
+    A: Payors do not assign default diagnosis codes to incomplete claims.
+    C: Clearinghouses translate formats but do not add clinical codes to claims.
+    D: Patients are not responsible for providing diagnosis codes.
 - question_id: Q-CRS-045
   type: MCQ
   pillar: cross_domain
@@ -6258,9 +6305,10 @@ questions:
   correct_answer: B
   explanation_correct: Payors use the diagnosis code to determine medical necessity — whether the diagnosis supports the procedure
     according to coverage policy.
-  explanation_incorrect_A: Diagnosis codes are not used to assign physicians.
-  explanation_incorrect_C: Diagnosis codes do not relate to provider income calculations.
-  explanation_incorrect_D: Scheduling is not a function of diagnosis codes on claims.
+  explanation_incorrect:
+    A: Diagnosis codes are not used to assign physicians.
+    C: Diagnosis codes do not relate to provider income calculations.
+    D: Scheduling is not a function of diagnosis codes on claims.
 - question_id: Q-CRS-046
   type: MCQ
   pillar: cross_domain
@@ -6274,9 +6322,10 @@ questions:
     D: The employer's human resources department
   correct_answer: C
   explanation_correct: The EOB is sent by the health plan to the patient after a claim is processed.
-  explanation_incorrect_A: Clearinghouses do not receive EOBs.
-  explanation_incorrect_B: Providers receive the ERA (835), not the EOB. The EOB goes to the patient.
-  explanation_incorrect_D: EOBs go to the patient, not the employer.
+  explanation_incorrect:
+    A: Clearinghouses do not receive EOBs.
+    B: Providers receive the ERA (835), not the EOB. The EOB goes to the patient.
+    D: EOBs go to the patient, not the employer.
 - question_id: Q-CRS-047
   type: MCQ
   pillar: cross_domain
@@ -6290,9 +6339,10 @@ questions:
     D: The clearinghouse's processing fee
   correct_answer: B
   explanation_correct: An EOB shows provider charges, allowed charges, the amount the insurer paid, and what the patient owes.
-  explanation_incorrect_A: NPI application information does not appear on an EOB.
-  explanation_incorrect_C: Prescription history is not included on an EOB for a specific claim.
-  explanation_incorrect_D: Clearinghouse fees are not shown on a patient's EOB.
+  explanation_incorrect:
+    A: NPI application information does not appear on an EOB.
+    C: Prescription history is not included on an EOB for a specific claim.
+    D: Clearinghouse fees are not shown on a patient's EOB.
 - question_id: Q-CRS-048
   type: MCQ
   pillar: cross_domain
@@ -6307,9 +6357,10 @@ questions:
   correct_answer: C
   explanation_correct: After adjudication, the payor sends an ERA (HIPAA 835 transaction) to the provider detailing payment,
     adjustments, and denial reasons.
-  explanation_incorrect_A: Patients are not involved in sending ERAs.
-  explanation_incorrect_B: The provider submits claims, not ERAs. The ERA flows in the opposite direction.
-  explanation_incorrect_D: The ERA goes to the provider, not the patient.
+  explanation_incorrect:
+    A: Patients are not involved in sending ERAs.
+    B: The provider submits claims, not ERAs. The ERA flows in the opposite direction.
+    D: The ERA goes to the provider, not the patient.
 - question_id: Q-CRS-049
   type: MCQ
   pillar: cross_domain
@@ -6323,9 +6374,10 @@ questions:
     D: A referral to a specialist for follow-up care
   correct_answer: B
   explanation_correct: The ERA details the payment amount, adjustments, and reasons for any denials after claim adjudication.
-  explanation_incorrect_A: Treatment plans and medication lists are clinical documents, not part of the ERA.
-  explanation_incorrect_C: Malpractice insurance details are not included in an ERA.
-  explanation_incorrect_D: Specialist referrals are not part of the ERA.
+  explanation_incorrect:
+    A: Treatment plans and medication lists are clinical documents, not part of the ERA.
+    C: Malpractice insurance details are not included in an ERA.
+    D: Specialist referrals are not part of the ERA.
 - question_id: Q-CRS-050
   type: MCQ
   pillar: cross_domain
@@ -6340,9 +6392,10 @@ questions:
   correct_answer: B
   explanation_correct: The allowed amount is the maximum the health plan will pay for a covered service. The provider may
     bill the patient for cost-sharing but generally not above the allowed amount for in-network services.
-  explanation_incorrect_A: The total billed charge is different from the allowed amount; the billed amount is often higher.
-  explanation_incorrect_C: Monthly premiums are separate from the allowed amount for individual services.
-  explanation_incorrect_D: Clearinghouse fees are not related to the allowed amount.
+  explanation_incorrect:
+    A: The total billed charge is different from the allowed amount; the billed amount is often higher.
+    C: Monthly premiums are separate from the allowed amount for individual services.
+    D: Clearinghouse fees are not related to the allowed amount.
 - question_id: Q-CRS-051
   type: MCQ
   pillar: cross_domain
@@ -6357,10 +6410,11 @@ questions:
   correct_answer: B
   explanation_correct: The patient may owe cost-sharing amounts such as co-pay, coinsurance, or deductible, but not charges
     above the allowed amount for in-network services.
-  explanation_incorrect_A: For in-network services, the patient's responsibility is limited to cost-sharing within the allowed
-    amount, not the full billed charge.
-  explanation_incorrect_C: Patients do not pay clearinghouse fees.
-  explanation_incorrect_D: There is no penalty for using in-network providers; in fact, costs are typically lower in-network.
+  explanation_incorrect:
+    A: For in-network services, the patient's responsibility is limited to cost-sharing within the allowed amount, not the
+      full billed charge.
+    C: Patients do not pay clearinghouse fees.
+    D: There is no penalty for using in-network providers; in fact, costs are typically lower in-network.
 - question_id: Q-CRS-052
   type: MCQ
   pillar: cross_domain
@@ -6375,9 +6429,10 @@ questions:
   correct_answer: B
   explanation_correct: A clearinghouse receives claims from providers, converts them into HIPAA-standard formats, and forwards
     them to the appropriate health plan.
-  explanation_incorrect_A: Clearinghouses handle data formatting, not clinical diagnosis.
-  explanation_incorrect_C: Clearinghouses forward claims to health plans; they do not permanently hold them.
-  explanation_incorrect_D: Claims are forwarded to health plans, not returned to patients.
+  explanation_incorrect:
+    A: Clearinghouses handle data formatting, not clinical diagnosis.
+    C: Clearinghouses forward claims to health plans; they do not permanently hold them.
+    D: Claims are forwarded to health plans, not returned to patients.
 - question_id: Q-CRS-053
   type: MCQ
   pillar: cross_domain
@@ -6392,9 +6447,10 @@ questions:
   correct_answer: B
   explanation_correct: Clearinghouses serve as intermediaries that translate and format claims into HIPAA-standard formats,
     making it easier for providers to submit to multiple health plans.
-  explanation_incorrect_A: Clearinghouses do not provide medical care.
-  explanation_incorrect_C: Clearinghouses translate formats but do not approve claims.
-  explanation_incorrect_D: Clearinghouses do not remove the requirement for clinical codes.
+  explanation_incorrect:
+    A: Clearinghouses do not provide medical care.
+    C: Clearinghouses translate formats but do not approve claims.
+    D: Clearinghouses do not remove the requirement for clinical codes.
 - question_id: Q-CRS-054
   type: MCQ
   pillar: cross_domain
@@ -6409,9 +6465,10 @@ questions:
   correct_answer: B
   explanation_correct: The three HIPAA covered entity types are health plans, health care providers who transmit transactions
     electronically, and clearinghouses.
-  explanation_incorrect_A: These are specific types of providers, not the three covered entity categories.
-  explanation_incorrect_C: These are types of health plans, not the three covered entity categories.
-  explanation_incorrect_D: Patients, employers, and government agencies are not the three covered entity types under HIPAA.
+  explanation_incorrect:
+    A: These are specific types of providers, not the three covered entity categories.
+    C: These are types of health plans, not the three covered entity categories.
+    D: Patients, employers, and government agencies are not the three covered entity types under HIPAA.
 - question_id: Q-CRS-055
   type: MCQ
   pillar: cross_domain
@@ -6426,13 +6483,11 @@ questions:
   correct_answer: B
   explanation_correct: The NPI is intelligence-free, meaning the number itself carries no information about the provider's
     location, specialty, or type — it is purely a unique identifier.
-  explanation_incorrect_A: The NPI has 10 digits, not 5.
-  explanation_incorrect_B: The NPI has 10 digits, not 8.
-  explanation_incorrect_D: The NPI has 10 digits, not 12.
   explanation_incorrect:
-    A: Intelligence-free refers to the data encoded in the number, not how it is accessed.
+    A: The NPI has 10 digits, not 5.
     C: The NPI application involves a review process; intelligence-free refers to the number format.
-    D: The NPI is permanent and does not expire.
+    D: The NPI has 10 digits, not 12.
+    B: The NPI has 10 digits, not 8.
 - question_id: Q-CRS-056
   type: MCQ
   pillar: cross_domain
@@ -6446,27 +6501,32 @@ questions:
     D: Only on transactions processed by clearinghouses
   correct_answer: C
   explanation_correct: The NPI must appear on all electronic claims, eligibility inquiries, and other HIPAA transactions.
-  explanation_incorrect_A: The NPI is required on electronic HIPAA transactions, not limited to paper claims.
-  explanation_incorrect_B: The NPI is required for all HIPAA-covered transactions, not only Medicare.
-  explanation_incorrect_D: The NPI requirement applies to all HIPAA transactions, not just those routed through clearinghouses.
+  explanation_incorrect:
+    A: The NPI is required on electronic HIPAA transactions, not limited to paper claims.
+    B: The NPI is required for all HIPAA-covered transactions, not only Medicare.
+    D: The NPI requirement applies to all HIPAA transactions, not just those routed through clearinghouses.
 - question_id: Q-CRS-057
   type: MCQ
   pillar: cross_domain
   tutorial_id: T-CROSS-01
-  fact_id: FACT-CRS-017
-  question: What does it mean that the NPI is "intelligence-free"?
+  fact_id: FACT-CRS-015
+  question: What role does a healthcare clearinghouse play in the claims process?
   options:
-    A: The NPI cannot be used to look up a provider in any database
-    B: The number itself carries no information about the provider's location, specialty, or type
-    C: The NPI is randomly regenerated each year
-    D: Only providers without board certifications receive an NPI
+    A: It directly pays providers for services rendered
+    B: It converts non-standard claim data into standard HIPAA formats for submission to payors
+    C: It determines whether a patient is eligible for coverage
+    D: It assigns diagnosis and procedure codes to patient encounters
   correct_answer: B
-  explanation_correct: Intelligence-free means the NPI number itself contains no embedded information about the provider —
-    it serves purely as a unique identifier.
-  explanation_incorrect_A: The NPI can be looked up in the NPPES database; "intelligence-free" refers to the number itself,
-    not its searchability.
-  explanation_incorrect_C: The NPI is permanent; it is not regenerated.
-  explanation_incorrect_D: All HIPAA-covered providers receive an NPI regardless of certifications.
+  explanation_correct: A healthcare clearinghouse receives claims and other transactions from providers, converts them from
+    non-standard formats into the standardized electronic formats required by HIPAA, and forwards them to the appropriate
+    payor.
+  explanation_incorrect:
+    A: Clearinghouses do not pay providers; payors (health plans) are responsible for reimbursement.
+    C: Eligibility determination is performed by the health plan, not the clearinghouse.
+    D: Coding is performed by the provider or medical coder, not by the clearinghouse.
+  regulatory_tags:
+  - HIPAA
+  difficulty: basic
 - question_id: Q-CRS-058
   type: MCQ
   pillar: cross_domain
@@ -6481,9 +6541,10 @@ questions:
   correct_answer: D
   explanation_correct: HIPAA covered entities are health plans, health care providers who transmit transactions electronically,
     and clearinghouses. A life insurance company that does not handle health information is not a covered entity.
-  explanation_incorrect_A: Health insurance companies are health plans and are covered entities under HIPAA.
-  explanation_incorrect_B: Hospitals that transmit electronic transactions are covered entities.
-  explanation_incorrect_C: Clearinghouses are one of the three types of covered entities.
+  explanation_incorrect:
+    A: Health insurance companies are health plans and are covered entities under HIPAA.
+    B: Hospitals that transmit electronic transactions are covered entities.
+    C: Clearinghouses are one of the three types of covered entities.
 - question_id: Q-CRS-059
   type: MCQ
   pillar: cross_domain
@@ -6498,9 +6559,10 @@ questions:
   correct_answer: A
   explanation_correct: PHI is any data relating to a person's health condition, care, or payment for care that can identify
     the individual — such as a name linked to a diagnosis.
-  explanation_incorrect_B: Aggregate data without individual identifiers is not PHI.
-  explanation_incorrect_C: A provider's public business address is not PHI.
-  explanation_incorrect_D: A health plan's revenue figures are not individually identifiable health information.
+  explanation_incorrect:
+    B: Aggregate data without individual identifiers is not PHI.
+    C: A provider's public business address is not PHI.
+    D: A health plan's revenue figures are not individually identifiable health information.
 - question_id: Q-CRS-060
   type: MCQ
   pillar: cross_domain
@@ -6515,9 +6577,10 @@ questions:
   correct_answer: B
   explanation_correct: HIPAA allows covered entities to share PHI without patient authorization for treatment, payment, and
     health care operations (TPO).
-  explanation_incorrect_A: Marketing and fundraising generally require patient authorization under HIPAA.
-  explanation_incorrect_C: These are not the TPO purposes recognized by HIPAA for sharing PHI without authorization.
-  explanation_incorrect_D: Education and media reporting are not TPO purposes under HIPAA.
+  explanation_incorrect:
+    A: Marketing and fundraising generally require patient authorization under HIPAA.
+    C: These are not the TPO purposes recognized by HIPAA for sharing PHI without authorization.
+    D: Education and media reporting are not TPO purposes under HIPAA.
 - question_id: Q-CRS-061
   type: MCQ
   pillar: cross_domain
@@ -6532,9 +6595,10 @@ questions:
   correct_answer: B
   explanation_correct: The minimum necessary standard requires covered entities to limit PHI use and disclosure to the smallest
     amount needed to accomplish the intended purpose.
-  explanation_incorrect_A: The standard applies to information disclosed, not staffing levels.
-  explanation_incorrect_C: The standard governs how covered entities handle PHI, not what patients provide at check-in.
-  explanation_incorrect_D: The standard is about PHI disclosure, not the number of procedure codes on a claim.
+  explanation_incorrect:
+    A: The standard applies to information disclosed, not staffing levels.
+    C: The standard governs how covered entities handle PHI, not what patients provide at check-in.
+    D: The standard is about PHI disclosure, not the number of procedure codes on a claim.
 - question_id: Q-CRS-062
   type: MCQ
   pillar: cross_domain
@@ -6550,9 +6614,10 @@ questions:
   correct_answer: B
   explanation_correct: Sending the complete medical record when only lab results were needed violates the minimum necessary
     standard, which requires limiting PHI to the smallest amount needed.
-  explanation_incorrect_A: The right of access applies to patients requesting their own records.
-  explanation_incorrect_C: The breach notification rule covers unauthorized disclosures; this is a minimum necessary violation.
-  explanation_incorrect_D: TPO is a category of permitted uses, not a principle about limiting the amount of information shared.
+  explanation_incorrect:
+    A: The right of access applies to patients requesting their own records.
+    C: The breach notification rule covers unauthorized disclosures; this is a minimum necessary violation.
+    D: TPO is a category of permitted uses, not a principle about limiting the amount of information shared.
 - question_id: Q-CRS-063
   type: MCQ
   pillar: cross_domain
@@ -6568,9 +6633,10 @@ questions:
   correct_answer: C
   explanation_correct: Under HIPAA, covered entities must provide patients with access to their health records within 30 days
     of request.
-  explanation_incorrect_A: The HIPAA requirement is 30 days, not 7.
-  explanation_incorrect_B: The HIPAA requirement is 30 days, not 14.
-  explanation_incorrect_D: The HIPAA requirement is 30 days, not 90.
+  explanation_incorrect:
+    A: The HIPAA requirement is 30 days, not 7.
+    B: The HIPAA requirement is 30 days, not 14.
+    D: The HIPAA requirement is 30 days, not 90.
 - question_id: Q-CRS-064
   type: MCQ
   pillar: cross_domain
@@ -6585,9 +6651,10 @@ questions:
   correct_answer: B
   explanation_correct: Patients have the right under HIPAA to access and obtain copies of their health records and to request
     corrections.
-  explanation_incorrect_A: Patients can request corrections, not unilateral deletions.
-  explanation_incorrect_C: HIPAA provides access rights, not the right to sell records.
-  explanation_incorrect_D: Patients cannot prevent providers from maintaining required clinical documentation.
+  explanation_incorrect:
+    A: Patients can request corrections, not unilateral deletions.
+    C: HIPAA provides access rights, not the right to sell records.
+    D: Patients cannot prevent providers from maintaining required clinical documentation.
 - question_id: Q-CRS-065
   type: MCQ
   pillar: cross_domain
@@ -6601,9 +6668,10 @@ questions:
     D: 278
   correct_answer: B
   explanation_correct: The 837 transaction is the HIPAA standard for electronic claims submission.
-  explanation_incorrect_A: The 835 is the remittance advice (payment) transaction.
-  explanation_incorrect_C: The 270 is the eligibility inquiry transaction.
-  explanation_incorrect_D: The 278 is the referral authorization transaction.
+  explanation_incorrect:
+    A: The 835 is the remittance advice (payment) transaction.
+    C: The 270 is the eligibility inquiry transaction.
+    D: The 278 is the referral authorization transaction.
 - question_id: Q-CRS-066
   type: MCQ
   pillar: cross_domain
@@ -6618,9 +6686,10 @@ questions:
   correct_answer: C
   explanation_correct: The 835 transaction is the HIPAA standard for electronic remittance advice, which details payment information
     from the payor to the provider.
-  explanation_incorrect_A: The 837 is used for claims submission, not remittance advice.
-  explanation_incorrect_B: The 270 is used for eligibility inquiries.
-  explanation_incorrect_D: The 276 is used for claim status inquiries.
+  explanation_incorrect:
+    A: The 837 is used for claims submission, not remittance advice.
+    B: The 270 is used for eligibility inquiries.
+    D: The 276 is used for claim status inquiries.
 - question_id: Q-CRS-067
   type: MCQ
   pillar: cross_domain
@@ -6634,9 +6703,10 @@ questions:
     D: 278 and 279
   correct_answer: B
   explanation_correct: The 270 transaction is the eligibility inquiry, and the 271 is the eligibility response.
-  explanation_incorrect_A: The 837 is for claims submission and the 835 is for remittance advice.
-  explanation_incorrect_C: The 276/277 pair covers claim status inquiries and responses.
-  explanation_incorrect_D: The 278 is for referral authorization; there is no standard 279 transaction.
+  explanation_incorrect:
+    A: The 837 is for claims submission and the 835 is for remittance advice.
+    C: The 276/277 pair covers claim status inquiries and responses.
+    D: The 278 is for referral authorization; there is no standard 279 transaction.
 - question_id: Q-CRS-068
   type: MCQ
   pillar: cross_domain
@@ -6650,10 +6720,10 @@ questions:
     D: 278 and 835
   correct_answer: C
   explanation_correct: The 276 transaction is the claim status inquiry, and the 277 is the claim status response.
-  explanation_incorrect_A: The 270/271 pair is used for eligibility verification, not claim status.
-  explanation_incorrect_B: The 837 is for claims submission and the 835 is for remittance advice.
-  explanation_incorrect_D: The 278 is for referral authorization, and the 835 is for remittance advice; they are not a paired
-    transaction.
+  explanation_incorrect:
+    A: The 270/271 pair is used for eligibility verification, not claim status.
+    B: The 837 is for claims submission and the 835 is for remittance advice.
+    D: The 278 is for referral authorization, and the 835 is for remittance advice; they are not a paired transaction.
 - question_id: Q-CRS-069
   type: MCQ
   pillar: cross_domain
@@ -6667,9 +6737,10 @@ questions:
     D: Eligibility verification
   correct_answer: C
   explanation_correct: The 278 transaction is the HIPAA standard for referral authorization requests and responses.
-  explanation_incorrect_A: Claims submission uses the 837 transaction.
-  explanation_incorrect_B: Remittance advice uses the 835 transaction.
-  explanation_incorrect_D: Eligibility verification uses the 270/271 transaction pair.
+  explanation_incorrect:
+    A: Claims submission uses the 837 transaction.
+    B: Remittance advice uses the 835 transaction.
+    D: Eligibility verification uses the 270/271 transaction pair.
 - question_id: Q-CRS-070
   type: MCQ
   pillar: cross_domain
@@ -6684,9 +6755,10 @@ questions:
   correct_answer: B
   explanation_correct: ASC X12 Version 5010 is used by providers, payors, and clearinghouses nationwide as the HIPAA-adopted
     standard for electronic transactions.
-  explanation_incorrect_A: The standard applies to all HIPAA-covered entities, not just Medicare and Medicaid.
-  explanation_incorrect_C: The standard applies to all covered providers, regardless of size.
-  explanation_incorrect_D: All clearinghouses use this standard, not just those processing government claims.
+  explanation_incorrect:
+    A: The standard applies to all HIPAA-covered entities, not just Medicare and Medicaid.
+    C: The standard applies to all covered providers, regardless of size.
+    D: All clearinghouses use this standard, not just those processing government claims.
 - question_id: Q-CRS-071
   type: MCQ
   pillar: cross_domain
@@ -6701,9 +6773,10 @@ questions:
   correct_answer: B
   explanation_correct: Standardized formats enable interoperability — any provider can communicate with any health plan using
     the same data structure.
-  explanation_incorrect_A: Patients typically do not submit claims; providers do.
-  explanation_incorrect_C: Standardized formats still require diagnosis and procedure codes.
-  explanation_incorrect_D: The purpose of standardization is a common format, not plan-specific ones.
+  explanation_incorrect:
+    A: Patients typically do not submit claims; providers do.
+    C: Standardized formats still require diagnosis and procedure codes.
+    D: The purpose of standardization is a common format, not plan-specific ones.
 - question_id: Q-CRS-072
   type: MCQ
   pillar: cross_domain
@@ -6718,9 +6791,10 @@ questions:
   correct_answer: C
   explanation_correct: In the claims flow, the payor (health plan) receives the claim, processes it through adjudication,
     and issues payment.
-  explanation_incorrect_A: Delivering care is the provider's role.
-  explanation_incorrect_B: Converting claims to standard formats is the clearinghouse's role.
-  explanation_incorrect_D: Scheduling appointments is not the payor's role in the claims flow.
+  explanation_incorrect:
+    A: Delivering care is the provider's role.
+    B: Converting claims to standard formats is the clearinghouse's role.
+    D: Scheduling appointments is not the payor's role in the claims flow.
 - question_id: Q-CRS-073
   type: MCQ
   pillar: cross_domain
@@ -6734,9 +6808,10 @@ questions:
     D: ASC X12
   correct_answer: C
   explanation_correct: ICD-10-CM is the coding system used for diagnosis codes, describing the clinical reason care was needed.
-  explanation_incorrect_A: CPT codes describe procedures and services, not diagnoses.
-  explanation_incorrect_B: HCPCS Level II codes describe supplies and services, not diagnoses.
-  explanation_incorrect_D: ASC X12 is a transaction standard format, not a coding system for diagnoses.
+  explanation_incorrect:
+    A: CPT codes describe procedures and services, not diagnoses.
+    B: HCPCS Level II codes describe supplies and services, not diagnoses.
+    D: ASC X12 is a transaction standard format, not a coding system for diagnoses.
 - question_id: Q-CRS-074
   type: MCQ
   pillar: cross_domain
@@ -6751,10 +6826,10 @@ questions:
   correct_answer: B
   explanation_correct: CPT and HCPCS codes describe the procedures and services performed, and are paired with ICD-10-CM diagnosis
     codes on claims.
-  explanation_incorrect_A: ICD-10-PCS is used for inpatient procedure coding; CPT and HCPCS are the standard procedure code
-    sets on claims.
-  explanation_incorrect_C: NPI is a provider identifier and EIN is a tax number; neither is a procedure code system.
-  explanation_incorrect_D: These are HIPAA transaction numbers, not coding systems.
+  explanation_incorrect:
+    A: ICD-10-PCS is used for inpatient procedure coding; CPT and HCPCS are the standard procedure code sets on claims.
+    C: NPI is a provider identifier and EIN is a tax number; neither is a procedure code system.
+    D: These are HIPAA transaction numbers, not coding systems.
 - question_id: Q-CRS-075
   type: MCQ
   pillar: cross_domain
@@ -6770,9 +6845,10 @@ questions:
   correct_answer: B
   explanation_correct: If the diagnosis does not support the procedure according to coverage policy, the payor may deny the
     claim for lack of medical necessity.
-  explanation_incorrect_A: A mismatched diagnosis-procedure pair would not increase payment.
-  explanation_incorrect_C: Payors do not automatically change diagnosis codes submitted by providers.
-  explanation_incorrect_D: Clearinghouses do not alter clinical codes on claims.
+  explanation_incorrect:
+    A: A mismatched diagnosis-procedure pair would not increase payment.
+    C: Payors do not automatically change diagnosis codes submitted by providers.
+    D: Clearinghouses do not alter clinical codes on claims.
 - question_id: Q-CRS-076
   type: MCQ
   pillar: cross_domain
@@ -6787,9 +6863,10 @@ questions:
   correct_answer: A
   explanation_correct: An EOB is a summary of how the plan processed the claim, showing charges, allowed amounts, plan payments,
     and patient responsibility. Patients should compare it to the actual bill from the provider.
-  explanation_incorrect_B: The EOB does not require payment to the health plan; the patient pays the provider.
-  explanation_incorrect_C: The EOB does not replace the provider's bill; patients should compare both documents.
-  explanation_incorrect_D: An EOB is not designed as a tax receipt.
+  explanation_incorrect:
+    B: The EOB does not require payment to the health plan; the patient pays the provider.
+    C: The EOB does not replace the provider's bill; patients should compare both documents.
+    D: An EOB is not designed as a tax receipt.
 - question_id: Q-CRS-077
   type: MCQ
   pillar: cross_domain
@@ -6804,9 +6881,10 @@ questions:
   correct_answer: B
   explanation_correct: HIPAA operating rules effective January 1, 2013, require health plans to respond to eligibility inquiries
     in real time, including deductible, co-pay, and coinsurance information.
-  explanation_incorrect_A: Eligibility verification is still required for Medicare.
-  explanation_incorrect_C: Providers are still permitted and encouraged to verify eligibility before providing care.
-  explanation_incorrect_D: The 270 transaction is still the standard for eligibility inquiries.
+  explanation_incorrect:
+    A: Eligibility verification is still required for Medicare.
+    C: Providers are still permitted and encouraged to verify eligibility before providing care.
+    D: The 270 transaction is still the standard for eligibility inquiries.
 - question_id: Q-CRS-078
   type: MCQ
   pillar: cross_domain
@@ -6821,10 +6899,10 @@ questions:
   correct_answer: B
   explanation_correct: Clearinghouses are one of the three types of HIPAA covered entities and must protect PHI under the
     Privacy Rule.
-  explanation_incorrect_A: There is no 24-hour deletion requirement; the obligation is to protect PHI.
-  explanation_incorrect_C: Clearinghouses are explicitly included as HIPAA covered entities.
-  explanation_incorrect_D: Clearinghouses process claims under TPO and do not need individual patient authorization for each
-    claim.
+  explanation_incorrect:
+    A: There is no 24-hour deletion requirement; the obligation is to protect PHI.
+    C: Clearinghouses are explicitly included as HIPAA covered entities.
+    D: Clearinghouses process claims under TPO and do not need individual patient authorization for each claim.
 - question_id: Q-CRS-079
   type: MCQ
   pillar: cross_domain
@@ -6840,9 +6918,10 @@ questions:
   correct_answer: B
   explanation_correct: Under HIPAA, covered entities may share PHI for treatment, payment, and health care operations (TPO)
     without patient authorization. Coordinating care with a specialist falls under treatment.
-  explanation_incorrect_A: HIPAA does not require written authorization for TPO purposes.
-  explanation_incorrect_C: The TPO exception applies regardless of network status.
-  explanation_incorrect_D: Lab results linked to a patient are PHI.
+  explanation_incorrect:
+    A: HIPAA does not require written authorization for TPO purposes.
+    C: The TPO exception applies regardless of network status.
+    D: Lab results linked to a patient are PHI.
 - question_id: Q-CRS-080
   type: MCQ
   pillar: cross_domain
@@ -6857,6 +6936,7 @@ questions:
   correct_answer: B
   explanation_correct: HIPAA's Administrative Simplification provisions mandate standard electronic formats for all of these
     key transaction types.
-  explanation_incorrect_A: The provisions cover multiple transaction types, not just claims submission.
-  explanation_incorrect_C: The provisions cover more than just eligibility and remittance transactions.
-  explanation_incorrect_D: The standards apply to all HIPAA-covered entities, not just government programs.
+  explanation_incorrect:
+    A: The provisions cover multiple transaction types, not just claims submission.
+    C: The provisions cover more than just eligibility and remittance transactions.
+    D: The standards apply to all HIPAA-covered entities, not just government programs.

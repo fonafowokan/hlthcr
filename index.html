@@ -295,6 +295,265 @@ body {
   .glossary-home-left { flex-direction: row; }
 }
 
+/* ── Facts Explorer Panel ── */
+.facts-panel {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.facts-search-wrap {
+  position: sticky;
+  top: 56px;
+  z-index: 50;
+  padding: 12px 0 0;
+  background: var(--gray-100);
+}
+.facts-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0 16px;
+  position: sticky;
+  top: 112px;
+  z-index: 49;
+  background: var(--gray-100);
+  align-items: center;
+}
+.facts-expand-btn {
+  margin-left: auto;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 2px solid var(--gray-300);
+  background: var(--white);
+  color: var(--gray-500);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.facts-expand-btn:hover { border-color: var(--primary); color: var(--primary); }
+.facts-filter-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 2px solid var(--primary);
+  background: var(--white);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.facts-filter-btn:hover { opacity: 0.85; }
+.facts-filter-btn.active {
+  background: var(--primary);
+  color: var(--white);
+}
+.facts-section {
+  margin-bottom: 24px;
+}
+.facts-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow var(--transition);
+  scroll-margin-top: 170px;
+}
+.facts-section-header:hover { box-shadow: var(--shadow-lg); }
+.facts-section-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.facts-section-info { flex: 1; }
+.facts-section-info h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+.facts-section-desc {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+.facts-section-count {
+  font-size: 12px;
+  color: var(--gray-500);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.facts-quiz-btn {
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: none;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+.facts-quiz-btn:hover { opacity: 0.85; filter: brightness(0.92); }
+.facts-audio-btn {
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 2px solid var(--primary);
+  background: var(--white);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.facts-audio-btn:hover { background: var(--primary); color: var(--white); }
+.facts-audio-btn.playing { background: var(--primary); color: var(--white); }
+.facts-audio-bar {
+  display: none;
+  width: 100%;
+  padding: 8px 16px;
+  background: var(--white);
+  border-radius: 0 0 var(--radius) var(--radius);
+  margin-top: -4px;
+  box-shadow: var(--shadow);
+  align-items: center;
+  gap: 10px;
+}
+.facts-audio-bar.active { display: flex; }
+.facts-audio-rewind {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--gray-200);
+  color: var(--dark);
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  flex-shrink: 0;
+}
+.facts-audio-rewind:hover { background: var(--gray-300); }
+.facts-audio-track {
+  flex: 1;
+  height: 6px;
+  background: var(--gray-200);
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+.facts-audio-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+.facts-audio-time {
+  font-size: 12px;
+  color: var(--gray-500);
+  white-space: nowrap;
+  min-width: 80px;
+  text-align: right;
+}
+.facts-section-toggle {
+  font-size: 16px;
+  color: var(--gray-500);
+  transition: transform var(--transition);
+}
+.facts-section.collapsed .facts-section-toggle { transform: rotate(-90deg); }
+.facts-section-body {
+  padding: 8px 0 0;
+}
+.facts-section.collapsed .facts-section-body { display: none; }
+.fact-card {
+  position: relative;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 16px 20px 16px 24px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border-left: 4px solid var(--gray-300);
+}
+.fact-card-pillar-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--white);
+}
+.fact-card-text {
+  font-size: 14px;
+  color: var(--dark);
+  line-height: 1.55;
+  padding-right: 80px;
+}
+.fact-card-footer {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fact-q-toggle {
+  background: none;
+  border: none;
+  color: var(--gray-500);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all var(--transition);
+}
+.fact-q-toggle:hover { background: var(--gray-200); color: var(--dark); }
+.fact-questions {
+  display: none;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--gray-200);
+}
+.fact-questions.expanded { display: block; }
+.fact-question-preview {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: var(--gray-100);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--dark);
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.fact-question-preview .q-type-badge {
+  flex-shrink: 0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--gray-200);
+  color: var(--gray-500);
+}
+
 /* ── Flag System ── */
 .flag-btn {
   position: absolute;
@@ -1041,6 +1300,17 @@ body {
       </div>
       <span class="start-label">Browse Glossary</span>
     </div>
+    <div class="glossary-home-card" onclick="showFacts()">
+      <div class="glossary-home-left">
+        <div class="pillar-icon">&#128218;</div>
+        <div>
+          <h3>125 Facts</h3>
+          <div class="pillar-meta">14 topics in learning order</div>
+          <p class="pillar-desc">Every fact in the course, organized by topic with linked questions.</p>
+        </div>
+      </div>
+      <span class="start-label">Explore Facts</span>
+    </div>
     <div class="flag-home-card empty" id="flagHomeCard" onclick="showFlags()">
       <div class="flag-home-left">
         <div class="pillar-icon">&#128681;</div>
@@ -1062,6 +1332,17 @@ body {
       <input type="text" id="glossarySearch" class="glossary-search" placeholder="Search terms..." oninput="filterGlossary()">
     </div>
     <div class="glossary-list" id="glossaryList"></div>
+  </div>
+</div>
+
+<!-- View: Facts Explorer -->
+<div class="view" id="factsView">
+  <div class="facts-panel">
+    <div class="facts-search-wrap">
+      <input type="text" id="factsSearch" class="glossary-search" placeholder="Search facts..." oninput="filterFacts()">
+    </div>
+    <div class="facts-filter-bar" id="factsFilterBar"></div>
+    <div class="facts-list" id="factsList"></div>
   </div>
 </div>
 
@@ -1133,6 +1414,168 @@ const TUTORIALS = [
 ];
 
 const TUTORIAL_SECTIONS = {"T-PAYOR-01": ["When you visit a doctor or go to the hospital, someone has to pay the bill. A payor (also spelled \"payer\") is the entity responsible for paying healthcare providers for the services you receive.\n\nPayors fall into three broad categories: government programs like Medicare and Medicaid, commercial (private) insurance companies, and self-pay. Most Americans have coverage through one of these channels.\n\nWhen a patient has coverage from more than one payor, coordination of benefits rules determine which payor pays first. The one that pays first is called the primary payer.", "Medicare is a federal health insurance program run by the Centers for Medicare and Medicaid Services (CMS), an agency within the U.S. Department of Health and Human Services. It primarily covers people age 65 and older, but it also covers certain younger people with disabilities, End-Stage Renal Disease, or ALS.\n\nOriginal Medicare has two main parts. Part A is Hospital Insurance. It covers inpatient hospital stays, skilled nursing facility care, hospice care, and some home health services. Most people do not pay a monthly premium for Part A because they or their spouse paid Medicare taxes for at least 10 years while working.\n\nPart B is Medical Insurance. It covers doctors' visits, outpatient hospital care, durable medical equipment like wheelchairs, and preventive services such as screenings and vaccinations. Part B requires a monthly premium. For 2026, the standard Part B premium is $202.90 per month with a $283 annual deductible.\n\nIf you are already receiving Social Security benefits, you are automatically enrolled in both Part A and Part B when you become eligible.", "Medicaid is a joint federal and state program that provides health coverage to eligible low-income adults, children, pregnant women, elderly adults, and people with disabilities. Unlike Medicare, which is purely federal, Medicaid is funded by both the federal government and state governments. The federal share varies by state based on per capita income and is called the Federal Medical Assistance Percentage (FMAP).\n\nEach state runs its own Medicaid program following federal requirements. This means eligibility rules and covered services can differ from state to state. Medicaid eligibility is based on income and household size rather than age, and people can apply at any time during the year. There is no annual enrollment window like some other programs.", "Commercial health insurance is the most common form of health coverage in the United States. You can get it through your employer, purchase it on the Health Insurance Marketplace, or buy it directly from an insurance company. Companies like Aetna, Blue Cross Blue Shield, and UnitedHealthcare are examples of major commercial insurers.\n\nEmployer-sponsored group health plans are the most common way Americans get private insurance. Typically, the employer shares the cost of premiums with employees. For example, your company might pay 70% of the monthly premium and you pay the remaining 30%.\n\nCommercial plans come in several types. An HMO (Health Maintenance Organization) usually requires you to choose a primary care doctor and get referrals to see specialists. A PPO (Preferred Provider Organization) gives you more flexibility to see any provider but costs less when you stay in-network. Other types include EPO (Exclusive Provider Organization) and POS (Point of Service) plans.", "A self-pay patient is someone who does not have health insurance or who chooses not to file a claim with their insurer for a particular service. An uninsured individual is someone not enrolled in any group health plan, individual insurance, or federal healthcare program.\n\nIf you are uninsured or self-pay, providers are required to help you understand costs upfront. Under the No Surprises Act, providers must give you a good faith estimate of expected charges before or when you schedule a healthcare service. This way, you know roughly what you will owe before you receive care.", "You may have heard of HIPAA, the Health Insurance Portability and Accountability Act. Under HIPAA, health plans are one of three types of \"covered entities\" that must follow strict rules to protect patient health information. The other two types are healthcare providers and clearinghouses.\n\nHIPAA-covered health plans include health insurance companies, HMOs, employer- sponsored group health plans, and government programs such as Medicare and Medicaid. These entities must comply with HIPAA's Privacy Rule and Security Rule.\n\nThere is one notable exception: a group health plan with fewer than 50 participants that is administered solely by the employer is exempt from HIPAA covered-entity requirements."], "T-PROVIDER-01": ["A healthcare provider is a person trained and licensed to give healthcare, or a place licensed to give healthcare. Your family doctor is a provider. So is a hospital, a pharmacy, and a physical therapy clinic.\n\nMedicare law makes an important distinction. It calls facilities like hospitals, hospices, and nursing homes \"providers.\" It calls entities that furnish equipment or diagnostic services \"suppliers.\" The distinction matters for billing and enrollment, but in everyday language, people use \"provider\" for both.", "Physicians and non-physician practitioners (like nurse practitioners and physician assistants) are the providers most people see first. A physician office is a common setting where you receive outpatient evaluation, diagnosis, and treatment.\n\nHospitals are institutional providers. They include general hospitals, critical access hospitals, skilled nursing facilities, home health agencies, and hospices. If you break your arm and need surgery, a hospital is where you would go.\n\nDurable Medical Equipment (DME) suppliers provide equipment that can withstand repeated use and lasts at least three years. Think of hospital beds, wheelchairs, ventilators, oxygen equipment, artificial limbs, and back braces. DME serves a medical purpose and is meant to be used in your home.\n\nAmbulance services are another provider type. Medicare covers ambulance transportation only when your medical condition makes other transportation unsafe. Emergency air ambulance by helicopter or airplane is covered when ground ambulance cannot get you there fast enough.\n\nAncillary services round out the picture. These include lab tests, radiology, pharmacy services, and other diagnostic or therapeutic services that support your primary care. Clinical labs operate in many settings — hospitals, physician offices, pharmacies, surgery centers, and as independent labs.", "When a provider treats you, they need to send a bill — called a claim — to the payor. Different types of providers use different claim forms.\n\nNon-institutional providers and suppliers (like your doctor's office) bill Medicare using the CMS-1500 form or its electronic version, the 837P transaction. Institutional providers (like hospitals) use the CMS-1450 form, also known as the UB-04, or the electronic 837I transaction.\n\nNearly all providers must submit claims to Medicare electronically. This is required under the Administrative Simplification Compliance Act (ASCA), unless the provider qualifies for a special waiver.", "Before a provider can bill Medicare, they must enroll. The process has three main steps. First, the provider gets a National Provider Identifier (NPI) — a unique 10-digit number used across all health transactions. Second, they complete an application through PECOS, Medicare's online enrollment system. Third, they work with their regional Medicare Administrative Contractor (MAC).\n\nDifferent provider types use different enrollment forms. Physicians use form CMS-855I. Hospitals and other institutional providers use form CMS-855A. DME suppliers use form CMS-855S and must also get accreditation from a CMS-approved organization and post a $50,000 surety bond.\n\nOnline applications through PECOS process in about 30 days. Paper applications take about 65 days. The ambulance fee schedule covers volunteer, municipal, private, and independent ambulance suppliers as well as hospitals.", "Medicaid enrollment works differently from Medicare. Each state runs its own Medicaid provider enrollment process and can impose requirements beyond the federal minimums set by CMS.\n\nAt a minimum, state Medicaid agencies must verify that a provider holds an unrestricted license before approving enrollment. Beyond that, states may require additional documentation, background checks, or site visits.", "Under HIPAA, a healthcare provider becomes a \"covered entity\" when it transmits health information electronically in connection with certain transactions, such as billing claims. In practice, most doctors, clinics, hospitals, psychologists, chiropractors, nursing homes, pharmacies, and dentists are HIPAA covered entities.\n\nAs covered entities, providers must comply with the Privacy Rule and Security Rule. This means they must put safeguards in place to protect patient health information, train their employees on privacy practices, and have contracts with any business associates that handle patient data on their behalf."], "T-PATIENT-01": ["When someone signs up for health insurance, they become the subscriber — also called the policyholder. The subscriber is the primary person who holds the insurance contract.\n\nFamily members covered under that same plan are called dependents. A dependent might be a spouse, a child, or a domestic partner. Under the Affordable Care Act, children can stay on a parent's plan until they turn 26, regardless of whether they are married. For example, if you get a job at 22 that does not offer insurance, you can remain on your parent's plan for four more years.", "How you get health insurance depends on where you get it. Eligibility for employer-sponsored insurance is determined by your employer's plan rules. Marketplace eligibility depends on factors like your income, household size, and where you live.\n\nMost health plans have an Open Enrollment period — an annual window when anyone can enroll in, renew, or change their plan. Outside that window, you generally cannot sign up unless you experience a qualifying life event.\n\nA Special Enrollment Period (SEP) lets you enroll or change plans outside of Open Enrollment after certain life changes — like losing your coverage, getting married, having a baby, or moving to a new state. Most SEPs give you 60 days before or after the event to pick a new plan.", "As a patient, you have important rights when it comes to your health information. Under the HIPAA Privacy Rule, you have a legal right to access and obtain copies of your protected health information (PHI) from covered entities like doctors, hospitals, and health plans. They must respond to your request within 30 days.\n\nYou can also request corrections or amendments to your health records if you believe something is inaccurate or incomplete. And you can direct a covered entity to send your records to a third party — another doctor, a family member, or anyone you choose.\n\nA provider may charge a reasonable fee for copying and mailing your records, but they cannot charge you for searching for or retrieving them. If you ever believe your privacy rights have been violated, you can file a complaint with the U.S. Department of Health and Human Services (HHS).", "When you visit a new doctor or hospital, they will usually ask you to sign a form acknowledging their Notice of Privacy Practices. This is a plain-language document required by HIPAA that explains how the provider may use and share your health information.\n\nSeparately, before any procedure or treatment, your provider should obtain your informed consent. This means the clinician explains the risks, benefits, and alternatives so you can make a voluntary, informed decision. Competent adults give their own consent. For children, a parent or legal guardian provides it.\n\nIn a life-threatening emergency, informed consent can be waived if there is not enough time to obtain it and no authorized decision-maker is available. For instance, if you arrive at the emergency room unconscious, doctors can begin life-saving treatment immediately.", "Health insurance does not mean free healthcare. You share costs with your plan in several ways.\n\nA premium is the amount you pay each month to keep your coverage active, whether or not you see a doctor. A deductible is the amount you must pay out of pocket each year before your plan starts paying its share. For example, if your deductible is $1,000, you pay the first $1,000 of covered services yourself.\n\nA copay is a fixed dollar amount you pay at the time of a visit — like $25 for a doctor's appointment. Coinsurance is a percentage you pay after meeting your deductible. For example, you might pay 20% of a covered service while your plan pays 80%.\n\nThe out-of-pocket maximum is the most you will pay in a plan year. Once you hit that number, your plan pays 100% of covered costs for the rest of the year. This protects you from very high medical bills.", "After your health plan processes a claim from your provider, it sends you an Explanation of Benefits (EOB). The EOB shows what was billed, what the plan paid, and what you owe. It is not a bill — it is a summary.\n\nYou should compare your EOB with the actual bill from your provider to make sure the services and amounts match before you pay. If something does not line up, contact your provider or your health plan to ask about it.", "Patient engagement means having the knowledge, skills, and confidence to actively participate in your own healthcare decisions. Research shows that patients who are more engaged tend to have better health outcomes and lower costs.\n\nSimple steps make a difference: asking questions during appointments, understanding your insurance benefits, reviewing your EOBs, and keeping track of your medical records. The more you understand the system, the better you can navigate it."], "T-DATA-01": ["Healthcare generates a lot of sensitive data. Protected Health Information (PHI) is any individually identifiable health information that relates to your past, present, or future physical or mental health, the care you received, or payment for that care.\n\nPHI includes things like your name, address, date of birth, and Social Security Number when they are linked to health information. It is protected under HIPAA regardless of form — whether it is in a computer system, on paper, or spoken aloud.", "The HIPAA Privacy Rule sets national standards for protecting PHI. It applies to covered entities — health plans, healthcare providers, and clearinghouses — as well as their business associates.\n\nOne key concept is the minimum necessary standard. Covered entities must make reasonable efforts to limit how much PHI they use or share to only what is needed for the task at hand. For example, if a billing office needs to process a claim, they should only access the billing-related information, not your entire medical history.\n\nThere is an exception: when providers share PHI for treatment purposes, the minimum necessary rule does not apply. Your doctor can share your full relevant history with a specialist who is treating you. You also have the right to access, inspect, and get copies of your own PHI.", "HIPAA defines three types of covered entities: health plans (like insurance companies and Medicare), healthcare clearinghouses, and healthcare providers who send health information electronically.\n\nA business associate is a person or organization that handles PHI on behalf of a covered entity. For example, a company that stores medical records in the cloud for a hospital is a business associate. They must sign a written agreement to follow HIPAA rules and protect the data they handle.", "While the Privacy Rule covers all forms of PHI, the HIPAA Security Rule focuses specifically on electronic PHI (ePHI). It requires covered entities and business associates to ensure the confidentiality, integrity, and availability of ePHI.\n\nThe Security Rule requires three types of safeguards: administrative (policies and procedures), physical (protecting facilities and equipment), and technical (technology controls for access and data protection). Think of it as locking the building, training the staff, and securing the computers.\n\nIf a breach of unsecured PHI does happen, the Breach Notification Rule kicks in. The covered entity must notify affected individuals within 60 days of discovering the breach. If the breach affects more than 500 people in a state, prominent media outlets and the HHS Secretary must also be notified. Smaller breaches are reported to HHS annually.", "Healthcare runs on standardized codes. When your doctor diagnoses you with something, that diagnosis is translated into an ICD code (International Classification of Diseases). The U.S. switched from ICD-9 to ICD-10 in 2015, expanding from about 14,000 codes to about 69,000. ICD-10 codes can be up to 7 characters long and capture more detail about the location, severity, and type of a condition.\n\nICD-10-CM (Clinical Modification) codes are used everywhere for diagnoses. ICD-10-PCS (Procedure Coding System) codes are used specifically for inpatient hospital procedures.\n\nOn the procedure side, CPT (Current Procedural Terminology) codes are 5-digit numbers maintained by the American Medical Association that identify the services a provider performed. HCPCS (Healthcare Common Procedure Coding System) has two levels: Level I is the CPT codes, and Level II covers products and services not in CPT — like ambulance services, durable medical equipment, and prosthetics. Level II codes start with a letter followed by 4 digits and are maintained by CMS.", "An in-network provider has a contract with your health insurer to provide services at pre-negotiated rates. This means lower out-of-pocket costs for you. If you visit an in-network doctor, your insurer has already agreed on what the service should cost.\n\nAn out-of-network provider has no such contract. You typically pay significantly more for the same service. For example, an in-network office visit might cost you a $25 copay, while the same visit out-of-network could cost you hundreds of dollars.", "An Electronic Health Record (EHR) is a digital version of your medical history. It includes your demographics, medications, vital signs, immunizations, lab results, and radiology reports — all maintained by your provider over time.\n\nEHRs help reduce duplicate tests, decrease treatment delays, and improve the accuracy of medical records by making your information available electronically to authorized providers. Certified EHR technology stores your data in a structured format so providers can easily retrieve, transfer, and use it to support care decisions."], "T-CROSS-01": ["Let me walk you through how a healthcare claim works from start to finish. You visit a doctor. The doctor treats you. Then the doctor's office submits a claim — a standardized bill — to your health plan. The health plan processes the claim and issues payment.\n\nProviders submit claims electronically to payors or to intermediaries like Medicare Administrative Contractors, using HIPAA-standard transaction formats. When the payor receives a claim, automated checks verify completeness, valid data, duplicate submissions, and whether the provider and patient are eligible.\n\nAfter these checks, the claim is adjudicated. It can be approved for payment, rejected (sent back to the provider for corrections), or denied (the service is not covered or does not meet policy requirements).", "Before treating you, a provider can check whether your insurance is active and what it covers. They do this by sending an electronic eligibility inquiry — called a HIPAA 270 transaction — to your health plan.\n\nSince January 2013, HIPAA rules require health plans to respond to these inquiries in real time. The response includes information about your deductibles, copays, and coinsurance. This helps the provider's office tell you upfront what you might owe for a visit.", "Every claim must pair a diagnosis code with a procedure code. The diagnosis code (ICD-10-CM) explains why you needed care. The procedure code (CPT or HCPCS) describes what the provider did. Together, they link the clinical documentation to the payor's reimbursement decision.\n\nIf a claim is submitted without a valid diagnosis code, it gets returned as incomplete and will not be processed. Even if the codes are present, the payor checks whether the diagnosis supports the procedure. If the diagnosis does not justify the service according to coverage policy, the claim may be denied for lack of medical necessity. For example, a claim for a knee MRI would need a diagnosis that explains why imaging the knee was medically needed.", "After your claim is processed, two things happen. Your health plan sends you an Explanation of Benefits (EOB). It shows the provider's charges, the allowed amount, what the plan paid, and what you owe. Remember, the EOB is not a bill — it is a summary. You should compare it to the actual bill from your provider.\n\nAt the same time, the payor sends the provider an Electronic Remittance Advice (ERA) — a HIPAA 835 transaction — detailing the payment amount, any adjustments, and reasons for denials.\n\nThe \"allowed amount\" is the maximum your plan will pay for a covered service. For in-network services, the provider generally cannot bill you beyond the allowed amount. Your share is limited to your copay, coinsurance, or deductible.", "A healthcare clearinghouse is an intermediary that sits between providers and payors. It receives claims and other transactions from providers, converts them into HIPAA-standard electronic formats, and forwards them to the correct health plan.\n\nThink of a clearinghouse as a translator. A provider's billing system might format data one way, but the health plan expects it in a specific standard format. The clearinghouse makes sure everything matches up. Clearinghouses are one of the three types of HIPAA covered entities, alongside health plans and providers.", "Every HIPAA-covered provider has a National Provider Identifier (NPI) — a unique, permanent 10-digit number. The NPI must appear on all electronic claims, eligibility inquiries, and other HIPAA transactions.\n\nThe NPI is \"intelligence-free.\" That means the number itself carries no information about the provider's location, specialty, or type. It is purely a unique identifier, like a Social Security Number for providers. This ensures that each provider can be consistently identified across every transaction in the system.", "HIPAA's Privacy Rule applies to all three types of covered entities — health plans, healthcare providers, and clearinghouses. Each must protect patients' protected health information (PHI). PHI is any data about a person's health, care, or payment that can identify them.\n\nCovered entities can share PHI without patient authorization for three purposes: treatment, payment, and healthcare operations — known as TPO. Outside of those purposes, the minimum necessary standard applies, meaning entities must limit shared information to the smallest amount needed.\n\nYou have the right to access and obtain copies of your health records from any covered entity within 30 days and to request corrections. HIPAA's Administrative Simplification provisions also mandate standard electronic formats for key transactions — claims (837), remittance advice (835), eligibility verification (270/271), claim status (276/277), and referral authorization (278). The current standard is ASC X12 Version 5010, used by providers, payors, and clearinghouses nationwide. These standardized formats allow any provider to submit a claim to any health plan using the same data structure, enabling interoperability across the entire system."]};
+
+const FACT_ORDER = [
+  { section_id: 1, title: "The Players: Who's Who", description: "Introducing the three key roles in healthcare", facts: ["FACT-PRV-001","FACT-PAY-001","FACT-PAT-001","FACT-PAT-002","FACT-CRS-001"] },
+  { section_id: 2, title: "Providers: Types & Settings", description: "The different kinds of healthcare providers and where care happens", facts: ["FACT-PRV-002","FACT-PRV-004","FACT-PRV-005","FACT-PRV-006","FACT-PRV-007","FACT-PRV-008","FACT-PRV-009","FACT-PRV-010","FACT-PRV-011","FACT-PRV-012","FACT-PRV-013","FACT-PRV-014","FACT-PRV-015"] },
+  { section_id: 3, title: "Provider Enrollment & Billing", description: "How providers register with Medicare and submit claims", facts: ["FACT-PRV-019","FACT-CRS-016","FACT-CRS-017","FACT-PRV-018","FACT-PRV-020","FACT-PRV-003","FACT-PRV-016","FACT-PRV-017","FACT-PRV-021","FACT-PRV-022"] },
+  { section_id: 4, title: "Payors: Government Programs", description: "Medicare and Medicaid — how government health insurance works", facts: ["FACT-PAY-002","FACT-PAY-004","FACT-PAY-005","FACT-PAY-006","FACT-PAY-007","FACT-PAY-008","FACT-PAY-009","FACT-PAY-010","FACT-PAY-011","FACT-PAY-012","FACT-PAY-013","FACT-PAY-014","FACT-PAY-015"] },
+  { section_id: 5, title: "Payors: Commercial & Self-Pay", description: "Private insurance plans and paying out of pocket", facts: ["FACT-PAY-016","FACT-PAY-017","FACT-PAY-018","FACT-PAY-019","FACT-PAY-003","FACT-PAY-020","FACT-PAY-021","FACT-PAY-022"] },
+  { section_id: 6, title: "Patient Enrollment & Eligibility", description: "How patients get and keep health insurance coverage", facts: ["FACT-PAT-003","FACT-PAT-004","FACT-PAT-005","FACT-PAT-006","FACT-PAT-007","FACT-CRS-005","FACT-CRS-006"] },
+  { section_id: 7, title: "Patient Cost Sharing", description: "Premiums, deductibles, copays, coinsurance, and out-of-pocket limits", facts: ["FACT-PAT-018","FACT-PAT-019","FACT-PAT-020","FACT-PAT-021","FACT-PAT-022","FACT-CRS-013"] },
+  { section_id: 8, title: "Patient Rights & Consent", description: "Informed consent, access to records, and HIPAA patient rights", facts: ["FACT-PAT-015","FACT-PAT-016","FACT-PAT-017","FACT-PAT-008","FACT-PAT-009","FACT-PAT-010","FACT-PAT-011","FACT-PAT-012","FACT-PAT-013","FACT-PAT-014","FACT-PAT-025"] },
+  { section_id: 9, title: "Healthcare Data: Coding Systems", description: "ICD, CPT, and HCPCS — the languages of healthcare billing", facts: ["FACT-DAT-014","FACT-DAT-015","FACT-DAT-016","FACT-DAT-017","FACT-DAT-018","FACT-DAT-019","FACT-DAT-020","FACT-CRS-007","FACT-CRS-009"] },
+  { section_id: 10, title: "Healthcare Data: Networks & EHRs", description: "In-network vs out-of-network providers and electronic health records", facts: ["FACT-DAT-021","FACT-DAT-022","FACT-DAT-023","FACT-DAT-024","FACT-DAT-025"] },
+  { section_id: 11, title: "Claims Flow & Processing", description: "How a claim moves from provider to payor to payment", facts: ["FACT-CRS-002","FACT-CRS-003","FACT-CRS-008","FACT-CRS-004","FACT-CRS-010","FACT-CRS-011","FACT-PAT-023","FACT-PAT-024","FACT-CRS-012"] },
+  { section_id: 12, title: "Clearinghouses & Transaction Standards", description: "How electronic healthcare transactions are standardized and routed", facts: ["FACT-CRS-014","FACT-CRS-015","FACT-CRS-023","FACT-CRS-024","FACT-CRS-025"] },
+  { section_id: 13, title: "HIPAA: PHI & Privacy Rule", description: "What protected health information is and how the Privacy Rule works", facts: ["FACT-DAT-001","FACT-DAT-002","FACT-DAT-003","FACT-CRS-019","FACT-DAT-004","FACT-DAT-005","FACT-DAT-006","FACT-CRS-020","FACT-CRS-021","FACT-DAT-007","FACT-CRS-022"] },
+  { section_id: 14, title: "HIPAA: Covered Entities & Security", description: "Who must follow HIPAA, and how health data is secured", facts: ["FACT-DAT-008","FACT-PRV-023","FACT-PRV-025","FACT-PRV-024","FACT-PAY-023","FACT-PAY-024","FACT-PAY-025","FACT-CRS-018","FACT-DAT-009","FACT-DAT-010","FACT-DAT-011","FACT-DAT-012","FACT-DAT-013"] }
+];
+
+const FACTS = {
+  "FACT-PRV-001": { pillar: "provider", statement: "A health care provider is a person trained and licensed to give health care, or a place licensed to give health care." },
+  "FACT-PRV-002": { pillar: "provider", statement: "Medicare law distinguishes between providers (institutional care facilities such as hospitals, hospices, and nursing homes) and suppliers (entities that furnish diagnostic, therapeutic, or equipment services rather than sustained residential care)." },
+  "FACT-PRV-003": { pillar: "provider", statement: "Physicians and non-physician practitioners (such as nurse practitioners and physician assistants) enroll in Medicare using form CMS-855I." },
+  "FACT-PRV-004": { pillar: "provider", statement: "A physician office is a common provider setting where patients receive outpatient evaluation, diagnosis, and treatment from a licensed physician." },
+  "FACT-PRV-005": { pillar: "provider", statement: "Hospitals are institutional providers that enroll in Medicare using form CMS-855A and bill using the CMS-1450 (UB-04) institutional claim form." },
+  "FACT-PRV-006": { pillar: "provider", statement: "Institutional providers include hospitals, critical access hospitals, skilled nursing facilities, home health agencies, and hospices." },
+  "FACT-PRV-007": { pillar: "provider", statement: "Durable Medical Equipment (DME) is equipment that can withstand repeated use, has an expected life of at least three years, serves a medical purpose, is generally not useful without illness or injury, and is appropriate for use in a patient\u2019s home." },
+  "FACT-PRV-008": { pillar: "provider", statement: "Examples of DME include hospital beds, wheelchairs, ventilators, oxygen equipment, prosthetics such as artificial limbs, and orthotics such as back and neck braces." },
+  "FACT-PRV-009": { pillar: "provider", statement: "DMEPOS suppliers must obtain accreditation from a CMS-approved organization and post a $50,000 surety bond per NPI to enroll in Medicare." },
+  "FACT-PRV-010": { pillar: "provider", statement: "DMEPOS suppliers enroll in Medicare using form CMS-855S, which is separate from the forms used by physicians or institutional providers." },
+  "FACT-PRV-011": { pillar: "provider", statement: "Medicare covers ambulance transportation only when the patient\u2019s medical condition makes any other means of transportation contraindicated." },
+  "FACT-PRV-012": { pillar: "provider", statement: "Emergency air ambulance transport by airplane or helicopter is covered by Medicare when immediate transport is needed and ground ambulance cannot provide it." },
+  "FACT-PRV-013": { pillar: "provider", statement: "The Medicare ambulance fee schedule applies to volunteer, municipal, private, and independent ambulance suppliers as well as institutional providers like hospitals." },
+  "FACT-PRV-014": { pillar: "provider", statement: "Ancillary services include laboratory tests, radiology, pharmacy services, and other diagnostic or therapeutic services that support a patient\u2019s primary care." },
+  "FACT-PRV-015": { pillar: "provider", statement: "Clinical laboratories operate in many settings including hospitals, physician offices, pharmacies, ambulatory surgery centers, and as independent labs." },
+  "FACT-PRV-016": { pillar: "provider", statement: "Non-institutional providers and suppliers bill Medicare using the CMS-1500 claim form (or its electronic equivalent, the 837P transaction), while institutional providers use the CMS-1450 form (UB-04) or the 837I transaction." },
+  "FACT-PRV-017": { pillar: "provider", statement: "Providers are required to submit Medicare claims electronically under the Administrative Simplification Compliance Act (ASCA) unless they qualify for a waiver." },
+  "FACT-PRV-018": { pillar: "provider", statement: "To enroll in Medicare, a provider must first obtain a National Provider Identifier (NPI), then complete an application through PECOS (the online enrollment system), and finally work with their regional Medicare Administrative Contractor (MAC)." },
+  "FACT-PRV-019": { pillar: "provider", statement: "Every health care provider that bills Medicare must have a unique National Provider Identifier (NPI), which is a standard 10-digit number used to identify the provider across all health transactions." },
+  "FACT-PRV-020": { pillar: "provider", statement: "Medicare enrollment applications submitted online through PECOS process in approximately 30 days, while paper applications take approximately 65 days." },
+  "FACT-PRV-021": { pillar: "provider", statement: "Each state administers its own Medicaid provider enrollment process and may impose requirements beyond the federal minimums set by CMS." },
+  "FACT-PRV-022": { pillar: "provider", statement: "State Medicaid agencies must verify that a provider holds an unrestricted license before approving enrollment." },
+  "FACT-PRV-023": { pillar: "provider", statement: "Under HIPAA, a health care provider becomes a covered entity when it transmits health information electronically in connection with certain transactions such as claims billing." },
+  "FACT-PRV-024": { pillar: "provider", statement: "HIPAA-covered providers must comply with the Privacy Rule and Security Rule, which require safeguards to protect patient health information, training for employees, and contracts with business associates." },
+  "FACT-PRV-025": { pillar: "provider", statement: "Most doctors, clinics, hospitals, psychologists, chiropractors, nursing homes, pharmacies, and dentists are HIPAA-covered entities because they transmit health information electronically." },
+  "FACT-PAY-001": { pillar: "payor", statement: "A payor (also spelled payer) is an entity responsible for paying healthcare providers for services delivered to patients; payors include private health insurers and government programs such as Medicare and Medicaid." },
+  "FACT-PAY-002": { pillar: "payor", statement: "Healthcare payors fall into three broad categories: government programs (such as Medicare and Medicaid), commercial (private) insurance, and self-pay." },
+  "FACT-PAY-003": { pillar: "payor", statement: "When a patient has coverage from more than one payor, coordination of benefits rules determine which payor pays first; the payor that pays first is called the primary payer." },
+  "FACT-PAY-004": { pillar: "payor", statement: "Medicare is a federal health insurance program primarily for people age 65 and older; it is also available to certain people under 65 who have disabilities, End-Stage Renal Disease (ESRD), or ALS." },
+  "FACT-PAY-005": { pillar: "payor", statement: "Medicare is administered by the Centers for Medicare & Medicaid Services (CMS), a federal agency within the U.S. Department of Health and Human Services (HHS)." },
+  "FACT-PAY-006": { pillar: "payor", statement: "Original Medicare consists of two parts: Part A (Hospital Insurance) and Part B (Medical Insurance)." },
+  "FACT-PAY-007": { pillar: "payor", statement: "Medicare Part A (Hospital Insurance) covers inpatient hospital stays, skilled nursing facility care, hospice care, and some home health services." },
+  "FACT-PAY-008": { pillar: "payor", statement: "Most people do not pay a monthly premium for Medicare Part A because they or their spouse paid Medicare taxes for 40 or more quarters (10 years) during their working life." },
+  "FACT-PAY-009": { pillar: "payor", statement: "Medicare Part B (Medical Insurance) covers doctors\u2019 services, outpatient hospital care, durable medical equipment, and preventive services such as screenings and vaccinations." },
+  "FACT-PAY-010": { pillar: "payor", statement: "Medicare Part B requires a monthly premium; for 2026 the standard Part B premium is $202.90 per month and the annual deductible is $283." },
+  "FACT-PAY-011": { pillar: "payor", statement: "People already receiving Social Security benefits are automatically enrolled in Medicare Part A and Part B when they become eligible." },
+  "FACT-PAY-012": { pillar: "payor", statement: "Medicaid is a joint federal and state program that provides health coverage to eligible low-income adults, children, pregnant women, elderly adults, and people with disabilities." },
+  "FACT-PAY-013": { pillar: "payor", statement: "Medicaid is funded jointly by the federal government and state governments; the federal share is determined by the Federal Medical Assistance Percentage (FMAP), which varies by state based on per capita income." },
+  "FACT-PAY-014": { pillar: "payor", statement: "Medicaid is administered by individual states according to federal requirements, which means eligibility rules and covered services can vary from state to state." },
+  "FACT-PAY-015": { pillar: "payor", statement: "Unlike Medicare, which is a purely federal program, Medicaid eligibility is based on income and household size rather than age, and people can apply for Medicaid at any time during the year." },
+  "FACT-PAY-016": { pillar: "payor", statement: "Commercial (private) health insurance is the most common form of health coverage in the United States and can be obtained through an employer, purchased on the Health Insurance Marketplace, or bought directly from an insurance company." },
+  "FACT-PAY-017": { pillar: "payor", statement: "Aetna, Blue Cross Blue Shield, and UnitedHealthcare are examples of major commercial health insurance companies that offer employer-sponsored and individual health plans." },
+  "FACT-PAY-018": { pillar: "payor", statement: "Common types of commercial health insurance plans include HMO (Health Maintenance Organization), PPO (Preferred Provider Organization), EPO (Exclusive Provider Organization), and POS (Point of Service)." },
+  "FACT-PAY-019": { pillar: "payor", statement: "Employer-sponsored group health plans are the most common way Americans obtain private health insurance; the employer typically shares the cost of premiums with employees." },
+  "FACT-PAY-020": { pillar: "payor", statement: "A self-pay patient is someone who does not have health insurance or who chooses not to submit a claim to their insurance for a particular health care service." },
+  "FACT-PAY-021": { pillar: "payor", statement: "An uninsured individual is a person who is not enrolled in any group health plan, individual health insurance coverage, or federal health care program." },
+  "FACT-PAY-022": { pillar: "payor", statement: "Under the No Surprises Act, providers must give uninsured or self-pay patients a good faith estimate of expected charges before or upon scheduling a health care service." },
+  "FACT-PAY-023": { pillar: "payor", statement: "Under HIPAA, health plans are one of the three categories of covered entities (along with health care providers and clearinghouses) and must comply with the Privacy Rule and Security Rule to protect patient health information." },
+  "FACT-PAY-024": { pillar: "payor", statement: "HIPAA-covered health plans include health insurance companies, HMOs, employer-sponsored group health plans, and government programs such as Medicare and Medicaid." },
+  "FACT-PAY-025": { pillar: "payor", statement: "A group health plan with fewer than 50 participants that is administered solely by the employer is exempt from HIPAA covered-entity requirements." },
+  "FACT-PAT-001": { pillar: "patient", statement: "The subscriber (also called the policyholder) is the primary individual who enrolls in and holds the health insurance contract with the insurance carrier." },
+  "FACT-PAT-002": { pillar: "patient", statement: "A dependent is a family member \u2014 such as a spouse, child, or domestic partner \u2014 who is covered under the subscriber\u2019s health insurance plan rather than holding their own policy." },
+  "FACT-PAT-003": { pillar: "patient", statement: "Under the Affordable Care Act, health plans that offer dependent coverage must allow children to remain on a parent\u2019s plan until they reach age 26, regardless of marital status." },
+  "FACT-PAT-004": { pillar: "patient", statement: "Open Enrollment is the annual period when anyone can enroll in, renew, or change a Health Insurance Marketplace plan; outside this window, enrollment is generally not permitted unless a qualifying life event occurs." },
+  "FACT-PAT-005": { pillar: "patient", statement: "A Special Enrollment Period (SEP) allows a person to enroll in or change a Marketplace plan outside of Open Enrollment after a qualifying life event such as losing coverage, getting married, having a baby, or moving." },
+  "FACT-PAT-006": { pillar: "patient", statement: "Most Special Enrollment Periods give the individual 60 days before or after the qualifying life event to select a new health plan." },
+  "FACT-PAT-007": { pillar: "patient", statement: "Eligibility for employer-sponsored health insurance is determined by the employer\u2019s plan rules, while Marketplace eligibility depends on factors such as income, household size, and residency." },
+  "FACT-PAT-008": { pillar: "patient", statement: "Under the HIPAA Privacy Rule, patients have a legal, enforceable right to access and obtain copies of their protected health information (PHI) held by covered entities such as doctors, hospitals, and health plans." },
+  "FACT-PAT-009": { pillar: "patient", statement: "A covered entity must respond to a patient\u2019s request to access their health records within 30 days of receiving the request." },
+  "FACT-PAT-010": { pillar: "patient", statement: "Patients have the right to request corrections or amendments to their health records if they believe the information is inaccurate or incomplete." },
+  "FACT-PAT-011": { pillar: "patient", statement: "A provider may charge a reasonable fee for copying and mailing health records to a patient, but cannot charge for searching for or retrieving those records." },
+  "FACT-PAT-012": { pillar: "patient", statement: "Patients can direct a covered entity to send a copy of their health information to a third party of their choice, such as another doctor or a family member." },
+  "FACT-PAT-013": { pillar: "patient", statement: "Patients have the right to file a complaint with the U.S. Department of Health and Human Services (HHS) if they believe their HIPAA privacy rights have been violated." },
+  "FACT-PAT-014": { pillar: "patient", statement: "The HIPAA Privacy Rule requires health care providers and health plans to give patients a Notice of Privacy Practices \u2014 a plain-language document explaining how the entity may use and disclose the patient\u2019s health information." },
+  "FACT-PAT-015": { pillar: "patient", statement: "Informed consent is a communication process in which a clinician explains the risks, benefits, and alternatives of a proposed procedure or treatment so the patient can make a voluntary, informed decision." },
+  "FACT-PAT-016": { pillar: "patient", statement: "Competent adults have the legal right to give or withhold informed consent for their own medical treatment; for children, a parent or legal guardian provides consent." },
+  "FACT-PAT-017": { pillar: "patient", statement: "Informed consent may be waived in life-threatening emergencies when there is not enough time to obtain consent and no authorized decision-maker is available." },
+  "FACT-PAT-018": { pillar: "patient", statement: "A premium is the amount a patient pays \u2014 usually monthly \u2014 to maintain health insurance coverage, regardless of whether they use medical services." },
+  "FACT-PAT-019": { pillar: "patient", statement: "A deductible is the amount a patient must pay out of pocket for covered health care services each year before the insurance plan begins to pay its share." },
+  "FACT-PAT-020": { pillar: "patient", statement: "A copayment (copay) is a fixed dollar amount \u2014 for example $25 \u2014 that a patient pays for a covered service at the time of the visit." },
+  "FACT-PAT-021": { pillar: "patient", statement: "Coinsurance is the percentage of a covered service\u2019s cost that the patient pays after meeting the deductible \u2014 for example, the patient pays 20% and the plan pays 80%." },
+  "FACT-PAT-022": { pillar: "patient", statement: "The out-of-pocket maximum is the most a patient will pay for covered services in a plan year; once reached, the health plan pays 100% of covered costs for the remainder of the year." },
+  "FACT-PAT-023": { pillar: "patient", statement: "After a health plan processes a claim, it sends the patient an Explanation of Benefits (EOB) showing what was billed, what the plan paid, and what the patient owes; the EOB is not a bill." },
+  "FACT-PAT-024": { pillar: "patient", statement: "Patients should compare the Explanation of Benefits from their health plan with the bill from their provider to confirm that services and amounts match before making a payment." },
+  "FACT-PAT-025": { pillar: "patient", statement: "Patient engagement refers to a patient\u2019s knowledge, skills, and confidence to actively participate in their own health care decisions; research shows that higher patient activation is associated with better health outcomes and lower costs." },
+  "FACT-DAT-001": { pillar: "data", statement: "Protected Health Information (PHI) is individually identifiable health information that relates to a person\u2019s past, present, or future physical or mental health, the provision of health care, or payment for health care." },
+  "FACT-DAT-002": { pillar: "data", statement: "PHI includes common identifiers such as a patient\u2019s name, address, date of birth, and Social Security Number when they are associated with health information." },
+  "FACT-DAT-003": { pillar: "data", statement: "PHI is protected under HIPAA regardless of its form \u2014 electronic, paper, or oral." },
+  "FACT-DAT-004": { pillar: "data", statement: "The HIPAA Privacy Rule establishes national standards for protecting individually identifiable health information held or transmitted by covered entities and their business associates." },
+  "FACT-DAT-005": { pillar: "data", statement: "The minimum necessary standard requires covered entities to make reasonable efforts to limit the use and disclosure of PHI to the minimum amount needed to accomplish the intended purpose." },
+  "FACT-DAT-006": { pillar: "data", statement: "Disclosures of PHI for treatment purposes between health care providers are exempt from the minimum necessary requirement." },
+  "FACT-DAT-007": { pillar: "data", statement: "Under the HIPAA Privacy Rule, individuals have the right to access, inspect, and obtain a copy of their own protected health information." },
+  "FACT-DAT-008": { pillar: "data", statement: "HIPAA defines three types of covered entities: health plans, health care clearinghouses, and health care providers who transmit health information electronically in connection with covered transactions." },
+  "FACT-DAT-009": { pillar: "data", statement: "A business associate is a person or organization that performs functions involving the use or disclosure of PHI on behalf of a covered entity and must sign a written agreement to comply with HIPAA rules." },
+  "FACT-DAT-010": { pillar: "data", statement: "The HIPAA Security Rule establishes national standards to protect electronic protected health information (ePHI) and requires covered entities and business associates to ensure its confidentiality, integrity, and availability." },
+  "FACT-DAT-011": { pillar: "data", statement: "The HIPAA Security Rule requires three categories of safeguards: administrative (policies and procedures), physical (protection of facilities and equipment), and technical (technology controls for access and data protection)." },
+  "FACT-DAT-012": { pillar: "data", statement: "The HIPAA Breach Notification Rule requires covered entities to notify affected individuals of a breach of unsecured PHI without unreasonable delay and no later than 60 days after discovering the breach." },
+  "FACT-DAT-013": { pillar: "data", statement: "When a breach of unsecured PHI affects more than 500 residents of a state or jurisdiction, the covered entity must also notify prominent media outlets and the HHS Secretary within 60 days; smaller breaches are reported to HHS annually." },
+  "FACT-DAT-014": { pillar: "data", statement: "ICD codes (International Classification of Diseases) are standardized codes used to represent medical diagnoses and inpatient procedures on claims and medical records." },
+  "FACT-DAT-015": { pillar: "data", statement: "The United States transitioned from ICD-9 to ICD-10 on October 1, 2015, expanding from approximately 14,000 diagnosis codes to approximately 69,000 to allow greater clinical specificity." },
+  "FACT-DAT-016": { pillar: "data", statement: "ICD-10-CM (Clinical Modification) codes are used by all providers in every healthcare setting to code diagnoses, while ICD-10-PCS (Procedure Coding System) codes are used specifically for inpatient hospital procedures." },
+  "FACT-DAT-017": { pillar: "data", statement: "ICD-10 codes can be up to 7 characters long, compared to the shorter ICD-9 codes, providing more detail about the location, severity, and type of a condition." },
+  "FACT-DAT-018": { pillar: "data", statement: "HCPCS (Healthcare Common Procedure Coding System) is a standardized coding system with two levels: Level I consists of CPT codes for medical services and procedures, and Level II covers products, supplies, and services not included in CPT." },
+  "FACT-DAT-019": { pillar: "data", statement: "CPT (Current Procedural Terminology) codes are 5-digit numeric codes maintained by the American Medical Association (AMA) that identify medical services and procedures performed by health care professionals." },
+  "FACT-DAT-020": { pillar: "data", statement: "HCPCS Level II codes consist of one alphabetical letter followed by 4 numeric digits and are maintained by CMS to identify items such as ambulance services, durable medical equipment, and prosthetics." },
+  "FACT-DAT-021": { pillar: "data", statement: "An in-network provider has a contract with a patient\u2019s health insurer to provide services at pre-negotiated rates, which results in lower out-of-pocket costs for the patient." },
+  "FACT-DAT-022": { pillar: "data", statement: "An out-of-network provider does not have a contract with the patient\u2019s health insurer, so the patient typically pays significantly more for the same services compared to an in-network provider." },
+  "FACT-DAT-023": { pillar: "data", statement: "An Electronic Health Record (EHR) is a digital version of a patient\u2019s medical history maintained by the provider over time, including demographics, medications, vital signs, immunizations, lab results, and radiology reports." },
+  "FACT-DAT-024": { pillar: "data", statement: "EHRs help reduce duplication of tests, decrease delays in treatment, and improve the accuracy and clarity of medical records by making health information available electronically to authorized providers." },
+  "FACT-DAT-025": { pillar: "data", statement: "Certified EHR technology stores patient data in a structured format that allows health care providers to easily retrieve, transfer, and use the information to support patient care decisions." },
+  "FACT-CRS-001": { pillar: "cross_domain", statement: "The basic claims flow is: a patient receives care from a provider, the provider submits a claim to the payor (health plan), and the payor processes the claim and issues payment." },
+  "FACT-CRS-002": { pillar: "cross_domain", statement: "Providers submit claims electronically to payors (or their intermediaries such as Medicare Administrative Contractors) using HIPAA-standard transaction formats." },
+  "FACT-CRS-003": { pillar: "cross_domain", statement: "When a payor receives a claim, automated edits check for completeness, valid values, data consistency, duplicate submissions, and provider and beneficiary eligibility before the claim is adjudicated." },
+  "FACT-CRS-004": { pillar: "cross_domain", statement: "After adjudication, a claim may be approved for payment, rejected (returned to the provider for correction), or denied (the service is not covered or does not meet policy requirements)." },
+  "FACT-CRS-005": { pillar: "cross_domain", statement: "Before or at the time of service, a provider can send an electronic eligibility inquiry (HIPAA 270 transaction) to the patient\u2019s health plan to verify coverage and benefits." },
+  "FACT-CRS-006": { pillar: "cross_domain", statement: "Since January 1, 2013, HIPAA operating rules require health plans to respond to eligibility inquiries in real time, including information on deductibles, co-pays, and coinsurance." },
+  "FACT-CRS-007": { pillar: "cross_domain", statement: "Every claim must pair a diagnosis code (ICD-10-CM) that explains why care was needed with a procedure code (CPT or HCPCS) that describes the service performed; this pairing links the provider\u2019s clinical documentation to the payor\u2019s reimbursement decision." },
+  "FACT-CRS-008": { pillar: "cross_domain", statement: "A claim submitted without a valid ICD-10-CM diagnosis code is returned to the provider as an incomplete claim and will not be processed for payment." },
+  "FACT-CRS-009": { pillar: "cross_domain", statement: "Payors use the diagnosis code on a claim to determine medical necessity; if the diagnosis does not support the procedure according to coverage policy, the claim may be denied." },
+  "FACT-CRS-010": { pillar: "cross_domain", statement: "An Explanation of Benefits (EOB) is a document sent by the health plan to the patient after a claim is processed, showing provider charges, allowed charges, the amount the insurer paid, and what the patient owes." },
+  "FACT-CRS-011": { pillar: "cross_domain", statement: "An EOB is not a bill; it is a summary of how the health plan processed the claim, and the patient should compare it to the provider\u2019s actual bill for accuracy." },
+  "FACT-CRS-012": { pillar: "cross_domain", statement: "After a claim is adjudicated, the payor sends an Electronic Remittance Advice (ERA, HIPAA 835 transaction) to the provider detailing the payment amount, adjustments, and reasons for any denials." },
+  "FACT-CRS-013": { pillar: "cross_domain", statement: "The \u2018allowed amount\u2019 is the maximum a health plan will pay for a covered service; the provider may bill the patient for any remaining cost-sharing (co-pay, coinsurance, or deductible) but generally cannot bill beyond the allowed amount for in-network services." },
+  "FACT-CRS-014": { pillar: "cross_domain", statement: "A healthcare clearinghouse is an intermediary that receives claims and other transactions from providers, converts them into HIPAA-standard electronic formats, and forwards them to the appropriate health plan for processing." },
+  "FACT-CRS-015": { pillar: "cross_domain", statement: "Healthcare clearinghouses are one of the three types of HIPAA covered entities, along with health plans and health care providers who transmit transactions electronically." },
+  "FACT-CRS-016": { pillar: "cross_domain", statement: "The National Provider Identifier (NPI) is a unique, permanent 10-digit number assigned to every HIPAA-covered provider; it must appear on all electronic claims, eligibility inquiries, and other HIPAA transactions." },
+  "FACT-CRS-017": { pillar: "cross_domain", statement: "The NPI is intelligence-free, meaning the number itself carries no information about the provider\u2019s location, specialty, or type; it serves purely as a unique identifier." },
+  "FACT-CRS-018": { pillar: "cross_domain", statement: "HIPAA\u2019s Privacy Rule applies to all three types of covered entities \u2014 health plans (payors), health care providers, and clearinghouses \u2014 requiring each to protect patients\u2019 protected health information (PHI)." },
+  "FACT-CRS-019": { pillar: "cross_domain", statement: "Protected health information (PHI) is any data that relates to a person\u2019s health condition, the care they received, or payment for that care and that can identify the individual." },
+  "FACT-CRS-020": { pillar: "cross_domain", statement: "Under HIPAA, covered entities may share PHI without patient authorization for three purposes: treatment, payment, and health care operations (known as TPO)." },
+  "FACT-CRS-021": { pillar: "cross_domain", statement: "The HIPAA minimum necessary standard requires that when PHI is used or disclosed, covered entities limit the information to the smallest amount needed to accomplish the intended purpose." },
+  "FACT-CRS-022": { pillar: "cross_domain", statement: "Patients have the right under HIPAA to access and obtain copies of their own health records from any covered entity within 30 days of request, and to request corrections to those records." },
+  "FACT-CRS-023": { pillar: "cross_domain", statement: "HIPAA\u2019s Administrative Simplification provisions mandate standard electronic formats for key transactions including claims submission (837), remittance advice (835), eligibility verification (270/271), claim status inquiry (276/277), and referral authorization (278)." },
+  "FACT-CRS-024": { pillar: "cross_domain", statement: "The ASC X12 Version 5010 is the current HIPAA-adopted standard format for electronic healthcare transactions, used by providers, payors, and clearinghouses nationwide." },
+  "FACT-CRS-025": { pillar: "cross_domain", statement: "Standardized transaction formats allow any provider to submit a claim to any health plan using the same data structure, enabling interoperability across the entire healthcare system." }
+};
+
+const FACT_AUDIO = {
+  1: "media/audio/facts/facts-01-who-who.wav",
+  2: "media/audio/facts/facts-02-types-settings.wav",
+  3: "media/audio/facts/facts-03-provider-enrollment-billing.wav",
+  4: "media/audio/facts/facts-04-government-programs.wav",
+  5: "media/audio/facts/facts-05-commercial-self-pay.wav",
+  6: "media/audio/facts/facts-06-patient-enrollment-eligibility.wav",
+  7: "media/audio/facts/facts-07-patient-cost-sharing.wav",
+  8: "media/audio/facts/facts-08-patient-rights-consent.wav",
+  9: "media/audio/facts/facts-09-coding-systems.wav",
+  10: "media/audio/facts/facts-10-networks-ehrs.wav",
+  11: "media/audio/facts/facts-11-claims-flow-processing.wav",
+  12: "media/audio/facts/facts-12-clearinghouses-transaction-standards.wav",
+  13: "media/audio/facts/facts-13-phi-privacy-rule.wav",
+  14: "media/audio/facts/facts-14-covered-entities-security.wav"
+};
 
 const GLOSSARY = [
   {term: "payor", definition: "An entity responsible for paying healthcare providers for services delivered to patients, such as an insurance company or government program like Medicare."},
@@ -1814,10 +2257,12 @@ function updateHeader() {
 
 function goBack() {
   stopAudio();
+  if (typeof stopFactAudio === 'function') stopFactAudio();
   showView('homeView');
   document.getElementById('backBtn').classList.remove('visible');
   document.getElementById('headerTitle').textContent = 'Healthcare Foundations';
   document.getElementById('headerRight').textContent = '';
+  window.scrollTo(0, 0);
 }
 
 function showGlossary() {
@@ -1832,8 +2277,14 @@ function showGlossary() {
 
 function renderAlphaBar() {
   const bar = document.getElementById('glossaryAlpha');
-  const usedLetters = new Set(GLOSSARY.map(g => g.term[0].toUpperCase()));
+  const usedLetters = new Set(GLOSSARY.map(g => {
+    const ch = g.term[0].toUpperCase();
+    return /[A-Z]/.test(ch) ? ch : '#';
+  }));
   let html = '';
+  // # button for non-alpha terms (numbers, symbols)
+  const hasHash = usedLetters.has('#');
+  html += `<button class="glossary-alpha-btn${hasHash ? '' : ' disabled'}" onclick="${hasHash ? "scrollToLetter('#')" : ''}">#</button>`;
   for (let i = 65; i <= 90; i++) {
     const letter = String.fromCharCode(i);
     const has = usedLetters.has(letter);
@@ -1858,11 +2309,18 @@ function scrollToLetter(letter) {
 
 function renderGlossary(terms) {
   const list = document.getElementById('glossaryList');
-  const sorted = [...terms].sort((a, b) => a.term.localeCompare(b.term));
+  const sorted = [...terms].sort((a, b) => {
+    const aAlpha = /[A-Za-z]/.test(a.term[0]);
+    const bAlpha = /[A-Za-z]/.test(b.term[0]);
+    if (!aAlpha && bAlpha) return -1;
+    if (aAlpha && !bAlpha) return 1;
+    return a.term.localeCompare(b.term, undefined, { numeric: true });
+  });
   let html = '';
   let currentLetter = '';
   for (const g of sorted) {
-    const letter = g.term[0].toUpperCase();
+    const ch = g.term[0].toUpperCase();
+    const letter = /[A-Z]/.test(ch) ? ch : '#';
     if (letter !== currentLetter) {
       currentLetter = letter;
       html += `<div class="glossary-letter-header" id="glossary-letter-${letter}">${letter}</div>`;
@@ -1878,6 +2336,227 @@ function filterGlossary() {
   if (!q) { renderGlossary(GLOSSARY); return; }
   const filtered = GLOSSARY.filter(g => g.term.toLowerCase().includes(q) || g.definition.toLowerCase().includes(q));
   renderGlossary(filtered);
+}
+
+// ════════════════════════════════════════════════════════════════
+// FACTS EXPLORER
+// ════════════════════════════════════════════════════════════════
+
+const PILLAR_COLORS = { payor: '#2A6F97', provider: '#2E7D56', patient: '#7B4DB5', data: '#3B5BDB', cross_domain: '#C0392B' };
+const PILLAR_LABELS = { payor: 'Payor', provider: 'Provider', patient: 'Patient', data: 'Data', cross_domain: 'Cross-Domain' };
+let factsFilter = 'all';
+let factsCollapsed = {};
+
+function showFacts() {
+  showView('factsView');
+  document.getElementById('backBtn').classList.add('visible');
+  document.getElementById('headerTitle').textContent = '125 Facts';
+  document.getElementById('headerRight').textContent = '';
+  document.getElementById('factsSearch').value = '';
+  factsFilter = 'all';
+  factsCollapsed = {};
+  FACT_ORDER.forEach(s => { factsCollapsed[s.section_id] = true; });
+  renderFactsFilterBar();
+  renderFacts();
+}
+
+function renderFactsFilterBar() {
+  const bar = document.getElementById('factsFilterBar');
+  const pillars = ['all', 'payor', 'provider', 'patient', 'data', 'cross_domain'];
+  let html = '';
+  for (const p of pillars) {
+    const label = p === 'all' ? 'All' : PILLAR_LABELS[p];
+    const color = p === 'all' ? 'var(--primary)' : PILLAR_COLORS[p];
+    const active = factsFilter === p;
+    html += `<button class="facts-filter-btn${active ? ' active' : ''}" style="border-color:${color};${active ? 'background:' + color + ';color:#fff;' : 'color:' + color + ';'}" onclick="setFactsFilter('${p}')">${label}</button>`;
+  }
+  const allExpanded = FACT_ORDER.every(s => !factsCollapsed[s.section_id]);
+  html += `<button class="facts-expand-btn" onclick="toggleAllFactSections()">${allExpanded ? 'Collapse All' : 'Expand All'}</button>`;
+  bar.innerHTML = html;
+}
+
+function setFactsFilter(p) {
+  factsFilter = p;
+  renderFactsFilterBar();
+  renderFacts();
+}
+
+function renderFacts() {
+  const list = document.getElementById('factsList');
+  const search = document.getElementById('factsSearch').value.toLowerCase().trim();
+  let html = '';
+  for (const section of FACT_ORDER) {
+    const matchingFacts = section.facts.filter(fid => {
+      const f = FACTS[fid];
+      if (!f) return false;
+      if (factsFilter !== 'all' && f.pillar !== factsFilter) return false;
+      if (search && !f.statement.toLowerCase().includes(search) && !fid.toLowerCase().includes(search)) return false;
+      return true;
+    });
+    if (matchingFacts.length === 0) continue;
+    const collapsed = factsCollapsed[section.section_id];
+    html += `<div class="facts-section${collapsed ? ' collapsed' : ''}" id="facts-section-${section.section_id}">`;
+    html += `<div class="facts-section-header" onclick="toggleFactSection(${section.section_id})">`;
+    html += `<div class="facts-section-num">${section.section_id}</div>`;
+    html += `<div class="facts-section-info"><h3>${escHtml(section.title)}</h3><div class="facts-section-desc">${escHtml(section.description)}</div></div>`;
+    html += `<span class="facts-section-count">${matchingFacts.length} fact${matchingFacts.length !== 1 ? 's' : ''}</span>`;
+    const sectionQCount = QUESTIONS.filter(q => section.facts.includes(q.fact_id)).length;
+    if (sectionQCount > 0) {
+      html += `<button class="facts-quiz-btn" onclick="event.stopPropagation(); startFactSectionQuiz(${section.section_id})">Quiz (${sectionQCount})</button>`;
+    }
+    if (FACT_AUDIO[section.section_id]) {
+      const isPlaying = factsAudioSection === section.section_id;
+      html += `<button class="facts-audio-btn${isPlaying ? ' playing' : ''}" id="facts-audio-btn-${section.section_id}" onclick="event.stopPropagation(); toggleFactAudio(${section.section_id})">${isPlaying ? '&#9646;&#9646; Pause' : '&#9654; Listen'}</button>`;
+    }
+    html += `<span class="facts-section-toggle">&#9660;</span>`;
+    html += `</div>`;
+    if (FACT_AUDIO[section.section_id]) {
+      html += `<div class="facts-audio-bar${factsAudioSection === section.section_id ? ' active' : ''}" id="facts-audio-bar-${section.section_id}">`;
+      html += `<button class="facts-audio-rewind" onclick="rewindFactAudio()" title="Rewind 10s">&#8634;10s</button>`;
+      html += `<div class="facts-audio-track" onclick="seekFactAudio(event, ${section.section_id})"><div class="facts-audio-fill" id="facts-audio-fill-${section.section_id}"></div></div>`;
+      html += `<span class="facts-audio-time" id="facts-audio-time-${section.section_id}">0:00</span>`;
+      html += `</div>`;
+    }
+    html += `<div class="facts-section-body">`;
+    for (const fid of matchingFacts) {
+      const f = FACTS[fid];
+      const color = PILLAR_COLORS[f.pillar] || 'var(--gray-300)';
+      const label = PILLAR_LABELS[f.pillar] || f.pillar;
+      const qList = QUESTIONS.filter(q => q.fact_id === fid);
+      const qCount = qList.length;
+      html += `<div class="fact-card" style="border-left-color:${color}">`;
+      html += `<span class="fact-card-pillar-badge" style="background:${color}">${label}</span>`;
+      html += `<div class="fact-card-text">${escHtml(f.statement)}</div>`;
+      if (qCount > 0) {
+        html += `<div class="fact-card-footer">`;
+        html += `<button class="fact-q-toggle" onclick="toggleFactQuestions('${fid}')">${qCount} question${qCount !== 1 ? 's' : ''} &#9662;</button>`;
+        html += `</div>`;
+        html += `<div class="fact-questions" id="fact-q-${fid}">`;
+        for (const q of qList) {
+          const typeBadge = q.type === 'TF' ? 'T/F' : 'MCQ';
+          html += `<div class="fact-question-preview"><span class="q-type-badge">${typeBadge}</span><span>${escHtml(q.question)}</span></div>`;
+        }
+        html += `</div>`;
+      }
+      html += `</div>`;
+    }
+    html += `</div></div>`;
+  }
+  if (!html) html = '<p style="text-align:center;color:var(--gray-500);padding:40px;">No matching facts.</p>';
+  list.innerHTML = html;
+}
+
+function toggleFactSection(sectionId) {
+  factsCollapsed[sectionId] = !factsCollapsed[sectionId];
+  const el = document.getElementById('facts-section-' + sectionId);
+  if (el) el.classList.toggle('collapsed');
+  renderFactsFilterBar();
+}
+
+function toggleAllFactSections() {
+  const allExpanded = FACT_ORDER.every(s => !factsCollapsed[s.section_id]);
+  for (const s of FACT_ORDER) {
+    factsCollapsed[s.section_id] = allExpanded;
+  }
+  renderFactsFilterBar();
+  renderFacts();
+}
+
+function toggleFactQuestions(factId) {
+  const el = document.getElementById('fact-q-' + factId);
+  if (el) el.classList.toggle('expanded');
+}
+
+function filterFacts() {
+  renderFacts();
+}
+
+// ── Facts Audio ──
+
+let factsAudioEl = null;
+let factsAudioSection = null;
+let factsAudioInterval = null;
+
+function toggleFactAudio(sectionId) {
+  // If clicking the same section that's playing, pause/resume
+  if (factsAudioSection === sectionId && factsAudioEl) {
+    if (factsAudioEl.paused) {
+      factsAudioEl.play().catch(() => {});
+      updateFactAudioBtn(sectionId, true);
+      factsAudioInterval = setInterval(() => updateFactAudioProgress(sectionId), 100);
+    } else {
+      factsAudioEl.pause();
+      updateFactAudioBtn(sectionId, false);
+      clearInterval(factsAudioInterval);
+    }
+    return;
+  }
+  // Stop any currently playing fact audio
+  stopFactAudio();
+  // Start new
+  const src = FACT_AUDIO[sectionId];
+  if (!src) return;
+  factsAudioSection = sectionId;
+  factsAudioEl = new Audio(src);
+  factsAudioEl.preload = 'metadata';
+  factsAudioEl.addEventListener('ended', () => {
+    stopFactAudio();
+  });
+  factsAudioEl.addEventListener('error', () => {
+    stopFactAudio();
+  });
+  factsAudioEl.play().catch(() => {});
+  updateFactAudioBtn(sectionId, true);
+  const bar = document.getElementById('facts-audio-bar-' + sectionId);
+  if (bar) bar.classList.add('active');
+  factsAudioInterval = setInterval(() => updateFactAudioProgress(sectionId), 100);
+}
+
+function stopFactAudio() {
+  if (factsAudioEl) {
+    factsAudioEl.pause();
+    factsAudioEl = null;
+  }
+  clearInterval(factsAudioInterval);
+  if (factsAudioSection) {
+    updateFactAudioBtn(factsAudioSection, false);
+    const bar = document.getElementById('facts-audio-bar-' + factsAudioSection);
+    if (bar) bar.classList.remove('active');
+    const fill = document.getElementById('facts-audio-fill-' + factsAudioSection);
+    if (fill) fill.style.width = '0%';
+    const time = document.getElementById('facts-audio-time-' + factsAudioSection);
+    if (time) time.textContent = '0:00';
+  }
+  factsAudioSection = null;
+}
+
+function updateFactAudioBtn(sectionId, playing) {
+  const btn = document.getElementById('facts-audio-btn-' + sectionId);
+  if (!btn) return;
+  btn.innerHTML = playing ? '&#9646;&#9646; Pause' : '&#9654; Listen';
+  btn.classList.toggle('playing', playing);
+}
+
+function updateFactAudioProgress(sectionId) {
+  if (!factsAudioEl || !factsAudioEl.duration) return;
+  const pct = (factsAudioEl.currentTime / factsAudioEl.duration) * 100;
+  const fill = document.getElementById('facts-audio-fill-' + sectionId);
+  if (fill) fill.style.width = pct + '%';
+  const time = document.getElementById('facts-audio-time-' + sectionId);
+  if (time) time.textContent = formatTime(factsAudioEl.currentTime) + ' / ' + formatTime(factsAudioEl.duration);
+}
+
+function rewindFactAudio() {
+  if (!factsAudioEl) return;
+  factsAudioEl.currentTime = Math.max(0, factsAudioEl.currentTime - 10);
+}
+
+function seekFactAudio(e, sectionId) {
+  if (!factsAudioEl || factsAudioSection !== sectionId) return;
+  const track = e.currentTarget;
+  const rect = track.getBoundingClientRect();
+  const pct = (e.clientX - rect.left) / rect.width;
+  factsAudioEl.currentTime = pct * factsAudioEl.duration;
 }
 
 // ════════════════════════════════════════════════════════════════
@@ -2358,9 +3037,13 @@ function stopAudio() {
 let allPillarQuestions = []; // full pool for current pillar
 let quizRound = 0;
 const QUIZ_BATCH = 20;
+let factsQuizSectionId = null;
+let factsQuizTitle = null;
 
 function startQuiz() {
   stopAudio();
+  factsQuizSectionId = null;
+  factsQuizTitle = null;
   allPillarQuestions = getQuestionsForTutorial(currentTutorialId);
   // Shuffle full pool
   for (let i = allPillarQuestions.length - 1; i > 0; i--) {
@@ -2368,6 +3051,38 @@ function startQuiz() {
     [allPillarQuestions[i], allPillarQuestions[j]] = [allPillarQuestions[j], allPillarQuestions[i]];
   }
   quizRound = 0;
+  startQuizBatch();
+}
+
+function startFactSectionQuiz(sectionId) {
+  if (typeof stopFactAudio === 'function') stopFactAudio();
+  const section = FACT_ORDER.find(s => s.section_id === sectionId);
+  if (!section) return;
+  const factIds = new Set(section.facts);
+  const filtered = QUESTIONS.filter(q => factIds.has(q.fact_id));
+  if (filtered.length === 0) {
+    const el = document.getElementById('facts-section-' + sectionId);
+    if (el) {
+      const existing = el.querySelector('.facts-no-quiz-msg');
+      if (existing) existing.remove();
+      const msg = document.createElement('div');
+      msg.className = 'facts-no-quiz-msg';
+      msg.style.cssText = 'padding:10px 16px;color:var(--gray-500);font-size:13px;text-align:center;';
+      msg.textContent = 'No quiz questions available for this section yet.';
+      el.querySelector('.facts-section-body').prepend(msg);
+      setTimeout(() => msg.remove(), 3000);
+    }
+    return;
+  }
+  // Shuffle
+  for (let i = filtered.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
+  }
+  allPillarQuestions = filtered;
+  quizRound = 0;
+  factsQuizSectionId = sectionId;
+  factsQuizTitle = section.title + ' \u2014 Quiz';
   startQuizBatch();
 }
 
@@ -2379,9 +3094,13 @@ function startQuizBatch() {
   quizScore = 0;
   quizAnswered = false;
   showView('quizView');
-  const t = TUTORIALS.find(t => t.tutorial_id === currentTutorialId);
   const roundLabel = allPillarQuestions.length > QUIZ_BATCH ? ` (${start + 1}\u2013${end} of ${allPillarQuestions.length})` : '';
-  document.getElementById('headerTitle').textContent = (t ? t.title + ' \u2014 Quiz' : 'Quiz') + roundLabel;
+  if (factsQuizTitle) {
+    document.getElementById('headerTitle').textContent = factsQuizTitle + roundLabel;
+  } else {
+    const t = TUTORIALS.find(t => t.tutorial_id === currentTutorialId);
+    document.getElementById('headerTitle').textContent = (t ? t.title + ' \u2014 Quiz' : 'Quiz') + roundLabel;
+  }
   renderQuestion();
 }
 
@@ -2502,9 +3221,13 @@ function showQuizSummary() {
       <h2>Quiz Complete</h2>
       <p>${message}</p>
       <div class="summary-actions">
-        <button class="summary-home-btn" onclick="goBack()">Back to Course Home</button>
+        ${factsQuizSectionId
+          ? `<button class="summary-home-btn" onclick="showFacts()">Back to Facts</button>`
+          : `<button class="summary-home-btn" onclick="goBack()">Back to Course Home</button>`}
         ${hasMore ? `<button class="summary-retry-btn" onclick="quizRound++; startQuizBatch()">Next ${Math.min(QUIZ_BATCH, remaining)} Questions</button>` : ''}
-        <button class="summary-retry-btn" onclick="startQuiz()">Restart All (Shuffled)</button>
+        ${factsQuizSectionId
+          ? `<button class="summary-retry-btn" onclick="startFactSectionQuiz(${factsQuizSectionId})">Quiz Again (Reshuffled)</button>`
+          : `<button class="summary-retry-btn" onclick="startQuiz()">Restart All (Shuffled)</button>`}
       </div>
     </div>
   `;
