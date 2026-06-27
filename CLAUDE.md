@@ -13,6 +13,8 @@ Build a **Healthcare Foundations Learning Product** — a tutorial-first, assess
 
 Plus a **Cross-Domain** pillar covering claims flow, billing interactions, eligibility checks, and HIPAA across entities.
 
+Plus a **Contrast** pillar (Medicare vs. Medicaid) — a lean disambiguation module that teaches the difference between the two programs and their sub-parts (Parts A/B/C/D, CHIP, dual eligibility) by direct, side-by-side contrast.
+
 **Level**: Foundational only. Plain language. No advanced topics, edge cases, or jargon overload.
 
 **Target outcome**: A learner who finishes this can explain how the healthcare system works at a basic level — who pays, who provides, who receives, and what data is exchanged.
@@ -66,8 +68,9 @@ CC must search **only** these for content:
 
 See `meta/distribution.yaml` for exact numbers. Summary:
 
-- 1000 total: 300 T/F + 700 MCQ
-- 200 per pillar (Payor, Provider, Patient, Data, Cross-Domain)
+- 1040 target total: 315 T/F + 725 MCQ
+- 200 per primary pillar (Payor, Provider, Patient, Data, Cross-Domain)
+- Contrast (Medicare vs. Medicaid) is a lean module: 40 questions (15 T/F + 25 MCQ), 1 tutorial
 - 40–60 tutorials, 3–5 scenes each
 
 ## 7. Project Structure

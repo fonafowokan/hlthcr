@@ -1,0 +1,10 @@
+{
+  "image_file": "contrast-title-card.png",
+  "scene_id": "SCN-CONTRAST-01-01",
+  "tutorial_id": "T-CONTRAST-01",
+  "visual_type": "nano-banana",
+  "visual_prompt_hint": "Title card splitting the frame in two — left side 'Medicare' in teal, right side 'Medicaid' in violet, a clean divider down the middle, modern flat style",
+  "prompt": "{\n  \"prompt\": \"Clean modern healthcare education title card, 16:9 aspect ratio. Title card splitting the frame in two \\u2014 left side 'Medicare' in teal, right side 'Medicaid' in violet, a clean divider down the middle, modern flat style. Bold clean sans-serif text at center reads 'Medicare vs. Medicaid: Telling Them Apart' in dark navy (#1A1A2E). Professional, minimal, educational feel. No people, no photos. Flat design with subtle depth. Color palette: teal (#2A6F97), light blue (#A9D6E5), white, dark navy text.\",\n  \"negative_prompt\": \"blurry, low resolution, cartoon, CGI, oversaturated, dark background, cluttered, realistic photos, 3D effects, drop shadows, stock imagery\",\n  \"image_input\": [],\n  \"api_parameters\": {\n    \"resolution\": \"1K\",\n    \"output_format\": \"png\",\n    \"aspect_ratio\": \"16:9\"\n  },\n  \"settings\": {\n    \"style\": \"flat modern educational\",\n    \"lighting\": \"soft even\",\n    \"quality\": \"high detail, clean\"\n  }\n}",
+  "generated_at": "2026-06-27T13:49:25.405148",
+  "aspect_ratio": "16:9"
+}

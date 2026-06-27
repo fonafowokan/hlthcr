@@ -671,3 +671,146 @@ scenes:
     layout: text_only
     aspect_ratio: "16:9"
     linked_facts: []
+
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 6 — T-CONTRAST-01: "Medicare vs. Medicaid: Telling Them Apart"
+  # ══════════════════════════════════════════════════════════════════
+  - scene_id: SCN-CONTRAST-01-01
+    tutorial_id: T-CONTRAST-01
+    order: 1
+    scene_type: intro
+    screen_text: "Medicare vs. Medicaid: Telling Them Apart"
+    visual_asset: images/contrast-title-card.png
+    visual_type: nano-banana
+    visual_prompt_hint: "Title card splitting the frame in two — left side 'Medicare' in teal, right side 'Medicaid' in violet, a clean divider down the middle, modern flat style"
+    audio_asset: audio/contrast-01-01.mp3
+    layout: full_visual
+    aspect_ratio: "16:9"
+    linked_facts: []
+
+  - scene_id: SCN-CONTRAST-01-02
+    tutorial_id: T-CONTRAST-01
+    order: 2
+    scene_type: lesson
+    screen_text: "Old people or poor people? Medicare is mostly about AGE — it's a federal program mainly for people 65 and older. Medicaid is about INCOME — eligibility is based on income and household size, not age. Memory hook: MedicarE = Elderly, MedicaiD = financial neeD."
+    visual_asset: images/contrast-who-qualifies.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Two-column split: left 'Medicare = Age 65+' with an elder icon; right 'Medicaid = Low income' with a wallet icon; header 'Who Qualifies?'"
+    audio_asset: audio/contrast-01-02.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAY-004
+      - FACT-PAY-012
+      - FACT-PAY-015
+
+  - scene_id: SCN-CONTRAST-01-03
+    tutorial_id: T-CONTRAST-01
+    order: 3
+    scene_type: lesson
+    screen_text: "Who's behind each one? Medicare is purely federal, run nationwide by CMS — so the rules are the same in every state. Medicaid is a joint federal-state program (cost shared via FMAP), run by each state — so eligibility and benefits vary by state."
+    visual_asset: images/contrast-funding.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Left: single federal building labeled 'Medicare — Federal/CMS, uniform'; Right: federal building + 50 state shapes labeled 'Medicaid — Federal+State, varies'"
+    audio_asset: audio/contrast-01-03.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAY-005
+      - FACT-PAY-013
+      - FACT-CON-010
+
+  - scene_id: SCN-CONTRAST-01-04
+    tutorial_id: T-CONTRAST-01
+    order: 4
+    scene_type: lesson
+    screen_text: "Do they cover the same things? Both pay for doctors and hospitals. The big difference is long-term care: Original Medicare generally does NOT cover long-term nursing-home (custodial) care, while Medicaid is the nation's primary payer for long-term services and supports."
+    visual_asset: images/contrast-coverage.png
+    visual_type: excalidraw
+    visual_prompt_hint: "A simple two-circle Venn diagram, hand-drawn whiteboard style, minimal text, plain white background. Header 'What's Covered'. Left circle labeled MEDICARE. Right circle labeled MEDICAID with the words 'Long-term / nursing home care'. The overlapping middle reads 'Both: Doctors & Hospitals'. Only two circles, no shields, no side icons, no other titles, no private insurance or self-pay."
+    audio_asset: audio/contrast-01-04.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAY-007
+      - FACT-PAY-009
+      - FACT-CON-006
+
+  - scene_id: SCN-CONTRAST-01-05
+    tutorial_id: T-CONTRAST-01
+    order: 5
+    scene_type: lesson
+    screen_text: "A, B, C, D — whose parts are those? All four are MEDICARE: Part A (hospital), Part B (medical), Part C (Medicare Advantage, private bundled plans), Part D (drug coverage). Medicaid has no lettered parts; its companion program is CHIP, low-cost coverage for children."
+    visual_asset: images/contrast-subparts.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Two simple columns, hand-drawn whiteboard style, minimal text, large legible letters, plain white background. LEFT column header MEDICARE above four identical rounded-rectangle boxes of equal size, each fully outlined with a complete border, stacked vertically, containing exactly these labels (one label per box, each written only once): 'Part A: Hospital', 'Part B: Doctors', 'Part C: All-in-one', 'Part D: Drugs'. RIGHT column header MEDICAID above two identical fully-outlined rounded boxes containing: 'No lettered parts' and 'CHIP: for children'. No icons, no arrows, no duplicate or repeated words, exactly six boxes total, every box bordered."
+    audio_asset: audio/contrast-01-05.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-CON-001
+      - FACT-CON-002
+      - FACT-CON-003
+      - FACT-CON-004
+      - FACT-CON-005
+
+  - scene_id: SCN-CONTRAST-01-06
+    tutorial_id: T-CONTRAST-01
+    order: 6
+    scene_type: lesson
+    screen_text: "Is it free? Medicare usually has costs: most pay no Part A premium, but Part B costs $202.90/month in 2026 plus deductibles. Medicaid costs the patient little or nothing — and for people with both, Medicaid often helps pay Medicare's premiums and cost-sharing."
+    visual_asset: images/contrast-cost.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Two items only, hand-drawn whiteboard style, large legible text, plain white background. Centered header 'Cost to the Patient'. Below it two price-tag shapes side by side: LEFT tag labeled MEDICARE reads 'Premiums + deductibles'; RIGHT tag labeled MEDICAID reads 'Little to no cost'. Nothing else - no flow chart, no arrows, no providers, no extra boxes."
+    audio_asset: audio/contrast-01-06.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-PAY-008
+      - FACT-PAY-010
+      - FACT-CON-009
+
+  - scene_id: SCN-CONTRAST-01-07
+    tutorial_id: T-CONTRAST-01
+    order: 7
+    scene_type: lesson
+    screen_text: "Can you have both at once? Yes. People in both programs are 'dually eligible.' The programs coordinate: Medicare pays FIRST for what it covers, and Medicaid is generally the payer of last resort — filling gaps like long-term care and helping with premiums."
+    visual_asset: images/contrast-dual.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Flow arrow: a person in the middle, arrow to 'Medicare pays first', then arrow to 'Medicaid pays last (fills gaps)'; header 'Dual Eligibility'"
+    audio_asset: audio/contrast-01-07.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-CON-007
+      - FACT-CON-008
+      - FACT-CON-009
+
+  - scene_id: SCN-CONTRAST-01-08
+    tutorial_id: T-CONTRAST-01
+    order: 8
+    scene_type: lesson
+    screen_text: "The six differences at a glance — Who qualifies (age vs. income), Who funds/runs it (federal vs. federal+state), What's covered (long-term care = Medicaid), Sub-parts (A/B/C/D vs. CHIP), Cost (premiums vs. little/none), and Both at once (dual eligible: Medicare first, Medicaid last)."
+    visual_asset: images/contrast-recap-table.png
+    visual_type: excalidraw
+    visual_prompt_hint: "Two columns only (NOT a grid table), hand-drawn whiteboard style, large legible text, plain white background. Header 'Medicare vs Medicaid'. LEFT column header MEDICARE with four short stacked lines: 'Age 65+', 'Federal', 'Parts A-D', 'Premiums'. RIGHT column header MEDICAID with four short stacked lines: 'Low income', 'Federal + State', 'CHIP for kids', 'Little / no cost'. Exactly two columns, no third column, no grid lines, no extra rows, no icons."
+    audio_asset: audio/contrast-01-08.mp3
+    layout: split_screen
+    aspect_ratio: "16:9"
+    linked_facts:
+      - FACT-CON-006
+      - FACT-CON-007
+      - FACT-CON-010
+
+  - scene_id: SCN-CONTRAST-01-09
+    tutorial_id: T-CONTRAST-01
+    order: 9
+    scene_type: assessment
+    screen_text: "Let's check that you can tell Medicare and Medicaid apart."
+    visual_asset: ""
+    visual_type: ""
+    visual_prompt_hint: ""
+    audio_asset: audio/contrast-01-09.mp3
+    layout: text_only
+    aspect_ratio: "16:9"
+    linked_facts: []

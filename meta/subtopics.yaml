@@ -51,3 +51,12 @@ cross_domain:
   - billing_and_coding_interaction
   - reimbursement_scenarios
   - HIPAA_across_entities
+
+contrast:
+  medicare_vs_medicaid:
+    - who_qualifies (age/disability vs. income)
+    - funding_and_administration (federal/CMS vs. federal+state)
+    - what_is_covered
+    - sub_parts (Medicare A/B/C/D vs. Medicaid + CHIP)
+    - cost_to_patient
+    - dual_eligibility (dual-eligibles, who pays first)

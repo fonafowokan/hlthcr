@@ -770,3 +770,172 @@ tutorials:
       - FACT-CRS-023
       - FACT-CRS-024
       - FACT-CRS-025
+
+  # ══════════════════════════════════════════════════════════════════
+  # TUTORIAL 6 — CONTRAST PILLAR (Medicare vs. Medicaid)
+  # ══════════════════════════════════════════════════════════════════
+  - tutorial_id: T-CONTRAST-01
+    title: "Medicare vs. Medicaid: Telling Them Apart"
+    pillar: contrast
+    learning_objectives:
+      - "Explain who qualifies for Medicare versus who qualifies for Medicaid"
+      - "Identify who funds and administers each program"
+      - "Describe the main difference in what each program covers, including long-term care"
+      - "Name the four parts of Medicare (A, B, C, D) and explain why Medicaid has no equivalent lettered parts"
+      - "Compare what each program costs the patient"
+      - "Explain dual eligibility and which program pays first"
+    sections:
+      - heading: "Old People or Poor People? — Who Qualifies"
+        text: >
+          The names sound almost the same, so the first thing to get straight is who each
+          program is for. The simplest way to remember it: Medicare is mostly about age,
+          and Medicaid is about income.
+
+
+          Medicare is a federal program primarily for people age 65 and older. It also covers
+          some younger people with disabilities, End-Stage Renal Disease, or ALS. If you reach
+          65, you generally qualify for Medicare no matter how much money you make.
+
+
+          Medicaid is for people with low income. Eligibility is based on income and household
+          size — not age. It covers eligible low-income adults, children, pregnant women,
+          elderly adults, and people with disabilities. A wealthy 70-year-old qualifies for
+          Medicare but not Medicaid; a low-income 30-year-old may qualify for Medicaid but not
+          Medicare. (One tip to keep them straight: Medicar**E** is for **E**lderly;
+          Medicai**D** is for those in financial nee**D**.)
+
+      - heading: "Who's Behind Each One? — Funding and Administration"
+        text: >
+          A second common mix-up is who actually runs and pays for each program. This is where
+          the "federal vs. shared" difference matters.
+
+
+          Medicare is a purely federal program. It is funded by the federal government and
+          administered nationwide by the Centers for Medicare & Medicaid Services (CMS), an
+          agency within the U.S. Department of Health and Human Services. Because it is federal,
+          Medicare's basic rules are the same in every state.
+
+
+          Medicaid is a joint federal-state program. The federal government and the states share
+          the cost — the federal share is set by a formula called the Federal Medical Assistance
+          Percentage (FMAP) — and each state runs its own Medicaid program within federal rules.
+          Because states administer it, eligibility details and covered benefits can vary from
+          one state to another. So Medicare is uniform nationwide, while Medicaid looks a little
+          different depending on where you live.
+
+      - heading: "Do They Cover the Same Things? — What's Covered"
+        text: >
+          Both programs pay for doctor visits and hospital care, so people assume they cover
+          the same things. The biggest difference shows up with long-term care.
+
+
+          Medicare covers hospital stays (Part A) and doctor visits, outpatient care, and
+          preventive services (Part B). What Original Medicare generally does *not* cover is
+          long-term custodial care — the kind of ongoing help with daily living that someone
+          might need in a nursing home for months or years.
+
+
+          Medicaid, on the other hand, is the country's primary payer for long-term services
+          and supports (LTSS), including nursing home care. This is one of the most important
+          practical differences between the two: if a person needs extended nursing home care,
+          it is usually Medicaid — not Medicare — that pays for it.
+
+      - heading: "A, B, C, D — Whose Parts Are Those? — The Sub-Parts"
+        text: >
+          People often hear "Part A," "Part B," "Part D," "CHIP," and "Advantage" and can't
+          tell which program they belong to. The lettered parts are all Medicare.
+
+
+          Medicare has four parts. Part A is hospital insurance and Part B is medical insurance;
+          together they are called Original Medicare. Part C, also known as Medicare Advantage,
+          is an alternative to Original Medicare offered by Medicare-approved private companies —
+          these bundled plans include Part A and Part B and usually Part D. Part D is optional
+          prescription drug coverage, offered through private companies approved by Medicare.
+
+
+          Medicaid does not use this lettered "Part A/B/C/D" structure at all. Its closest
+          companion is a separate program called CHIP — the Children's Health Insurance Program —
+          which provides low-cost coverage to children in families that earn too much for
+          Medicaid but cannot afford private insurance. So if you hear a letter (A, B, C, D),
+          think Medicare; if you hear CHIP, think the Medicaid side.
+
+      - heading: "Is It Free? — Cost to the Patient"
+        text: >
+          Another point of confusion is cost. Neither program is automatically "free," but they
+          feel very different to the people enrolled.
+
+
+          Medicare usually involves some cost. Most people pay no premium for Part A (because
+          they paid Medicare taxes while working), but Part B has a monthly premium — for 2026,
+          the standard Part B premium is $202.90 a month with a $283 annual deductible — and
+          there are also deductibles and coinsurance for many services.
+
+
+          Medicaid generally costs the beneficiary little or nothing, because it is designed for
+          people with limited income. In fact, for people who have both programs, Medicaid often
+          steps in to help pay Medicare's premiums and cost-sharing. So as a rough rule of thumb:
+          Medicare typically has monthly premiums and cost-sharing, while Medicaid asks very
+          little of the patient.
+
+      - heading: "Can You Have Both at Once? — Dual Eligibility"
+        text: >
+          Because the two programs serve different groups, people assume they are mutually
+          exclusive. They are not. Some people qualify for both at the same time.
+
+
+          People enrolled in both Medicare and Medicaid are called "dually eligible" (or "dual
+          eligible") individuals — often older adults or people with disabilities who also have
+          low income. When someone has both, the programs coordinate: Medicare pays first for the
+          services it covers, and Medicaid is generally the payer of last resort, paying after
+          Medicare.
+
+
+          For these dual eligibles, Medicaid fills in the gaps — covering things Medicare does
+          not, such as long-term services and supports, and helping with Medicare premiums and
+          cost-sharing. So the answer to "can you have both?" is yes, and the two programs are
+          designed to work together when you do.
+
+      - heading: "The Six Differences at a Glance"
+        text: >
+          Put it all together and the two programs separate cleanly along six lines.
+
+
+          Who qualifies: Medicare is mainly age 65+ (and certain disabilities); Medicaid is
+          income-based. Who funds and runs it: Medicare is purely federal (CMS), uniform
+          nationwide; Medicaid is joint federal-state and varies by state. What's covered:
+          both cover doctors and hospitals, but Medicaid — not Medicare — is the main payer for
+          long-term care. The sub-parts: Medicare has Parts A, B, C, and D; Medicaid has no
+          lettered parts but pairs with CHIP for children. Cost to the patient: Medicare has
+          premiums and cost-sharing; Medicaid costs the patient little or nothing. Both at once:
+          a person can be "dually eligible," in which case Medicare pays first and Medicaid pays
+          last. Remember the memory hook — Medicar**E** for the **E**lderly, Medicai**D** for
+          financial nee**D** — and the rest follows.
+    summary:
+      - "Medicare is mainly for people 65+ (age-based); Medicaid is for people with low income (income-based)."
+      - "Medicare is purely federal and uniform nationwide; Medicaid is a joint federal-state program that varies by state."
+      - "Both cover doctors and hospitals, but Medicaid — not Medicare — is the primary payer for long-term/nursing-home care."
+      - "Medicare has four parts (A, B, C, D); Medicaid has no lettered parts but pairs with CHIP for children."
+      - "Medicare has premiums and cost-sharing; Medicaid costs the patient little or nothing."
+      - "A person can have both: 'dual eligibles' get Medicare first and Medicaid as the payer of last resort."
+    linked_facts:
+      - FACT-PAY-004
+      - FACT-PAY-005
+      - FACT-PAY-006
+      - FACT-PAY-007
+      - FACT-PAY-008
+      - FACT-PAY-009
+      - FACT-PAY-010
+      - FACT-PAY-012
+      - FACT-PAY-013
+      - FACT-PAY-014
+      - FACT-PAY-015
+      - FACT-CON-001
+      - FACT-CON-002
+      - FACT-CON-003
+      - FACT-CON-004
+      - FACT-CON-005
+      - FACT-CON-006
+      - FACT-CON-007
+      - FACT-CON-008
+      - FACT-CON-009
+      - FACT-CON-010

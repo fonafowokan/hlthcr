@@ -1,0 +1,58 @@
+{
+  "manifestVersion": "1.0",
+  "course": {
+    "id": "medicare-vs-medicaid",
+    "title": "Medicare vs. Medicaid: Telling Them Apart",
+    "description": "A focused contrast module that teaches the difference between Medicare and Medicaid and their sub-parts (Parts A/B/C/D, CHIP, dual eligibility) by direct, side-by-side comparison.",
+    "space": "academy",
+    "sourceRepo": "hlthcr",
+    "contentVersion": "5e2b697",
+    "language": "en",
+    "level": "foundational",
+    "estimatedHours": 0.5,
+    "moduleCount": 1
+  },
+  "delivery": {
+    "player": {
+      "type": "scorm",
+      "url": "exports/lms/scorm/medicare-vs-medicaid.zip",
+      "progressHook": "window.SCORM_report(raw,max)"
+    },
+    "scorm": {
+      "version": "1.2"
+    },
+    "moodle": {
+      "gift": "exports/lms/gift/medicare-vs-medicaid.gift"
+    }
+  },
+  "modules": [
+    {
+      "id": "M1",
+      "number": 1,
+      "slug": "medicare-vs-medicaid",
+      "title": "Medicare vs. Medicaid: Telling Them Apart",
+      "summary": "Medicare vs. Medicaid told apart across six axes: who qualifies, who funds it, what's covered, the sub-parts, cost, and dual eligibility.",
+      "items": [
+        {
+          "id": "M1.lesson",
+          "type": "lesson",
+          "title": "Medicare vs. Medicaid: Telling Them Apart — Lesson",
+          "sceneCount": 8,
+          "scormPackage": "exports/lms/scorm/medicare-vs-medicaid.zip"
+        },
+        {
+          "id": "M1.quiz",
+          "type": "quiz",
+          "title": "Medicare vs. Medicaid: Telling Them Apart — Quiz",
+          "graded": true,
+          "passMark": 0.8,
+          "questionCount": 40,
+          "autoGraded": 40,
+          "manualGraded": 0,
+          "questionsFile": "exports/lms/json/medicare-vs-medicaid-questions.json",
+          "giftFile": "exports/lms/gift/medicare-vs-medicaid.gift"
+        }
+      ]
+    }
+  ]
+}
