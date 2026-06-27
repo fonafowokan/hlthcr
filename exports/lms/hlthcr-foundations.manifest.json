@@ -1,0 +1,197 @@
+{
+  "manifestVersion": "1.0",
+  "course": {
+    "id": "hlthcr-foundations",
+    "title": "Healthcare Foundations",
+    "description": "A foundational tour of how the U.S. healthcare system works — who pays, who provides, who receives, what data is exchanged, how it all connects, and how Medicare and Medicaid differ.",
+    "space": "academy",
+    "sourceRepo": "hlthcr",
+    "contentVersion": "5a5741a",
+    "language": "en",
+    "level": "foundational",
+    "moduleCount": 6
+  },
+  "delivery": {
+    "player": {
+      "type": "html",
+      "url": "index.html",
+      "progressHook": "window.SCORM_report(raw,max)"
+    },
+    "scorm": {
+      "version": "1.2"
+    },
+    "moodle": {
+      "gift": "exports/lms/gift/hlthcr-foundations.gift"
+    }
+  },
+  "modules": [
+    {
+      "id": "M1",
+      "number": 1,
+      "slug": "payor",
+      "title": "Who Pays for Healthcare?",
+      "summary": "Define what a payor is and explain the payor's role in healthcare",
+      "items": [
+        {
+          "id": "M1.lesson",
+          "type": "lesson",
+          "title": "Who Pays for Healthcare? — Lesson",
+          "sceneCount": 7,
+          "scormPackage": "exports/lms/scorm/hlthcr-foundations-M01-payor.zip"
+        },
+        {
+          "id": "M1.quiz",
+          "type": "quiz",
+          "title": "Who Pays for Healthcare? — Quiz",
+          "graded": true,
+          "passMark": 0.8,
+          "questionCount": 80,
+          "autoGraded": 80,
+          "manualGraded": 0,
+          "questionsFile": "exports/lms/json/hlthcr-foundations-questions.json",
+          "giftFile": "exports/lms/gift/hlthcr-foundations.gift"
+        }
+      ]
+    },
+    {
+      "id": "M2",
+      "number": 2,
+      "slug": "provider",
+      "title": "Who Provides Healthcare?",
+      "summary": "Define what a healthcare provider is and distinguish between providers and suppliers under Medicare",
+      "items": [
+        {
+          "id": "M2.lesson",
+          "type": "lesson",
+          "title": "Who Provides Healthcare? — Lesson",
+          "sceneCount": 7,
+          "scormPackage": "exports/lms/scorm/hlthcr-foundations-M02-provider.zip"
+        },
+        {
+          "id": "M2.quiz",
+          "type": "quiz",
+          "title": "Who Provides Healthcare? — Quiz",
+          "graded": true,
+          "passMark": 0.8,
+          "questionCount": 80,
+          "autoGraded": 80,
+          "manualGraded": 0,
+          "questionsFile": "exports/lms/json/hlthcr-foundations-questions.json",
+          "giftFile": "exports/lms/gift/hlthcr-foundations.gift"
+        }
+      ]
+    },
+    {
+      "id": "M3",
+      "number": 3,
+      "slug": "patient",
+      "title": "Who Receives Healthcare?",
+      "summary": "Explain the difference between a subscriber and a dependent on a health insurance plan",
+      "items": [
+        {
+          "id": "M3.lesson",
+          "type": "lesson",
+          "title": "Who Receives Healthcare? — Lesson",
+          "sceneCount": 8,
+          "scormPackage": "exports/lms/scorm/hlthcr-foundations-M03-patient.zip"
+        },
+        {
+          "id": "M3.quiz",
+          "type": "quiz",
+          "title": "Who Receives Healthcare? — Quiz",
+          "graded": true,
+          "passMark": 0.8,
+          "questionCount": 80,
+          "autoGraded": 80,
+          "manualGraded": 0,
+          "questionsFile": "exports/lms/json/hlthcr-foundations-questions.json",
+          "giftFile": "exports/lms/gift/hlthcr-foundations.gift"
+        }
+      ]
+    },
+    {
+      "id": "M4",
+      "number": 4,
+      "slug": "data",
+      "title": "Healthcare Data and Privacy",
+      "summary": "Define Protected Health Information (PHI) and explain why it matters",
+      "items": [
+        {
+          "id": "M4.lesson",
+          "type": "lesson",
+          "title": "Healthcare Data and Privacy — Lesson",
+          "sceneCount": 7,
+          "scormPackage": "exports/lms/scorm/hlthcr-foundations-M04-data.zip"
+        },
+        {
+          "id": "M4.quiz",
+          "type": "quiz",
+          "title": "Healthcare Data and Privacy — Quiz",
+          "graded": true,
+          "passMark": 0.8,
+          "questionCount": 80,
+          "autoGraded": 80,
+          "manualGraded": 0,
+          "questionsFile": "exports/lms/json/hlthcr-foundations-questions.json",
+          "giftFile": "exports/lms/gift/hlthcr-foundations.gift"
+        }
+      ]
+    },
+    {
+      "id": "M5",
+      "number": 5,
+      "slug": "cross-domain",
+      "title": "How It All Connects",
+      "summary": "Trace the end-to-end flow of a healthcare claim from patient visit to payment",
+      "items": [
+        {
+          "id": "M5.lesson",
+          "type": "lesson",
+          "title": "How It All Connects — Lesson",
+          "sceneCount": 8,
+          "scormPackage": "exports/lms/scorm/hlthcr-foundations-M05-cross-domain.zip"
+        },
+        {
+          "id": "M5.quiz",
+          "type": "quiz",
+          "title": "How It All Connects — Quiz",
+          "graded": true,
+          "passMark": 0.8,
+          "questionCount": 80,
+          "autoGraded": 80,
+          "manualGraded": 0,
+          "questionsFile": "exports/lms/json/hlthcr-foundations-questions.json",
+          "giftFile": "exports/lms/gift/hlthcr-foundations.gift"
+        }
+      ]
+    },
+    {
+      "id": "M6",
+      "number": 6,
+      "slug": "contrast",
+      "title": "Medicare vs. Medicaid: Telling Them Apart",
+      "summary": "Explain who qualifies for Medicare versus who qualifies for Medicaid",
+      "items": [
+        {
+          "id": "M6.lesson",
+          "type": "lesson",
+          "title": "Medicare vs. Medicaid: Telling Them Apart — Lesson",
+          "sceneCount": 8,
+          "scormPackage": "exports/lms/scorm/hlthcr-foundations-M06-contrast.zip"
+        },
+        {
+          "id": "M6.quiz",
+          "type": "quiz",
+          "title": "Medicare vs. Medicaid: Telling Them Apart — Quiz",
+          "graded": true,
+          "passMark": 0.8,
+          "questionCount": 40,
+          "autoGraded": 40,
+          "manualGraded": 0,
+          "questionsFile": "exports/lms/json/hlthcr-foundations-questions.json",
+          "giftFile": "exports/lms/gift/hlthcr-foundations.gift"
+        }
+      ]
+    }
+  ]
+}

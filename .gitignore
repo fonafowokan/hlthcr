@@ -11,3 +11,7 @@ __pycache__/
 .idea/
 .vscode/
 .codex/
+
+# Generated SCORM packages — large (~8 MB each) and fully reproducible via
+# scripts/build_moodle_course.py. Text artifacts (gift/csv/json/manifest) stay tracked.
+exports/lms/scorm/*.zip

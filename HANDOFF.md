@@ -271,3 +271,37 @@ Remaining Work: NONE buildable here. ONLY remaining step is the live Moodle impo
   zip as an activity, flip catalog status coming-soon -> live. Optional: browser smoke-test of the SCORM
   player; retire intro-medicare/intro-medicaid placeholders.
 Confidence: 9/10
+
+## 2026-06-27 — Full Healthcare Foundations Moodle course
+
+Task: "ship the healthcare foundations course" — the FULL hlthcr-foundations course (all 6 pillars),
+not just the contrast micro-course.
+
+### Full-course build
+Completed:
+- Generalized scripts/build_moodle_course.py from a single pillar to a COURSE = list of modules.
+  Builds both hlthcr-foundations (6 modules) and medicare-vs-medicaid (1 module) from one code path.
+- hlthcr-foundations deliverables (exports/lms/): GIFT (440 Qs, stable-sorted into 6 categories) + CSV +
+  rich JSON; 6 per-module SCORM 1.2 packages (M01 payor .. M06 contrast); schema-valid course-manifest
+  (6 modules, lesson+quiz items).
+Validation: manifest valid vs course-manifest.schema.json; 440 Qs consistent across source/JSON/GIFT/
+  manifest; all 6 SCORM zips well-formed with resolving media refs; contrast course regenerated identically.
+Commits/PRs: hlthcr feat/ship-hlthcr-foundations-moodle-course (PR #2); moodle-infra catalog note PR #11
+  (off main; NOTE: collides with the in-flight catalog restructure on rename-aig-course / PR #10).
+
+Cross-repo map (for the live import):
+- aig-crs: build script imports ../aig-crs/tools/quiz_to_lms.py at runtime (sibling-checkout dependency).
+- moodle-infra: PR #9 import-course.php is the manifest->Moodle importer that consumes course-manifest.json
+  + delivery.moodle.gift — i.e. our deliverables are its direct input.
+- exhorter-site: scripts/generate-catalog.mjs renders catalog.json into marketing cards (needs a `market` block).
+
+### PR #2 hygiene (strip SCORM zips)
+Completed:
+- Added .gitignore rule `exports/lms/scorm/*.zip` (regenerable, ~8 MB each, ~59 MB total).
+- Untracked all 7 zips (6 hlthcr-foundations + the medicare-vs-medicaid.zip previously tracked from PR #1)
+  via `git rm --cached`; files remain on disk. Amended PR #2 and force-pushed.
+- Text artifacts (gift/csv/json/manifest) stay tracked; manifest scormPackage paths still resolve at
+  build/import time.
+Note: PR #2 now also DELETES medicare-vs-medicaid.zip from git (policy consistency: no SCORM zips tracked).
+Remaining Work: live Moodle import (ops). Decide moodle-infra PR #11 vs #10 restructure sequencing.
+Confidence: 9/10

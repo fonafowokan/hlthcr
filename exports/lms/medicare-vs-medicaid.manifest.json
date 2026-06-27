@@ -6,10 +6,9 @@
     "description": "A focused contrast module that teaches the difference between Medicare and Medicaid and their sub-parts (Parts A/B/C/D, CHIP, dual eligibility) by direct, side-by-side comparison.",
     "space": "academy",
     "sourceRepo": "hlthcr",
-    "contentVersion": "5e2b697",
+    "contentVersion": "5a5741a",
     "language": "en",
     "level": "foundational",
-    "estimatedHours": 0.5,
     "moduleCount": 1
   },
   "delivery": {
@@ -29,9 +28,9 @@
     {
       "id": "M1",
       "number": 1,
-      "slug": "medicare-vs-medicaid",
+      "slug": "contrast",
       "title": "Medicare vs. Medicaid: Telling Them Apart",
-      "summary": "Medicare vs. Medicaid told apart across six axes: who qualifies, who funds it, what's covered, the sub-parts, cost, and dual eligibility.",
+      "summary": "Explain who qualifies for Medicare versus who qualifies for Medicaid",
       "items": [
         {
           "id": "M1.lesson",
