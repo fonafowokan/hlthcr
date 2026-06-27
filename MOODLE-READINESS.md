@@ -2,7 +2,7 @@
 
 Goal: bring this course to **feature parity with the AI Governance Academy (`aig-crs`)** for Moodle delivery.
 A **"Coming Soon" placeholder** already exists in Moodle: course shortname **`hlthcr-foundations`**
-(created by `aig-crs/deploy/moodle-railway/create-coming-soon-courses.php`).
+(created by `moodle-infra/create-coming-soon-courses.php`).
 
 > Status (2026-06-26): `exports/lms/` is empty — no GIFT/SCORM generated yet. This file is the launch plan.
 
@@ -39,4 +39,4 @@ A **"Coming Soon" placeholder** already exists in Moodle: course shortname **`hl
 - **Works cross-repo today:** `quiz_to_lms.py hlthcr` (GIFT), `/course-check` (global skill).
 - **Needs a small adapter** (this repo uses `content/`+`scenes/`, not aig-crs's `modules/NN/` layout):
   `build_lesson_player.py`, `build_moodle_pages.py`, `add-content-pages.php`.
-- Moodle hardening scripts in `aig-crs/deploy/moodle-railway/` are course-agnostic and reusable as-is.
+- Moodle hardening scripts in `moodle-infra/` are course-agnostic and reusable as-is.
