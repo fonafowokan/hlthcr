@@ -9,6 +9,7 @@ pillars:
   - patient
   - data
   - cross_domain
+  - contrast
 
 delivery_modes:
   - web

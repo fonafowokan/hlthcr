@@ -1,5 +1,6 @@
 # Healthcare Foundations — Question Bank
-# 400 questions: 120 TF + 280 MCQ
+# 440 questions: 135 TF + 305 MCQ
+# Pillars: payor/provider/patient/data/cross_domain = 80 each; contrast (Medicare vs. Medicaid) = 40 (lean module)
 
 questions:
 - question_id: Q-PAY-001
@@ -6484,10 +6485,9 @@ questions:
   explanation_correct: The NPI is intelligence-free, meaning the number itself carries no information about the provider's
     location, specialty, or type — it is purely a unique identifier.
   explanation_incorrect:
-    A: The NPI has 10 digits, not 5.
-    C: The NPI application involves a review process; intelligence-free refers to the number format.
-    D: The NPI has 10 digits, not 12.
-    B: The NPI has 10 digits, not 8.
+    A: Intelligence-free describes the number carrying no embedded meaning, not whether a computer is needed to look it up.
+    C: Intelligence-free refers to the number format carrying no provider information, not to how the number is reviewed or generated.
+    D: The NPI does not expire or require renewal; intelligence-free refers to the number carrying no embedded information.
 - question_id: Q-CRS-056
   type: MCQ
   pillar: cross_domain
@@ -6940,3 +6940,643 @@ questions:
     A: The provisions cover multiple transaction types, not just claims submission.
     C: The provisions cover more than just eligibility and remittance transactions.
     D: The standards apply to all HIPAA-covered entities, not just government programs.
+- question_id: Q-CON-001
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Medicare eligibility is based mainly on age (65 and older), while Medicaid eligibility is based mainly on income."
+  correct_answer: "True"
+  explanation_correct: "Medicare is primarily for people 65+, whereas Medicaid eligibility is based on income and household size."
+  explanation_incorrect: "This statement is true. Age is the main gateway to Medicare; income is the main gateway to Medicaid."
+  fact_id: FACT-PAY-004
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-002
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Medicaid is primarily intended for people with low income."
+  correct_answer: "True"
+  explanation_correct: "Medicaid provides health coverage to eligible low-income adults, children, pregnant women, elderly adults, and people with disabilities."
+  explanation_incorrect: "This statement is true. Medicaid is income-based, unlike Medicare."
+  fact_id: FACT-PAY-012
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-003
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Medicare's basic rules are set separately by each individual state."
+  correct_answer: "False"
+  explanation_correct: "Medicare is a purely federal program administered nationwide by CMS, so its basic rules are the same in every state."
+  explanation_incorrect: "This statement is false. It is Medicaid, not Medicare, that is run by the states and varies by location."
+  fact_id: FACT-CON-010
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-004
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Medicaid is funded jointly by the federal government and the states."
+  correct_answer: "True"
+  explanation_correct: "Medicaid is a joint federal-state program; the federal share is set by the Federal Medical Assistance Percentage (FMAP)."
+  explanation_incorrect: "This statement is true. Medicare is purely federal, but Medicaid funding is shared with the states."
+  fact_id: FACT-PAY-013
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-005
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Medicare is administered nationwide by CMS, a federal agency within HHS."
+  correct_answer: "True"
+  explanation_correct: "Medicare is administered by the Centers for Medicare & Medicaid Services (CMS), a federal agency within HHS."
+  explanation_incorrect: "This statement is true. Medicare is federally administered, which is why its rules are uniform nationwide."
+  fact_id: FACT-PAY-005
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-006
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Original Medicare is the main program that pays for long-term nursing home (custodial) care."
+  correct_answer: "False"
+  explanation_correct: "Medicaid, not Medicare, is the primary payer for long-term services and supports; Original Medicare generally does not cover long-term custodial care."
+  explanation_incorrect: "This statement is false. Long-term nursing home care is mainly paid by Medicaid."
+  fact_id: FACT-CON-006
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-007
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Medicaid is the primary payer for long-term services and supports in the United States."
+  correct_answer: "True"
+  explanation_correct: "Medicaid is the nation's primary payer for long-term services and supports (LTSS), including nursing home care."
+  explanation_incorrect: "This statement is true. This is one of the biggest coverage differences between the two programs."
+  fact_id: FACT-CON-006
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-008
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Parts A, B, C, and D are all parts of Medicare."
+  correct_answer: "True"
+  explanation_correct: "Medicare has four parts: A (hospital), B (medical), C (Medicare Advantage), and D (prescription drugs)."
+  explanation_incorrect: "This statement is true. The lettered parts all belong to Medicare, not Medicaid."
+  fact_id: FACT-CON-001
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-009
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Medicaid is divided into Part A and Part B, just like Medicare."
+  correct_answer: "False"
+  explanation_correct: "Medicaid does not use the lettered Part A/B/C/D structure; that structure belongs to Medicare. Medicaid's companion program for children is CHIP."
+  explanation_incorrect: "This statement is false. Only Medicare uses lettered parts."
+  fact_id: FACT-CON-004
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-010
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Medicare Part C (Medicare Advantage) plans are offered by private companies approved by Medicare."
+  correct_answer: "True"
+  explanation_correct: "Medicare Advantage (Part C) is an alternative to Original Medicare offered by Medicare-approved private companies."
+  explanation_incorrect: "This statement is true. Part C plans are run by private companies that must follow Medicare's rules."
+  fact_id: FACT-CON-002
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-011
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "CHIP provides low-cost health coverage to children."
+  correct_answer: "True"
+  explanation_correct: "The Children's Health Insurance Program (CHIP) provides low-cost coverage to children in families that earn too much for Medicaid but cannot afford private insurance."
+  explanation_incorrect: "This statement is true. CHIP is the Medicaid-side companion program for children."
+  fact_id: FACT-CON-005
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-012
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "A person can be enrolled in both Medicare and Medicaid at the same time."
+  correct_answer: "True"
+  explanation_correct: "People enrolled in both programs are called 'dually eligible' individuals, so a person can have both at once."
+  explanation_incorrect: "This statement is true. The two programs are not mutually exclusive."
+  fact_id: FACT-CON-007
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-013
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "For someone enrolled in both programs, Medicaid pays first and Medicare pays last."
+  correct_answer: "False"
+  explanation_correct: "For dual eligibles, Medicare pays first for services it covers and Medicaid is generally the payer of last resort."
+  explanation_incorrect: "This statement is false. The order is reversed: Medicare pays first, Medicaid pays last."
+  fact_id: FACT-CON-008
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-014
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Medicare Part B requires a monthly premium."
+  correct_answer: "True"
+  explanation_correct: "Medicare Part B (Medical Insurance) requires a monthly premium; for 2026 the standard premium is $202.90."
+  explanation_incorrect: "This statement is true. Medicare generally involves premiums and cost-sharing, unlike Medicaid."
+  fact_id: FACT-PAY-010
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-015
+  type: TF
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Because Medicaid is run by the states, eligibility and covered benefits can vary from state to state."
+  correct_answer: "True"
+  explanation_correct: "Each state administers its own Medicaid program within federal rules, so eligibility details and benefits can vary by state."
+  explanation_incorrect: "This statement is true. Medicare, by contrast, is uniform nationwide."
+  fact_id: FACT-CON-010
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-016
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Which program is primarily for people age 65 and older?"
+  options:
+    A: "Medicare"
+    B: "Medicaid"
+    C: "CHIP"
+    D: "The Health Insurance Marketplace"
+  correct_answer: A
+  explanation_correct: "Medicare is the federal program primarily for people age 65 and older."
+  explanation_incorrect:
+    B: "Medicaid is based on income, not age."
+    C: "CHIP covers children, not seniors."
+    D: "The Marketplace sells private plans; it is not an age-based program."
+  fact_id: FACT-PAY-004
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-017
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Which program bases eligibility mainly on a person's income?"
+  options:
+    A: "Medicare"
+    B: "Medicaid"
+    C: "Medicare Part C"
+    D: "Medicare Part D"
+  correct_answer: B
+  explanation_correct: "Medicaid eligibility is based mainly on income and household size."
+  explanation_incorrect:
+    A: "Medicare is based mainly on age, not income."
+    C: "Part C is a way to receive Medicare benefits, still age-based."
+    D: "Part D is Medicare drug coverage, still age-based."
+  fact_id: FACT-PAY-012
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-018
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Which statement best describes how the two programs are administered?"
+  options:
+    A: "Both are purely federal and uniform nationwide"
+    B: "Both are run entirely by the states"
+    C: "Medicare is federal and uniform; Medicaid is state-run and varies by state"
+    D: "Medicare is state-run; Medicaid is purely federal"
+  correct_answer: C
+  explanation_correct: "Medicare is administered federally by CMS (uniform nationwide), while Medicaid is administered by each state within federal rules (so it varies)."
+  explanation_incorrect:
+    A: "Only Medicare is uniform; Medicaid varies by state."
+    B: "Medicare is federal, not state-run."
+    D: "This reverses the two programs."
+  fact_id: FACT-CON-010
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-019
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "How is Medicaid funded?"
+  options:
+    A: "Entirely by the federal government"
+    B: "Entirely by state governments"
+    C: "Entirely by employer premiums"
+    D: "Jointly by the federal government and the states"
+  correct_answer: D
+  explanation_correct: "Medicaid is funded jointly by the federal government and the states, with the federal share set by the FMAP."
+  explanation_incorrect:
+    A: "Medicaid funding is shared, not purely federal; Medicare is the purely federal program."
+    B: "States share the cost with the federal government, not alone."
+    C: "Employer premiums fund commercial insurance, not Medicaid."
+  fact_id: FACT-PAY-013
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-020
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Which agency administers Medicare across the country?"
+  options:
+    A: "The Centers for Medicare & Medicaid Services (CMS)"
+    B: "Each state's health department"
+    C: "The Internal Revenue Service (IRS)"
+    D: "Private insurance companies acting alone"
+  correct_answer: A
+  explanation_correct: "Medicare is administered nationwide by CMS, a federal agency within HHS."
+  explanation_incorrect:
+    B: "States administer Medicaid, not Medicare."
+    C: "The IRS handles taxes, not Medicare administration."
+    D: "Private companies offer some plans but do not administer the federal program."
+  fact_id: FACT-PAY-005
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-021
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Which program is the main payer for long-term nursing home care in the U.S.?"
+  options:
+    A: "Medicare"
+    B: "Medicaid"
+    C: "CHIP"
+    D: "Commercial insurance"
+  correct_answer: B
+  explanation_correct: "Medicaid is the nation's primary payer for long-term services and supports, including nursing home care."
+  explanation_incorrect:
+    A: "Original Medicare generally does not cover long-term custodial care."
+    C: "CHIP covers children, not long-term care."
+    D: "Commercial plans rarely cover extended long-term care."
+  fact_id: FACT-CON-006
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-022
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "A patient needs several years of custodial nursing-home care. Which program is most likely to pay for it?"
+  options:
+    A: "Medicare Part A"
+    B: "Medicare Part B"
+    C: "Medicaid"
+    D: "Medicare Part D"
+  correct_answer: C
+  explanation_correct: "Long-term custodial care is generally paid by Medicaid, the primary payer for long-term services and supports."
+  explanation_incorrect:
+    A: "Part A covers short inpatient hospital stays, not long-term custodial care."
+    B: "Part B covers outpatient and doctor services, not long-term care."
+    D: "Part D covers prescription drugs, not long-term care."
+  fact_id: FACT-CON-006
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-023
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Which list correctly names the four parts of Medicare?"
+  options:
+    A: "Part 1, Part 2, Part 3, Part 4"
+    B: "Part A and Part B only"
+    C: "Part A, Part B, Part C, Part D, and Part E"
+    D: "Part A, Part B, Part C, Part D"
+  correct_answer: D
+  explanation_correct: "Medicare has four parts: A, B, C, and D."
+  explanation_incorrect:
+    A: "Medicare parts are lettered, not numbered."
+    B: "A and B are only Original Medicare; C and D also exist."
+    C: "There is no Part E."
+  fact_id: FACT-CON-001
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-024
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Medicare Part C is also known by what name?"
+  options:
+    A: "Medicare Advantage"
+    B: "Medigap"
+    C: "Medicaid"
+    D: "CHIP"
+  correct_answer: A
+  explanation_correct: "Medicare Part C is also called Medicare Advantage, offered by Medicare-approved private companies."
+  explanation_incorrect:
+    B: "Medigap is separate supplemental insurance, not Part C."
+    C: "Medicaid is a different program entirely."
+    D: "CHIP is the children's program on the Medicaid side."
+  fact_id: FACT-CON-002
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-025
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "What does Medicare Part D cover?"
+  options:
+    A: "Inpatient hospital stays"
+    B: "Prescription drugs"
+    C: "Long-term nursing home care"
+    D: "Doctor office visits"
+  correct_answer: B
+  explanation_correct: "Medicare Part D is optional prescription drug coverage offered through private companies approved by Medicare."
+  explanation_incorrect:
+    A: "Inpatient hospital care is Part A."
+    C: "Long-term care is mainly covered by Medicaid."
+    D: "Doctor visits are Part B."
+  fact_id: FACT-CON-003
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-026
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Which statement about Medicaid's structure is correct?"
+  options:
+    A: "Medicaid is divided into Parts A, B, C, and D like Medicare"
+    B: "Medicaid only covers prescription drugs"
+    C: "Medicaid has no lettered parts and pairs with CHIP for children"
+    D: "Medicaid is identical to Medicare"
+  correct_answer: C
+  explanation_correct: "Medicaid does not use lettered parts; its companion program for children is CHIP."
+  explanation_incorrect:
+    A: "Lettered parts belong to Medicare, not Medicaid."
+    B: "Medicaid covers a broad range of services, not only drugs."
+    D: "The two programs differ in eligibility, funding, and structure."
+  fact_id: FACT-CON-004
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-027
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Whom does CHIP primarily cover?"
+  options:
+    A: "Adults age 65 and older"
+    B: "Military veterans"
+    C: "Large employers"
+    D: "Children in families that earn too much for Medicaid but cannot afford private insurance"
+  correct_answer: D
+  explanation_correct: "CHIP provides low-cost coverage to children in families earning too much for Medicaid but unable to afford private insurance."
+  explanation_incorrect:
+    A: "Seniors are served by Medicare, not CHIP."
+    B: "Veterans have separate VA coverage."
+    C: "CHIP covers children, not employers."
+  fact_id: FACT-CON-005
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-028
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Which statement about cost is true?"
+  options:
+    A: "Medicare Part B has a monthly premium"
+    B: "Medicare is always completely free"
+    C: "Medicare never charges any premiums"
+    D: "Only Medicaid charges premiums"
+  correct_answer: A
+  explanation_correct: "Medicare Part B requires a monthly premium ($202.90 in 2026), plus deductibles and coinsurance for many services."
+  explanation_incorrect:
+    B: "Medicare usually involves some cost, such as the Part B premium."
+    C: "Part B does charge a premium."
+    D: "Medicare, not Medicaid, is the program with regular premiums."
+  fact_id: FACT-PAY-010
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-029
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "For a person with very low income, which program typically costs the patient little or nothing?"
+  options:
+    A: "Medicare"
+    B: "Medicaid"
+    C: "A commercial PPO plan"
+    D: "Medicare Part C"
+  correct_answer: B
+  explanation_correct: "Medicaid is designed for people with limited income and generally costs the beneficiary little or nothing."
+  explanation_incorrect:
+    A: "Medicare usually involves premiums and cost-sharing."
+    C: "Commercial plans charge premiums."
+    D: "Part C is a Medicare option and can involve costs."
+  fact_id: FACT-CON-009
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-030
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "People who are enrolled in both Medicare and Medicaid at the same time are called what?"
+  options:
+    A: "Dependents"
+    B: "Subscribers"
+    C: "Dual eligibles"
+    D: "Self-pay patients"
+  correct_answer: C
+  explanation_correct: "People enrolled in both Medicare and Medicaid are called dually eligible (or dual eligible) individuals."
+  explanation_incorrect:
+    A: "A dependent is a person covered under another's plan."
+    B: "A subscriber is the primary policyholder of one plan."
+    D: "Self-pay patients have no insurance coverage."
+  fact_id: FACT-CON-007
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-031
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "For a dual-eligible person, which program pays first for a covered service?"
+  options:
+    A: "Medicaid"
+    B: "CHIP"
+    C: "The patient pays first"
+    D: "Medicare"
+  correct_answer: D
+  explanation_correct: "For dual eligibles, Medicare pays first for services it covers."
+  explanation_incorrect:
+    A: "Medicaid is generally the payer of last resort, paying after Medicare."
+    B: "CHIP covers children, not dual-eligible adults."
+    C: "Coverage pays before the patient is billed for covered services."
+  fact_id: FACT-CON-008
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-032
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "The phrase 'payer of last resort' for dual eligibles refers to which program?"
+  options:
+    A: "Medicaid"
+    B: "Medicare"
+    C: "Commercial insurance"
+    D: "CHIP"
+  correct_answer: A
+  explanation_correct: "Medicaid is generally the payer of last resort, paying after Medicare and other coverage."
+  explanation_incorrect:
+    B: "Medicare pays first, not last."
+    C: "Commercial insurance is not the dual-eligible context here."
+    D: "CHIP is the children's program, not the last-resort payer."
+  fact_id: FACT-CON-008
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-033
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "For dual eligibles, Medicaid often helps pay which Medicare costs?"
+  options:
+    A: "Nothing at all"
+    B: "Medicare premiums and cost-sharing"
+    C: "Only prescriptions bought outside the U.S."
+    D: "Hospital meal charges only"
+  correct_answer: B
+  explanation_correct: "For dually eligible individuals, Medicaid helps pay Medicare premiums and cost-sharing and covers gaps like long-term care."
+  explanation_incorrect:
+    A: "Medicaid does help with Medicare costs for dual eligibles."
+    C: "Medicaid's help is not limited to drugs purchased abroad."
+    D: "Medicaid's assistance is far broader than meal charges."
+  fact_id: FACT-CON-009
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-034
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Which statement correctly contrasts the two programs?"
+  options:
+    A: "Medicare is income-based; Medicaid is age-based"
+    B: "Both are age-based"
+    C: "Medicare is age-based; Medicaid is income-based"
+    D: "Both are income-based"
+  correct_answer: C
+  explanation_correct: "Medicare is based mainly on age (65+), while Medicaid is based mainly on income."
+  explanation_incorrect:
+    A: "This reverses the two programs."
+    B: "Only Medicare is age-based."
+    D: "Only Medicaid is income-based."
+  fact_id: FACT-PAY-015
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-035
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "A financially well-off 70-year-old retiree is generally eligible for which program?"
+  options:
+    A: "Medicaid"
+    B: "CHIP"
+    C: "Neither program"
+    D: "Medicare"
+  correct_answer: D
+  explanation_correct: "Medicare eligibility is based on age, so a 70-year-old qualifies regardless of income."
+  explanation_incorrect:
+    A: "Medicaid is income-based; a well-off person generally would not qualify."
+    B: "CHIP is for children."
+    C: "Age 65+ qualifies a person for Medicare."
+  fact_id: FACT-PAY-004
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-036
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "A low-income 30-year-old parent with little income might qualify for which program?"
+  options:
+    A: "Medicaid"
+    B: "Medicare"
+    C: "Medicare Part B"
+    D: "Medicare Advantage"
+  correct_answer: A
+  explanation_correct: "Medicaid is income-based, so a low-income adult may qualify even though they are far from age 65."
+  explanation_incorrect:
+    B: "Medicare is mainly for people 65+ or with certain disabilities."
+    C: "Part B is a component of Medicare, still age-based."
+    D: "Medicare Advantage is a Medicare option, still age-based."
+  fact_id: FACT-PAY-012
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-037
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "A Medicare Advantage (Part C) plan typically bundles which coverage together?"
+  options:
+    A: "Only Part A"
+    B: "Part A, Part B, and usually Part D"
+    C: "Only prescription drugs"
+    D: "Only long-term care"
+  correct_answer: B
+  explanation_correct: "Medicare Advantage plans are bundled and include Part A and Part B and usually Part D drug coverage."
+  explanation_incorrect:
+    A: "Advantage plans include more than just Part A."
+    C: "Drug coverage is usually included but is not the whole plan."
+    D: "Long-term care is generally a Medicaid responsibility."
+  fact_id: FACT-CON-002
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-038
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Why can Medicaid benefits differ depending on the state you live in?"
+  options:
+    A: "Because Medicaid is federally uniform"
+    B: "Because hospitals set Medicaid rules"
+    C: "Because each state runs its own Medicaid program within federal rules"
+    D: "Because benefits are priced by ZIP code"
+  correct_answer: C
+  explanation_correct: "Each state administers its own Medicaid program within federal requirements, so eligibility and benefits can vary."
+  explanation_incorrect:
+    A: "Medicaid is not federally uniform; that describes Medicare."
+    B: "States, not individual hospitals, run Medicaid."
+    D: "Variation comes from state administration, not ZIP-code pricing."
+  fact_id: FACT-CON-010
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-039
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Which program has essentially the same basic rules in every state?"
+  options:
+    A: "Medicaid"
+    B: "CHIP"
+    C: "Employer-sponsored insurance"
+    D: "Medicare"
+  correct_answer: D
+  explanation_correct: "Medicare is federally administered by CMS, so its basic rules are uniform nationwide."
+  explanation_incorrect:
+    A: "Medicaid varies by state."
+    B: "CHIP is state-administered and varies."
+    C: "Employer plans differ by employer."
+  fact_id: FACT-PAY-005
+  regulatory_tags: []
+  difficulty: basic
+- question_id: Q-CON-040
+  type: MCQ
+  pillar: contrast
+  tutorial_id: T-CONTRAST-01
+  question: "Which is a key difference in what the two programs cover?"
+  options:
+    A: "Medicaid, not Medicare, is the main payer for long-term care"
+    B: "Only Medicare covers doctor visits"
+    C: "Only Medicaid covers hospital stays"
+    D: "Neither program covers preventive care"
+  correct_answer: A
+  explanation_correct: "Both cover doctors and hospitals, but Medicaid is the primary payer for long-term care, which Original Medicare generally does not cover."
+  explanation_incorrect:
+    B: "Both programs cover doctor visits."
+    C: "Both programs cover hospital care."
+    D: "Both cover preventive services."
+  fact_id: FACT-CON-006
+  regulatory_tags: []
+  difficulty: basic

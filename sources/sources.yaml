@@ -651,3 +651,64 @@ sources:
       - "The CMS-1500 is the paper equivalent of the 837P electronic claim form"
     regulatory_tags: [HIPAA, Claims, Billing]
     date_accessed: 2026-03-21
+
+  # ══════════════════════════════════════════════════════════════════
+  # CONTRAST PILLAR (Medicare vs. Medicaid)
+  # medicare.gov / medicaid.gov are CMS-operated; cited per existing
+  # repo precedent (see SRC-PAY-001, SRC-PAY-004).
+  # ══════════════════════════════════════════════════════════════════
+  - source_id: SRC-CON-001
+    title: "Your health plan options — Medicare Advantage (Part C)"
+    url: "https://www.medicare.gov/health-drug-plans/health-plans/your-health-plan-options"
+    domain: contrast
+    key_points:
+      - "Medicare Advantage (Part C) is a Medicare-approved plan from a private company that is an alternative to Original Medicare."
+      - "Medicare Advantage plans are 'bundled' and include Part A, Part B, and usually Part D (drug coverage)."
+      - "Private companies offering Medicare Advantage plans must follow rules set by Medicare."
+    regulatory_tags: []
+    date_accessed: 2026-06-27
+
+  - source_id: SRC-CON-002
+    title: "What's Medicare Drug Coverage (Part D)?"
+    url: "https://www.medicare.gov/health-drug-plans/part-d"
+    domain: contrast
+    key_points:
+      - "Medicare Part D is optional prescription drug coverage that helps pay for brand-name and generic drugs."
+      - "Part D is offered to everyone with Medicare through private insurance companies approved by Medicare."
+      - "Part D can be added to Original Medicare as a standalone drug plan, or obtained through a Medicare Advantage plan that includes drug coverage."
+    regulatory_tags: []
+    date_accessed: 2026-06-27
+
+  - source_id: SRC-CON-003
+    title: "People Dually Eligible for Medicare and Medicaid (CMS MMCO Fact Sheet)"
+    url: "https://www.cms.gov/medicare-medicaid-coordination/medicare-and-medicaid-coordination/medicare-medicaid-coordination-office/downloads/mmco_factsheet.pdf"
+    domain: contrast
+    key_points:
+      - "Some people qualify for both Medicare and Medicaid and are known as 'dually eligible' individuals."
+      - "Dual eligibles rely on Medicare for most preventive, primary, and acute health care services and prescription drugs."
+      - "Medicaid covers long-term services and supports (LTSS) and helps pay Medicare premiums and cost-sharing for dual eligibles."
+      - "Medicaid is generally the payer of last resort, so Medicare pays first for services it covers."
+    regulatory_tags: []
+    date_accessed: 2026-06-27
+
+  - source_id: SRC-CON-004
+    title: "Children's Health Insurance Program (CHIP)"
+    url: "https://www.medicaid.gov/chip/index.html"
+    domain: contrast
+    key_points:
+      - "CHIP provides low-cost health coverage to children in families that earn too much to qualify for Medicaid but cannot afford private coverage."
+      - "CHIP is a joint federal and state program administered by states within federal requirements."
+      - "In some states CHIP also covers pregnant women."
+    regulatory_tags: []
+    date_accessed: 2026-06-27
+
+  - source_id: SRC-CON-005
+    title: "Long Term Services & Supports (Medicaid)"
+    url: "https://www.medicaid.gov/medicaid/long-term-services-supports/index.html"
+    domain: contrast
+    key_points:
+      - "Medicaid is the primary payer for long-term services and supports (LTSS) in the United States, including nursing home care."
+      - "LTSS includes a broad range of services that help people with daily self-care needs over an extended period."
+      - "Original Medicare does not generally cover long-term (custodial) nursing home care."
+    regulatory_tags: []
+    date_accessed: 2026-06-27

@@ -819,3 +819,74 @@ facts:
     statement: "Standardized transaction formats allow any provider to submit a claim to any health plan using the same data structure, enabling interoperability across the entire healthcare system."
     source_id: SRC-CRS-006
     tags: [Interoperability, EDI, Standards]
+
+  # ══════════════════════════════════════════════════════════════════
+  # CONTRAST PILLAR FACTS (Medicare vs. Medicaid)
+  # New contrast-specific facts. Single-program basics are reused from
+  # the PAYOR pillar (FACT-PAY-004..015).
+  # ══════════════════════════════════════════════════════════════════
+
+  # --- Medicare's four parts (sub-parts dimension) ---
+  - fact_id: FACT-CON-001
+    pillar: contrast
+    statement: "Medicare is organized into four parts: Part A (hospital insurance) and Part B (medical insurance) make up Original Medicare, while Part C (Medicare Advantage) and Part D (prescription drug coverage) are additional ways to get Medicare benefits."
+    source_id: SRC-CON-001
+    tags: [Medicare, Parts, Sub-Parts]
+
+  - fact_id: FACT-CON-002
+    pillar: contrast
+    statement: "Medicare Part C (Medicare Advantage) is an alternative to Original Medicare offered by Medicare-approved private companies; these bundled plans include Part A and Part B and usually include Part D drug coverage."
+    source_id: SRC-CON-001
+    tags: [Medicare, Part C, Medicare Advantage]
+
+  - fact_id: FACT-CON-003
+    pillar: contrast
+    statement: "Medicare Part D is optional prescription drug coverage offered to everyone with Medicare through private insurance companies approved by Medicare."
+    source_id: SRC-CON-002
+    tags: [Medicare, Part D, Drug Coverage]
+
+  # --- Medicaid's structure differs: no lettered parts; CHIP companion ---
+  - fact_id: FACT-CON-004
+    pillar: contrast
+    statement: "Medicaid does not use the lettered 'Part A/B/C/D' structure that Medicare does; instead, a related joint federal-state program called CHIP (the Children's Health Insurance Program) extends low-cost coverage to children."
+    source_id: SRC-CON-004
+    tags: [Medicaid, CHIP, Sub-Parts, Medicare Comparison]
+
+  - fact_id: FACT-CON-005
+    pillar: contrast
+    statement: "The Children's Health Insurance Program (CHIP) provides low-cost health coverage to children in families that earn too much to qualify for Medicaid but cannot afford private insurance; CHIP is administered by states within federal rules."
+    source_id: SRC-CON-004
+    tags: [CHIP, Medicaid, Children, Eligibility]
+
+  # --- Coverage difference: long-term care ---
+  - fact_id: FACT-CON-006
+    pillar: contrast
+    statement: "Medicaid is the primary payer for long-term services and supports (LTSS), such as nursing home and custodial care, which Original Medicare generally does not cover — a major difference in what the two programs pay for."
+    source_id: SRC-CON-005
+    tags: [Medicaid, Long-Term Care, LTSS, Coverage, Medicare Comparison]
+
+  # --- Dual eligibility (can you have both?) ---
+  - fact_id: FACT-CON-007
+    pillar: contrast
+    statement: "Some people qualify for both Medicare and Medicaid at the same time; they are called 'dually eligible' (or 'dual eligible') individuals, which shows that a person can be enrolled in both programs."
+    source_id: SRC-CON-003
+    tags: [Dual Eligible, Medicare, Medicaid]
+
+  - fact_id: FACT-CON-008
+    pillar: contrast
+    statement: "For people who have both Medicare and Medicaid, Medicare pays first for services it covers and Medicaid is generally the payer of last resort, paying after Medicare and other coverage."
+    source_id: SRC-CON-003
+    tags: [Dual Eligible, Payer of Last Resort, Coordination of Benefits]
+
+  - fact_id: FACT-CON-009
+    pillar: contrast
+    statement: "For dually eligible individuals, Medicaid covers many costs that Medicare does not — including long-term services and supports — and helps pay Medicare premiums and cost-sharing."
+    source_id: SRC-CON-003
+    tags: [Dual Eligible, Medicaid, Cost-Sharing, Premiums]
+
+  # --- Administration contrast (uniform vs. state-by-state) ---
+  - fact_id: FACT-CON-010
+    pillar: contrast
+    statement: "Medicare is administered uniformly by the federal government through CMS, so its rules are the same nationwide, whereas Medicaid is administered by each state within federal rules, so eligibility and covered benefits can vary from state to state."
+    source_id: SRC-PAY-004
+    tags: [Medicare, Medicaid, Administration, Federal, State]
