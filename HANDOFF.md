@@ -332,3 +332,28 @@ Imports performed (both verified):
 Remaining Work: commit the category-mapping fix + rebuilt artifacts (master artifacts are now stale).
   Then launch decisions (visibility, Coming Soon label, catalog status -> live, market block).
 Confidence: 9/10
+
+## 2026-06-28 — Full-course upload: rebuild + lessons + content pages
+
+Three asks: rebuild SCORM zips, "fill scope" (lessons, not just quizzes), create content-pages.json.
+
+Iteration 1 — rebuild: regenerated all 7 SCORM zips (gitignored, on disk for upload); validated.
+
+Iteration 2 — content-pages.json: added scripts/build_content_pages.py -> exports/moodle/content-pages.json
+  (consumed by moodle-infra/add-content-pages.php). Resources = the approved sources per pillar from
+  sources.yaml (57 links); exercises = authored foundational stretch prompts (2/module). 6 modules.
+
+Iteration 3 — fill scope (lessons): import-course.php handles quizzes only. Added a companion
+  moodle-infra/import-lessons.php (PR #16) that creates a SCORM activity per manifest `lesson` item
+  (ungraded, complete-on-view, placed before the quiz; idempotent; remove mode). Hit a Moodle 5.2
+  moveto_module() quirk (null modname) -> fixed by ordering via direct course_sections.sequence edit.
+
+Uploaded LIVE to moodle-infra-moodle-1 (Moodle 5.2.1), verified:
+- hlthcr-foundations: 6 SCORM lessons (launchable, SCOs parsed) + 6 quizzes + 12 content pages.
+  Each section now reads: SCORM lesson · quiz · Additional Resources page · Stretch Exercises page.
+- medicare-vs-medicaid: lesson added too (test of the importer).
+
+PRs: hlthcr content-pages (this commit); moodle-infra import-lessons.php = PR #16.
+Remaining Work: merge PRs; launch decisions (visibility, Coming Soon label, catalog -> live, market block).
+  Note: moodle-infra import-manifest.md / CLAUDE.md still say SCORM "aren't handled" — now stale (PR #16).
+Confidence: 9/10
