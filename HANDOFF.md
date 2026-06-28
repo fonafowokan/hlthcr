@@ -305,3 +305,30 @@ Completed:
 Note: PR #2 now also DELETES medicare-vs-medicaid.zip from git (policy consistency: no SCORM zips tracked).
 Remaining Work: live Moodle import (ops). Decide moodle-infra PR #11 vs #10 restructure sequencing.
 Confidence: 9/10
+
+## 2026-06-28 — Live Moodle import + importer-compatible categories
+
+Item #2 (fold catalog note): already resolved on moodle-infra main — restructure ($schema) landed with my
+note folded in, intros retired, PRs #10/#11 closed. Deleted my stale ship/ branch. Observation:
+hlthcr-foundations has no `market` block (won't surface on exhorter-site cards) — left for user.
+
+Item #1 (live import): DONE against the running moodle-infra-moodle-1 container (docker available, Moodle
+healthy). import-course.php (moodle-infra main) is the tool; runs in-container, idempotent, course HIDDEN.
+
+FOUND + FIXED a real blocker: import-course.php maps multi-module quizzes by fuzzy-matching the manifest
+module TITLE against the GIFT CATEGORY name (number-in-name + similar_text>4). hlthcr's "HLTHCR: <Pillar>"
+categories don't contain the module number and barely resemble tutorial titles -> simulated mapping
+collapsed 5/6 modules onto "HLTHCR: Payor" (BROKEN). Fix: build_moodle_course.py now names full-course
+categories "<n>. <tutorial title>" (category_map()), so the correct category is the unique strict winner
+(number match + near-exact title => score 2 vs <=1). Single-pillar course keeps its uniform relabel.
+Re-simulated: 1:1. Rebuilt artifacts; per-category counts 80/80/80/80/80/40 = 440.
+
+Imports performed (both verified):
+- medicare-vs-medicaid: created course id=8, HIDDEN, 40 Qs, 1 quiz (all 40), gradepass 80.
+- hlthcr-foundations: reused existing placeholder course id=2 (visible=1), 440 Qs, 6 quizzes correctly
+  mapped (80/80/80/80/80/40). Importer leaves visibility unchanged -> course still visible=1 with the
+  "Coming Soon" label. Reveal/label-removal is a launch decision for the user.
+
+Remaining Work: commit the category-mapping fix + rebuilt artifacts (master artifacts are now stale).
+  Then launch decisions (visibility, Coming Soon label, catalog status -> live, market block).
+Confidence: 9/10
