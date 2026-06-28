@@ -212,6 +212,20 @@ def _git_sha():
         return "uncommitted"
 
 
+def category_map(course):
+    """pillar -> Moodle question-bank category name.
+
+    Full course: "<n>. <tutorial title>" so moodle-infra/import-course.php maps each
+    module's quiz to the right category (its heuristic scores number-in-name + title
+    similarity; this makes the correct category the unique strict winner).
+    Single-pillar course: the uniform relabel (its quiz uses all questions anyway).
+    """
+    tuts = {t["tutorial_id"]: t for t in yaml.safe_load(open(ROOT / "content" / "tutorials.yaml"))["tutorials"]}
+    if course["relabel"]:
+        return {pillar: course["relabel"] for _, pillar in course["modules"]}
+    return {pillar: f"{i}. {tuts[tid]['title']}" for i, (tid, pillar) in enumerate(course["modules"], 1)}
+
+
 def build_questions(conv, course, out_dir):
     """Emit GIFT/CSV/JSON for all pillars in this course (reuses the converter verbatim)."""
     pillars = {p for _, p in course["modules"]}
@@ -222,9 +236,9 @@ def build_questions(conv, course, out_dir):
         yaml.safe_dump({"questions": qs}, open(cdir / "questions.yaml", "w", encoding="utf-8"),
                        sort_keys=False, allow_unicode=True)
         questions = conv.parse_hlthcr(str(cdir / "questions.yaml"))
-    if course["relabel"]:
-        for q in questions:
-            q.category = course["relabel"]
+    catmap = category_map(course)
+    for q_obj, q_src in zip(questions, qs):
+        q_obj.category = catmap[str(q_src["pillar"]).lower()]
     # Stable-sort by category so each Moodle category is declared once in the GIFT
     # (source questions are batched, not contiguous by pillar). Order within a category
     # is preserved, so per-module quiz order is unaffected.
@@ -244,9 +258,9 @@ def build_questions(conv, course, out_dir):
     return len(questions), counts
 
 
-def _module_questions(course, all_json, pillar):
+def _module_questions(catmap, all_json, pillar):
     """Rich-JSON questions for one module's quiz (filter the course JSON by category)."""
-    cat = course["relabel"] or PILLAR_CAT.get(pillar, "HLTHCR: " + pillar.title())
+    cat = catmap[pillar]
     return [q for q in all_json if q.get("category") == cat]
 
 
@@ -304,13 +318,14 @@ def build_scorm(course, out_dir):
     tuts = {t["tutorial_id"]: t for t in yaml.safe_load(open(ROOT / "content" / "tutorials.yaml"))["tutorials"]}
     scenes = yaml.safe_load(open(ROOT / "scenes" / "scenes.yaml"))["scenes"]
     all_json = json.load(open(out_dir / "json" / f"{course['id']}-questions.json", encoding="utf-8"))["questions"]
+    catmap = category_map(course)
     multi = len(course["modules"]) > 1
     results = []
     for i, (tid, pillar) in enumerate(course["modules"], 1):
         tut = tuts[tid]
         lesson_scenes = sorted([s for s in scenes if s["tutorial_id"] == tid
                                 and s["scene_type"] != "assessment"], key=lambda s: s["order"])
-        qsub = _module_questions(course, all_json, pillar)
+        qsub = _module_questions(catmap, all_json, pillar)
         slug = f"{course['id']}-M{i:02d}-{pillar.replace('_','-')}" if multi else course["id"]
         zp, nimg, naud, size = _build_scorm_zip(out_dir, slug, tut["title"], tut, lesson_scenes, qsub)
         results.append((tid, slug, len(lesson_scenes), len(qsub), size))
@@ -322,6 +337,7 @@ def build_manifest(course, out_dir):
     scenes = yaml.safe_load(open(ROOT / "scenes" / "scenes.yaml"))["scenes"]
     all_json = json.load(open(out_dir / "json" / f"{course['id']}-questions.json", encoding="utf-8"))["questions"]
     cid = course["id"]
+    catmap = category_map(course)
     multi = len(course["modules"]) > 1
 
     modules = []
@@ -329,7 +345,7 @@ def build_manifest(course, out_dir):
     for i, (tid, pillar) in enumerate(course["modules"], 1):
         tut = tuts[tid]
         lesson_scenes = [s for s in scenes if s["tutorial_id"] == tid and s["scene_type"] != "assessment"]
-        qsub = _module_questions(course, all_json, pillar)
+        qsub = _module_questions(catmap, all_json, pillar)
         total_q += len(qsub)
         slug = f"{cid}-M{i:02d}-{pillar.replace('_','-')}" if multi else cid
         modules.append({
