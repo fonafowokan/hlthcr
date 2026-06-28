@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
 """
-build_moodle_course.py — Build a standalone Moodle course package from a single
-hlthcr pillar. Default: the CONTRAST pillar -> "Medicare vs. Medicaid: Telling
-Them Apart" (course shortname medicare-vs-medicaid).
+build_moodle_course.py — Build Moodle course packages from hlthcr content.
 
-Steps (all scoped to one pillar / its single tutorial):
-  questions  -> exports/lms/{gift,csv,json}/<shortname>.*        (reuses aig-crs converter)
-  scorm      -> exports/lms/scorm/<shortname>.zip                (SCORM 1.2: lesson + quiz)
+A course is a list of modules (each module = one tutorial + its pillar's questions).
+Two courses are defined:
+  hlthcr-foundations   — the full course, 6 modules (payor, provider, patient, data,
+                         cross_domain, contrast).
+  medicare-vs-medicaid — the standalone contrast course, 1 module.
 
-Reuses aig-crs/tools/quiz_to_lms.py for question conversion (no logic duplicated).
-Audio WAVs are transcoded to MP3 (ffmpeg) to keep the SCORM package small.
+Per course it emits, scoped to that course's pillars:
+  questions -> exports/lms/{gift,csv,json}/<id>.*            (reuses aig-crs converter)
+  scorm     -> exports/lms/scorm/<id>[-MNN-<slug>].zip       (SCORM 1.2: lesson + quiz, per module)
+  manifest  -> exports/lms/<id>.manifest.json                (schema: course-manifest 1.0)
+
+Audio WAVs are transcoded to MP3 (ffmpeg) to keep SCORM packages small.
 
 Usage:
-  python3 scripts/build_moodle_course.py                  # questions + scorm (default)
-  python3 scripts/build_moodle_course.py --step questions
-  python3 scripts/build_moodle_course.py --step scorm
+  python3 scripts/build_moodle_course.py                          # both courses, all steps
+  python3 scripts/build_moodle_course.py --course hlthcr-foundations
+  python3 scripts/build_moodle_course.py --course medicare-vs-medicaid --step questions
 
 generated_by: cc
 """
@@ -34,12 +38,35 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 AIGCRS_TOOLS = ROOT.parent / "aig-crs" / "tools"
 
-COURSE = {
-    "pillar": "contrast",
-    "shortname": "medicare-vs-medicaid",
-    "fullname": "Medicare vs. Medicaid: Telling Them Apart",
-    "category_label": "Medicare vs. Medicaid",
-    "tutorial_id": "T-CONTRAST-01",
+# Moodle question-bank category each pillar lands in (matches quiz_to_lms.py _PILLARS).
+PILLAR_CAT = {
+    "payor": "HLTHCR: Payor", "provider": "HLTHCR: Provider", "patient": "HLTHCR: Patient",
+    "data": "HLTHCR: Healthcare Data", "cross_domain": "HLTHCR: Cross-Domain",
+    "contrast": "HLTHCR: Contrast",
+}
+
+COURSES = {
+    "hlthcr-foundations": {
+        "title": "Healthcare Foundations",
+        "description": ("A foundational tour of how the U.S. healthcare system works — who pays, "
+                        "who provides, who receives, what data is exchanged, how it all connects, "
+                        "and how Medicare and Medicaid differ."),
+        "level": "foundational",
+        "relabel": None,  # keep per-pillar HLTHCR categories
+        "modules": [
+            ("T-PAYOR-01", "payor"), ("T-PROVIDER-01", "provider"), ("T-PATIENT-01", "patient"),
+            ("T-DATA-01", "data"), ("T-CROSS-01", "cross_domain"), ("T-CONTRAST-01", "contrast"),
+        ],
+    },
+    "medicare-vs-medicaid": {
+        "title": "Medicare vs. Medicaid: Telling Them Apart",
+        "description": ("A focused contrast module that teaches the difference between Medicare and "
+                        "Medicaid and their sub-parts (Parts A/B/C/D, CHIP, dual eligibility) by direct, "
+                        "side-by-side comparison."),
+        "level": "foundational",
+        "relabel": "Medicare vs. Medicaid",
+        "modules": [("T-CONTRAST-01", "contrast")],
+    },
 }
 
 # --------------------------------------------------------------------------- #
@@ -177,31 +204,39 @@ def load_converter():
     return conv
 
 
-def filtered_questions(pillar):
+def _git_sha():
+    try:
+        return subprocess.run(["git", "-C", str(ROOT), "rev-parse", "--short", "HEAD"],
+                              capture_output=True, text=True).stdout.strip() or "uncommitted"
+    except Exception:
+        return "uncommitted"
+
+
+def build_questions(conv, course, out_dir):
+    """Emit GIFT/CSV/JSON for all pillars in this course (reuses the converter verbatim)."""
+    pillars = {p for _, p in course["modules"]}
     data = yaml.safe_load(open(ROOT / "content" / "questions.yaml", encoding="utf-8"))
-    qs = [q for q in data.get("questions", []) if str(q.get("pillar", "")).lower() == pillar]
-    if not qs:
-        sys.exit(f"no questions for pillar '{pillar}'")
-    return qs
-
-
-def build_questions(conv, pillar, out_dir):
-    qs = filtered_questions(pillar)
+    qs = [q for q in data["questions"] if str(q.get("pillar", "")).lower() in pillars]
     with tempfile.TemporaryDirectory() as td:
         cdir = Path(td) / "content"; cdir.mkdir(parents=True)
         yaml.safe_dump({"questions": qs}, open(cdir / "questions.yaml", "w", encoding="utf-8"),
                        sort_keys=False, allow_unicode=True)
         questions = conv.parse_hlthcr(str(cdir / "questions.yaml"))
-    for q in questions:
-        q.category = COURSE["category_label"]
+    if course["relabel"]:
+        for q in questions:
+            q.category = course["relabel"]
+    # Stable-sort by category so each Moodle category is declared once in the GIFT
+    # (source questions are batched, not contiguous by pillar). Order within a category
+    # is preserved, so per-module quiz order is unaffected.
+    questions.sort(key=lambda q: q.category)
     for sub in ("gift", "csv", "json"):
         (out_dir / sub).mkdir(parents=True, exist_ok=True)
-    short = COURSE["shortname"]
-    with open(out_dir / "gift" / f"{short}.gift", "w", encoding="utf-8") as fh:
+    cid = course["id"]
+    with open(out_dir / "gift" / f"{cid}.gift", "w", encoding="utf-8") as fh:
         conv.emit_gift(questions, fh)
-    with open(out_dir / "csv" / f"{short}-questions.csv", "w", encoding="utf-8", newline="") as fh:
+    with open(out_dir / "csv" / f"{cid}-questions.csv", "w", encoding="utf-8", newline="") as fh:
         conv.emit_csv(questions, fh)
-    with open(out_dir / "json" / f"{short}-questions.json", "w", encoding="utf-8") as fh:
+    with open(out_dir / "json" / f"{cid}-questions.json", "w", encoding="utf-8") as fh:
         conv.emit_json(questions, fh)
     counts = {"mc": 0, "tf": 0, "essay": 0}
     for q in questions:
@@ -209,23 +244,23 @@ def build_questions(conv, pillar, out_dir):
     return len(questions), counts
 
 
-def build_scorm(out_dir):
-    """Self-contained SCORM 1.2 package: single-tutorial lesson + 40-question quiz."""
-    tuts = {t["tutorial_id"]: t for t in yaml.safe_load(open(ROOT / "content" / "tutorials.yaml"))["tutorials"]}
-    scenes = yaml.safe_load(open(ROOT / "scenes" / "scenes.yaml"))["scenes"]
-    tut = tuts[COURSE["tutorial_id"]]
-    con_scenes = sorted([s for s in scenes if s["tutorial_id"] == COURSE["tutorial_id"]
-                         and s["scene_type"] != "assessment"], key=lambda s: s["order"])
+def _module_questions(course, all_json, pillar):
+    """Rich-JSON questions for one module's quiz (filter the course JSON by category)."""
+    cat = course["relabel"] or PILLAR_CAT.get(pillar, "HLTHCR: " + pillar.title())
+    return [q for q in all_json if q.get("category") == cat]
 
+
+def _build_scorm_zip(out_dir, slug, title, tut, lesson_scenes, questions_subset):
+    """Write one self-contained SCORM 1.2 zip (lesson + quiz) and return (path, n_img, n_aud, size)."""
     player_scenes, images, audios = [], set(), {}
-    for s in con_scenes:
+    for s in lesson_scenes:
         if s["scene_type"] == "intro":
             heading, text = tut["title"], f"Welcome to {tut['title']}."
         else:
             sec = tut["sections"][s["order"] - 2]
             heading, text = sec["heading"], sec["text"].strip()
         img = os.path.basename(s.get("visual_asset", "")) or None
-        aud = os.path.basename(s.get("audio_asset", "")) or None   # .mp3 name
+        aud = os.path.basename(s.get("audio_asset", "")) or None
         if img and (ROOT / "media" / "images" / img).exists():
             images.add(img)
         else:
@@ -238,22 +273,17 @@ def build_scorm(out_dir):
                 aud = None
         player_scenes.append({"heading": heading, "text": text, "image": img, "audio": aud})
 
-    questions = json.load(open(out_dir / "json" / f"{COURSE['shortname']}-questions.json", encoding="utf-8"))["questions"]
-    course_json = json.dumps({"title": COURSE["fullname"], "scenes": player_scenes, "questions": questions},
+    course_json = json.dumps({"title": title, "scenes": player_scenes, "questions": questions_subset},
                              ensure_ascii=False)
-    index_html = (PLAYER_HTML
-                  .replace("__TITLE__", html.escape(COURSE["fullname"]))
+    index_html = (PLAYER_HTML.replace("__TITLE__", html.escape(title))
                   .replace("__COURSE_JSON__", course_json))
-    manifest = SCORM_MANIFEST.format(ident=COURSE["shortname"].replace("-", "_"),
-                                     title=html.escape(COURSE["fullname"]))
+    manifest = SCORM_MANIFEST.format(ident=slug.replace("-", "_"), title=html.escape(title))
 
     (out_dir / "scorm").mkdir(parents=True, exist_ok=True)
-    zip_path = out_dir / "scorm" / f"{COURSE['shortname']}.zip"
-
+    zip_path = out_dir / "scorm" / f"{slug}.zip"
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
         (td / "audio").mkdir(); (td / "images").mkdir()
-        # transcode wav -> mp3 to keep the package small
         for mp3_name, wav in audios.items():
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav),
                             "-codec:a", "libmp3lame", "-q:a", "5", str(td / "audio" / mp3_name)], check=True)
@@ -266,104 +296,102 @@ def build_scorm(out_dir):
             for p in sorted(td.rglob("*")):
                 if p.is_file():
                     z.write(p, p.relative_to(td))
-    return zip_path, len(player_scenes), len(images), len(audios), zip_path.stat().st_size
+    return zip_path, len(images), len(audios), zip_path.stat().st_size
 
 
-def build_manifest(out_dir):
-    """Emit a schema-valid course-manifest.json (the platform contract) for this course."""
+def build_scorm(course, out_dir):
+    """One SCORM zip per module. Single-module courses keep the bare <id>.zip name."""
     tuts = {t["tutorial_id"]: t for t in yaml.safe_load(open(ROOT / "content" / "tutorials.yaml"))["tutorials"]}
     scenes = yaml.safe_load(open(ROOT / "scenes" / "scenes.yaml"))["scenes"]
-    con = [s for s in scenes if s["tutorial_id"] == COURSE["tutorial_id"]]
-    lesson_scenes = [s for s in con if s["scene_type"] != "assessment"]
-    qs = filtered_questions(COURSE["pillar"])
-    tf = sum(1 for q in qs if str(q.get("type")).upper() == "TF")
-    mc = sum(1 for q in qs if str(q.get("type")).upper() == "MCQ")
-    short = COURSE["shortname"]
-    try:
-        sha = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "--short", "HEAD"],
-                             capture_output=True, text=True).stdout.strip() or "uncommitted"
-    except Exception:
-        sha = "uncommitted"
+    all_json = json.load(open(out_dir / "json" / f"{course['id']}-questions.json", encoding="utf-8"))["questions"]
+    multi = len(course["modules"]) > 1
+    results = []
+    for i, (tid, pillar) in enumerate(course["modules"], 1):
+        tut = tuts[tid]
+        lesson_scenes = sorted([s for s in scenes if s["tutorial_id"] == tid
+                                and s["scene_type"] != "assessment"], key=lambda s: s["order"])
+        qsub = _module_questions(course, all_json, pillar)
+        slug = f"{course['id']}-M{i:02d}-{pillar.replace('_','-')}" if multi else course["id"]
+        zp, nimg, naud, size = _build_scorm_zip(out_dir, slug, tut["title"], tut, lesson_scenes, qsub)
+        results.append((tid, slug, len(lesson_scenes), len(qsub), size))
+    return results
+
+
+def build_manifest(course, out_dir):
+    tuts = {t["tutorial_id"]: t for t in yaml.safe_load(open(ROOT / "content" / "tutorials.yaml"))["tutorials"]}
+    scenes = yaml.safe_load(open(ROOT / "scenes" / "scenes.yaml"))["scenes"]
+    all_json = json.load(open(out_dir / "json" / f"{course['id']}-questions.json", encoding="utf-8"))["questions"]
+    cid = course["id"]
+    multi = len(course["modules"]) > 1
+
+    modules = []
+    total_q = 0
+    for i, (tid, pillar) in enumerate(course["modules"], 1):
+        tut = tuts[tid]
+        lesson_scenes = [s for s in scenes if s["tutorial_id"] == tid and s["scene_type"] != "assessment"]
+        qsub = _module_questions(course, all_json, pillar)
+        total_q += len(qsub)
+        slug = f"{cid}-M{i:02d}-{pillar.replace('_','-')}" if multi else cid
+        modules.append({
+            "id": f"M{i}", "number": i, "slug": pillar.replace("_", "-"), "title": tut["title"],
+            "summary": (tut.get("learning_objectives") or [""])[0],
+            "items": [
+                {"id": f"M{i}.lesson", "type": "lesson", "title": f"{tut['title']} — Lesson",
+                 "sceneCount": len(lesson_scenes), "scormPackage": f"exports/lms/scorm/{slug}.zip"},
+                {"id": f"M{i}.quiz", "type": "quiz", "title": f"{tut['title']} — Quiz",
+                 "graded": True, "passMark": 0.8, "questionCount": len(qsub),
+                 "autoGraded": len(qsub), "manualGraded": 0,
+                 "questionsFile": f"exports/lms/json/{cid}-questions.json",
+                 "giftFile": f"exports/lms/gift/{cid}.gift"},
+            ],
+        })
 
     manifest = {
         "manifestVersion": "1.0",
         "course": {
-            "id": short,
-            "title": COURSE["fullname"],
-            "description": ("A focused contrast module that teaches the difference between Medicare and "
-                            "Medicaid and their sub-parts (Parts A/B/C/D, CHIP, dual eligibility) by direct, "
-                            "side-by-side comparison."),
-            "space": "academy",
-            "sourceRepo": "hlthcr",
-            "contentVersion": sha,
-            "language": "en",
-            "level": "foundational",
-            "estimatedHours": 0.5,
-            "moduleCount": 1,
+            "id": cid, "title": course["title"], "description": course["description"],
+            "space": "academy", "sourceRepo": "hlthcr", "contentVersion": _git_sha(),
+            "language": "en", "level": course["level"], "moduleCount": len(modules),
         },
         "delivery": {
-            "player": {
-                "type": "scorm",
-                "url": f"exports/lms/scorm/{short}.zip",
-                "progressHook": "window.SCORM_report(raw,max)",
-            },
+            "player": {"type": "html" if multi else "scorm",
+                       "url": "index.html" if multi else f"exports/lms/scorm/{cid}.zip",
+                       "progressHook": "window.SCORM_report(raw,max)"},
             "scorm": {"version": "1.2"},
-            "moodle": {"gift": f"exports/lms/gift/{short}.gift"},
+            "moodle": {"gift": f"exports/lms/gift/{cid}.gift"},
         },
-        "modules": [{
-            "id": "M1",
-            "number": 1,
-            "slug": short,
-            "title": COURSE["fullname"],
-            "summary": "Medicare vs. Medicaid told apart across six axes: who qualifies, who funds it, "
-                       "what's covered, the sub-parts, cost, and dual eligibility.",
-            "items": [
-                {
-                    "id": "M1.lesson",
-                    "type": "lesson",
-                    "title": f"{COURSE['fullname']} — Lesson",
-                    "sceneCount": len(lesson_scenes),
-                    "scormPackage": f"exports/lms/scorm/{short}.zip",
-                },
-                {
-                    "id": "M1.quiz",
-                    "type": "quiz",
-                    "title": f"{COURSE['fullname']} — Quiz",
-                    "graded": True,
-                    "passMark": 0.8,
-                    "questionCount": len(qs),
-                    "autoGraded": tf + mc,
-                    "manualGraded": 0,
-                    "questionsFile": f"exports/lms/json/{short}-questions.json",
-                    "giftFile": f"exports/lms/gift/{short}.gift",
-                },
-            ],
-        }],
+        "modules": modules,
     }
-    path = out_dir / f"{short}.manifest.json"
+    path = out_dir / f"{cid}.manifest.json"
     path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    return path, len(lesson_scenes), len(qs)
+    return path, len(modules), total_q
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--pillar", default=COURSE["pillar"])
+    ap.add_argument("--course", choices=list(COURSES) + ["all"], default="all")
     ap.add_argument("--step", choices=["questions", "scorm", "manifest", "all"], default="all")
     ap.add_argument("--out", default=str(ROOT / "exports" / "lms"))
     args = ap.parse_args()
     out_dir = Path(args.out)
+    keys = list(COURSES) if args.course == "all" else [args.course]
+    conv = load_converter()
 
-    print(f"Course: {COURSE['fullname']}  (shortname: {COURSE['shortname']})")
-    if args.step in ("questions", "all"):
-        conv = load_converter()
-        total, counts = build_questions(conv, args.pillar, out_dir)
-        print(f"  questions: {total} (MC={counts['mc']}, TF={counts['tf']}) -> exports/lms/{{gift,csv,json}}/")
-    if args.step in ("scorm", "all"):
-        zp, nsc, nimg, naud, size = build_scorm(out_dir)
-        print(f"  scorm: {nsc} lesson scenes, {nimg} images, {naud} audio -> {zp.relative_to(ROOT)} ({size//1024} KB)")
-    if args.step in ("manifest", "all"):
-        mp, nsc, nq = build_manifest(out_dir)
-        print(f"  manifest: 1 module, lesson({nsc} scenes) + quiz({nq} Q) -> {mp.relative_to(ROOT)}")
+    for key in keys:
+        course = dict(COURSES[key]); course["id"] = key
+        print(f"\nCourse: {course['title']}  ({key})")
+        if args.step in ("questions", "all"):
+            total, c = build_questions(conv, course, out_dir)
+            print(f"  questions: {total} (MC={c['mc']}, TF={c['tf']}) -> exports/lms/{{gift,csv,json}}/{key}*")
+        if args.step in ("scorm", "all"):
+            res = build_scorm(course, out_dir)
+            tot = sum(r[4] for r in res)
+            print(f"  scorm: {len(res)} package(s), {tot//1024} KB total")
+            for tid, slug, nsc, nq, size in res:
+                print(f"    {slug}.zip — {nsc} scenes, {nq} Q ({size//1024} KB)")
+        if args.step in ("manifest", "all"):
+            mp, nmod, nq = build_manifest(course, out_dir)
+            print(f"  manifest: {nmod} module(s), {nq} questions -> {mp.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
